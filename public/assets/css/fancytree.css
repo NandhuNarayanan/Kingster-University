@@ -1,0 +1,142 @@
+ul.fancytree-container {
+    list-style: none
+}
+
+[dir] ul.fancytree-container {
+    border: none;
+    padding: 0
+}
+
+ul.fancytree-container:focus {
+    outline: none
+}
+
+[dir] ul.fancytree-container li {
+    padding: 0 0 3px
+}
+
+[dir] ul.fancytree-container li.fancytree-lastsib {
+    padding: 0
+}
+
+ul.fancytree-container li ul {
+    list-style: none
+}
+
+[dir] ul.fancytree-container li ul {
+    padding-top: 3px
+}
+
+.fancytree-icon {
+    color: #383b3d
+}
+
+.fancytree-folder .fancytree-icon {
+    color: #2196f3
+}
+
+.fancytree-expander {
+    color: #383b3d
+}
+
+[dir] span.fancytree-node.fancytree-selected {
+    background-color: #eee;
+    border-color: #eee
+}
+
+[dir] span.fancytree-node.fancytree-selected span.fancytree-title {
+    background-color: transparent
+}
+
+[dir] span.fancytree-node.fancytree-active {
+    background-color: #ecf6fe
+}
+
+span.fancytree-node.fancytree-active .fancytree-expander,
+span.fancytree-node.fancytree-active .fancytree-icon {
+    color: #383b3d
+}
+
+[dir] .fancytree-container.fancytree-treefocus span.fancytree-node:hover {
+    background-color: #eee
+}
+
+.fancytree-container.fancytree-treefocus span.fancytree-node:hover .fancytree-expander,
+.fancytree-container.fancytree-treefocus span.fancytree-node:hover .fancytree-icon {
+    color: #383b3d
+}
+
+.fancytree-container.fancytree-treefocus span.fancytree-node:hover.fancytree-folder .fancytree-icon {
+    color: #2196f3
+}
+
+[dir] .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-focused {
+    border-color: #2196f3
+}
+
+[dir] .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected {
+    background-color: #eee;
+    border-color: #eee
+}
+
+[dir] .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected span.fancytree-title {
+    background-color: transparent
+}
+
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected .fancytree-expander,
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected .fancytree-icon {
+    color: #383b3d
+}
+
+[dir] .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected:hover {
+    background-color: #e9e9e9
+}
+
+[dir] .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active {
+    background-color: #2196f3;
+    border-color: #2196f3
+}
+
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active .fancytree-checkbox,
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active .fancytree-expander,
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active .fancytree-icon,
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active .fancytree-title {
+    color: #fff
+}
+
+[dir] .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active:hover {
+    background-color: #1791f2
+}
+
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active:hover.fancytree-folder .fancytree-icon {
+    color: #fff
+}
+
+[dir] .sidebar-skin-dark ul.fancytree-container {
+    background-color: transparent
+}
+
+.sidebar-skin-dark span.fancytree-title {
+    color: #383b3d
+}
+
+[dir] .sidebar-skin-dark span.fancytree-node.fancytree-active {
+    background-color: fade(#2196f3, 30%)
+}
+
+.sidebar-skin-dark span.fancytree-node.fancytree-active .fancytree-expander,
+.sidebar-skin-dark span.fancytree-node.fancytree-active .fancytree-icon {
+    color: #383b3d
+}
+
+[dir] .sidebar-skin-dark .fancytree-container.fancytree-treefocus span.fancytree-node:hover {
+    background-color: #eee
+}
+
+[dir] .sidebar-skin-dark .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active:hover {
+    background-color: #1791f2
+}
+
+[dir] .sidebar span.fancytree-node {
+    border-radius: 0
+}

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from thememakker.com/templates/swift/university/add-courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2019 12:27:21 GMT -->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<title>:: Swift - University Admin ::</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Favicon-->
+<link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+<!-- Dropzone Css -->
+<link href="/assets/plugins/dropzone/dropzone.css" rel="stylesheet">
+<!-- Bootstrap Material Datetime Picker Css -->
+<link href="/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+<!-- Wait Me Css -->
+<link href="/assets/plugins/waitme/waitMe.css" rel="stylesheet" />
+<!-- Bootstrap Select Css -->
+<link href="/assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+<link href="/assets/css/main.css" rel="stylesheet">
+<!-- Custom Css -->
+
+
+<link href="/assets/css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-blush">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="preloader">
+            <div class="spinner-layer pl-blush">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Please wait...</p>
+    </div>
+</div>
+<!-- #END# Page Loader --> 
+
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- #END# Overlay For Sidebars --> 
+
+<!-- Morphing Search  -->
+<div id="morphsearch" class="morphsearch">
+    <form class="morphsearch-form">
+        <div class="form-group m-0">
+            <input value="" type="search" placeholder="Search..." class="form-control morphsearch-input" />
+            <button class="morphsearch-submit" type="submit">Search</button>
+        </div>
+    </form>
+    <!-- /morphsearch-content --> 
+    <span class="morphsearch-close"></span>
+</div>
+
+<!-- Top Bar -->
+<nav class="navbar clearHeader">
+    <div class="col-12">
+        <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand" href="/admin/admindash">Kingster University</a> </div>
+        <ul class="nav navbar-nav navbar-right">
+            <!-- Notifications -->
+            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="zmdi zmdi-notifications"></i> <span class="label-count">7</span> </a>
+                <ul class="dropdown-menu">
+                    <li class="header">NOTIFICATIONS</li>
+                    <li class="body">
+                        <ul class="menu">
+                            <li> <a href="javascript:void(0);">
+                                <div class="icon-circle bg-light-green"><i class="zmdi zmdi-account-add"></i></div>
+                                <div class="menu-info">
+                                    <h4>12 new members joined</h4>
+                                    <p> <i class="material-icons">access_time</i> 14 mins ago </p>
+                                </div>
+                                </a> </li>
+                            <li> <a href="javascript:void(0);">
+                                <div class="icon-circle bg-cyan"><i class="zmdi zmdi-shopping-cart-plus"></i></div>
+                                <div class="menu-info">
+                                    <h4>4 sales made</h4>
+                                    <p> <i class="material-icons">access_time</i> 22 mins ago </p>
+                                </div>
+                                </a> </li>
+                            <li> <a href="javascript:void(0);">
+                                <div class="icon-circle bg-red"><i class="zmdi zmdi-delete"></i></div>
+                                <div class="menu-info">
+                                    <h4><b>Nancy Doe</b> deleted account</h4>
+                                    <p> <i class="material-icons">access_time</i> 3 hours ago </p>
+                                </div>
+                                </a> </li>
+                            <li> <a href="javascript:void(0);">
+                                <div class="icon-circle bg-orange"><i class="zmdi zmdi-edit"></i></div>
+                                <div class="menu-info">
+                                    <h4><b>Nancy</b> changed name</h4>
+                                    <p> <i class="material-icons">access_time</i> 2 hours ago </p>
+                                </div>
+                                </a> </li>
+                            <li> <a href="javascript:void(0);">
+                                <div class="icon-circle bg-blue-grey"><i class="zmdi zmdi-comment-alt-text"></i></div>
+                                <div class="menu-info">
+                                    <h4><b>John</b> commented your post</h4>
+                                    <p> <i class="material-icons">access_time</i> 4 hours ago </p>
+                                </div>
+                                </a> </li>
+                            <li> <a href="javascript:void(0);">
+                                <div class="icon-circle bg-light-green"><i class="zmdi zmdi-refresh-alt"></i></div>
+                                <div class="menu-info">
+                                    <h4><b>John</b> updated status</h4>
+                                    <p> <i class="material-icons">access_time</i> 3 hours ago </p>
+                                </div>
+                                </a> </li>
+                            <li> <a href="javascript:void(0);">
+                                <div class="icon-circle bg-purple"><i class="zmdi zmdi-settings"></i></div>
+                                <div class="menu-info">
+                                    <h4>Settings updated</h4>
+                                    <p> <i class="material-icons">access_time</i> Yesterday </p>
+                                </div>
+                                </a> </li>
+                        </ul>
+                    </li>
+                    <li class="footer"> <a href="javascript:void(0);">View All Notifications</a> </li>
+                </ul>
+            </li>
+            <!-- #END# Notifications --> 
+            <li><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings"></i></a></li>
+        </ul>
+    </div>
+</nav>
+<!-- #Top Bar -->
+
+<!--Side menu and right menu -->
+<section> 
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar"> 
+        <!-- User Info -->
+        <div class="user-info">
+            <div class="admin-image"> <img src="/assets/images/random-avatar7.jpg" alt=""> </div>
+            <div class="admin-action-info"> <span>Welcome</span>
+                <h3>Prof. Anoop Krishna</h3>
+                <ul>
+                    <li><a data-placement="bottom" title="Go to Inbox" href="mail-inbox.html"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a data-placement="bottom" title="Go to Profile" href="profile.html"><i class="zmdi zmdi-account"></i></a></li>                    
+                    <li><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings"></i></a></li>
+                    <li><a data-placement="bottom" title="Full Screen" href="sign-in.html" ><i class="zmdi zmdi-sign-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- #User Info --> 
+        <!-- Menu -->
+        <div class="menu">
+            <ul class="list">
+                <li class="header">MAIN NAVIGATION</li>
+                <li><a href="/admin/admindash"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                <li><a href="events.html"><i class="zmdi zmdi-calendar-check"></i><span>Event Management</span> </a></li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account"></i><span>Professors</span> </a>
+                    <ul class="ml-menu">
+                        <li><a href="professors.html">All Professors</a></li>
+                        <li><a href="add-professors.html">Add professors</a></li>                       
+                        <li><a href="profile.html">professors Profile</a></li>
+                    </ul>
+                </li>                
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-accounts-outline"></i><span>Students</span> </a>
+                    <ul class="ml-menu">
+                        <li><a href="/admin/viewstudent">All Students</a></li>
+                        <li><a href="/admin/addstudents">Add Students</a></li>                       
+                        <li><a href="students-profile.html">Students Profile</a></li>
+                        <li><a href="students-invoice.html">Students Invoice</a></li>
+                    </ul>
+                </li>
+                <li class="active open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-graduation-cap"></i><span>Courses</span> </a>
+                    <ul class="ml-menu">
+                        <li><a href="/admin/viewcourse">All Courses</a></li>
+                        <li class="active"><a href="/admin/addcourse">Add Courses</a></li>                       
+                        <li><a href="courses-info.html">Courses Info</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-book"></i><span>Qualification</span> </a>
+                    <ul class="ml-menu">
+                        <li><a href="library.html">All qualification</a></li>
+                        <li><a href="add-library.html">Add qualification</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-book"></i><span>Program</span> </a>
+                    <ul class="ml-menu">
+                        <li><a href="library.html">All Program</a></li>
+                        <li><a href="add-library.html">Add Program</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city-alt"></i><span>Departments</span> </a>
+                    <ul class="ml-menu">
+                        <li><a href="departments.html">All Departments</a></li>
+                        <li><a href="/admin/adddepartment">Add Departments</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-mood"></i><span>Staffs</span> </a>
+                    <ul class="ml-menu">
+                        <li><a href="staffs.html">All Staffs</a></li>
+                        <li><a href="add-staffs.html">Add Staffs</a></li>                       
+                        <li><a href="staffs-info.html">Staffs Profile</a></li>
+                    </ul>
+                </li>
+                <li><a href="centres.html"><i class="zmdi zmdi-pin"></i><span>University Centres</span></a></li>
+            </ul>
+        </div>
+        <!-- #Menu -->
+    </aside>
+    <!-- #END# Left Sidebar --> 
+    <!-- Right Sidebar -->
+    <aside id="rightsidebar" class="right-sidebar">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane in active in active" id="skins">
+            </div>
+            <div role="tabpanel" class="tab-pane" id="chat">
+                <div class="demo-settings">
+                    <div class="search">
+                        <div class="input-group">
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Search..." required autofocus>
+                            </div>
+                        </div>
+                    </div>
+                    <h6>Recent</h6>
+                    <ul>
+                        <li class="online">
+                            <div class="media">
+                                <a  role="button" tabindex="0"> <img class="media-object " src="/assets/images/xs/avatar1.jpg" alt=""> </a>
+                                <div class="media-body">
+                                    <span class="name">Claire Sassu</span> <span class="message">Can you share the...</span> <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="online">
+                            <div class="media"> <a  role="button" tabindex="0"> <img class="media-object " src="/assets/images/xs/avatar2.jpg" alt=""> </a>
+                                <div class="media-body">
+                                    <span class="name">Maggie jackson</span> <span class="message">Can you share the...</span> <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="online">
+                            <div class="media"> <a  role="button" tabindex="0"> <img class="media-object " src="/assets/images/xs/avatar3.jpg" alt=""> </a>
+                                <div class="media-body">
+                                    <span class="name">Joel King</span> <span class="message">Ready for the meeti...</span> <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <h6>Contacts</h6>
+                    <ul>
+                        <li class="offline">
+                            <div class="media"> <a  role="button" tabindex="0"> <img class="media-object " src="/assets/images/xs/avatar4.jpg" alt=""> </a>
+                                <div class="media-body">
+                                    <span class="name">Joel King</span> <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="online">
+                            <div class="media"> <a  role="button" tabindex="0"> <img class="media-object " src="/assets/images/xs/avatar1.jpg" alt=""> </a>
+                                <div class="media-body">
+                                    <span class="name">Joel King</span> <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="offline">
+                            <div class="media"> <a class="pull-left " role="button" tabindex="0"> <img class="media-object " src="/assets/images/xs/avatar2.jpg" alt=""> </a>
+                                <div class="media-body">
+                                    <span class="name">Joel King</span> <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="settings">
+                <div class="demo-settings">
+                    <p>GENERAL SETTINGS</p>
+                    <ul class="setting-list">
+                        <li> <span>Report Panel Usage</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span class="lever"></span></label>
+                            </div>
+                        </li>
+                        <li> <span>Email Redirect</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="lever"></span></label>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>SYSTEM SETTINGS</p>
+                    <ul class="setting-list">
+                        <li> <span>Notifications</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span class="lever"></span></label>
+                            </div>
+                        </li>
+                        <li> <span>Auto Updates</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span class="lever"></span></label>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>ACCOUNT SETTINGS</p>
+                    <ul class="setting-list">
+                        <li> <span>Offline</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="lever"></span></label>
+                            </div>
+                        </li>
+                        <li> <span>Location Permission</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span class="lever"></span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- #END# Right Sidebar --> 
+</section>
+<!--Side menu and right menu -->
+
+<!-- main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Add Coupon</h2>
+            <small class="text-muted">Welcome to Kingster University application</small>
+        </div>
+        <div class="row clearfix">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="card">
+					<div class="body">                        
+                                <form method="post" action="/admin/addcoupon">
+                        <div class="row clearfix">
+                             <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line"> 
+                                        <input type="text" class="form-control" placeholder="Enter Coupon Code" name="couponCode">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" placeholder="Discount" name="discount">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" placeholder="Enter Coupon Name" name="couponName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <button  onclick="sweetalert()" type="submit" class="btn btn-raised btn-default waves-effect" data-placement-from="top" data-placement-align="center"
+                                            data-animate-enter="" data-animate-exit="" data-color-name="bg-black"> Submit </button>
+                                <button type="reset" class="btn btn-raised btn-default waves-effect">Cancel</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>        
+</section>
+<!-- main content -->
+
+<div class="color-bg"></div>
+
+<!-- Jquery Core Js --> 
+<script src="/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="/assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="/assets/bundles/morphingsearchscripts.bundle.js"></script> <!-- Main top morphing search --> 
+
+
+<script src="/assets/plugins/autosize/autosize.js"></script> <!-- Autosize Plugin Js --> 
+<script src="/assets/plugins/momentjs/moment.js"></script> <!-- Moment Plugin Js --> 
+<script src="/assets/plugins/dropzone/dropzone.js"></script> <!-- Dropzone Plugin Js -->
+<!-- Bootstrap Material Datetime Picker Plugin Js --> 
+<script src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script> 
+
+<script src="/assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
+<script src="/assets/js/pages/forms/basic-form-elements.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function sweetalert(){
+     swal("Add Successfully!");
+    }
+   
+</script>
+
+
+
+</body>
+
+<!-- Mirrored from thememakker.com/templates/swift/university/add-courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2019 12:27:21 GMT -->
+</html>

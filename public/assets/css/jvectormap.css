@@ -1,0 +1,33 @@
+.jvectormap-zoomin,
+.jvectormap-zoomout {
+    box-sizing: content-box
+}
+
+[dir] .jvectormap-zoomin,
+[dir] .jvectormap-zoomout {
+    background: #2196f3
+}
+
+.jvectormap-label {
+    z-index: 1
+}
+
+[dir] .jvectormap-label {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: #2196f3;
+    padding: 3px 5px
+}
+
+.jvm-legend-item {
+    width: 10px;
+    height: 10px
+}
+
+[dir=ltr] .jvm-legend-item {
+    margin-right: 5px
+}
+
+[dir=rtl] .jvm-legend-item {
+    margin-left: 5px
+}

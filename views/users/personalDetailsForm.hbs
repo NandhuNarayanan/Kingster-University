@@ -1,0 +1,955 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Student - Dashboard</title>
+
+    <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
+    <meta name="robots" content="noindex">
+
+    <!-- Custom Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="assets/vendor/spinkit.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="assets/css/app.css" rel="stylesheet">
+
+</head>
+
+<body class=" layout-fluid">
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header -->
+
+        <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
+            <div class="mdk-header__content">
+
+                <!-- Navbar -->
+                <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
+                    <div class="container-fluid">
+                        <!-- Toggle sidebar -->
+                        <button class="navbar-toggler d-block" data-toggle="sidebar" type="button">
+                            <span class="material-icons">menu</span>
+                        </button>
+
+                        <!-- Brand -->
+                        <a href="student-dashboard.html" class="navbar-brand">
+                            <img src="assets/images/logo/white.svg" class="mr-2" alt="LearnPlus" />
+                            <span class="d-none d-xs-md-block">Kingster University</span>
+                        </a>
+
+                        <div class="flex"></div>
+
+                        <!-- Menu -->
+                        <ul class="nav navbar-nav flex-nowrap">
+                            <!-- Notifications dropdown -->
+                            <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
+                                <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
+                                    data-dropdown-disable-document-scroll data-caret="false">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="badge badge-notifications badge-danger">.</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div data-perfect-scrollbar class="position-relative">
+                                        <div class="dropdown-header"><strong>Notifications</strong></div>
+                                        <div class="list-group list-group-flush mb-0">
+                                            {{#each notification}}
+                                            <a href="/notification"
+                                                class="list-group-item list-group-item-action border-left-3 border-left-danger">
+                                                <span class="d-flex">
+                                                    <span class="avatar avatar-xs mr-2">
+                                                        <span class="avatar-title rounded-circle bg-light">
+                                                            <i
+                                                                class="material-icons font-size-16pt text-danger">notifications</i>
+                                                        </span>
+                                                    </span>
+                                                    <span class="flex d-flex flex-column">
+
+                                                        <span class="text-black-70">{{this.header}}</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- // END Notifications dropdown -->
+                            <!-- User dropdown -->
+                            <li class="nav-item dropdown ml-1 ml-md-3">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
+                                        src="assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
+                                        width="40"></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="/studentdash">
+                                        <i class="material-icons">account_box</i> Dashboard
+                                    </a>
+                                    <a class="dropdown-item" href="/studentprofile">
+                                        <i class="material-icons">edit</i> Edit Account
+                                    </a>
+                                    <a class="dropdown-item" href="/logout">
+                                        <i class="material-icons">lock</i> Logout
+                                    </a>
+                                </div>
+                            </li>
+                            <!-- // END User dropdown -->
+
+                        </ul>
+                        <!-- // END Menu -->
+                    </div>
+                </nav>
+                <!-- // END Navbar -->
+
+            </div>
+        </div>
+
+        <!-- // END Header -->
+
+        <!-- Header Layout Content -->
+        <div class="container">
+            <div class="container-fluid py-5">
+                <form id="wizard_with_validation" enctype="multipart/form-data" action="/personalform" method="POST" class="py-5">
+                <h2> Application for {{programname}}</h2>
+                    <h3>Personal Details</h3>
+                    <h2>BASIC INFORMATION</h2>
+                    <div class="form-group col-md-12">
+                        <div class="form-1">
+                            <label class="form-2">Upload Your Recent Passport Size Photograph*</label>
+                            <input type="file" name="photograph" id="photograph" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Salutation*</label>
+                        <div class="form">
+                            <select class="form-control" name="salutaton">
+                                <option value="1"></option>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Mr">Mr</option>
+                                <option value="Dr">Dr</option>
+                                <option value="Prof">Prof</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">First Name*</label>
+                        <div class="form-line">
+                            <input type="text" name="fname" class="form-control" value="{{users.fname}}">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Last Name*</label>
+                        <div class="form-line">
+                            <input type="text" name="lname" class="form-control" value="{{users.lname}}">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Gender*</label>
+                        <div class="form-line">
+
+                            <select class="form-control" name="gender">
+                                <option value="1"></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Date of Birth*</label>
+                        <div class="form-line">
+                            <div class="form-line">
+                                <input type="date" name="DOB" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Blood Group*</label>
+                        <div>
+                            <select class="form-control" name="bloodgroup">
+                                <option value="1"></option>
+                                <option value="A+">A+</option>
+                                <option value="B+">B+</option>
+                                <option value="O+">O+</option>
+                                <option value="AB+">AB+</option>
+                                <option value="A-">A-</option>
+                                <option value="B-">B-</option>
+                                <option value="O-">O-</option>
+                                <option value="AB-">AB-</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Marital Status*</label>
+                        <div class="form">
+                            <select class="form-control" name="maritalstatus">
+                                <option value="1"></option>
+                                <option value="Married">Married</option>
+                                <option value="Unmarried">Unmarried</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Age*</label>
+                        <div class="form-line">
+                            <input min="18" type="number" name="age" class="form-control">
+                        </div>
+                        <div class="help-info">The warning step will show up if age is less than 18
+                        </div>
+                    </div>
+                    <div>
+                        <h2>ADDITIONAL INFORMATION</h2>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Category*</label>
+                            <div>
+                                <select class="form-control" name="category">
+                                    <option value="1"></option>
+                                    <option value="2">(OBC) Other Backward Caste</option>
+                                    <option value="3">Economically Backward Class (EBC)</option>
+                                    <option value="4">General Category (GN)</option>
+                                    <option value="4">Nomadic Tribes (B) (NT - B)</option>
+                                    <option value="4">Nomadic Tribes (C) (NT - C)</option>
+                                    <option value="4">Nomadic Tribes (D) (NT - D)</option>
+                                    <option value="4">Nomadic Tribes (NT)</option>
+                                    <option value="4">Scheduled Tribe (ST)</option>
+                                    <option value="4">Scheduled Caste (SC)</option>
+                                    <option value="4">Socially And Educationally Backward (SEBC)
+                                    </option>
+                                    <option value="4">Special Backward Caste (SBC)</option>
+                                    <option value="4">Scheduled Caste (SC)</option>
+                                    <option value="4">Vimukt Jati (VJ)</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Nationality*</label>
+                            <div>
+                                <select class="form-control" name="nationality">
+                                    <option value="1"></option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Are you differently abled? *</label>
+                            <div class="form-line">
+                                <select class="form-control" name="differentlyabled">
+                                    <option value="1"></option>
+                                    <option value="Male">Yes</option>
+                                    <option value="Female">No</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">ID Proof*</label>
+                            <div>
+                                <select class="form-control" name="idProof">
+                                    <option value="1"></option>
+                                    <option value="Male">UID (Aadhaar Card)</option>
+                                    <option value="Female">PAN Card issued by government</option>
+                                    <option value="Other">Passport issued by Indian authorities
+                                    </option>
+                                    <option value="Other">Voter ID</option>
+                                    <option value="Other">Driving License</option>
+
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>CONTACT INFORMATION</h2>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Phone Number*</label>
+                            <div class="form-line">
+                                <input type="text" name="mobilenumber" class="form-control" disabled
+                                    value="{{users.mobile}}">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Alternate Phone Number</label>
+                            <div class="form-line">
+                                <input type="text" name="alternatenumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Primery E mail*</label>
+                            <div class="form-line">
+                                <input type="email" name="primeryemail" class="form-control" disabled
+                                    value="{{users.email}}">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Alternate Email *</label>
+                            <div class="form-line">
+                                <input type="email" name="alternateemail" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>FATHER'S DETAILS</h2>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Father's Title *</label>
+                            <div class="form">
+                                <select class="form-control" name="fathertitle">
+                                    <option value="1"></option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Father's First Name*</label>
+                            <div class="form-line">
+                                <input type="text" name=" fatherfname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Father's Last Name*</label>
+                            <div class="form-line">
+                                <input type="text" name=" fatherlname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Father's Mobile Number*</label>
+                            <div class="form-line">
+                                <input type="text" name="fathermobilenumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Father's Email ID*</label>
+                            <div class="form-line">
+                                <input type="email" name="fatheremail" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>MOTHER'S DETAILS</h2>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Mother's Title*</label>
+                            <div class="form">
+                                <select class="form-control" name="motheretitle">
+                                    <option value="1"></option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Mother's First Name*</label>
+                            <div class="form-line">
+                                <input type="text" name="motherfname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Mother's Last Name*</label>
+                            <div class="form-line">
+                                <input type="text" name="motherlname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Mother's Mobile Number*</label>
+                            <div class="form-line">
+                                <input type="text" name="mothermobilenumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Mother's Email ID*</label>
+                            <div class="form-line">
+                                <input type="email" name="motheremail" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>COMMUNICATION ADDRESS DETAILS</h2>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Country*</label>
+                            <div class="form">
+                                <select class="form-control" name="country">
+                                            <option value="">Select</option>
+                                            <option value="460076;;;India">India</option>
+                                            <option value="460077;;;Afghanistan">Afghanistan</option>
+                                            <option value="460078;;;Albania">Albania</option>
+                                            <option value="460079;;;Algeria">Algeria</option>
+                                            <option value="460257;;;American Samoa">American Samoa</option>
+                                            <option value="460258;;;Andorra">Andorra</option>
+                                            <option value="460080;;;Angola">Angola</option>
+                                            <option value="460259;;;Anguilla">Anguilla</option>
+                                            <option value="460081;;;Antarctica">Antarctica</option>
+                                            <option value="460260;;;Antigua And Barbuda">Antigua And Barbuda</option>
+                                            <option value="460082;;;Argentina">Argentina</option>
+                                            <option value="460083;;;Armenia">Armenia</option>
+                                            <option value="460261;;;Aruba">Aruba</option>
+                                            <option value="460084;;;Australia">Australia</option>
+                                            <option value="460085;;;Austria">Austria</option>
+                                            <option value="460086;;;Azerbaijan">Azerbaijan</option>
+                                            <option value="460087;;;Bahamas">Bahamas</option>
+                                            <option value="460088;;;Bahrain">Bahrain</option>
+                                            <option value="460089;;;Bangladesh">Bangladesh</option>
+                                            <option value="460262;;;Barbados">Barbados</option>
+                                            <option value="460090;;;Belarus">Belarus</option>
+                                            <option value="460091;;;Belgium">Belgium</option>
+                                            <option value="460092;;;Belize">Belize</option>
+                                            <option value="460093;;;Benin">Benin</option>
+                                            <option value="460263;;;Bermuda">Bermuda</option>
+                                            <option value="460094;;;Bhutan">Bhutan</option>
+                                            <option value="460095;;;Bolivia">Bolivia</option>
+                                            <option value="460096;;;Bosnia And Herzegovina">Bosnia And Herzegovina
+                                            </option>
+                                            <option value="460097;;;Botswana">Botswana</option>
+                                            <option value="460098;;;Brazil">Brazil</option>
+                                            <option value="460264;;;British Virgin Islands">British Virgin Islands
+                                            </option>
+                                            <option value="460099;;;Brunei Darussalam">Brunei Darussalam</option>
+                                            <option value="460100;;;Bulgaria">Bulgaria</option>
+                                            <option value="460101;;;Burkina Faso">Burkina Faso</option>
+                                            <option value="460102;;;Burundi">Burundi</option>
+                                            <option value="460103;;;Cambodia">Cambodia</option>
+                                            <option value="460104;;;Cameroon">Cameroon</option>
+                                            <option value="460105;;;Canada">Canada</option>
+                                            <option value="460106;;;Cape Verde">Cape Verde</option>
+                                            <option value="460265;;;Cayman Islands">Cayman Islands</option>
+                                            <option value="460107;;;Central African Republic">Central African Republic
+                                            </option>
+                                            <option value="460108;;;Chad">Chad</option>
+                                            <option value="460109;;;Chile">Chile</option>
+                                            <option value="460110;;;China">China</option>
+                                            <option value="460267;;;Cocos Islands">Cocos Islands</option>
+                                            <option value="460111;;;Colombia">Colombia</option>
+                                            <option value="460112;;;Comoros">Comoros</option>
+                                            <option value="460113;;;Congo">Congo</option>
+                                            <option value="460114;;;Congo, The Democratic Republic Of The">Congo, The
+                                                Democratic Republic Of The</option>
+                                            <option value="460268;;;Cook Islands">Cook Islands</option>
+                                            <option value="460115;;;Costa Rica">Costa Rica</option>
+                                            <option value="460116;;;Croatia">Croatia</option>
+                                            <option value="460117;;;Cte D Ivoire">Cte D Ivoire</option>
+                                            <option value="460118;;;Cuba">Cuba</option>
+                                            <option value="460119;;;Cyprus">Cyprus</option>
+                                            <option value="460120;;;Czech Republic">Czech Republic</option>
+                                            <option value="460121;;;Denmark">Denmark</option>
+                                            <option value="460122;;;Djibouti">Djibouti</option>
+                                            <option value="460269;;;Dominica">Dominica</option>
+                                            <option value="460123;;;Dominican Republic">Dominican Republic</option>
+                                            <option value="460270;;;East Timor">East Timor</option>
+                                            <option value="460124;;;Ecuador">Ecuador</option>
+                                            <option value="460125;;;Egypt">Egypt</option>
+                                            <option value="460126;;;El Salvador">El Salvador</option>
+                                            <option value="460127;;;Equatorial Guinea">Equatorial Guinea</option>
+                                            <option value="460128;;;Eritrea">Eritrea</option>
+                                            <option value="460129;;;Estonia">Estonia</option>
+                                            <option value="460130;;;Ethiopia">Ethiopia</option>
+                                            <option value="460271;;;Falkland Islands">Falkland Islands</option>
+                                            <option value="460272;;;Faroe Islands">Faroe Islands</option>
+                                            <option value="460131;;;Fiji">Fiji</option>
+                                            <option value="460132;;;Finland">Finland</option>
+                                            <option value="460133;;;France">France</option>
+                                            <option value="460273;;;French Guiana">French Guiana</option>
+                                            <option value="460274;;;French Polynesia">French Polynesia</option>
+                                            <option value="460275;;;Gabon">Gabon</option>
+                                            <option value="460134;;;Gambia">Gambia</option>
+                                            <option value="460135;;;Germany">Germany</option>
+                                            <option value="460136;;;Ghana">Ghana</option>
+                                            <option value="460276;;;Gibraltar">Gibraltar</option>
+                                            <option value="460137;;;Greece">Greece</option>
+                                            <option value="460277;;;Greenland">Greenland</option>
+                                            <option value="460278;;;Grenada">Grenada</option>
+                                            <option value="460279;;;Guam">Guam</option>
+                                            <option value="460138;;;Guatemala">Guatemala</option>
+                                            <option value="460280;;;Guernsey">Guernsey</option>
+                                            <option value="460139;;;Guinea">Guinea</option>
+                                            <option value="460140;;;Guinea-Bissau">Guinea-Bissau</option>
+                                            <option value="460141;;;Guyana">Guyana</option>
+                                            <option value="460142;;;Haiti">Haiti</option>
+                                            <option value="460143;;;Honduras">Honduras</option>
+                                            <option value="460144;;;Hong Kong">Hong Kong</option>
+                                            <option value="460145;;;Hungary">Hungary</option>
+                                            <option value="460146;;;Iceland">Iceland</option>
+                                            <option value="460147;;;Indonesia">Indonesia</option>
+                                            <option value="460148;;;Iran, Islamic Republic Of">Iran, Islamic Republic Of
+                                            </option>
+                                            <option value="460149;;;Iraq">Iraq</option>
+                                            <option value="460150;;;Ireland">Ireland</option>
+                                            <option value="460281;;;Isle Of Man">Isle Of Man</option>
+                                            <option value="460151;;;Israel">Israel</option>
+                                            <option value="460152;;;Italy">Italy</option>
+                                            <option value="460297;;;Ivory Coast">Ivory Coast</option>
+                                            <option value="460153;;;Jamaica">Jamaica</option>
+                                            <option value="460154;;;Japan">Japan</option>
+                                            <option value="460282;;;Jersey">Jersey</option>
+                                            <option value="460155;;;Jordan">Jordan</option>
+                                            <option value="460156;;;Kazakhstan">Kazakhstan</option>
+                                            <option value="460157;;;Kenya">Kenya</option>
+                                            <option value="460158;;;Kiribati">Kiribati</option>
+                                            <option value="460159;;;Korea, Democratic People S Republic Of">Korea,
+                                                Democratic People S Republic Of</option>
+                                            <option value="460160;;;Korea, Republic Of">Korea, Republic Of</option>
+                                            <option value="460283;;;Kosovo">Kosovo</option>
+                                            <option value="460161;;;Kuwait">Kuwait</option>
+                                            <option value="460162;;;Kyrgyzstan">Kyrgyzstan</option>
+                                            <option value="460163;;;Lao People S Democratic Republic">Lao People S
+                                                Democratic Republic</option>
+                                            <option value="460284;;;Laos">Laos</option>
+                                            <option value="460164;;;Latvia">Latvia</option>
+                                            <option value="460165;;;Lebanon">Lebanon</option>
+                                            <option value="460166;;;Lesotho">Lesotho</option>
+                                            <option value="460167;;;Liberia">Liberia</option>
+                                            <option value="460168;;;Libyan Arab Jamabiriya">Libyan Arab Jamabiriya
+                                            </option>
+                                            <option value="460285;;;Liechtenstein">Liechtenstein</option>
+                                            <option value="460169;;;Lithuania">Lithuania</option>
+                                            <option value="460170;;;Luxembourg">Luxembourg</option>
+                                            <option value="460286;;;Macau">Macau</option>
+                                            <option value="460287;;;Macedonia">Macedonia</option>
+                                            <option value="460171;;;Madagascar">Madagascar</option>
+                                            <option value="460172;;;Malawi">Malawi</option>
+                                            <option value="460173;;;Malaysia">Malaysia</option>
+                                            <option value="460174;;;Maldives">Maldives</option>
+                                            <option value="460175;;;Mali">Mali</option>
+                                            <option value="460288;;;Malta">Malta</option>
+                                            <option value="460176;;;Marshall Islands">Marshall Islands</option>
+                                            <option value="460289;;;Martinique">Martinique</option>
+                                            <option value="460177;;;Mauritania">Mauritania</option>
+                                            <option value="460178;;;Mauritius">Mauritius</option>
+                                            <option value="460179;;;Mexico">Mexico</option>
+                                            <option value="460290;;;Micronesia">Micronesia</option>
+                                            <option value="460180;;;Micronesia, Federated States Of">Micronesia,
+                                                Federated States Of</option>
+                                            <option value="460291;;;Moldova">Moldova</option>
+                                            <option value="460181;;;Moldova, Republic Of">Moldova, Republic Of</option>
+                                            <option value="460292;;;Monaco">Monaco</option>
+                                            <option value="460182;;;Mongolia">Mongolia</option>
+                                            <option value="460293;;;Montenegro">Montenegro</option>
+                                            <option value="460294;;;Montserrat">Montserrat</option>
+                                            <option value="460183;;;Morocco">Morocco</option>
+                                            <option value="460184;;;Mozambique">Mozambique</option>
+                                            <option value="460185;;;Myanmar">Myanmar</option>
+                                            <option value="460186;;;Namibia">Namibia</option>
+                                            <option value="460296;;;Nauru">Nauru</option>
+                                            <option value="460187;;;Nepal">Nepal</option>
+                                            <option value="460188;;;Netherlands">Netherlands</option>
+                                            <option value="460189;;;Netherlands Antilles">Netherlands Antilles</option>
+                                            <option value="460298;;;New Caledonia">New Caledonia</option>
+                                            <option value="460190;;;New Zealand">New Zealand</option>
+                                            <option value="460191;;;Nicaragua">Nicaragua</option>
+                                            <option value="460192;;;Niger">Niger</option>
+                                            <option value="460193;;;Nigeria">Nigeria</option>
+                                            <option value="460299;;;Niue">Niue</option>
+                                            <option value="460312;;;Norfolk Island">Norfolk Island</option>
+                                            <option value="460300;;;Northern Mariana Islands">Northern Mariana Islands
+                                            </option>
+                                            <option value="460194;;;Norway">Norway</option>
+                                            <option value="460195;;;Oman">Oman</option>
+                                            <option value="460197;;;Pakistan">Pakistan</option>
+                                            <option value="460302;;;Palau">Palau</option>
+                                            <option value="460198;;;Palestinian Territory, Occupied">Palestinian
+                                                Territory, Occupied</option>
+                                            <option value="460199;;;Panama">Panama</option>
+                                            <option value="460200;;;Papua New Guinea">Papua New Guinea</option>
+                                            <option value="460201;;;Paraguay">Paraguay</option>
+                                            <option value="460202;;;Peru">Peru</option>
+                                            <option value="460203;;;Philippines">Philippines</option>
+                                            <option value="460303;;;Pitcairn">Pitcairn</option>
+                                            <option value="460204;;;Poland">Poland</option>
+                                            <option value="460205;;;Portugal">Portugal</option>
+                                            <option value="460206;;;Qatar">Qatar</option>
+                                            <option value="460301;;;Reunion">Reunion</option>
+                                            <option value="460207;;;Romania">Romania</option>
+                                            <option value="460208;;;Russian Federation">Russian Federation</option>
+                                            <option value="460209;;;Rwanda">Rwanda</option>
+                                            <option value="460210;;;Saint Helena">Saint Helena</option>
+                                            <option value="460305;;;Saint Kitts And Nevis">Saint Kitts And Nevis
+                                            </option>
+                                            <option value="460306;;;Saint Lucia">Saint Lucia</option>
+                                            <option value="460311;;;Saint Martin">Saint Martin</option>
+                                            <option value="460308;;;Saint Vincent And The Grenadines">Saint Vincent And
+                                                The Grenadines</option>
+                                            <option value="460211;;;Samoa">Samoa</option>
+                                            <option value="460309;;;San Marino">San Marino</option>
+                                            <option value="460212;;;Sao Tome And Principe">Sao Tome And Principe
+                                            </option>
+                                            <option value="460213;;;Saudi Arabia">Saudi Arabia</option>
+                                            <option value="460214;;;Senegal">Senegal</option>
+                                            <option value="460215;;;Serbia And Montenegro">Serbia And Montenegro
+                                            </option>
+                                            <option value="460310;;;Seychelles">Seychelles</option>
+                                            <option value="460216;;;Sierra Leone">Sierra Leone</option>
+                                            <option value="460217;;;Singapore">Singapore</option>
+                                            <option value="460218;;;Slovakia">Slovakia</option>
+                                            <option value="460219;;;Slovenia">Slovenia</option>
+                                            <option value="460220;;;Solomon Islands">Solomon Islands</option>
+                                            <option value="460221;;;Somalia">Somalia</option>
+                                            <option value="460222;;;South Africa">South Africa</option>
+                                            <option value="460223;;;Spain">Spain</option>
+                                            <option value="460224;;;Sri Lanka">Sri Lanka</option>
+                                            <option value="460307;;;St. Pierre And Miquelon">St. Pierre And Miquelon
+                                            </option>
+                                            <option value="460225;;;Sudan">Sudan</option>
+                                            <option value="460226;;;Sudan (North)">Sudan (North)</option>
+                                            <option value="460227;;;Sudan (South)">Sudan (South)</option>
+                                            <option value="460228;;;Suriname">Suriname</option>
+                                            <option value="460266;;;Svalbard And Jan Mayen">Svalbard And Jan Mayen
+                                            </option>
+                                            <option value="460229;;;Swaziland">Swaziland</option>
+                                            <option value="460230;;;Sweden">Sweden</option>
+                                            <option value="460231;;;Switzerland">Switzerland</option>
+                                            <option value="460232;;;Syrian Arab Republic">Syrian Arab Republic</option>
+                                            <option value="460233;;;Taiwan, Province Of China">Taiwan, Province Of China
+                                            </option>
+                                            <option value="460234;;;Tajikistan">Tajikistan</option>
+                                            <option value="460235;;;Tanzania">Tanzania</option>
+                                            <option value="460236;;;Thailand">Thailand</option>
+                                            <option value="460237;;;Timor-Leste">Timor-Leste</option>
+                                            <option value="460238;;;Togo">Togo</option>
+                                            <option value="460313;;;Tokelau">Tokelau</option>
+                                            <option value="460314;;;Tonga">Tonga</option>
+                                            <option value="460239;;;Trinidad And Tobago">Trinidad And Tobago</option>
+                                            <option value="460240;;;Tunisia">Tunisia</option>
+                                            <option value="460241;;;Turkey">Turkey</option>
+                                            <option value="460242;;;Turkmenistan">Turkmenistan</option>
+                                            <option value="460315;;;Turks And Caicos Islands">Turks And Caicos Islands
+                                            </option>
+                                            <option value="460316;;;Tuvalu">Tuvalu</option>
+                                            <option value="460243;;;Uganda">Uganda</option>
+                                            <option value="460244;;;Ukraine">Ukraine</option>
+                                            <option value="460245;;;United Arab Emirates">United Arab Emirates</option>
+                                            <option value="460246;;;United Kingdom">United Kingdom</option>
+                                            <option value="460247;;;United States">United States</option>
+                                            <option value="460248;;;United States Minor Outlying Islands">United States
+                                                Minor Outlying Islands</option>
+                                            <option value="460249;;;Uruguay">Uruguay</option>
+                                            <option value="460250;;;Uzbekistan">Uzbekistan</option>
+                                            <option value="460251;;;Vanuatu">Vanuatu</option>
+                                            <option value="460304;;;Vatican City State (Holy See)">Vatican City State
+                                                (Holy See)</option>
+                                            <option value="460252;;;Venezuela">Venezuela</option>
+                                            <option value="460253;;;Viet Nam">Viet Nam</option>
+                                            <option value="460317;;;Wallis And Futuna Islands">Wallis And Futuna Islands
+                                            </option>
+                                            <option value="460295;;;Western Sahara">Western Sahara</option>
+                                            <option value="460254;;;Yemen">Yemen</option>
+                                            <option value="460318;;;Yugoslavia">Yugoslavia</option>
+                                            <option value="460255;;;Zambia">Zambia</option>
+                                            <option value="460256;;;Zimbabwe">Zimbabwe</option>
+                                        </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">State*</label>
+                            <select class="form-control" id="inputState">
+                                <option value="SelectState">Select State</option>
+                                <option value="Andra Pradesh">Andra Pradesh</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madya Pradesh">Madya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Orissa">Orissa</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttaranchal">Uttaranchal</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="West Bengal">West Bengal</option>
+                                <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Lakshadeep">Lakshadeep</option>
+                                <option value="Pondicherry">Pondicherry</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">District*</label>
+                            <select class="form-control" id="inputDistrict">
+                                <option value="">-- select one -- </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Address Line 1*</label>
+                            <div class="form-line">
+                                <input type="text" name="address1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Address Line 2</label>
+                            <div class="form-line">
+                                <input type="text" name="address2" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Pincode*</label>
+                            <div class="form-line">
+                                <input type="pincode" name="pincode" class="form-control">
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content:flex-end;">
+                        <button type="submit" class="btn btn-dark" >Next</button>
+                        </div>
+                    </div>
+        </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/vendor/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- MDK -->
+    <script src="assets/vendor/dom-factory.js"></script>
+    <script src="assets/vendor/material-design-kit.js"></script>
+
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Highlight.js -->
+    <script src="assets/js/hljs.js"></script>
+
+    <!-- App Settings (safe to remove) -->
+    <script src="assets/js/app-settings.js"></script>
+
+    <!-- Global Settings -->
+    <script src="assets/js/settings.js"></script>
+
+    <!-- Moment.js -->
+    <script src="assets/vendor/moment.min.js"></script>
+    <script src="assets/vendor/moment-range.js"></script>
+
+    <!-- Chart.js -->
+    <script src="assets/vendor/Chart.min.js"></script>
+    <script src="assets/js/chartjs.js"></script>
+
+    <!-- Student Dashboard Page JS -->
+    <!-- <script src="assets/js/chartjs-rounded-bar.js"></script> -->
+    <script src="assets/js/page.student-dashboard.js"></script>
+
+
+
+
+
+    <script>
+        var AndraPradesh = ["Anantapur", "Chittoor", "East Godavari", "Guntur", "Kadapa", "Krishna", "Kurnool", "Prakasam", "Nellore", "Srikakulam", "Visakhapatnam", "Vizianagaram", "West Godavari"];
+        var ArunachalPradesh = ["Anjaw", "Changlang", "Dibang Valley", "East Kameng", "East Siang", "Kra Daadi", "Kurung Kumey", "Lohit", "Longding", "Lower Dibang Valley", "Lower Subansiri", "Namsai", "Papum Pare", "Siang", "Tawang", "Tirap", "Upper Siang", "Upper Subansiri", "West Kameng", "West Siang", "Itanagar"];
+        var Assam = ["Baksa", "Barpeta", "Biswanath", "Bongaigaon", "Cachar", "Charaideo", "Chirang", "Darrang", "Dhemaji", "Dhubri", "Dibrugarh", "Goalpara", "Golaghat", "Hailakandi", "Hojai", "Jorhat", "Kamrup Metropolitan", "Kamrup (Rural)", "Karbi Anglong", "Karimganj", "Kokrajhar", "Lakhimpur", "Majuli", "Morigaon", "Nagaon", "Nalbari", "Dima Hasao", "Sivasagar", "Sonitpur", "South Salmara Mankachar", "Tinsukia", "Udalguri", "West Karbi Anglong"];
+        var Bihar = ["Araria", "Arwal", "Aurangabad", "Banka", "Begusarai", "Bhagalpur", "Bhojpur", "Buxar", "Darbhanga", "East Champaran", "Gaya", "Gopalganj", "Jamui", "Jehanabad", "Kaimur", "Katihar", "Khagaria", "Kishanganj", "Lakhisarai", "Madhepura", "Madhubani", "Munger", "Muzaffarpur", "Nalanda", "Nawada", "Patna", "Purnia", "Rohtas", "Saharsa", "Samastipur", "Saran", "Sheikhpura", "Sheohar", "Sitamarhi", "Siwan", "Supaul", "Vaishali", "West Champaran"];
+        var Chhattisgarh = ["Balod", "Baloda Bazar", "Balrampur", "Bastar", "Bemetara", "Bijapur", "Bilaspur", "Dantewada", "Dhamtari", "Durg", "Gariaband", "Janjgir Champa", "Jashpur", "Kabirdham", "Kanker", "Kondagaon", "Korba", "Koriya", "Mahasamund", "Mungeli", "Narayanpur", "Raigarh", "Raipur", "Rajnandgaon", "Sukma", "Surajpur", "Surguja"];
+        var Goa = ["North Goa", "South Goa"];
+        var Gujarat = ["Ahmedabad", "Amreli", "Anand", "Aravalli", "Banaskantha", "Bharuch", "Bhavnagar", "Botad", "Chhota Udaipur", "Dahod", "Dang", "Devbhoomi Dwarka", "Gandhinagar", "Gir Somnath", "Jamnagar", "Junagadh", "Kheda", "Kutch", "Mahisagar", "Mehsana", "Morbi", "Narmada", "Navsari", "Panchmahal", "Patan", "Porbandar", "Rajkot", "Sabarkantha", "Surat", "Surendranagar", "Tapi", "Vadodara", "Valsad"];
+        var Haryana = ["Ambala", "Bhiwani", "Charkhi Dadri", "Faridabad", "Fatehabad", "Gurugram", "Hisar", "Jhajjar", "Jind", "Kaithal", "Karnal", "Kurukshetra", "Mahendragarh", "Mewat", "Palwal", "Panchkula", "Panipat", "Rewari", "Rohtak", "Sirsa", "Sonipat", "Yamunanagar"];
+        var HimachalPradesh = ["Bilaspur", "Chamba", "Hamirpur", "Kangra", "Kinnaur", "Kullu", "Lahaul Spiti", "Mandi", "Shimla", "Sirmaur", "Solan", "Una"];
+        var JammuKashmir = ["Anantnag", "Bandipora", "Baramulla", "Budgam", "Doda", "Ganderbal", "Jammu", "Kargil", "Kathua", "Kishtwar", "Kulgam", "Kupwara", "Leh", "Poonch", "Pulwama", "Rajouri", "Ramban", "Reasi", "Samba", "Shopian", "Srinagar", "Udhampur"];
+        var Jharkhand = ["Bokaro", "Chatra", "Deoghar", "Dhanbad", "Dumka", "East Singhbhum", "Garhwa", "Giridih", "Godda", "Gumla", "Hazaribagh", "Jamtara", "Khunti", "Koderma", "Latehar", "Lohardaga", "Pakur", "Palamu", "Ramgarh", "Ranchi", "Sahebganj", "Seraikela Kharsawan", "Simdega", "West Singhbhum"];
+        var Karnataka = ["Bagalkot", "Bangalore Rural", "Bangalore Urban", "Belgaum", "Bellary", "Bidar", "Vijayapura", "Chamarajanagar", "Chikkaballapur", "Chikkamagaluru", "Chitradurga", "Dakshina Kannada", "Davanagere", "Dharwad", "Gadag", "Gulbarga", "Hassan", "Haveri", "Kodagu", "Kolar", "Koppal", "Mandya", "Mysore", "Raichur", "Ramanagara", "Shimoga", "Tumkur", "Udupi", "Uttara Kannada", "Yadgir"];
+        var Kerala = ["Alappuzha", "Ernakulam", "Idukki", "Kannur", "Kasaragod", "Kollam", "Kottayam", "Kozhikode", "Malappuram", "Palakkad", "Pathanamthitta", "Thiruvananthapuram", "Thrissur", "Wayanad"];
+        var MadhyaPradesh = ["Agar Malwa", "Alirajpur", "Anuppur", "Ashoknagar", "Balaghat", "Barwani", "Betul", "Bhind", "Bhopal", "Burhanpur", "Chhatarpur", "Chhindwara", "Damoh", "Datia", "Dewas", "Dhar", "Dindori", "Guna", "Gwalior", "Harda", "Hoshangabad", "Indore", "Jabalpur", "Jhabua", "Katni", "Khandwa", "Khargone", "Mandla", "Mandsaur", "Morena", "Narsinghpur", "Neemuch", "Panna", "Raisen", "Rajgarh", "Ratlam", "Rewa", "Sagar", "Satna",
+            "Sehore", "Seoni", "Shahdol", "Shajapur", "Sheopur", "Shivpuri", "Sidhi", "Singrauli", "Tikamgarh", "Ujjain", "Umaria", "Vidisha"];
+        var Maharashtra = ["Ahmednagar", "Akola", "Amravati", "Aurangabad", "Beed", "Bhandara", "Buldhana", "Chandrapur", "Dhule", "Gadchiroli", "Gondia", "Hingoli", "Jalgaon", "Jalna", "Kolhapur", "Latur", "Mumbai City", "Mumbai Suburban", "Nagpur", "Nanded", "Nandurbar", "Nashik", "Osmanabad", "Palghar", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli", "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"];
+        var Manipur = ["Bishnupur", "Chandel", "Churachandpur", "Imphal East", "Imphal West", "Jiribam", "Kakching", "Kamjong", "Kangpokpi", "Noney", "Pherzawl", "Senapati", "Tamenglong", "Tengnoupal", "Thoubal", "Ukhrul"];
+        var Meghalaya = ["East Garo Hills", "East Jaintia Hills", "East Khasi Hills", "North Garo Hills", "Ri Bhoi", "South Garo Hills", "South West Garo Hills", "South West Khasi Hills", "West Garo Hills", "West Jaintia Hills", "West Khasi Hills"];
+        var Mizoram = ["Aizawl", "Champhai", "Kolasib", "Lawngtlai", "Lunglei", "Mamit", "Saiha", "Serchhip", "Aizawl", "Champhai", "Kolasib", "Lawngtlai", "Lunglei", "Mamit", "Saiha", "Serchhip"];
+        var Nagaland = ["Dimapur", "Kiphire", "Kohima", "Longleng", "Mokokchung", "Mon", "Peren", "Phek", "Tuensang", "Wokha", "Zunheboto"];
+        var Odisha = ["Angul", "Balangir", "Balasore", "Bargarh", "Bhadrak", "Boudh", "Cuttack", "Debagarh", "Dhenkanal", "Gajapati", "Ganjam", "Jagatsinghpur", "Jajpur", "Jharsuguda", "Kalahandi", "Kandhamal", "Kendrapara", "Kendujhar", "Khordha", "Koraput", "Malkangiri", "Mayurbhanj", "Nabarangpur", "Nayagarh", "Nuapada", "Puri", "Rayagada", "Sambalpur", "Subarnapur", "Sundergarh"];
+        var Punjab = ["Amritsar", "Barnala", "Bathinda", "Faridkot", "Fatehgarh Sahib", "Fazilka", "Firozpur", "Gurdaspur", "Hoshiarpur", "Jalandhar", "Kapurthala", "Ludhiana", "Mansa", "Moga", "Mohali", "Muktsar", "Pathankot", "Patiala", "Rupnagar", "Sangrur", "Shaheed Bhagat Singh Nagar", "Tarn Taran"];
+        var Rajasthan = ["Ajmer", "Alwar", "Banswara", "Baran", "Barmer", "Bharatpur", "Bhilwara", "Bikaner", "Bundi", "Chittorgarh", "Churu", "Dausa", "Dholpur", "Dungarpur", "Ganganagar", "Hanumangarh", "Jaipur", "Jaisalmer", "Jalore", "Jhalawar", "Jhunjhunu", "Jodhpur", "Karauli", "Kota", "Nagaur", "Pali", "Pratapgarh", "Rajsamand", "Sawai Madhopur", "Sikar", "Sirohi", "Tonk", "Udaipur"];
+        var Sikkim = ["East Sikkim", "North Sikkim", "South Sikkim", "West Sikkim"];
+        var TamilNadu = ["Ariyalur", "Chennai", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindigul", "Erode", "Kanchipuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai", "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukkottai", "Ramanathapuram", "Salem", "Sivaganga", "Thanjavur", "Theni", "Thoothukudi", "Tiruchirappalli", "Tirunelveli", "Tiruppur", "Tiruvallur", "Tiruvannamalai", "Tiruvarur", "Vellore", "Viluppuram", "Virudhunagar"];
+        var Telangana = ["Adilabad", "Bhadradri Kothagudem", "Hyderabad", "Jagtial", "Jangaon", "Jayashankar", "Jogulamba", "Kamareddy", "Karimnagar", "Khammam", "Komaram Bheem", "Mahabubabad", "Mahbubnagar", "Mancherial", "Medak", "Medchal", "Nagarkurnool", "Nalgonda", "Nirmal", "Nizamabad", "Peddapalli", "Rajanna Sircilla", "Ranga Reddy", "Sangareddy", "Siddipet", "Suryapet", "Vikarabad", "Wanaparthy", "Warangal Rural", "Warangal Urban", "Yadadri Bhuvanagiri"];
+        var Tripura = ["Dhalai", "Gomati", "Khowai", "North Tripura", "Sepahijala", "South Tripura", "Unakoti", "West Tripura"];
+        var UttarPradesh = ["Agra", "Aligarh", "Allahabad", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya", "Azamgarh", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", "Barabanki", "Bareilly", "Basti", "Bhadohi", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Faizabad", "Farrukhabad", "Fatehpur", "Firozabad", "Gautam Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hapur", "Hardoi", "Hathras", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", "Kanpur Dehat", "Kanpur Nagar", "Kasganj", "Kaushambi", "Kheri", "Kushinagar", "Lalitpur", "Lucknow", "Maharajganj", "Mahoba", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Raebareli", "Rampur", "Saharanpur", "Sambhal", "Sant Kabir Nagar", "Shahjahanpur", "Shamli", "Shravasti", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"];
+        var Uttarakhand = ["Almora", "Bageshwar", "Chamoli", "Champawat", "Dehradun", "Haridwar", "Nainital", "Pauri", "Pithoragarh", "Rudraprayag", "Tehri", "Udham Singh Nagar", "Uttarkashi"];
+        var WestBengal = ["Alipurduar", "Bankura", "Birbhum", "Cooch Behar", "Dakshin Dinajpur", "Darjeeling", "Hooghly", "Howrah", "Jalpaiguri", "Jhargram", "Kalimpong", "Kolkata", "Malda", "Murshidabad", "Nadia", "North 24 Parganas", "Paschim Bardhaman", "Paschim Medinipur", "Purba Bardhaman", "Purba Medinipur", "Purulia", "South 24 Parganas", "Uttar Dinajpur"];
+        var AndamanNicobar = ["Nicobar", "North Middle Andaman", "South Andaman"];
+        var Chandigarh = ["Chandigarh"];
+        var DadraHaveli = ["Dadra Nagar Haveli"];
+        var DamanDiu = ["Daman", "Diu"];
+        var Delhi = ["Central Delhi", "East Delhi", "New Delhi", "North Delhi", "North East Delhi", "North West Delhi", "Shahdara", "South Delhi", "South East Delhi", "South West Delhi", "West Delhi"];
+        var Lakshadweep = ["Lakshadweep"];
+        var Puducherry = ["Karaikal", "Mahe", "Puducherry", "Yanam"];
+
+
+        $("#inputState").change(function () {
+            var StateSelected = $(this).val();
+            var optionsList;
+            var htmlString = "";
+
+            switch (StateSelected) {
+                case "Andra Pradesh":
+                    optionsList = AndraPradesh;
+                    break;
+                case "Arunachal Pradesh":
+                    optionsList = ArunachalPradesh;
+                    break;
+                case "Assam":
+                    optionsList = Assam;
+                    break;
+                case "Bihar":
+                    optionsList = Bihar;
+                    break;
+                case "Chhattisgarh":
+                    optionsList = Chhattisgarh;
+                    break;
+                case "Goa":
+                    optionsList = Goa;
+                    break;
+                case "Gujarat":
+                    optionsList = Gujarat;
+                    break;
+                case "Haryana":
+                    optionsList = Haryana;
+                    break;
+                case "Himachal Pradesh":
+                    optionsList = HimachalPradesh;
+                    break;
+                case "Jammu and Kashmir":
+                    optionsList = JammuKashmir;
+                    break;
+                case "Jharkhand":
+                    optionsList = Jharkhand;
+                    break;
+                case "Karnataka":
+                    optionsList = Karnataka;
+                    break;
+                case "Kerala":
+                    optionsList = Kerala;
+                    break;
+                case "Madya Pradesh":
+                    optionsList = MadhyaPradesh;
+                    break;
+                case "Maharashtra":
+                    optionsList = Maharashtra;
+                    break;
+                case "Manipur":
+                    optionsList = Manipur;
+                    break;
+                case "Meghalaya":
+                    optionsList = Meghalaya;
+                    break;
+                case "Mizoram":
+                    optionsList = Mizoram;
+                    break;
+                case "Nagaland":
+                    optionsList = Nagaland;
+                    break;
+                case "Orissa":
+                    optionsList = Orissa;
+                    break;
+                case "Punjab":
+                    optionsList = Punjab;
+                    break;
+                case "Rajasthan":
+                    optionsList = Rajasthan;
+                    break;
+                case "Sikkim":
+                    optionsList = Sikkim;
+                    break;
+                case "Tamil Nadu":
+                    optionsList = TamilNadu;
+                    break;
+                case "Telangana":
+                    optionsList = Telangana;
+                    break;
+                case "Tripura":
+                    optionsList = Tripura;
+                    break;
+                case "Uttaranchal":
+                    optionsList = Uttaranchal;
+                    break;
+                case "Uttar Pradesh":
+                    optionsList = UttarPradesh;
+                    break;
+                case "West Bengal":
+                    optionsList = WestBengal;
+                    break;
+                case "Andaman and Nicobar Islands":
+                    optionsList = AndamanNicobar;
+                    break;
+                case "Chandigarh":
+                    optionsList = Chandigarh;
+                    break;
+                case "Dadar and Nagar Haveli":
+                    optionsList = DadraHaveli;
+                    break;
+                case "Daman and Diu":
+                    optionsList = DamanDiu;
+                    break;
+                case "Delhi":
+                    optionsList = Delhi;
+                    break;
+                case "Lakshadeep":
+                    optionsList = Lakshadeep;
+                    break;
+                case "Pondicherry":
+                    optionsList = Pondicherry;
+                    break;
+            }
+
+
+            for (var i = 0; i < optionsList.length; i++) {
+                htmlString = htmlString + "<option value='" + optionsList[i] + "'>" + optionsList[i] + "</option>";
+            }
+            $("#inputDistrict").html(htmlString);
+
+        });
+    </script>
+
+</body>
+
+</html>

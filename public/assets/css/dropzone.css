@@ -1,0 +1,98 @@
+.dropzone,
+.dropzone * {
+    box-sizing: border-box
+}
+
+[dir] .dropzone,
+[dir] .dropzone * {
+    border-color: #f0f1f2;
+    border-radius: 3px
+}
+
+.dropzone {
+    position: relative
+}
+
+[dir] .dropzone {
+    margin-bottom: .625rem
+}
+
+[dir] .dropzone .dz-message {
+    margin: 3rem
+}
+
+.dropzone .dz-preview {
+    position: relative;
+    display: inline-block;
+    width: 120px
+}
+
+[dir] .dropzone .dz-preview {
+    margin: .5em
+}
+
+[dir] .dropzone .dz-preview.dz-file-preview .dz-image {
+    background: #efefef;
+    border-radius: 5px
+}
+
+.dropzone .dz-preview .dz-progress {
+    display: block;
+    height: 15px
+}
+
+[dir] .dropzone .dz-preview .dz-progress {
+    border: 1px solid #f0f1f2
+}
+
+.dropzone .dz-preview .dz-progress .dz-upload {
+    display: block;
+    height: 100%;
+    width: 0
+}
+
+[dir] .dropzone .dz-preview .dz-progress .dz-upload {
+    background: #66bb6a
+}
+
+.dropzone .dz-preview .dz-error-message {
+    color: #fff;
+    display: none
+}
+
+[dir] .dropzone .dz-preview .dz-error-message {
+    background: #f44336
+}
+
+[dir] .dropzone .dz-preview .dz-error-message:after {
+    border-bottom-color: #f44336
+}
+
+.dropzone .dz-preview.dz-error .dz-error-mark,
+.dropzone .dz-preview.dz-error .dz-error-message,
+.dropzone .dz-preview.dz-success .dz-success-mark {
+    display: block
+}
+
+.dropzone .dz-preview .dz-error-mark,
+.dropzone .dz-preview .dz-success-mark {
+    position: absolute;
+    display: none;
+    top: 30px;
+    width: 54px;
+    height: 58px
+}
+
+[dir=ltr] .dropzone .dz-preview .dz-error-mark,
+[dir=ltr] .dropzone .dz-preview .dz-success-mark {
+    left: 30px;
+    left: 50%;
+    margin-left: -27px
+}
+
+[dir=rtl] .dropzone .dz-preview .dz-error-mark,
+[dir=rtl] .dropzone .dz-preview .dz-success-mark {
+    right: 30px;
+    right: 50%;
+    margin-right: -27px
+}

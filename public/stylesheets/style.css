@@ -1,0 +1,138 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif
+  }
+  
+  p {
+      margin: 0
+  }
+  
+  .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #e8eaf6;
+      padding: 35px;
+  }
+  
+  .box-right {
+      padding: 30px 25px;
+      background-color: white;
+      border-radius: 15px
+  }
+  
+  .box-left {
+      padding: 20px 20px;
+      background-color: white;
+      border-radius: 15px
+  }
+  
+  .textmuted {
+      color: #7a7a7a
+  }
+  
+  .bg-green {
+      background-color: #d4f8f2;
+      color: #06e67a;
+      padding: 3px 0;
+      display: inline;
+      border-radius: 25px;
+      font-size: 11px
+  }
+  
+  .p-blue {
+      font-size: 14px;
+      color: #1976d2
+  }
+  
+  .fas.fa-circle {
+      font-size: 12px
+  }
+  
+  .p-org {
+      font-size: 14px;
+      color: #fbc02d
+  }
+  
+  .h7 {
+      font-size: 15px
+  }
+  
+  .h8 {
+      font-size: 12px
+  }
+  
+  .h9 {
+      font-size: 10px
+  }
+  
+  .bg-blue {
+      background-color: #dfe9fc9c;
+      border-radius: 5px
+  }
+  
+  .form-control {
+      box-shadow: none !important
+  }
+  
+  .card input::placeholder {
+      font-size: 14px
+  }
+  
+  ::placeholder {
+      font-size: 14px
+  }
+  
+  input.card {
+      position: relative
+  }
+  
+  .far.fa-credit-card {
+      position: absolute;
+      top: 10px;
+      padding: 0 15px
+  }
+  
+  .fas,
+  .far {
+      cursor: pointer
+  }
+  
+  .cursor {
+      cursor: pointer
+  }
+  
+  .btn.btn-primary {
+      box-shadow: none;
+      height: 40px;
+      padding: 11px
+  }
+  
+  .bg.btn.btn-primary {
+      background-color: transparent;
+      border: none;
+      color: #1976d2
+  }
+  
+  .bg.btn.btn-primary:hover {
+      color: #539ee9
+  }
+  
+  @media(max-width:320px) {
+      .h8 {
+          font-size: 11px
+      }
+  
+      .h7 {
+          font-size: 13px
+      }
+  
+      ::placeholder {
+          font-size: 10px
+      }
+  }

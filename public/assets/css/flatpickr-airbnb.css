@@ -1,0 +1,168 @@
+.flatpickr-calendar {
+    width: 307.875px
+}
+
+[dir] .dayContainer {
+    padding: 0
+}
+
+[dir=ltr] .dayContainer {
+    border-right: 0
+}
+
+[dir=rtl] .dayContainer {
+    border-left: 0
+}
+
+.flatpickr-months {
+    height: 2rem
+}
+
+[dir] .flatpickr-months .flatpickr-next-month,
+[dir] .flatpickr-months .flatpickr-prev-month {
+    padding: .5rem
+}
+
+.flatpickr-weekdays {
+    height: 1.5rem
+}
+
+[dir] .flatpickr-weekdays {
+    margin: .5rem 0
+}
+
+span.flatpickr-day,
+span.flatpickr-day.nextMonthDay,
+span.flatpickr-day.prevMonthDay {
+    max-width: none
+}
+
+[dir] span.flatpickr-day,
+[dir] span.flatpickr-day.nextMonthDay,
+[dir] span.flatpickr-day.prevMonthDay {
+    border-radius: 0 !important;
+    border-color: #fff;
+    background-color: rgba(248, 249, 250, .5)
+}
+
+[dir=ltr] span.flatpickr-day,
+[dir=ltr] span.flatpickr-day.nextMonthDay,
+[dir=ltr] span.flatpickr-day.prevMonthDay {
+    border-right-color: transparent
+}
+
+[dir=rtl] span.flatpickr-day,
+[dir=rtl] span.flatpickr-day.nextMonthDay,
+[dir=rtl] span.flatpickr-day.prevMonthDay {
+    border-left-color: transparent
+}
+
+[dir] span.flatpickr-day.nextMonthDay:nth-child(n+8),
+[dir] span.flatpickr-day.prevMonthDay:nth-child(n+8),
+[dir] span.flatpickr-day:nth-child(n+8) {
+    border-top-color: transparent
+}
+
+[dir=ltr] span.flatpickr-day.nextMonthDay:nth-child(7n-6),
+[dir=ltr] span.flatpickr-day.prevMonthDay:nth-child(7n-6),
+[dir=ltr] span.flatpickr-day:nth-child(7n-6) {
+    border-left: 0
+}
+
+[dir=rtl] span.flatpickr-day.nextMonthDay:nth-child(7n-6),
+[dir=rtl] span.flatpickr-day.prevMonthDay:nth-child(7n-6),
+[dir=rtl] span.flatpickr-day:nth-child(7n-6) {
+    border-right: 0
+}
+
+[dir] span.flatpickr-day.nextMonthDay:nth-child(n+36),
+[dir] span.flatpickr-day.prevMonthDay:nth-child(n+36),
+[dir] span.flatpickr-day:nth-child(n+36) {
+    border-bottom: 0
+}
+
+[dir] span.flatpickr-day.nextMonthDay:nth-child(-n+7),
+[dir] span.flatpickr-day.prevMonthDay:nth-child(-n+7),
+[dir] span.flatpickr-day:nth-child(-n+7) {
+    margin-top: 0
+}
+
+[dir] span.flatpickr-day.endRange,
+[dir] span.flatpickr-day.inRange,
+[dir] span.flatpickr-day.nextMonthDay.endRange,
+[dir] span.flatpickr-day.nextMonthDay.inRange,
+[dir] span.flatpickr-day.nextMonthDay.startRange,
+[dir] span.flatpickr-day.nextMonthDay.today,
+[dir] span.flatpickr-day.prevMonthDay.endRange,
+[dir] span.flatpickr-day.prevMonthDay.inRange,
+[dir] span.flatpickr-day.prevMonthDay.startRange,
+[dir] span.flatpickr-day.prevMonthDay.today,
+[dir] span.flatpickr-day.startRange,
+[dir] span.flatpickr-day.today {
+    border-color: #fff
+}
+
+[dir] span.flatpickr-day.inRange,
+[dir] span.flatpickr-day.nextMonthDay.inRange,
+[dir] span.flatpickr-day.prevMonthDay.inRange {
+    background-color: rgba(33, 150, 243, .1);
+    box-shadow: none
+}
+
+[dir] span.flatpickr-day.endRange,
+[dir] span.flatpickr-day.nextMonthDay.endRange,
+[dir] span.flatpickr-day.nextMonthDay.startRange,
+[dir] span.flatpickr-day.prevMonthDay.endRange,
+[dir] span.flatpickr-day.prevMonthDay.startRange,
+[dir] span.flatpickr-day.startRange {
+    background-color: rgba(33, 150, 243, .9)
+}
+
+span.flatpickr-day.nextMonthDay.today,
+span.flatpickr-day.prevMonthDay.today,
+span.flatpickr-day.today {
+    color: #fff
+}
+
+[dir] span.flatpickr-day.nextMonthDay.today,
+[dir] span.flatpickr-day.prevMonthDay.today,
+[dir] span.flatpickr-day.today {
+    background-color: #66bb6a
+}
+
+span.flatpickr-day.nextMonthDay.selected,
+span.flatpickr-day.nextMonthDay.today,
+span.flatpickr-day.prevMonthDay.selected,
+span.flatpickr-day.prevMonthDay.today,
+span.flatpickr-day.selected,
+span.flatpickr-day.today {
+    z-index: 2
+}
+
+[dir] .rangeMode .flatpickr-day {
+    margin-top: -1px
+}
+
+[dir] .flatpickr-weekwrapper .flatpickr-weeks {
+    box-shadow: none
+}
+
+[dir] .flatpickr-weekwrapper span.flatpickr-day {
+    border: 0
+}
+
+[dir=ltr] .flatpickr-weekwrapper span.flatpickr-day {
+    margin: -1px 0 0 -1px
+}
+
+[dir=rtl] .flatpickr-weekwrapper span.flatpickr-day {
+    margin: -1px -1px 0 0
+}
+
+[dir=ltr] .hasWeeks .flatpickr-days {
+    border-right: 0
+}
+
+[dir=rtl] .hasWeeks .flatpickr-days {
+    border-left: 0
+}

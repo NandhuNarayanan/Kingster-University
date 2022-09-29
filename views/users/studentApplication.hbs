@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Student - Dashboard</title>
+
+    <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
+    <meta name="robots" content="noindex">
+
+    <!-- Custom Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="assets/vendor/spinkit.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="assets/css/app.css" rel="stylesheet">
+{{!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet"
+  href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006288/BBBootstrap/choices.min.css?version=7.0.0">
+<script
+  src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006273/BBBootstrap/choices.min.js?version=7.0.0"></script> --}}
+
+</head>
+
+<body class=" layout-fluid">
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header -->
+
+        <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
+            <div class="mdk-header__content">
+
+                <!-- Navbar -->
+                <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
+                    <div class="container-fluid">
+                        <!-- Toggle sidebar -->
+                        <button class="navbar-toggler d-block" data-toggle="sidebar" type="button">
+                            <span class="material-icons">menu</span>
+                        </button>
+
+                        <!-- Brand -->
+                        <a href="student-dashboard.html" class="navbar-brand">
+                            <img src="assets/images/logo/white.svg" class="mr-2" alt="LearnPlus" />
+                            <span class="d-none d-xs-md-block">Kingster University</span>
+                        </a>
+
+                        <!-- Search -->
+                        <form class="search-form d-none d-md-flex">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <button class="btn" type="button"><i
+                                    class="material-icons font-size-24pt">search</i></button>
+                        </form>
+                        <!-- // END Search -->
+
+                        <div class="flex"></div>
+
+                        <!-- Menu -->
+                        <ul class="nav navbar-nav flex-nowrap">
+                            <!-- Notifications dropdown -->
+                            <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
+                                <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
+                                    data-dropdown-disable-document-scroll data-caret="false">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="badge badge-notifications badge-danger">.</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div data-perfect-scrollbar class="position-relative">
+                                        <div class="dropdown-header"><strong>Notifications</strong></div>
+                                        <div class="list-group list-group-flush mb-0">
+                                            {{#each notification}}
+                                            <a href="/notification"
+                                                class="list-group-item list-group-item-action border-left-3 border-left-danger">
+                                                <span class="d-flex">
+                                                    <span class="avatar avatar-xs mr-2">
+                                                        <span class="avatar-title rounded-circle bg-light">
+                                                            <i
+                                                                class="material-icons font-size-16pt text-danger">notifications</i>
+                                                        </span>
+                                                    </span>
+                                                    <span class="flex d-flex flex-column">
+
+                                                        <span class="text-black-70">{{this.header}}</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- // END Notifications dropdown -->
+                            <!-- User dropdown -->
+                            <li class="nav-item dropdown ml-1 ml-md-3">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
+                                        src="assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
+                                        width="40"></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="/studentdash">
+                                        <i class="material-icons">account_box</i> Dashboard
+                                    </a>
+                                    <a class="dropdown-item" href="/studentprofile">
+                                        <i class="material-icons">edit</i> Edit Account
+                                    </a>
+                                    <a class="dropdown-item" href="/logout">
+                                        <i class="material-icons">lock</i> Logout
+                                    </a>
+                                </div>
+                            </li>
+                            <!-- // END User dropdown -->
+
+                        </ul>
+                        <!-- // END Menu -->
+                    </div>
+                </nav>
+                <!-- // END Navbar -->
+
+            </div>
+        </div>
+
+        <!-- // END Header -->
+
+        <!-- Header Layout Content -->
+        <div class="mdk-header-layout__content">
+
+            <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
+                <div class="mdk-drawer-layout__content page ">
+
+                    <div class="container-fluid page__container">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/studentdash">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                        <h1 class="h2">Dashboard</h1>
+
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <!-- Wrapper -->
+                                    <div>
+                                        <form  method="post" action="/application">
+                                            <select name="qualification" id="qualification"  onchange="myFunction(1)"
+                                                style="width: 25%;padding: 10px;">
+                                                <option id="q1Id" value="">-- Select --</option>
+                                                {{#each viewqualification}}
+                                                <option value="{{this._id}}">{{this.qualification}}</option>
+                                                {{/each}}
+                                            </select>
+                                                <select id="sel" name="course" onchange="myFunction(2)" style="width: 25%;padding: 10px;">
+                                                    <option value="">-- Select --</option>
+                                                </select> 
+                                                <select id="selprogram" name="program"   style="width: 25%;padding: 10px;">
+                                                    <option value="">-- Select --</option>
+                                                </select> 
+                                              
+                                                    <button class="btn btn-primary ms-2 mx-2" type="submit">Search</button>
+                                               
+                                            <button class="btn btn-dark" type="reset">clear</button>
+                                            
+                                        </form>
+                                    </div>
+                                    <div class="table-responsive" data-toggle="lists" data-lists-values='["name"]'>
+
+                                        <!-- Search -->
+                                        <div class="search-form search-form--light mb-3">
+
+                                        </div>
+
+                                        <!-- Table -->
+                                        <table class="table" id="table">
+                                            <thead>
+
+                                                <tr>
+                                                    <th>Application Form</th>
+                                                    <th>Application Fees</th>
+                                                    <th>Application No.</th>
+                                                    <th>Date</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody">
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+                    <div class="mdk-drawer__content ">
+                        <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
+                            <div class="sidebar-p-y">
+                                <div class="sidebar-heading">APPLICATIONS</div>
+                                <ul class="sidebar-menu sm-active-button-bg">
+                                    <li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button" href="/studentdash">
+                                            <i
+                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>
+                                            Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/application">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">book</i>
+                                            All Application Form(s)
+                                        </a>
+                                        <a class="sidebar-menu-button" href="/application">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">book</i>
+                                            Application Form
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- Account menu -->
+                                <div class="sidebar-heading">Account</div>
+                                <ul class="sidebar-menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
+                                            href="#account_menu">
+                                            <i
+                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person_outline</i>
+                                            Account
+                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                        </a>
+                                        <ul class="sidebar-submenu sm-indent collapse" id="account_menu">
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="guest-login.html">
+                                                    <span class="sidebar-menu-text">Login</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="guest-signup.html">
+                                                    <span class="sidebar-menu-text">Sign Up</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="guest-forgot-password.html">
+                                                    <span class="sidebar-menu-text">Forgot Password</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-account-edit.html">
+                                                    <span class="sidebar-menu-text">Edit Account</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-account-edit-basic.html">
+                                                    <span class="sidebar-menu-text">Basic Information</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-account-edit-profile.html">
+                                                    <span class="sidebar-menu-text">Profile &amp; Privacy</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                    href="student-account-billing-subscription.html">
+                                                    <span class="sidebar-menu-text">Subscription</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                    href="student-account-billing-upgrade.html">
+                                                    <span class="sidebar-menu-text">Upgrade Account</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                    href="student-account-billing-payment-information.html">
+                                                    <span class="sidebar-menu-text">Payment Information</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-billing.html">
+                                                    <span class="sidebar-menu-text">Payment History</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-invoice.html">
+                                                    <span class="sidebar-menu-text">Student Invoice</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="instructor-invoice.html">
+                                                    <span class="sidebar-menu-text">Instructor Invoice</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="instructor-edit-invoice.html">
+                                                    <span class="sidebar-menu-text">Edit Invoice</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                   <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" data-toggle="collapse" href="#messages_menu">
+                                            <i
+                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">notifications</i>
+                                            Notifications
+                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                        </a>
+                                        <ul class="sidebar-submenu sm-indent collapse" id="messages_menu">
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="/notification">
+                                                    <span class="sidebar-menu-text">Notifications</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="sidebar-heading">Student</div>
+                                <ul class="sidebar-menu sm-active-button-bg">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="student-browse-courses.html">
+                                            <i
+                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">search</i>
+                                            Browse Courses
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="student-view-course.html">
+                                            <i
+                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">import_contacts</i>
+                                            View Course
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="student-take-course.html">
+                                            <i
+                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i>
+                                            Take Course
+                                            <span class="sidebar-menu-badge badge badge-primary ml-auto">PRO</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="student-take-quiz.html">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i>
+                                            Take a Quiz
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="student-quiz-results.html">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">poll</i>
+                                            Quiz Results
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="student-my-courses.html">
+                                            <i
+                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
+                                            My Courses
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" data-toggle="collapse" href="#forum_menu">
+                                            <i
+                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">chat_bubble_outline</i>
+                                            Community
+                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                        </a>
+                                        <ul class="sidebar-submenu sm-indent collapse" id="forum_menu">
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-forum.html">
+                                                    <span class="sidebar-menu-text">Forum</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-forum-thread.html">
+                                                    <span class="sidebar-menu-text">Discussion</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-forum-ask.html">
+                                                    <span class="sidebar-menu-text">Ask Question</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-profile.html">
+                                                    <span class="sidebar-menu-text">Student Profile - Courses</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="student-profile-posts.html">
+                                                    <span class="sidebar-menu-text">Student Profile - Posts</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button" href="instructor-profile.html">
+                                                    <span class="sidebar-menu-text">Instructor Profile</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/vendor/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- MDK -->
+    <script src="assets/vendor/dom-factory.js"></script>
+    <script src="assets/vendor/material-design-kit.js"></script>
+
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Highlight.js -->
+    <script src="assets/js/hljs.js"></script>
+
+    <!-- App Settings (safe to remove) -->
+    <script src="assets/js/app-settings.js"></script>
+
+    <!-- Global Settings -->
+    <script src="assets/js/settings.js"></script>
+
+    <!-- Moment.js -->
+    <script src="assets/vendor/moment.min.js"></script>
+    <script src="assets/vendor/moment-range.js"></script>
+
+    <!-- Chart.js -->
+    <script src="assets/vendor/Chart.min.js"></script>
+    <script src="assets/js/chartjs.js"></script>
+
+    <!-- Student Dashboard Page JS -->
+    <!-- <script src="assets/js/chartjs-rounded-bar.js"></script> -->
+    <script src="assets/js/page.student-dashboard.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#table').DataTable({
+                responsive: {
+                    details: {
+                        display: $.fn.dataTable.Responsive.display.modal({
+                            header: function (row) {
+                                var data = row.data();
+                                return 'Details for ' + data[0] + ' ' + data[1];
+                            }
+                        }),
+                        renderer: $.fn.dataTable.Responsive.renderer.tableAll({
+                            tableClass: 'table'
+                        })
+                    }
+                }
+            });
+        });
+    </script>
+
+
+    <script>
+
+        
+        function setCourseDropDown(data){
+            let course = data.viewcourses
+             document.getElementById('sel').innerHTML = " ";
+            document.getElementById('selprogram').innerHTML = " ";
+            let ele = document.getElementById('sel');
+                for (let i = 0; i < course.length; i++) {
+                 ele.innerHTML = ele.innerHTML +
+                    '<option value="' + course[i]['_id'] + '">' + course[i]['course'] + '</option>';
+            }
+                
+        }
+
+        function setProgramDropDown(data){
+            let program = data.viewprogram
+             document.getElementById('selprogram').innerHTML = " ";
+            let ele = document.getElementById('selprogram');
+                for (let i = 0; i < program.length; i++) {
+                // POPULATE SELECT ELEMENT WITH JSON.
+                ele.innerHTML = ele.innerHTML +
+                    '<option value="' + program[i]['_id'] + '">' + program[i]['program'] + '</option>';
+            }
+           // console.log("ele.inner",ele.innerHTML)
+                let msg = document.getElementById('msg'); 
+                 msg.innerHTML = 'Selected Bird: <b>' + ele.options[ele.selectedIndex].text + '</b> </br>' +
+            '_id: <b>' + ele.value + '</b>';
+         }
+
+   
+ 
+        function myFunction(status) {
+             let id = status === 1 ? $("#qualification").val() : $("#sel").val();
+             let param = status == 1 ? 'qualification' : 'program';
+             jQuery.ajax({
+                url: "/application",
+                 data: param+'=' + id,
+                type: 'POST',
+                success: function (data) {
+                    console.log(data.viewprogram)
+                   status === 1 ?  setCourseDropDown(data) : setProgramDropDown(data)
+                   for( var i = 0 ; i<data.viewprogram.length;i++){
+                   let tbody = ' <tr><td>'+data.viewprogram[i].program+`</td> <td></td> <td></td> <td></td> <td><a  class="btn btn-primary" style="padding: 1px 24px" >Take A Couse</a><br><a href="/personalform?id=${data.viewprogram[i]._id}" class="btn btn-dark"style="padding: 1px 24px" >Apply</a></td> </tr>`
+                   console.log(data.viewprogram[i].program)
+                   let oldtbody = $('#tbody').html()
+                   tbody = oldtbody + tbody
+                   $('#tbody').html(tbody)
+                   }
+                },
+                error: function () {
+                    console.log('error1')
+                }
+            })
+      
+         }
+    </script>
+
+</body>
+
+</html>
