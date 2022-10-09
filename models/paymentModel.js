@@ -10,6 +10,10 @@ const paymentSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"Program"
     },
+    course:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Course"
+    },
     finalAmount:{
         type:String
     },
@@ -19,7 +23,7 @@ const paymentSchema = new mongoose.Schema({
     },
     paymentStatus:{
         type:String,
-        default:false
+        default:'success'
     }
    
        

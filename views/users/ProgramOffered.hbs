@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Student - Dashboard</title>
+
+    <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
+    <meta name="robots" content="noindex">
+
+    <!-- Custom Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="/assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="/assets/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="/assets/css/fontawesome.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="/assets/vendor/spinkit.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="/assets/css/app.css" rel="stylesheet">
+
+</head>
+
+<body class=" layout-fluid">
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header -->
+
+        <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
+            <div class="mdk-header__content">
+
+                <!-- Navbar -->
+                <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
+                    <div class="container-fluid">
+                        <!-- Toggle sidebar -->
+                        <button class="navbar-toggler d-block" data-toggle="sidebar" type="button">
+                            <span class="material-icons">menu</span>
+                        </button>
+
+                        <!-- Brand -->
+                        <a href="student-dashboard.html" class="navbar-brand">
+                            <img src="/assets/images/logo/white.svg" class="mr-2" alt="LearnPlus" />
+                            <span class="d-none d-xs-md-block">Kingster University</span>
+                        </a>
+
+                        <div class="flex"></div>
+
+                        <!-- Menu -->
+                        <ul class="nav navbar-nav flex-nowrap">
+                            <!-- Notifications dropdown -->
+                            <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
+                                <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
+                                    data-dropdown-disable-document-scroll data-caret="false">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="badge badge-notifications badge-danger">.</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div data-perfect-scrollbar class="position-relative">
+                                        <div class="dropdown-header"><strong>Notifications</strong></div>
+                                        <div class="list-group list-group-flush mb-0">
+                                            {{#each notification}}
+                                            <a href="/notification"
+                                                class="list-group-item list-group-item-action border-left-3 border-left-danger">
+                                                <span class="d-flex">
+                                                    <span class="avatar avatar-xs mr-2">
+                                                        <span class="avatar-title rounded-circle bg-light">
+                                                            <i
+                                                                class="material-icons font-size-16pt text-danger">notifications</i>
+                                                        </span>
+                                                    </span>
+                                                    <span class="flex d-flex flex-column">
+
+                                                        <span class="text-black-70">{{this.header}}</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- // END Notifications dropdown -->
+                            <!-- User dropdown -->
+                            <li class="nav-item dropdown ml-1 ml-md-3">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
+                                        src="assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
+                                        width="40"></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="/studentdash">
+                                        <i class="material-icons">account_box</i> Dashboard
+                                    </a>
+                                    <a class="dropdown-item" href="/studentprofile">
+                                        <i class="material-icons">edit</i> Edit Account
+                                    </a>
+                                    <a class="dropdown-item" href="/logout">
+                                        <i class="material-icons">lock</i> Logout
+                                    </a>
+                                </div>
+                            </li>
+                            <!-- // END User dropdown -->
+
+                        </ul>
+                        <!-- // END Menu -->
+                    </div>
+                </nav>
+                <!-- // END Navbar -->
+
+            </div>
+        </div>
+
+        <!-- // END Header -->
+
+        <!-- Header Layout Content -->
+        <div class="container">
+            <form action="/ProgramOffered/makePayment" method="post">
+            <div class="container-fluid py-5">
+                {{!-- <form id="wizard_with_validation" enctype="multipart/form-data" action="/ProgramOffered"
+                    method="POST" class="py-5"> --}}
+                    <h3>Kindly provide your previous qualification details, so that we can assess your scholarship (if
+                        any) based upon that.</h3>
+                    <h5>10th Details</h5>
+                    <div class="form-group">
+                        <label class="form-label" for="name">Choose your Programme *</label>
+                        <div class="col-md-4">
+                            <select id="selects" class="select" name="course" style="width: 90%;padding: 10px;"
+                                onchange="select()" type="course">
+                                {{#each programDetails}}
+                                <option value="{{this._id}}">{{this.course}}</option>
+
+                                {{/each}}
+
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-label" for="name">Choose your Programme *</label>
+                        <div class="form-check">
+                            <input class="form-check-input" onclick="Amount('Full semester fee')" type="radio" value=""
+                                name="amountPayable" id="amountvaring">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Full semester fee
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" onclick="Amount('Minimum provisional registration fee')" value="10000"
+                                type="radio" name="amountPayable" >
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Minimum provisional registration fee
+                            </label>
+                        </div>
+
+                        <div class="row py-5" id="Amount1" style="display: none;">
+                            <h5>Amount Payable: ₹</h5>
+                            <h5 id="priceamount">{{programDetails.[0].price}}</h5>
+                        </div>
+                        <div class="row py-5" id="Amount2" style="display: none;">
+                            <h5>Amount Payable: ₹</h5>
+                            <h5 id="registrationamount"> {{programDetails.[0].registrationfee}}</h5>
+                        </div>
+                    </div>
+                    <div class="form-group form-float py-3">
+                        <div class="form-line" name="declaration">
+                            <h3>1. Declaration for Depositing Pending Fee</h3>
+                            <p>I am aware that I am depositing partial fees/charges for the admission and here in, I
+                                undertake to deposit the balance amount (if any for
+                                Programme/Residential/Laundry/Mess/Transport etc.) by 20th September 2022. In case I
+                                fail to deposit the balance amount by the mentioned date, then my admission may be
+                                cancelled and the fee/charges already deposited by me may be forfeited or penalty/fine
+                                may be imposed or any other action as deemed fit may be taken by the University.</p>
+                        </div>
+                    </div>
+                    <div class="form-group form-float">
+                        <div class="form-line" name="eligibilityConfirmation">
+                            <h3>2. Consent for Eligibility Confirmation</h3>
+                            <p>I have checked the eligibility criteria for <span id="courseName">Food Technology
+                                </span>and I
+                                am aware that the admission
+                                confirmation is subject to fulfillment of defined criteria, uploading of documents and
+                                verification of submitted documents. *</p>
+                        </div>
+                        <label
+                            class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+                            <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="agree"
+                                type="checkbox" id="agree" value="forever" />
+                            <span>I agree with both the declarations and give my consent</span>
+                        </label>
+                    </div>
+            </div>
+            <div class="pb-4">
+                <div style="display: flex; justify-content:flex-end;">
+                    <div>
+                        <a href="/personalform" class="btn btn-dark mx-3" style="color: white;">Back</a>
+                    </div>
+                    <button type="submit"  class="btn btn-success">Make Payment</button>
+                    </form>
+                </div>
+            </div>
+            {{!-- </form> --}}
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        function select() {
+            const select = $('#selects').val()
+           
+              axios({
+                method: 'post',
+                url: '/ProgramOffered/',
+                data: {
+                   courseid:select
+
+                }
+            }).then((value) => {
+                $('#courseName').text(value.data.courseName+'')
+                $('#priceamount').text(value.data.coursePrice);
+                $('#amountvaring').attr('value', value.data.coursePrice)
+
+            })
+        }
+
+    </script>
+    <script>
+        function Amount(value) {
+            if (value == 'Full semester fee') {
+                $('#Amount1').css('display', 'block')
+                $('#Amount2').css('display', 'none')
+            } else if (value == 'Minimum provisional registration fee') {
+                $('#Amount1').css('display', 'none')
+                $('#Amount2').css('display', 'block')
+            }
+        }
+
+
+        function makePayment() {
+            console.log("makePayment")
+            let priceamount = document.getElementById('priceamount').innerText
+            let registrationamount = document.getElementById('registrationamount').innerText
+            console.log(registrationamount, priceamount)
+          
+
+
+        }
+    </script>
+
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/vendor/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- MDK -->
+    <script src="assets/vendor/dom-factory.js"></script>
+    <script src="assets/vendor/material-design-kit.js"></script>
+
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Highlight.js -->
+    <script src="assets/js/hljs.js"></script>
+
+    <!-- App Settings (safe to remove) -->
+    <script src="assets/js/app-settings.js"></script>
+
+    <!-- Global Settings -->
+    <script src="assets/js/settings.js"></script>
+
+    <!-- Moment.js -->
+    <script src="assets/vendor/moment.min.js"></script>
+    <script src="assets/vendor/moment-range.js"></script>
+
+    <!-- Chart.js -->
+    <script src="assets/vendor/Chart.min.js"></script>
+    <script src="assets/js/chartjs.js"></script>
+
+    <!-- Student Dashboard Page JS -->
+    <!-- <script src="assets/js/chartjs-rounded-bar.js"></script> -->
+    <script src="assets/js/page.student-dashboard.js"></script>
+
+
+</body>
+
+</html>

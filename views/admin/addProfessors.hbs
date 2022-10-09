@@ -1,0 +1,49 @@
+
+<!-- main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Add Professors</h2>
+            <small class="text-muted">Welcome to Kingster University application</small>
+        </div>
+        <div class="row clearfix">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="card">
+					<div class="body">                        
+                                <form method="post" action="/admin/addprofessors">
+                        <div class="row clearfix">
+                             <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line"> 
+                                        <input type="text" class="form-control" placeholder="Enter Professors Name" name="professors">
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                         <select class="form-control show-tick" name="depatment">
+                                        <option value="">-- Select --</option>
+                                        {{#each getDepartment}}
+                                        <option value="{{this._id}}">{{this.department}}</option>
+                                        {{/each}}
+                                
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <button  onclick="sweetalert()" type="submit" class="btn btn-raised btn-default waves-effect" data-placement-from="top" data-placement-align="center"
+                                            data-animate-enter="" data-animate-exit="" data-color-name="bg-black"> Submit </button>
+                                <button type="reset" class="btn btn-raised btn-default waves-effect">Cancel</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>        
+</section>
+<!-- main content -->
+
+<div class="color-bg"></div>

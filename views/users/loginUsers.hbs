@@ -1,556 +1,222 @@
-<body
-    class="page-template-default page page-id-2959 theme-kingster gdlr-core-body woocommerce-account woocommerce-page woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full  kingster-with-sticky-navigation  kingster-blockquote-style-1 gdlr-core-link-to-lightbox">
-    <div class="kingster-mobile-header-wrap">
-        <div class="kingster-mobile-header kingster-header-background kingster-style-slide kingster-sticky-mobile-navigation "
-            id="kingster-mobile-header">
-            <div class="kingster-mobile-header-container kingster-container clearfix">
-                <div class="kingster-logo  kingster-item-pdlr">
-                    <div class="kingster-logo-inner"><a class="" href="#"><img
-                                src="https://demo.goodlayers.com/kingster/wp-content/themes/kingster/images/logo.png"
-                                alt="" /></a></div>
+<div class="kingster-page-title-wrap  kingster-style-medium kingster-left-align">
+    <div class="kingster-header-transparent-substitute"></div>
+    <div class="kingster-page-title-overlay"></div>
+    <div class="kingster-page-title-container kingster-container">
+        <div class="kingster-page-title-content kingster-item-pdlr">
+            <h1 class="kingster-page-title">My Account</h1>
+        </div>
+    </div>
+</div>
+<div class="kingster-page-wrapper" id="kingster-page-wrapper">
+    <div class="kingster-content-container kingster-container">
+        <div class="kingster-content-area kingster-item-pdlr kingster-sidebar-style-none clearfix">
+            <div class="woocommerce">
+                <div class="woocommerce-notices-wrapper"></div>
+
+                <h2>Login</h2>
+
+                <form class="woocommerce-form woocommerce-form-login login" action="/login" method="post">
+
+
+                    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                        <label for="username">Username or email address&nbsp;<span class="required">*</span></label>
+                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username"
+                            id="username" autocomplete="username" value="" />
+                    </p>
+                    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                        <label for="password">Password&nbsp;<span class="required">*</span></label>
+                        <input class="woocommerce-Input woocommerce-Input--text input-text" type="password"
+                            name="password" id="password" autocomplete="current-password" />
+                    </p>
+
+                    {{#if session.usernotfound}}
+                    <p class="text-danger">Invalid Username</p>
+                    {{/if}}
+                    {{#if session.wrongpassword}}
+                    <p class="text-danger">Invalid password</p>
+                    {{/if}}
+                    <p class="form-row">
+                        <label
+                            class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+                            <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme"
+                                type="checkbox" id="rememberme" value="forever" />
+                            <span>Remember me</span>
+                        </label>
+                        <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce"
+                            value="0965297ee1" /><input type="hidden" name="_wp_http_referer"
+                            value="/kingster/my-account/" /> <button type="submit"
+                            class="woocommerce-button button woocommerce-form-login__submit" name="login"
+                            value="Log in">Log in</button>
+                    </p>
+                    <p class="woocommerce-LostPassword lost_password">
+                        <a href="#">Lost your
+                            password?</a>
+                    </p>
+
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/signup"
+                            class="link-danger">Register</a></p>
+
+                    <div class="row small fw-bold mt-2 pt-5 mb-0">
+                        <a href="/otp" class="bg-danger">Login via OTP</a>
+                    </div>
+
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="">
+    <div class="kingster-footer-wrapper ">
+        <div class="kingster-footer-container kingster-container clearfix">
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+                <div id="text-2" class="widget widget_text kingster-widget">
+                    <div class="textwidget">
+                        <p><img src="https://demo.goodlayers.com/kingster/wp-content/uploads/2018/08/footer-logo.png"
+                                alt="" /><br />
+                            <span class="gdlr-core-space-shortcode" style="margin-top: 5px ;"></span><br />
+                            Box 35300<br />
+                            1810 Campus Way NE<br />
+                            Bothell, WA 98011-8246
+                        </p>
+                        <p><span style="font-size: 15px; color: #ffffff;">+91-9446588245</span><br />
+                            <span class="gdlr-core-space-shortcode" style="margin-top: -20px ;"></span><br />
+                            <a style="font-size: 15px; color: #ffffff;" href="#"><span class="__cf_email__"
+                                    data-cfemail="0d6c696064634d6664636a7e79687f78636423686978">[email&#160;protected]</span></a>
+                        </p>
+                        <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align">
+                            <div class="gdlr-core-divider-line gdlr-core-skin-divider"
+                                style="border-color: #3db166 ;border-width: 2px;"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="kingster-mobile-menu-right">
-                    <div class="kingster-main-menu-search" id="kingster-mobile-top-search"><i class="fa fa-search"></i>
+            </div>
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+                <div id="gdlr-core-custom-menu-widget-2"
+                    class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+                    <h3 class="kingster-widget-title">Our Campus</h3><span class="clear"></span>
+                    <div class="menu-our-campus-container">
+                        <ul id="menu-our-campus" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5709 kingster-normal-menu">
+                                <a href="#">Acedemic</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5710 kingster-normal-menu">
+                                <a href="#">Planning &#038; Administration</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5711 kingster-normal-menu">
+                                <a href="#">Campus Safety</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5712 kingster-normal-menu">
+                                <a href="#">Office of the Chancellor</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5713 kingster-normal-menu">
+                                <a href="#">Facility Services</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5714 kingster-normal-menu">
+                                <a href="#">Human Resources</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="kingster-top-search-wrap">
-                        <div class="kingster-top-search-close"></div>
-
-                        <div class="kingster-top-search-row">
-                            <div class="kingster-top-search-cell">
-                                <form role="search" method="get" class="search-form"
-                                    action="#">
-                                    <input type="text" class="search-field kingster-title-font" placeholder="Search..."
-                                        value="" name="s">
-                                    <div class="kingster-top-search-submit"><i class="fa fa-search"></i></div>
-                                    <input type="submit" class="search-submit" value="Search">
-                                    <div class="kingster-top-search-close"><i class="icon_close"></i></div>
-                                    <input type="hidden" name="ref" value="course" /><input type="hidden"
-                                        name="post_type" value="lp_course" />
-                                </form>
-                            </div>
-                        </div>
-
+                </div>
+            </div>
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+                <div id="gdlr-core-custom-menu-widget-3"
+                    class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+                    <h3 class="kingster-widget-title">Campus Life</h3><span class="clear"></span>
+                    <div class="menu-campus-life-container">
+                        <ul id="menu-campus-life" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5715 kingster-normal-menu">
+                                <a href="#">Accessibility</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5716 kingster-normal-menu">
+                                <a href="#">Financial Aid</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5717 kingster-normal-menu">
+                                <a href="#">Food Services</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5718 kingster-normal-menu">
+                                <a href="#">Housing</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5719 kingster-normal-menu">
+                                <a href="#">Information Technologies</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5720 kingster-normal-menu">
+                                <a href="#">Student Life</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="kingster-mobile-menu"><a
-                            class="kingster-mm-menu-button kingster-mobile-menu-button kingster-mobile-button-hamburger"
-                            href="#kingster-mobile-menu"><span></span></a>
-                        <div class="kingster-mm-menu-wrap kingster-navigation-font" id="kingster-mobile-menu"
-                            data-slide="right">
-                            <ul id="menu-main-navigation" class="m-menu">
-                                <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-5271">
-                                    <a href="/">Home</a>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+            </div>
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+                <div id="gdlr-core-custom-menu-widget-4"
+                    class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+                    <h3 class="kingster-widget-title">Academics</h3><span class="clear"></span>
+                    <div class="menu-academics-container">
+                        <ul id="menu-academics" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5721 kingster-normal-menu">
+                                <a href="#">Canvas</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5722 kingster-normal-menu">
+                                <a href="#">Catalyst</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5723 kingster-normal-menu">
+                                <a href="#">Library</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5724 kingster-normal-menu">
+                                <a href="#">Time Schedule</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5725 kingster-normal-menu">
+                                <a href="#">Apply For Admissions</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5726 kingster-normal-menu">
+                                <a href="#">Pay My Tuition</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="kingster-body-outer-wrapper ">
-        <div class="kingster-body-wrapper clearfix  kingster-with-frame">
-            <div class="kingster-top-bar">
-                <div class="kingster-top-bar-background"></div>
-                <div class="kingster-top-bar-container kingster-container ">
-                    <div class="kingster-top-bar-container-inner clearfix">
-                        <div class="kingster-top-bar-left kingster-item-pdlr"><i class="fa fa-envelope-open-o"
-                                style="font-size: 15px ;color: #96a2b8 ;margin-right: 8px ;"></i> <a
-                                href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                data-cfemail="c8aba7a6bca9abbc88839d9ca0ada5ade6adacbd">[email&#160;protected]</a> <i
-                                class="fa fa-phone"
-                                style="font-size: 15px ;color: #96a2b8 ;margin-left: 18px ;margin-right: 6px ;"></i>
-                            +91-9446-5882-45</div>
-                        <div class="kingster-top-bar-right kingster-item-pdlr">
-                            <ul id="kingster-top-bar-menu"
-                                class="sf-menu kingster-top-bar-menu kingster-top-bar-right-menu">
-                                <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5727 kingster-normal-menu">
-                                    <a href="https://demo.goodlayers.com/kingster/alumni/">Alumni</a>
-                                </li>
-                                <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6051 kingster-normal-menu">
-                                    <a href="https://demo.goodlayers.com/kingster/event-calendar/">Calendar</a>
-                                </li>
-                                <li
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5368 kingster-normal-menu">
-                                    <a href="#">Portal</a>
-                                </li>
-                            </ul>
-                            <div class="kingster-top-bar-right-social"></div><a class="kingster-top-bar-right-button"
-                                href="/kingster/give-to-kingster/" target="_blank">Support KU</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="kingster-copyright-wrapper">
+        <div class="kingster-copyright-container kingster-container clearfix">
+            <div class="kingster-copyright-left kingster-item-pdlr">Copyright All Right Reserved 2018,
+                GoodLayers</div>
+            <div class="kingster-copyright-right kingster-item-pdlr">
+                <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align"
+                    style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon"
+                        title="facebook"><i class="fa fa-facebook"></i></a><a href="#" target="_blank"
+                        class="gdlr-core-social-network-icon" title="google-plus"><i
+                            class="fa fa-google-plus"></i></a><a href="#" target="_blank"
+                        class="gdlr-core-social-network-icon" title="linkedin"><i class="fa fa-linkedin"></i></a><a
+                        href="#" target="_blank" class="gdlr-core-social-network-icon" title="skype"><i
+                            class="fa fa-skype"></i></a><a href="#" target="_blank"
+                        class="gdlr-core-social-network-icon" title="twitter"><i class="fa fa-twitter"></i></a><a
+                        href="#" target="_blank" class="gdlr-core-social-network-icon" title="instagram"><i
+                            class="fa fa-instagram"></i></a></div>
             </div>
-            <header
-                class="kingster-header-wrap kingster-header-style-plain  kingster-style-menu-right kingster-sticky-navigation kingster-style-fixed clearfix"
-                data-navigation-offset="75px">
-                <div class="kingster-header-background"></div>
-                <div class="kingster-header-container  kingster-container">
-
-                    <div class="kingster-header-container-inner clearfix">
-                        <div class="kingster-logo  kingster-item-pdlr">
-                            <div class="kingster-logo-inner"><a class=""
-                                    href="#"><img
-                                        src="https://demo.goodlayers.com/kingster/wp-content/themes/kingster/images/logo.png"
-                                        alt="" /></a></div>
-                        </div>
-                        <div class="kingster-navigation kingster-item-pdlr clearfix ">
-                            <div class="kingster-main-menu" id="kingster-main-menu">
-                                <ul id="menu-main-navigation-1" class="sf-menu">
-                                    <li
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-5271 kingster-normal-menu">
-                                        <a href="/" class="sf-with-ul-pre">Home</a>
-                                    </li>
-                                    <li
-                                        class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-5227 kingster-normal-menu">
-                                        <a href="#" class="sf-with-ul-pre">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5314"
-                                                data-size="60"><a
-                                                    href="#">About KU</a>
-                                            </li>
-                                            </ul>
-                                    <li
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5735 kingster-mega-menu">
-                                        <a href="#"
-                                            class="sf-with-ul-pre">Academics</a>
-                                        <div class="sf-mega sf-mega-full"
-                                            style=" background-image: url('https://demo.goodlayers.com/kingster/wp-content/uploads/2018/08/mega-menu-bg.jpg');  background-position: bottom right;  background-repeat: no-repeat; ">
-                                            <ul class="sub-menu">
-                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5739"
-                                                    data-size="15"><a class="sf-with-ul-pre">Undergraduate</a>
-                                                    <ul class="sub-menu">
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5736">
-                                                            <a
-                                                                href="https://demo.goodlayers.com/kingster/bachelor-of-science-in-business-administration/">Business
-                                                                Administration</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5902">
-                                                            <a
-                                                                href="#">School
-                                                                Of Law</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5901">
-                                                            <a
-                                                                href="#">Engineering</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5900">
-                                                            <a
-                                                                href="#">Medicine</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5899">
-                                                            <a href="#">Art
-                                                                &#038; Science</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5740"
-                                                    data-size="15"><a href="#" class="sf-with-ul-pre">Graduate
-                                                        Program</a>
-                                                    <ul class="sub-menu">
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5954">
-                                                            <a
-                                                                href="#">Hospitality
-                                                                Management</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5953">
-                                                            <a
-                                                                href="#">Physics</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5909">
-                                                            <a href="#">Chemistry</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5910">
-                                                            <a href="#">Music</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5920">
-                                                            <a href="#">Computer Science</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5741"
-                                                    data-size="15"><a href="#" class="sf-with-ul-pre">Resources</a>
-                                                    <ul class="sub-menu">
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5911">
-                                                            <a
-                                                                href="#">Department
-                                                                Page</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5912">
-                                                            <a
-                                                                href="#">Major
-                                                                Page</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5913">
-                                                            <a
-                                                                href="#">Faculty
-                                                                Page</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-personnel menu-item-5919">
-                                                            <a
-                                                                href="#">Single
-                                                                Instructor</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-course menu-item-5955">
-                                                            <a
-                                                                href="#">Single
-                                                                Course</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5746"
-                                                    data-size="15">
-                                                    <div class="kingster-mega-menu-section-content"><img
-                                                            src="https://demo.goodlayers.com/kingster/wp-content/uploads/2018/08/mega-menu-logo.png"
-                                                            style="margin-bottom: 13px;" alt="" />
-                                                        <span style="font-size: 14px; font-weight: 500;">Academic
-                                                            offerings include 95 majors, 86 minors, and more than 100
-                                                            in-major specializations</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5728 kingster-normal-menu">
-                                        <a href="#"
-                                            class="sf-with-ul-pre">Admissions</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5729"
-                                                data-size="60"><a
-                                                    href="/admissions">Apply
-                                                    To Kingster</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5918"
-                                                data-size="60"><a
-                                                    href="#">Campus
-                                                    Tour</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5730"
-                                                data-size="60"><a
-                                                    href="#">Scholarships</a>
-                                            </li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5731"
-                                                data-size="60"><a
-                                                    href="#">Athletics</a>
-                                            </li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5732"
-                                                data-size="60"><a
-                                                    href="#">Give
-                                                    To Kingster</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5917"
-                                                data-size="60"><a
-                                                    href="#">Alumni</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6049"
-                                                data-size="60"><a
-                                                    href="#">Event
-                                                    Calendar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6036 kingster-normal-menu">
-                                        <a href="#"
-                                            class="sf-with-ul-pre">Courses</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6029"
-                                                data-size="60"><a href="#">Course
-                                                    Search</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6035"
-                                                data-size="60"><a
-                                                    href="#">Course
-                                                    List 1</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6034"
-                                                data-size="60"><a
-                                                    href="#">Course
-                                                    List 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5734 kingster-normal-menu">
-                                        <a href="#">Athletics</a>
-                                    </li>
-                                    <li
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5733 kingster-normal-menu">
-                                        <a href="#">University
-                                            Life</a>
-                                    </li>
-                                
-                                <div class="kingster-navigation-slide-bar" id="kingster-navigation-slide-bar"></div>
-                            </div>
-                            <div class="kingster-main-menu-right-wrap clearfix ">
-                                <div class="kingster-main-menu-search" id="kingster-top-search"><i
-                                        class="icon_search"></i></div>
-                                <div class="kingster-top-search-wrap">
-                                    <div class="kingster-top-search-close"></div>
-
-                                    <div class="kingster-top-search-row">
-                                        <div class="kingster-top-search-cell">
-                                            <form role="search" method="get" class="search-form"
-                                                action="#">
-                                                <input type="text" class="search-field kingster-title-font"
-                                                    placeholder="Search..." value="" name="s">
-                                                <div class="kingster-top-search-submit"><i class="fa fa-search"></i>
-                                                </div>
-                                                <input type="submit" class="search-submit" value="Search">
-                                                <div class="kingster-top-search-close"><i class="icon_close"></i></div>
-                                                <input type="hidden" name="ref" value="course" /><input type="hidden"
-                                                    name="post_type" value="lp_course" />
-                                            </form>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div><!-- kingster-navigation -->
-
-                    </div><!-- kingster-header-inner -->
-                </div><!-- kingster-header-container -->
-            </header><!-- header -->
-            <div class="kingster-page-title-wrap  kingster-style-medium kingster-left-align">
-                <div class="kingster-header-transparent-substitute"></div>
-                <div class="kingster-page-title-overlay"></div>
-                <div class="kingster-page-title-container kingster-container">
-                    <div class="kingster-page-title-content kingster-item-pdlr">
-                        <h1 class="kingster-page-title">My Account</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="kingster-page-wrapper" id="kingster-page-wrapper">
-                <div class="kingster-content-container kingster-container">
-                    <div class="kingster-content-area kingster-item-pdlr kingster-sidebar-style-none clearfix">
-                        <div class="woocommerce">
-                            <div class="woocommerce-notices-wrapper"></div>
-
-                            <h2>Login</h2>
-
-                            <form class="woocommerce-form woocommerce-form-login login" action="/login" method="post">
-
-
-                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                    <label for="username">Username or email address&nbsp;<span
-                                            class="required">*</span></label>
-                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text"
-                                        name="username" id="username" autocomplete="username" value="" />
-                                </p>
-                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                    <label for="password">Password&nbsp;<span class="required">*</span></label>
-                                    <input class="woocommerce-Input woocommerce-Input--text input-text" type="password"
-                                        name="password" id="password" autocomplete="current-password" />
-                                </p>
-
-                                    {{#if session.usernotfound}}
-                                    <p class="text-danger">Invalid Username</p>
-                                    {{/if}}
-                                    {{#if session.wrongpassword}}
-                                    <p class="text-danger">Invalid password</p>
-                                    {{/if}}
-                                <p class="form-row">
-                                    <label
-                                        class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-                                        <input class="woocommerce-form__input woocommerce-form__input-checkbox"
-                                            name="rememberme" type="checkbox" id="rememberme" value="forever" />
-                                        <span>Remember me</span>
-                                    </label>
-                                    <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce"
-                                        value="0965297ee1" /><input type="hidden" name="_wp_http_referer"
-                                        value="/kingster/my-account/" /> <button type="submit"
-                                        class="woocommerce-button button woocommerce-form-login__submit" name="login"
-                                        value="Log in">Log in</button>
-                                </p>
-                                <p class="woocommerce-LostPassword lost_password">
-                                    <a href="#">Lost your
-                                        password?</a>
-                                </p>
-
-                                <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/signup"
-                                        class="link-danger">Register</a></p>
-
-                                   <div class="row small fw-bold mt-2 pt-5 mb-0">
-                                    <a href="/otp" class="bg-danger">Login via OTP</a>
-                                   </div>     
-
-
-                            </form>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer class="">
-                <div class="kingster-footer-wrapper ">
-                    <div class="kingster-footer-container kingster-container clearfix">
-                        <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
-                            <div id="text-2" class="widget widget_text kingster-widget">
-                                <div class="textwidget">
-                                    <p><img src="https://demo.goodlayers.com/kingster/wp-content/uploads/2018/08/footer-logo.png"
-                                            alt="" /><br />
-                                        <span class="gdlr-core-space-shortcode" style="margin-top: 5px ;"></span><br />
-                                        Box 35300<br />
-                                        1810 Campus Way NE<br />
-                                        Bothell, WA 98011-8246
-                                    </p>
-                                    <p><span style="font-size: 15px; color: #ffffff;">+91-9446588245</span><br />
-                                        <span class="gdlr-core-space-shortcode"
-                                            style="margin-top: -20px ;"></span><br />
-                                        <a style="font-size: 15px; color: #ffffff;"
-                                            href="#"><span
-                                                class="__cf_email__"
-                                                data-cfemail="0d6c696064634d6664636a7e79687f78636423686978">[email&#160;protected]</span></a>
-                                    </p>
-                                    <div
-                                        class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align">
-                                        <div class="gdlr-core-divider-line gdlr-core-skin-divider"
-                                            style="border-color: #3db166 ;border-width: 2px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
-                            <div id="gdlr-core-custom-menu-widget-2"
-                                class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
-                                <h3 class="kingster-widget-title">Our Campus</h3><span class="clear"></span>
-                                <div class="menu-our-campus-container">
-                                    <ul id="menu-our-campus"
-                                        class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5709 kingster-normal-menu">
-                                            <a href="#">Acedemic</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5710 kingster-normal-menu">
-                                            <a href="#">Planning &#038; Administration</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5711 kingster-normal-menu">
-                                            <a href="#">Campus Safety</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5712 kingster-normal-menu">
-                                            <a href="#">Office of the Chancellor</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5713 kingster-normal-menu">
-                                            <a href="#">Facility Services</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5714 kingster-normal-menu">
-                                            <a href="#">Human Resources</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
-                            <div id="gdlr-core-custom-menu-widget-3"
-                                class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
-                                <h3 class="kingster-widget-title">Campus Life</h3><span class="clear"></span>
-                                <div class="menu-campus-life-container">
-                                    <ul id="menu-campus-life"
-                                        class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5715 kingster-normal-menu">
-                                            <a href="#">Accessibility</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5716 kingster-normal-menu">
-                                            <a href="#">Financial Aid</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5717 kingster-normal-menu">
-                                            <a href="#">Food Services</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5718 kingster-normal-menu">
-                                            <a href="#">Housing</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5719 kingster-normal-menu">
-                                            <a href="#">Information Technologies</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5720 kingster-normal-menu">
-                                            <a href="#">Student Life</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
-                            <div id="gdlr-core-custom-menu-widget-4"
-                                class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
-                                <h3 class="kingster-widget-title">Academics</h3><span class="clear"></span>
-                                <div class="menu-academics-container">
-                                    <ul id="menu-academics"
-                                        class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5721 kingster-normal-menu">
-                                            <a href="#">Canvas</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5722 kingster-normal-menu">
-                                            <a href="#">Catalyst</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5723 kingster-normal-menu">
-                                            <a href="#">Library</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5724 kingster-normal-menu">
-                                            <a href="#">Time Schedule</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5725 kingster-normal-menu">
-                                            <a href="#">Apply For Admissions</a>
-                                        </li>
-                                        <li
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5726 kingster-normal-menu">
-                                            <a href="#">Pay My Tuition</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="kingster-copyright-wrapper">
-                    <div class="kingster-copyright-container kingster-container clearfix">
-                        <div class="kingster-copyright-left kingster-item-pdlr">Copyright All Right Reserved 2018,
-                            GoodLayers</div>
-                        <div class="kingster-copyright-right kingster-item-pdlr">
-                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align"
-                                style="padding-bottom: 0px ;"><a href="#" target="_blank"
-                                    class="gdlr-core-social-network-icon" title="facebook"><i
-                                        class="fa fa-facebook"></i></a><a href="#" target="_blank"
-                                    class="gdlr-core-social-network-icon" title="google-plus"><i
-                                        class="fa fa-google-plus"></i></a><a href="#" target="_blank"
-                                    class="gdlr-core-social-network-icon" title="linkedin"><i
-                                        class="fa fa-linkedin"></i></a><a href="#" target="_blank"
-                                    class="gdlr-core-social-network-icon" title="skype"><i
-                                        class="fa fa-skype"></i></a><a href="#" target="_blank"
-                                    class="gdlr-core-social-network-icon" title="twitter"><i
-                                        class="fa fa-twitter"></i></a><a href="#" target="_blank"
-                                    class="gdlr-core-social-network-icon" title="instagram"><i
-                                        class="fa fa-instagram"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
+</footer>
+</div>
+</div>
 </body>

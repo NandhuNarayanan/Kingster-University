@@ -1,332 +1,290 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!-- Header Layout -->
+<div class="mdk-header-layout js-mdk-header-layout">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Student - Edit account</title>
+    <!-- Header -->
 
-    <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
-    <meta name="robots" content="noindex">
+    <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
+        <div class="mdk-header__content">
 
-    <!-- Custom Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&display=swap"
-        rel="stylesheet">
+            <!-- Navbar -->
+            <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
+                <div class="container-fluid">
 
-    <!-- Perfect Scrollbar -->
-    <link type="text/css" href="assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+                    <!-- Brand -->
+                    <a href="/" class="navbar-brand">
+                        <img src="/assets/images/logo/white.svg" class="mr-2" alt="LearnPlus" />
+                        <span class="d-none d-xs-md-block">Kingster University</span>
+                    </a>
 
-    <!-- Material Design Icons -->
-    <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
+                    <!-- Search -->
+                    <form class="search-form d-none d-md-flex">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <button class="btn" type="button"><i class="material-icons font-size-24pt">search</i></button>
+                    </form>
+                    <!-- // END Search -->
 
-    <!-- Font Awesome Icons -->
-    <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
+                    <div class="flex"></div>
+                    <!-- Menu -->
+                    <ul class="nav navbar-nav flex-nowrap">
 
-    <!-- Preloader -->
-    <link type="text/css" href="assets/vendor/spinkit.css" rel="stylesheet">
-
-    <!-- App CSS -->
-    <link type="text/css" href="assets/css/app.css" rel="stylesheet">
-
-</head>
-
-<body class=" layout-fluid">
-
-    <!-- Header Layout -->
-    <div class="mdk-header-layout js-mdk-header-layout">
-
-        <!-- Header -->
-
-        <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
-            <div class="mdk-header__content">
-
-                <!-- Navbar -->
-                <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
-                    <div class="container-fluid">
-                        <!-- Toggle sidebar -->
-                        <button class="navbar-toggler d-block" data-toggle="sidebar" type="button">
-                            <span class="material-icons">menu</span>
-                        </button>
-
-                        <!-- Brand -->
-                        <a href="student-dashboard.html" class="navbar-brand">
-                            <img src="assets/images/logo/white.svg" class="mr-2" alt="LearnPlus" />
-                            <span class="d-none d-xs-md-block">Kingster University</span>
-                        </a>
-
-                        <!-- Search -->
-                        <form class="search-form d-none d-md-flex">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <button class="btn" type="button"><i
-                                    class="material-icons font-size-24pt">search</i></button>
-                        </form>
-                        <!-- // END Search -->
-
-                        <div class="flex"></div>
-
-                        <!-- Menu -->
-                        <ul class="nav navbar-nav flex-nowrap">
-
-                            <!-- Notifications dropdown -->
-                            <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
-                                <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
-                                    data-dropdown-disable-document-scroll data-caret="false">
-                                    <i class="material-icons">notifications</i>
-                                    <span class="badge badge-notifications badge-danger">.</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <div data-perfect-scrollbar class="position-relative">
-                                        <div class="dropdown-header"><strong>Notifications</strong></div>
-                                        <div class="list-group list-group-flush mb-0">
-                                            {{#each notification}}
-                                            <a href="/notification"
-                                                class="list-group-item list-group-item-action border-left-3 border-left-danger">
-                                                <span class="d-flex">
-                                                    <span class="avatar avatar-xs mr-2">
-                                                        <span class="avatar-title rounded-circle bg-light">
-                                                            <i
-                                                                class="material-icons font-size-16pt text-danger">notifications</i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="flex d-flex flex-column">
-
-                                                        <span class="text-black-70">{{this.header}}</span>
+                        <!-- Notifications dropdown -->
+                        <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
+                            <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
+                                data-dropdown-disable-document-scroll data-caret="false">
+                                <i class="material-icons">notifications</i>
+                                <span class="badge badge-notifications badge-danger">.</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div data-perfect-scrollbar class="position-relative">
+                                    <div class="dropdown-header"><strong>Notifications</strong></div>
+                                    <div class="list-group list-group-flush mb-0">
+                                        {{#each notification}}
+                                        <a href="/notification"
+                                            class="list-group-item list-group-item-action border-left-3 border-left-danger">
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <span class="avatar-title rounded-circle bg-light">
+                                                        <i
+                                                            class="material-icons font-size-16pt text-danger">notifications</i>
                                                     </span>
                                                 </span>
-                                            </a>
-                                            {{/each}}
-                                        </div>
+                                                <span class="flex d-flex flex-column">
+
+                                                    <span class="text-black-70">{{this.header}}</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                        {{/each}}
                                     </div>
                                 </div>
-                            </li>
-                            <!-- // END Notifications dropdown -->
-                            <!-- User dropdown -->
-                            <li class="nav-item dropdown ml-1 ml-md-3">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
-                                        src="assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
-                                        width="40"></a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="/studentdash">
-                                        <i class="material-icons">account_box</i> Dashboard
-                                    </a>
-                                    <a class="dropdown-item" href="/studentprofile">
-                                        <i class="material-icons">edit</i> My Profile
-                                    </a>
-                                    <a class="dropdown-item" href="/logout">
-                                        <i class="material-icons">lock</i> Logout
-                                    </a>
-                                </div>
-                            </li>
-                            <!-- // END User dropdown -->
+                            </div>
+                        </li>
+                        <!-- // END Notifications dropdown -->
+                        <!-- User dropdown -->
+                        <li class="nav-item dropdown ml-1 ml-md-3">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
+                                    src="/assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
+                                    width="40"></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="/studentdash">
+                                    <i class="material-icons">account_box</i> Dashboard
+                                </a>
+                                <a class="dropdown-item" href="/studentprofile">
+                                    <i class="material-icons">edit</i> Edit Account
+                                </a>
+                                <a class="dropdown-item" href="/logout">
+                                    <i class="material-icons">lock</i> Logout
+                                </a>
+                            </div>
+                        </li>
+                        <!-- // END User dropdown -->
 
-                        </ul>
-                        <!-- // END Menu -->
-                    </div>
-                </nav>
-                <!-- // END Navbar -->
+                    </ul>
+                    <!-- // END Menu -->
+                </div>
+            </nav>
+            <!-- // END Navbar -->
 
-            </div>
         </div>
+    </div>
 
-        <!-- // END Header -->
+    <!-- // END Header -->
+    <!-- Header Layout Content -->
+    <div class="mdk-header-layout__content">
 
-        <!-- Header Layout Content -->
-        <div class="mdk-header-layout__content">
+        <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
+            <div class="mdk-drawer-layout__content page ">
 
-            <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
-                <div class="mdk-drawer-layout__content page ">
+                <div class="container-fluid page__container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/studentdash">Home</a></li>
+                        <li class="breadcrumb-item active">My Profile</li>
+                    </ol>
+                    <h1 class="h2">My Profile</h1>
 
-                    <div class="container-fluid page__container">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="student-dashboard.html">Home</a></li>
-                            <li class="breadcrumb-item active">My Profile</li>
-                        </ol>
-                        <h1 class="h2">My Profile</h1>
-
-                        <div class="card">
-                            <ul class="nav nav-tabs nav-tabs-card">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#first" data-toggle="tab">Account</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#second" data-toggle="tab">Change Password</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content card-body">
-                                <div class="tab-pane active" id="first">
-                                    <form action="#" class="form-horizontal">
-                                        <div class="form-group row">
-                                            <label for="name" class="col-sm-3 col-form-label form-label">Full
-                                                Name</label>
-                                            <div class="col-sm-8">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <input id="name" type="text" class="form-control"
-                                                            placeholder="First Name" value="{{user.fname}}">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control" placeholder="Last Name" value="{{user.lname}}">
-                                                    </div>
+                    <div class="card">
+                        <ul class="nav nav-tabs nav-tabs-card">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#first" data-toggle="tab">Account</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#second" data-toggle="tab">Change Password</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content card-body">
+                            <div class="tab-pane active" id="first">
+                                <form action="#" class="form-horizontal">
+                                    <div class="form-group row">
+                                        <label for="name" class="col-sm-3 col-form-label form-label">Full
+                                            Name</label>
+                                        <div class="col-sm-8">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <input id="name" type="text" class="form-control"
+                                                        placeholder="First Name" value="{{user.fname}}">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="Last Name"
+                                                        value="{{user.lname}}">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label for="email" class="col-sm-3 col-form-label form-label">Email</label>
-                                            <div class="col-sm-6 col-md-6">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">
-                                                            <i class="material-icons md-18 text-muted">mail</i>
-                                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email" class="col-sm-3 col-form-label form-label">Email</label>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="material-icons md-18 text-muted">mail</i>
                                                     </div>
-                                                    <input type="text" id="email" class="form-control"
-                                                        placeholder="Email Address" value="{{user.email}}">
                                                 </div>
+                                                <input type="text" id="email" class="form-control"
+                                                    placeholder="Email Address" value="{{user.email}}">
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group row">
-                                            <label for="password" class="col-sm-3 col-form-label form-label">Phone
-                                                Number</label>
-                                            <div class="col-sm-6 col-md-4">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">
-                                                            <i class="material-icons md-18 text-muted">phone</i>
-                                                        </div>
+                                    <div class="form-group row">
+                                        <label for="password" class="col-sm-3 col-form-label form-label">Phone
+                                            Number</label>
+                                        <div class="col-sm-6 col-md-4">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="material-icons md-18 text-muted">phone</i>
                                                     </div>
-                                                    <input type="number" name="mobile" id="PhoneNumber"
-                                                        class="form-control" placeholder="Enter Phone Number" value="{{user.mobile}}">
+                                                </div>
+                                                <input type="number" name="mobile" id="PhoneNumber" class="form-control"
+                                                    placeholder="Enter Phone Number" value="{{user.mobile}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="state" class="col-sm-3 col-form-label form-label">State</label>
+                                        <div class="col-sm-6 col-md-4">
+                                            <select class="select" name="state" style="width: 100%;padding: 7.5px;">
+                                                <option value="{{user.state}}" selected></option>
+                                                <option value="{{user.state}}">ANDAMAN AND NICOBAR</option>
+                                                <option value="{{user.state}}">ANDHRA PRADESH</option>
+                                                <option value="{{user.state}}">ARUNACHAL PRADESH</option>
+                                                <option value="{{user.state}}">BIHAR</option>
+                                                <option value="{{user.state}}">CHANDIGARH</option>
+                                                <option value="{{user.state}}">CHHATTISGARH</option>
+                                                <option value="{{user.state}}">DADRA AND NAGAR HAVELI
+                                                </option>
+                                                <option value="{{user.state}}">DAMAN AND DIU</option>
+                                                <option value="{{user.state}}">DELHI</option>
+                                                <option value="{{user.state}}">GOA</option>
+                                                <option value="{{user.state}}">GUJARAT</option>
+                                                <option value="{{user.state}}">HARYANA</option>
+                                                <option value="">HIMACHAL PRADESH</option>
+                                                <option value="{{user.state}}">JAMMU AND KASHMIR</option>
+                                                <option value="{{user.state}}">JHARKHAND</option>
+                                                <option value="{{user.state}}">KARNATAKA</option>
+                                                <option value="{{user.state}}">KERALA</option>
+                                                <option value="{{user.state}}">LADAKH</option>
+                                                <option value="{{user.state}}">LAKSHADWEEP</option>
+                                                <option value="{{user.state}}">MADHYA PRADESH</option>
+                                                <option value="{{user.state}}">MAHARASHTRA</option>
+                                                <option value="{{user.state}}">MANIPUR</option>
+                                                <option value="{{user.state}}">MEGHALAYA</option>
+                                                <option value="{{user.state}}">MIZORAM</option>
+                                                <option value="{{user.state}}">NAGALAND</option>
+                                                <option value="{{user.state}}">ODISHA</option>
+                                                <option value="{{user.state}}">OTHER</option>
+                                                <option value="{{user.state}}">PUDUCHERRY</option>
+                                                <option value="{{user.state}}">PUNJAB</option>
+                                                <option value="{{user.state}}">RAJASTHAN</option>
+                                                <option value="{{user.state}}">SIKKIM</option>
+                                                <option value="{{user.state}}">TAMIL NADU</option>
+                                                <option value="{{user.state}}">TELANGANA</option>
+                                                <option value="{{user.state}}">TRIPURA</option>
+                                                <option value="{{user.state}}">UTTAR PRADESH</option>
+                                                <option value="{{user.state}}">UTTARAKHAND</option>
+                                                <option value="{{user.state}}">WEST BENGAL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="city" class="col-sm-3 col-form-label form-label">City</label>
+                                        <div class="col-sm-6 col-md-4">
+                                            <select class="select" name="city" style="width: 100%;padding: 7.5px;">
+                                                <option value="{{user.city}}" selected></option>
+                                                <option value="{{user.city}}">New York</option>
+                                                <option value="{{user.city}}">Mumbai</option>
+                                                <option value="{{user.city}}">Delhi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="password" class="col-sm-3 col-form-label form-label">GENDER</label>
+                                        <div class="col-sm-6 col-md-4">
+                                            <select class="select" name="gender" style="width: 100%;padding: 7.5px;">
+                                                <option value=""></option>
+                                                <option value="{{user.gender}}" selected>Male</option>
+                                                <option value="{{user.gender}}" selected>Female</option>
+                                                <option value="{{user.gender}}" selected>Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="password"
+                                            class="col-sm-3 col-form-label form-label">QUALIFICATION</label>
+                                        <div class="col-sm-6 col-md-4">
+                                            <select class="select" name="QUALIFICATION"
+                                                style="width: 100%;padding: 7.5px;">
+                                                <option value=""></option>
+                                                <option value="{{user.QUALIFICATION}}" selected>12th</option>
+                                                <option value="{{user.QUALIFICATION}}" selected>Graduate</option>
+                                                <option value="{{user.QUALIFICATION}}" selected>Post Graduate</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="password" class="col-sm-3 col-form-label form-label">Select
+                                            Course</label>
+                                        <div class="col-sm-6 col-md-4">
+                                            <select class="select" name="Course" style="width: 100%;padding: 7.5px;">
+                                                <option value=""></option>
+                                                <option value="{{user.Course}}" selected>Computer Operator Pragramming
+                                                    Assistant
+                                                </option>
+                                                <option value="{{user.Course}}" selected>Designer</option>
+                                                <option value="{{user.Course}}" selected>Marketing</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="category"
+                                            class="col-sm-3 col-form-label form-label">Category</label>
+                                        <div class="col-sm-6 col-md-4">
+                                            <select class="Category" name="Category"
+                                                style="width: 100%;padding: 7.5px;">
+                                                <option value=""></option>
+                                                <option value="{{user.state}}" selected>General
+                                                </option>
+                                                <option value="{{user.Category}}" selected>OBC(Non Creamy)</option>
+                                                <option value="{{user.Category}}" selected>ST</option>
+                                                <option value="{{user.Category}}" selected>SC</option>
+                                                <option value="{{user.Category}}" selected>Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-8 offset-sm-3">
+                                            <div class="media align-items-center">
+                                                <div class="media-left">
+                                                    <a href="#" class="btn btn-success">Save Changes</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label for="state" class="col-sm-3 col-form-label form-label">State</label>
-                                            <div class="col-sm-6 col-md-4">
-                                                <select class="select" name="state" style="width: 100%;padding: 7.5px;" >
-                                                    <option value="{{user.state}}"selected></option>
-                                                    <option value="ANDAMAN AND NICOBAR">ANDAMAN AND NICOBAR</option>
-                                                    <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
-                                                    <option value="">ARUNACHAL PRADESH</option>
-                                                    <option value="">BIHAR</option>
-                                                    <option value="">CHANDIGARH</option>
-                                                    <option value="">CHHATTISGARH</option>
-                                                    <option value="">DADRA AND NAGAR HAVELI
-                                                    </option>
-                                                    <option value="">DAMAN AND DIU</option>
-                                                    <option value="">DELHI</option>
-                                                    <option value="">GOA</option>
-                                                    <option value="">GUJARAT</option>
-                                                    <option value="">HARYANA</option>
-                                                    <option value="">HIMACHAL PRADESH</option>
-                                                    <option value="">JAMMU AND KASHMIR</option>
-                                                    <option value="">JHARKHAND</option>
-                                                    <option value="">KARNATAKA</option>
-                                                    <option value="">KERALA</option>
-                                                    <option value="">LADAKH</option>
-                                                    <option value="">LAKSHADWEEP</option>
-                                                    <option value="">MADHYA PRADESH</option>
-                                                    <option value="">MAHARASHTRA</option>
-                                                    <option value="">MANIPUR</option>
-                                                    <option value="">MEGHALAYA</option>
-                                                    <option value="">MIZORAM</option>
-                                                    <option value="">NAGALAND</option>
-                                                    <option value="">ODISHA</option>
-                                                    <option value="">OTHER</option>
-                                                    <option value="">PUDUCHERRY</option>
-                                                    <option value="">PUNJAB</option>
-                                                    <option value="">RAJASTHAN</option>
-                                                    <option value="">SIKKIM</option>
-                                                    <option value="">TAMIL NADU</option>
-                                                    <option value="">TELANGANA</option>
-                                                    <option value="">TRIPURA</option>
-                                                    <option value="">UTTAR PRADESH</option>
-                                                    <option value="">UTTARAKHAND</option>
-                                                    <option value="">WEST BENGAL</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="city" class="col-sm-3 col-form-label form-label">City</label>
-                                            <div class="col-sm-6 col-md-4">
-                                                <select class="select" name="city" style="width: 100%;padding: 7.5px;">
-                                                    <option value="{{user.city}}"selected></option>
-                                                    <option value="New York">New York</option>
-                                                    <option value="Mumbai">Mumbai</option>
-                                                    <option value="Delhi">Delhi</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="password"
-                                                class="col-sm-3 col-form-label form-label">GENDER</label>
-                                            <div class="col-sm-6 col-md-4">
-                                                <select class="select" name="gender"
-                                                    style="width: 100%;padding: 7.5px;">
-                                                    <option value=""></option>
-                                                    <option value="{{user.gender}}"selected>Male</option>
-                                                    <option value="{{user.gender}}"selected>Female</option>
-                                                    <option value="{{user.gender}}"selected>Other</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="password"
-                                                class="col-sm-3 col-form-label form-label">QUALIFICATION</label>
-                                            <div class="col-sm-6 col-md-4">
-                                                <select class="select" name="QUALIFICATION"
-                                                    style="width: 100%;padding: 7.5px;">
-                                                    <option value=""></option>
-                                                    <option value="{{user.QUALIFICATION}}"selected>12th</option>
-                                                    <option value="{{user.QUALIFICATION}}"selected>Graduate</option>
-                                                    <option value="{{user.QUALIFICATION}}"selected>Post Graduate</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="password"
-                                                class="col-sm-3 col-form-label form-label">Select Course</label>
-                                            <div class="col-sm-6 col-md-4">
-                                                <select class="select" name="Course" style="width: 100%;padding: 7.5px;">
-                                                    <option value=""></option>
-                                                    <option value="{{user.Course}}"selected>Computer Operator Pragramming Assistant
-                                                    </option>
-                                                    <option value="{{user.Course}}"selected>Designer</option>
-                                                    <option value="{{user.Course}}"selected>Marketing</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="category"
-                                                class="col-sm-3 col-form-label form-label">Category</label>
-                                            <div class="col-sm-6 col-md-4">
-                                                <select class="Category" name="Category" style="width: 100%;padding: 7.5px;">
-                                                    <option value=""></option>
-                                                    <option value="{{user.state}}"selected>General
-                                                    </option>
-                                                    <option value="{{user.Category}}"selected>OBC(Non Creamy)</option>
-                                                    <option value="{{user.Category}}"selected>ST</option>
-                                                    <option value="{{user.Category}}"selected>SC</option>
-                                                    <option value="{{user.Category}}"selected>Other</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-8 offset-sm-3">
-                                                <div class="media align-items-center">
-                                                    <div class="media-left">
-                                                        <a href="#" class="btn btn-success">Save Changes</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
+                            </div>
 
-                                <div class="tab-pane" id="second">
-                                    <form action="/studentprofile/changepassword" method="post">
+                            <div class="tab-pane" id="second">
+                                <form action="/studentprofile/changepassword" method="post">
                                     <h4>Change Password</h4>
                                     <div class="card">
                                         <div class="list-group list-group-fit">
@@ -341,8 +299,9 @@
                                                         <div class="col-sm-9">
                                                             <div role="group"
                                                                 class="input-group input-group-merge form-control-prepended">
-                                                                <input id="password" type="password" required="required" name="crrtPassword"
-                                                                    placeholder="Current password" aria-required="true"
+                                                                <input id="password" type="password" required="required"
+                                                                    name="crrtPassword" placeholder="Current password"
+                                                                    aria-required="true"
                                                                     class="form-control form-control-prepended">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">
@@ -365,11 +324,13 @@
                                                             <div role="group"
                                                                 class="input-group input-group-merge form-control-prepended">
                                                                 <input id="password" type="password" required="required"
-                                                                    placeholder="New password" aria-required="true" name="password"
+                                                                    placeholder="New password" aria-required="true"
+                                                                    name="password"
                                                                     class="form-control form-control-prepended">
-                                                                   
-                                                                <input id="password" type="hidden" 
-                                                                    placeholder="New password" aria-required="true" name="stdid" value="{{user._id}}"
+
+                                                                <input id="password" type="hidden"
+                                                                    placeholder="New password" aria-required="true"
+                                                                    name="stdid" value="{{user._id}}"
                                                                     class="form-control form-control-prepended">
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">
@@ -408,417 +369,34 @@
                                         </div>
                                     </div>
                                     <div class="page-nav__content">
-                                        <button class="btn btn-success" type="submit">Save Changes 
-                                            </button>
+                                        <button class="btn btn-success" type="submit">Save Changes
+                                        </button>
                                     </div>
-                                    </form>
-                                </div>
-
-
-
-
-
+                                </form>
                             </div>
+
+
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    </div>
+</div>
+</div>
 
-    <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
-        <div class="mdk-drawer__content ">
-            <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
-                <div class="sidebar-p-y">
-                    <div class="sidebar-heading">APPLICATIONS</div>
-                    <ul class="sidebar-menu sm-active-button-bg">
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="#">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>
-                                Student
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="#">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
-                                Instructor
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Account menu -->
-                    <div class="sidebar-heading">Account</div>
-                    <ul class="sidebar-menu">
-                        <li class="sidebar-menu-item open">
-                            <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
-                                href="#account_menu">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person_outline</i>
-                                Account
-                                <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                            </a>
-                            <ul class="sidebar-submenu sm-indent collapse show" id="account_menu">
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="#">
-                                        <span class="sidebar-menu-text">Login</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="guest-signup.html">
-                                        <span class="sidebar-menu-text">Sign Up</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="guest-forgot-password.html">
-                                        <span class="sidebar-menu-text">Forgot Password</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item active">
-                                    <a class="sidebar-menu-button" href="student-account-edit.html">
-                                        <span class="sidebar-menu-text">Edit Account</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-account-edit-basic.html">
-                                        <span class="sidebar-menu-text">Basic Information</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-account-edit-profile.html">
-                                        <span class="sidebar-menu-text">Profile &amp; Privacy</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-account-billing-subscription.html">
-                                        <span class="sidebar-menu-text">Subscription</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-account-billing-upgrade.html">
-                                        <span class="sidebar-menu-text">Upgrade Account</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button"
-                                        href="student-account-billing-payment-information.html">
-                                        <span class="sidebar-menu-text">Payment Information</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-billing.html">
-                                        <span class="sidebar-menu-text">Payment History</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-invoice.html">
-                                        <span class="sidebar-menu-text">Student Invoice</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="instructor-invoice.html">
-                                        <span class="sidebar-menu-text">Instructor Invoice</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="instructor-edit-invoice.html">
-                                        <span class="sidebar-menu-text">Edit Invoice</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" data-toggle="collapse" href="#messages_menu">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">comment</i> Messages
-                                <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                            </a>
-                            <ul class="sidebar-submenu sm-indent collapse" id="messages_menu">
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-messages.html">
-                                        <span class="sidebar-menu-text">Conversation</span>
-                                        <span
-                                            class="sidebar-menu-badge badge badge-primary badge-notifications ml-auto">2</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-messages-2.html">
-                                        <span class="sidebar-menu-text">Conversation - 2</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="sidebar-heading">Student</div>
-                    <ul class="sidebar-menu sm-active-button-bg">
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="student-browse-courses.html">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">search</i> Browse
-                                Courses
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="student-view-course.html">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">import_contacts</i>
-                                View Course
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="student-take-course.html">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i> Take
-                                Course
-                                <span class="sidebar-menu-badge badge badge-primary ml-auto">PRO</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="student-take-quiz.html">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i> Take a Quiz
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="student-quiz-results.html">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">poll</i> Quiz
-                                Results
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="student-my-courses.html">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i> My
-                                Courses
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" data-toggle="collapse" href="#forum_menu">
-                                <i
-                                    class="sidebar-menu-icon sidebar-menu-icon--left material-icons">chat_bubble_outline</i>
-                                Community
-                                <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                            </a>
-                            <ul class="sidebar-submenu sm-indent collapse" id="forum_menu">
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-forum.html">
-                                        <span class="sidebar-menu-text">Forum</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-forum-thread.html">
-                                        <span class="sidebar-menu-text">Discussion</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-forum-ask.html">
-                                        <span class="sidebar-menu-text">Ask Question</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-profile.html">
-                                        <span class="sidebar-menu-text">Student Profile - Courses</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="student-profile-posts.html">
-                                        <span class="sidebar-menu-text">Student Profile - Posts</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="instructor-profile.html">
-                                        <span class="sidebar-menu-text">Instructor Profile</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="student-help-center.html">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">live_help</i> Get
-                                Help
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="/logout">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">lock_open</i> Logout
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Components menu -->
-                    <div class="sidebar-heading">Components</div>
-                    <ul class="sidebar-menu">
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
-                                href="#components_menu">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">tune</i>
-                                Components
-                                <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                            </a>
-                            <ul class="sidebar-submenu sm-indent collapse" id="components_menu">
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-avatars.html">
-                                        <span class="sidebar-menu-text">Avatars</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-forms.html">
-                                        <span class="sidebar-menu-text">Forms</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-loaders.html">
-                                        <span class="sidebar-menu-text">Loaders</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-tables.html">
-                                        <span class="sidebar-menu-text">Tables</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-cards.html">
-                                        <span class="sidebar-menu-text">Cards</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-tabs.html">
-                                        <span class="sidebar-menu-text">Tabs</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-icons.html">
-                                        <span class="sidebar-menu-text">Icons</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-buttons.html">
-                                        <span class="sidebar-menu-text">Buttons</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-alerts.html">
-                                        <span class="sidebar-menu-text">Alerts</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-badges.html">
-                                        <span class="sidebar-menu-text">Badges</span>
-                                    </a>
-                                </li>
-                                <!-- <li class="sidebar-menu-item">
-        <a class="sidebar-menu-button" href="ui-modals.html">
-          <span class="sidebar-menu-text">- Modals</span>
-        </a>
-      </li> -->
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-progress.html">
-                                        <span class="sidebar-menu-text">Progress Bars</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-pagination.html">
-                                        <span class="sidebar-menu-text">Pagination</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
-                                href="#plugins_menu">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">folder</i>
-                                Plugins
-                                <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                            </a>
-                            <ul class="sidebar-submenu sm-indent collapse" id="plugins_menu">
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-charts.html">
-                                        <span class="sidebar-menu-text">Charts</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-drag.html">
-                                        <span class="sidebar-menu-text">Drag &amp; Drop</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-calendar.html">
-                                        <span class="sidebar-menu-text">Calendar</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-nestable.html">
-                                        <span class="sidebar-menu-text">Nestable</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-tree.html">
-                                        <span class="sidebar-menu-text">Tree</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-maps-vector.html">
-                                        <span class="sidebar-menu-text">Vector Maps</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item">
-                                    <a class="sidebar-menu-button" href="ui-sweet-alert.html">
-                                        <span class="sidebar-menu-text">Sweet Alert</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <!-- // END Components Menu -->
-
-                    <div class="sidebar-heading">Layout</div>
-                    <ul class="sidebar-menu">
-                        <li class="sidebar-menu-item active">
-                            <a class="sidebar-menu-button" href="student-account-edit.html">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dashboard</i> Fluid
-                                Layout
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="fixed-student-account-edit.html">
-                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dashboard</i> Fixed
-                                Layout
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    </div>
-
-    <!-- App Settings FAB -->
-    <div id="app-settings">
-        <app-settings layout-active="default" :layout-location="{
+<!-- App Settings FAB -->
+<div id="app-settings">
+    <app-settings layout-active="default" :layout-location="{
       'fixed': 'fixed-student-account-edit.html',
       'default': 'student-account-edit.html'
     }" sidebar-variant="bg-transparent border-0"></app-settings>
-    </div>
+</div>
 
-    </div>
-    </div>
-
-    <!-- jQuery -->
-    <script src="assets/vendor/jquery.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="assets/vendor/popper.min.js"></script>
-    <script src="assets/vendor/bootstrap.min.js"></script>
-
-    <!-- Perfect Scrollbar -->
-    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
-
-    <!-- MDK -->
-    <script src="assets/vendor/dom-factory.js"></script>
-    <script src="assets/vendor/material-design-kit.js"></script>
-
-    <!-- App JS -->
-    <script src="assets/js/app.js"></script>
-
-    <!-- Highlight.js -->
-    <script src="assets/js/hljs.js"></script>
-
-    <!-- App Settings (safe to remove) -->
-    <script src="assets/js/app-settings.js"></script>
-
-</body>
-
-</html>
+</div>
+</div>

@@ -3,8 +3,7 @@ const mongoose = require('mongoose')
 
 academicDetailsSchema = new mongoose.Schema({
     userId :{
-        type:String,
-        required : true
+        type:String
     },
     XBoard:{
     type:String

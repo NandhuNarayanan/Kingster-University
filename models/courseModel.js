@@ -12,14 +12,18 @@ const courseSchema = new mongoose.Schema({
     duration:{
         type:String
     },
+    registrationfee:{
+        type:Number
+    },
     price:{
         type:Number
     },
-    incharge:{
+    HOD:{
         type:String
     },
     department:{
-        type:String
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Department'
     },
     year:{  
         type:Number

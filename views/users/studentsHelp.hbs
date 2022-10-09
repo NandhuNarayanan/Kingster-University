@@ -1,3224 +1,525 @@
-
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --><meta name="description" content=""><meta name="author" content=""><title>Student Dashboard | NMIMS University</title><link href="https://cdn.npfs.co/uploads/college/image/5dbc066c6069e840632978_icon.ico" type="image/x-icon" rel="icon"/><link href="https://cdn.npfs.co/uploads/college/image/5dbc066c6069e840632978_icon.ico" type="image/x-icon" rel="shortcut icon"/><!-- Bootstrap core CSS --><link rel="stylesheet" href="https://cdn.npfs.co/css/student/web/css/bootstrap.min.css?1642187088"/><!-- Custom styles for this template --><link rel="stylesheet" href="https://cdn.npfs.co/css/student/web/css/dashboard.css?1662051363"/><!-- Custom scrool for this template --><link rel="stylesheet" href="https://cdn.npfs.co/css/student/web/css/simplebar.css?1642187088"/><link rel="stylesheet" href="https://cdn.npfs.co/css/publisher/css/chosen.css?1656805502"/><link rel="stylesheet" href="https://cdn.npfs.co/css/qms-form.css?1651765191"/><meta name="google-site-verification" content="8oFbAK4TBVpDMnppXs81rHuQv74NElZ_ozesbPMrXo8" /><script>//<![CDATA[
-var jsVars = {"fieldRegisteredForNmat":"","ContactUrl":"https:\/\/apply.nmims.edu\/sat\/contact-query-submit","LayoutName":"592","CaptchaLink":"\/sat\/captcha","FileRemoveLink":"\/sat\/file-remove","_csrfToken":"57647ff0bc9ae93b29e77a28ecc6b0d4eddc8339","FULL_URL":"https:\/\/apply.nmims.edu\/sat","BACKEN_DOMAIN":"nopaperforms.io","LOGOUT_PATH":"https:\/\/apply.nmims.edu","field_name_2":"Program","selectedCategory":"incomplete","user_name":"nandhu","user_email":"nandhunarayan9446@gmail.com","user_phone":"9446588245","bypassLeadPool":1,"QMS_GENERAL_CATEGORY":"5590","showExamScheduleURL":"exam\/showExamScheduleList","getOnlineOfflineFeldsURL":"exam\/getOnlineOfflineFields","saveOnlineOfflineFieldsURL":"exam\/saveOnlineOfflineFields","getSsoUrl":"https:\/\/apply.nmims.edu\/sat\/exam\/getSsoUrl","currentDate":"2022-09-20,01:09:22","currentTimestamp":1663662442,"uniPeFeeEnabledFormList":""};
-//]]></script><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]--><script>//<![CDATA[
-var jsVars = {"fieldRegisteredForNmat":"","ContactUrl":"https:\/\/apply.nmims.edu\/sat\/contact-query-submit","LayoutName":"592","CaptchaLink":"\/sat\/captcha","FileRemoveLink":"\/sat\/file-remove","_csrfToken":"57647ff0bc9ae93b29e77a28ecc6b0d4eddc8339","FULL_URL":"https:\/\/apply.nmims.edu\/sat","BACKEN_DOMAIN":"nopaperforms.io","LOGOUT_PATH":"https:\/\/apply.nmims.edu","field_name_2":"Program","selectedCategory":"incomplete","user_name":"nandhu","user_email":"nandhunarayan9446@gmail.com","user_phone":"9446588245","bypassLeadPool":1,"QMS_GENERAL_CATEGORY":"5590","showExamScheduleURL":"exam\/showExamScheduleList","getOnlineOfflineFeldsURL":"exam\/getOnlineOfflineFields","saveOnlineOfflineFieldsURL":"exam\/saveOnlineOfflineFields","getSsoUrl":"https:\/\/apply.nmims.edu\/sat\/exam\/getSsoUrl","currentDate":"2022-09-20,01:09:22","currentTimestamp":1663662442,"uniPeFeeEnabledFormList":""};
-//]]></script><!--Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-TW25VQH');</script><!--End Google Tag Manager --></head><body class="nD nmimsuniversity"><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW25VQH"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header id="header" class="header-top" style="background-color: #FFFFFF !important"><nav class="navbar"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="https://apply.nmims.edu/sat/dashboard"><img src="https://cdn.npfs.co/uploads/college/image/61fb6849b0632517252952_logo2.jpg" alt="NMIMS University" title="NMIMS University"/></a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li class="profile"><a href="javascript:void(0);" id="profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="pName">Welcome Nandhu</span>&nbsp;<span class="caret"></span></a><ul class="dropdown-menu" aria-labelledby="profile"><li><ul class="dropList"><li><a href="https://apply.nmims.edu/sat/dashboard"><i class="icon-dashboard mr-5" aria-hidden="true" style="font-size:14px;"></i>&nbsp;My Dashboard</a></li><li><a href="https://apply.nmims.edu/sat/all-application-form"><i class="icon-application mr-5" aria-hidden="true" style="font-size:14px;font-weight:600;"></i>&nbsp;All Form(s)</a></li><li><a href="https://apply.nmims.edu/sat/profile"><i class="icon-lead mr-5" aria-hidden="true" style="    font-size:14px;font-weight:600;"></i>&nbsp;My Profile</a></li><li ><a href="https://apply.nmims.edu/sat/my-ticket"><i class="fa fa-comments-o mr-5" aria-hidden="true" style="font-size:16px;"></i>&nbsp;My Queries</a></li><li style="display:none !important;"><a href="https://apply.nmims.edu/sat/my-notification"><i class="fa fa-bell-o mr-5" aria-hidden="true" style="font-size:16px;"></i>&nbsp;My Notification</a></li><li><a href="https://apply.nmims.edu/sat/change-password"><i class="glyphicon glyphicon-pencil mr-5" aria-hidden="true"></i>&nbsp;Change Password </a></li><li><a href="https://apply.nmims.edu/sat/logout" onclick="logoutEvent(393);"><i class="glyphicon glyphicon-off mr-5" aria-hidden="true"></i>&nbsp; Logout</a></li></ul></li></ul></li></ul></div></div></nav></header><!--div class="msg_success text-center" style="display:none;"></div--><style type="text/css">.field_410699 .tdClass {
-    /* height: 20px; */
-    vertical-align: top;
-    padding-top: 15px !important;
-}
-
-.field_410699 .thClass {
-    background: #e1141d;
-    color: #fff;
-    font-weight: bold;
-    padding: 12px;
-}
-
-.field_410699 table {
-    box-shadow: 0px 4px 12px #ccc;
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.field_410699 .formAreaCols {
-    padding: 20px;
-}
-
-/* new css for cet transfer */
-
-.field_411274 .tdClass {
-    /* height: 20px; */
-    vertical-align: top;
-    padding-top: 15px !important;
-}
-
-.field_411274 .thClass {
-    background: #e1141d;
-    color: #fff;
-    font-weight: bold;
-    padding: 12px;
-}
-
-.field_411274 table {
-    box-shadow: 0px 4px 12px #ccc;
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.field_411274 .formAreaCols {
-    padding: 20px;
-}
-
-/* new css for LAT transfer */
-
-.field_412379 .tdClass {
-    /* height: 20px; */
-    vertical-align: top;
-    padding-top: 15px !important;
-}
-
-.field_412379 .thClass {
-    background: #e1141d;
-    color: #fff;
-    font-weight: bold;
-    padding: 12px;
-}
-
-.field_412379 table {
-    box-shadow: 0px 4px 12px #ccc;
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.field_412379 .formAreaCols {
-    padding: 20px;
-}
-
-/* cet trasnfer ended here */
-
-.myLoader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 99999;
-    background: url('https://cdn.npfs.co/uploads/template/393/3604/publish/images/loading.gif') 50% 50% no-repeat rgba(255, 255, 255, 0.60);
-}
-
-.com {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-n.input.form-control.textfield.disablecolor {
-    background-color: #BEBEBE !important;
-}
-
-.tdClass {
-    height: 20px;
-    /* width: 33%; */
-    vertical-align: top;
-    padding-top: 15px !important;
-    text-align: center;
-}
-
-.thClass {
-    text-align: center;
-    padding: 12px;
-
-}
-
-.thClass {
-    background: #e1141d;
-    color: #fff;
-    font-weight: bold
-}
-
-.field_407995 .tdClass {
-    /* height: 20px; */
-    vertical-align: top;
-    padding-top: 15px !important;
-}
-
-.field_407995 .thClass {
-    background: #e1141d;
-    color: #fff;
-    font-weight: bold;
-    padding: 12px;
-}
-
-.field_407995 table {
-    box-shadow: 0px 4px 12px #ccc;
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.field_407995 .formAreaCols {
-    padding: 20px;
-}
-
-
-.form-control::-webkit-input-placeholder,
-.form-control::-moz-placeholder,
-.form-control:-ms-input-placeholder,
-.form-control:-moz-placeholder {
-    font-size: 14px !important;
-    color: #444 !important
-}
-
-/* Start font-face css */
-/* vietnamese */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8WAc5iU1EQVg.woff2) format('woff2');
-    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-
-/* latin-ext */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8WAc5jU1EQVg.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* latin */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8WAc5tU1E.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* vietnamese */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe0qMImSLYBIv1o4X1M8cceyI9tScg.woff2) format('woff2');
-    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-
-/* latin-ext */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe0qMImSLYBIv1o4X1M8ccezI9tScg.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* latin */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe0qMImSLYBIv1o4X1M8cce9I9s.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* vietnamese */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc9iB85iU1EQVg.woff2) format('woff2');
-    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-
-/* latin-ext */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc9iB85jU1EQVg.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* latin */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc9iB85tU1E.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* vietnamese */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8GBs5iU1EQVg.woff2) format('woff2');
-    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-
-/* latin-ext */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8GBs5jU1EQVg.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* latin */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8GBs5tU1E.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* vietnamese */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8-BM5iU1EQVg.woff2) format('woff2');
-    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-
-/* latin-ext */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8-BM5jU1EQVg.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* latin */
-@font-face {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8-BM5tU1E.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* End font-face css*/
-body {
-    font-family: 'Nunito Sans', sans-serif
-}
-
-b,
-strong,
-th {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 700
-}
-
-h1,
-.h2,
-.h3,
-.h4,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Nunito Sans', sans-serif
-}
-
-.btn:not(.btn-raised),
-.btn:not(.btn-raised).btn-default,
-.form-group.formAreaCols #formsubmitbtn,
-.input-group-btn .btn:not(.btn-raised),
-.input-group-btn .btn:not(.btn-raised).btn-default,
-.lovelyprofessionaluniversity .cont-btn,
-.lovelyprofessionaluniversity .countFormNpf {
-    font-family: 'Nunito Sans'
-}
-
-.bottomButton .btn-group-raised .btn:not(.btn-link),
-.bottomButton .btn-group-raised .input-group-btn .btn:not(.btn-link),
-.bottomButton .btn.btn-raised:not(.btn-link),
-.bottomButton .input-group-btn .btn.btn-raised:not(.btn-link) {
-    font-family: 'Nunito Sans' !important
-}
-
-a.query-ticket-btn {
-    background-color: #dbdad8;
-    font-family: 'Nunito Sans'
-}
-
-#home>div>div.table-header>table>thead>tr>th.col3.text-center {
-    padding: 8px 7px;
-}
-
-.form-group>label {
-    font-family: 'Nunito Sans', sans-serif
-}
-
-button,
-input,
-select,
-textarea {
-    font-family: 'Nunito Sans', sans-serif
-}
-
-.nav-sidebar>li.active>a {
-    font-family: 'Nunito Sans', sans-serif
-}
-
-.smlFont.complete {
-    font-family: 'Nunito Sans', sans-serif
-}
-
-.open .cont-btn {
-    right: 422px;
-}
-
-.tabmenu>li.active>a {
-    background-color: #E1141D;
-}
-
-.cont-btn {
-    background-color: #E1141D;
-    color: #fff;
-}
-
-.cont-btn:hover,
-.cont-btn:focus {
-    color: #fff;
-}
-
-a.btn.btn-danger.btn-sm {
-    background-color: #428fc9;
-    border-color: #428fc9;
-}
-
-.btn-brand {
-    background-color: #E1141D;
-}
-
-.qms-form .npf-btn {
-    background-color: #8cbade !important;
-}
-
-table.table.table-bordered.cat1.incomplete.category_form_13 {
-    border-left-color: #E1141D !important;
-}
-
-.nav-sidebar .nav-child>li.active>a {
-    color: #fff;
-    background-color: #E1141D;
-}
-
-.nav-sidebar>li>ul {
-    color: #fff;
-    /* background-color: #f37402; */
-}
-
-.nav-sidebar>li {
-    border-bottom: 1px solid rgba(191, 190, 190, 0.2);
-}
-
-.col-sm-3.col-md-3.col-lg-2.sidebar {
-    background-color: #428fc9 !important;
-}
-
-.nav-sidebar>li>a {
-    color: #fff;
-}
-
-.nav-sidebar .nav-child>li>a {
-    color: #fff;
-}
-
-.col-sm-9.col-md-9.col-lg-10.main {
-    background-color: #f1f3fa !important;
-}
-
-.tabmenu>li>a {
-    color: #9d9d9d;
-}
-
-.qrc {
-    color: #9d9d9d;
-}
-
-div#home {
-    color: #666 !important;
-}
-
-b,
-strong,
-th {
-    font-weight: 600;
-    color: #666;
-}
-
-h4.sub-header.category_13 {
-    color: #428fc9 !important;
-}
-
-h3.mb-25 {
-    color: #666;
-}
-
-.btn-npf,
-.btn-npf:focus {
-    background-color: #E1141D !important;
-}
-
-.form-page .owl-item .items-normal.current-stage,
-.form-page .owl-item .items-normal.current-stage:hover {
-    background-color: #E1141D;
-}
-
-.form-page .owl-item .items-normal.active,
-.form-page .owl-item .items-normal:hover {
-    background-color: #E1141Da8;
-    color: #E1141D;
-}
-
-.query-ticket-btn:hover,
-.query-ticket-btn:focus {
-    background-color: #E1141D;
-}
-
-#QueryForm .chosen-drop .chosen-results .active-result.highlighted {
-    background-color: #E1141D !important;
-}
-
-.msg_receive {
-    background-color: #5b5b5b;
-    color: #fff;
-}
-
-.messages {
-    border-left: 3px solid #E1141D;
-}
-
-body>div.main-content.fadeIn>div>div>div.col-sm-9.col-md-9.col-lg-10.main>div.chat-screen>div>div.panel-body.msg_container_base>div>div>div>div>p>time>strong {
-    color: #fff !important;
-}
-
-.btn-brand:hover {
-    background-color: #428fc9;
-}
-
-a.count-link {
-    color: #E1141D;
-}
-
-.form-page .owl-item .item.current-stage p {
-    color: #E1141D;
-}
-
-.form-page .progress .current-progress {
-    background-color: #E1141D;
-}
-
-.form-page .progress .npf-progress-bar {
-    background-color: #E1141D !important;
-}
-
-h1#form_heading_title {
-    font-size: 25px;
-}
-
-.countFormNpf {
-    background-color: #E1141Dbf;
-}
-
-h1#form_heading_title {
-    font-size: 25px;
-}
-
-.active-result.result-selected.highlighted,
-.chosen-container .chosen-results li.highlighted {
-    background-color: #E1141D !important
-}
-
-.form-control {
-    font-size: 14px
-}
-
-.form-group.formAreaCols h3 {
-    font-size: 14px
-}
-
-.nav-sidebar .nav-child>li>a,
-.table-krea th {
-    font-size: 14px
-}
-
-.bottomButton .btn.btn-raised:not(.btn-link),
-.bottomButton .input-group-btn .btn.btn-raised:not(.btn-link),
-.bottomButton .btn-group-raised .btn:not(.btn-link),
-.bottomButton .btn-group-raised .input-group-btn .btn:not(.btn-link) {
-    background-color: #428fc9 !important;
-}
-
-.checkbox input[type=checkbox]:checked+.checkbox-material .check:before,
-.navbar .dropdown-menu li>a:focus,
-.navbar .dropdown-menu li>a:hover,
-.navbar.navbar-default .dropdown-menu li>a:focus,
-.navbar.navbar-default .dropdown-menu li>a:hover {
-    color: #E1141D;
-}
-
-.icon-i.infoIco {
-    background: #E1141D none repeat scroll 0 0;
-}
-
-.npf-accordion .accordion-group ul li {
-    color: #484848;
-    font-size: 14px;
-}
-
-.radio input[type=radio]:checked~.check {
-    background-color: #E1141D;
-}
-
-.radio input[type=radio]:checked~.circle {
-    border-color: #E1141D;
-}
-
-h1#form_heading_title {
-    font-size: 22px;
-}
-
-.npf-form-group .form-group.is-focused .form-control {
-    border: solid 1px #E1141D !important;
-    color: #000 !important;
-}
-
-a.query-ticket-btn {
-    background-color: #F1F3FA;
-    font-family: Nunito Sans;
-}
-
-.text-danger,
-.classOpen {
-    color: #E1141D;
-}
-
-.btn-npf:hover {
-    background-color: #3777a7 !important;
-    color: #fff !important;
-}
-
-.qms-form .npf-btn {
-    background-color: #428fc9 !important;
-}
-
-.bottomButton .btn.btn-raised:not(.btn-link),
-.bottomButton .input-group-btn .btn.btn-raised:not(.btn-link),
-.bottomButton .btn-group-raised .btn:not(.btn-link),
-.bottomButton .btn-group-raised .input-group-btn .btn:not(.btn-link) {
-    font-size: 14px;
-}
-
-.btn,
-.input-group-btn .btn {
-    font-size: 16px;
-}
-
-.npf-accordion .accordion-group ul li {
-    font-size: 14px;
-}
-
-#npf-instruction>div>ul>li>ul>li:nth-child(2)>ul>li {
-    font-size: 14px;
-}
-
-.form-page .owl-item .item.active span {
-    color: #fff;
-}
-
-.checkbox input[type=checkbox]:checked+.checkbox-material .check {
-    color: #E1141D;
-    border-color: #E1141D;
-}
-
-.filedropdwn span.total_files {
-    color: #E1141D;
-}
-
-.filedropdwn i {
-    color: #E1141D;
-}
-
-.help_text {
-    font-size: 11px;
-}
-
-.npf-form-group .form-group.has-error .requiredError {
-    font-weight: 400
-}
-
-.requiredError {
-    font-weight: 400
-}
-
-.btn,
-.input-group-btn .btn {
-    font-size: 14px;
-}
-
-.merge_field_div label.control-label {
-    font-family: 'Nunito Sans', sans-serif;
-}
-
-.form-control.textfield {
-    color: #000 !important;
-}
-
-.form-group.formAreaCols h3 {
-    font-size: 20px;
-}
-
-.table-responsive.pretbl {
-    color: #000 !important;
-}
-
-.npf-form-group .form-group label.control-label {
-    color: #000 !important;
-    font-weight: 600;
-}
-
-.form-control {
-    color: #000 !important;
-}
-
-li.active>a {
-    background-color: #E1141D;
-}
-
-li.active>a:hover {
-    background-color: #E1141D;
-}
-
-h4.sub-header.category_66 {
-    color: #E1141D !important;
-}
-
-table.table.table-bordered.cat1.incomplete.category_form_66 {
-    border-left-color: #E1141D !important;
-}
-
-body>div.main-content.fadeIn>div>div>div.col-sm-3.col-md-3.col-lg-2.sidebar>ul>li:nth-child(2)>ul>div>div.simplebar-scroll-content>div>ul>li {
-    color: #E1141D !important;
-}
-
-table.table.table-bordered.cat1.untouch.category_form_66 {
-    border-left-color: #E1141D !important;
-}
-
-#save_data>div.form_build>div:nth-child(1)>div>div>ol>li {
-    line-height: 24px;
-    color: #000 !important;
-}
-
-#npf-form>div.owl-wrapper-outer>div>div:nth-child(1)>div>p {
-    margin-bottom: 3px;
-}
-
-span#otherError {
-    margin-bottom: -15px;
-}
-
-@media (min-width: 990px) {
-    .cont-btn {
-        right: -73px;
-top:370px;
-    }
-}
-
-@media (max-width: 480px) and (min-width: 0px) {
-    .cont-btn {
-        padding: 5px 13px;
-        font-size: 15px;
-        right: -43px;
-        top: 55% !important;
-        margin-top: -30px;
-    }
-.form-page .panel.panel-default>.panel-heading, .form-page .panel>.panel-heading {
-margin-top:5px;
-}
-}
-
-@media (max-width: 768px) and (min-width: 641px) {
-    .cont-btn {
-        right: -39px;
-        top: 185px;
-        padding: 5px 13px;
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    header#header img {
-        max-height: 45px !important;
-    }
-}
-
-
-.dropup.col-md-12.field_25.instructions {
-    color: #E1141D;
-    font-size: 16px;
-    line-height: 24px;
-}
-
-a#next_btn {
-    text-transform: none !important;
-}
-
-span.icon-i.infoIco:before {
-    color: #fff;
-}
-
-i.fa.fa-book {
-    padding-right: 10px;
-    font-size: 22px;
-    color: #E1141D;
-}
-
-/** Start New Form CSS **/
-
-
-.form-page .owl-item .item.current-stage p {
-    color: #000
-}
-
-.form-page .progress .current-progress {
-    background-color: #fff;
-    color: #E1141D;
-    border: solid
-}
-
-.form-page .progress .npf-progress-bar {
-    background-color: #E1141D !important
-}
-
-h1#form_heading_title {
-    font-size: 25px
-}
-
-.countFormNpf {
-    background-color: #4e5d64;
-}
-
-h1#form_heading_title {
-    font-size: 25px
-}
-
-.active-result.result-selected.highlighted,
-.chosen-container .chosen-results li.highlighted {
-    background-color: #222 !important
-}
-
-.form-control {
-    font-size: 14px
-}
-
-.form-group.formAreaCols h3 {
-    font-size: 14px
-}
-
-.form-group.formAreaCols h3.marginNone {
-    margin-top: 50px;
-}
-
-
-.form_build .row:first-child .heading .formAreaCols h3.marginNone {
-    margin-top: 0 !important;
-}
-
-.nav-sidebar .nav-child>li>a,
-.table-krea th {
-    font-size: 14px
-}
-
-.bottomButton .btn-group-raised .btn:not(.btn-link),
-.bottomButton .btn-group-raised .input-group-btn .btn:not(.btn-link),
-.bottomButton .btn.btn-raised:not(.btn-link),
-.bottomButton .input-group-btn .btn.btn-raised:not(.btn-link) {
-    background-color: #666 !important
-}
-
-.checkbox input[type=checkbox]:checked+.checkbox-material .check:before,
-.navbar .dropdown-menu li>a:focus,
-.navbar .dropdown-menu li>a:hover,
-.navbar.navbar-default .dropdown-menu li>a:focus,
-.navbar.navbar-default .dropdown-menu li>a:hover {
-    color: #222
-}
-
-.icon-i.infoIco {
-    background: #E1141D none repeat scroll 0 0
-}
-
-.npf-accordion .accordion-group ul li {
-    color: #484848;
-    font-size: 14px
-}
-
-.radio input[type=radio]:checked~.check {
-    background-color: #222
-}
-
-.radio input[type=radio]:checked~.circle {
-    border-color: #222
-}
-
-h1#form_heading_title {
-    font-size: 22px
-}
-
-.npf-form-group .form-group.is-focused .form-control {
-    border: solid 1px #222 !important;
-    color: #222
-}
-
-a.query-ticket-btn {
-    background-color: #f1f3fa;
-    font-family: 'Nunito Sans'
-}
-
-.classOpen,
-.text-danger {
-    color: #222
-}
-
-.btn-npf:hover {
-    background-color: #3777a7 !important;
-    color: #fff !important
-}
-
-.qms-form .npf-btn {
-    background-color: #222 !important
-}
-
-.bottomButton .btn-group-raised .btn:not(.btn-link),
-.bottomButton .btn-group-raised .input-group-btn .btn:not(.btn-link),
-.bottomButton .btn.btn-raised:not(.btn-link),
-.bottomButton .input-group-btn .btn.btn-raised:not(.btn-link) {
-    font-size: 14px
-}
-
-.btn,
-.input-group-btn .btn {
-    font-size: 16px
-}
-
-.npf-accordion .accordion-group ul li {
-    font-size: 14px
-}
-
-#npf-instruction>div>ul>li>ul>li:nth-child(2)>ul>li {
-    font-size: 14px
-}
-
-.form-page .owl-item .item.active span {
-    color: #fff
-}
-
-.checkbox input[type=checkbox]:checked+.checkbox-material .check {
-    color: #222;
-    border-color: #222
-}
-
-.filedropdwn span.total_files {
-    color: #222
-}
-
-.filedropdwn i {
-    color: #222
-}
-
-.help_text {
-    font-size: 11px
-}
-
-.npf-form-group .form-group.has-error .requiredError {
-    font-weight: 400
-}
-
-.requiredError {
-    font-weight: 400
-}
-
-.btn,
-.input-group-btn .btn {
-    font-size: 14px
-}
-
-.merge_field_div label.control-label {
-    font-family: 'Nunito Sans', sans-serif
-}
-
-.form-control.textfield {
-    color: #909090
-}
-
-.npf-form-group .form-control {
-    padding: 10px
-}
-
-.form-control.textfield,
-.form-control[disabled],
-.form-control[readonly],
-.form-group .form-control[disabled],
-.form-group .form-control[readonly],
-.form_submit a.chosen-single,
-.merge_field_div .bs-dropdown-to-select-group .bs-dropdown-to-select,
-fieldset[disabled] .form-control,
-fieldset[disabled] .form-group .form-control {
-    height: 40px !important
-}
-
-.chosen-container-single .chosen-single {
-    box-shadow: none;
-    padding-left: 10px
-}
-
-/*    .chosen-container .chosen-single span {
-         padding-top: 10px; 
-         color: #000!important 
-      } */
-
-.chosen-container-single .chosen-single div {
-    top: 4px
-}
-
-.table-responsive.pretbl {
-    color: #222
-}
-
-.form-control {
-    color: #909090;
-    border-radius: 0;
-    border: 1px solid #f1f1f1;
-    box-shadow: none
-}
-
-li.active>a {
-    background-color: #E1141D
-}
-
-li.active>a:hover {
-    background-color: #E1141D
-}
-
-h4.sub-header.category_66 {
-    color: #222 !important
-}
-
-table.table.table-bordered.cat1.incomplete.category_form_66 {
-    border-left-color: #222 !important
-}
-
-body>div.main-content.fadeIn>div>div>div.col-sm-3.col-md-3.col-lg-2.sidebar>ul>li:nth-child(2)>ul>div>div.simplebar-scroll-content>div>ul>li {
-    color: #222 !important
-}
-
-table.table.table-bordered.cat1.untouch.category_form_66 {
-    border-left-color: #222 !important
-}
-
-#save_data>div.form_build>div:nth-child(1)>div>div>ol>li {
-    line-height: 24px;
-    color: #222
-}
-
-#save_data {
-    padding: 0
-}
-
-.form-page .owl-item .items-normal:hover {
-    background-color: #222
-}
-
-.btn-success {
-    background-color: #E1141D
-}
-
-#home>div>div.table-body>div>table>tbody>tr>td.col5.text-center>a {
-    background-color: #E1141D;
-    border-color: #E1141D;
-}
-
-.form-page .owl-item .item.current-stage .c100:after,
-.form-page .owl-item .item.current-stage:hover .c100:after {
-    background-color: #222 !important
-}
-
-div.c100.green.small>div>div.bar,
-div.c100.green.small>div>div.fill {
-    border-color: #222 !important
-}
-
-.form-page .owl-item .item.active .c100:after,
-.form-page .owl-item .item:hover .c100:after {
-    background-color: #E1141D !important
-}
-
-.bottomButton .btn-group-raised .btn:not(.btn-link),
-.bottomButton .btn-group-raised .input-group-btn .btn:not(.btn-link),
-.bottomButton .input-group-btn .btn.btn-raised:not(.btn-link),
-raised:not(.btn-link) {
-    background-color: #222 !important
-}
-
-label {
-    margin: 2px
-}
-
-input#field_157248 {
-    background: #f1f2f3 !important
-}
-
-h3.marginNone {
-    font-size: 26px
-}
-
-a#skip_btn {
-    background-color: transparent !important;
-    color: #000;
-    font-size: 16px;
-    padding: 10px 20px 10px 20px;
-}
-
-a#skip_btn:hover {
-    background-color: #e8e7e7 !important
-}
-
-.form-page .owl-item .item.current-stage .item-inner .itemCon,
-.form-page .owl-item .item.current-stage:hover .item-inner .itemCon {
-    background-color: transparent;
-    box-shadow: none
-}
-
-div.c100.green.small>div>div.bar,
-div.c100.green.small>div>div.fill {
-    border-color: #222 !important
-}
-
-.form-page .panel.panel-default>.panel-heading,
-.form-page .panel>.panel-heading {
-    background-color: #666
-}
-
-.c100.green .bar,
-.c100.green .fill {
-    border-color: #222 !important;
-    display: none
-}
-
-.form-group.formAreaCols h3 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #E1141D;
-    text-transform: uppercase;
-}
-
-a#next_btn {
-    background-color: #E1141D !important;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 20px 10px 20px
-}
-
-.form-title {
-    color: #222
-}
-
-a.btn.r-less,
-a.btn.r-more {
-    padding: 4px 14px;
-    margin-top: -4px;
-    font-size: 12px;
-    border-radius: 10px
-}
-
-a.btn.r-more {
-    background-color: #fff !important;
-    color: #E1141D;
-    border: 1px solid #E1141D
-}
-
-span.glyphicon.glyphicon-minus-sign,
-span.glyphicon.glyphicon-plus-sign {
-    font-size: 15px !important
-}
-
-#tr_field_157189_0>td:nth-child(4),
-#tr_field_157189_0>td:nth-child(5) {
-    width: 94px
-}
-
-#tr_field_157189_0>td:nth-child(3),
-#tr_field_157189_0>td:nth-child(4) {
-    width: 94px
-}
-
-.next,
-.prev {
-    background: #222
-}
-
-a.btn.pull-left.dark-grey.save-exit {
-    background: #fff !important;
-    color: red;
-    border: 1px solid;
-    font-size: 16px;
-    padding: 9px 20px 9px 20px;
-}
-
-a.btn.pull-left.dark-grey.back-btn {
-    background: #eaeaea !important;
-    font-size: 16px;
-    padding: 10px 20px 10px 20px;
-}
-
-.form_build .heading {
-    background-color: #fff;
-    padding: 0
-}
-
-.form-page .panel-body {
-    background: #fff;
-    margin-top: 0;
-    border: 0;
-    padding-top: 35px;
-}
-
-.datepicker table tr td span.active.active,
-.datepicker table tr td span.active.active:hover,
-.datepicker table tr td span.active:hover.active:hover {
-    background-color: #E1141D;
-    border-color: #E1141D
-}
-
-.npf-form-group .form-group label.control-label {
-    color: #637078;
-   /*  text-transform: uppercase; */
-    font-size: 14px !important;
-    line-height: 22px
-}
-
-.btn-payment {
-    background-color: #E1141D !important;
-    border: #E1141D !important
-}
-
-a.btn.btn-raised.pull-right.preview-btn {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 20px 10px 20px;
-    display: none;
-}
-
-
-.checkout_title .back_btn {
-    border: 1px solid #E1141D !important;
-    color: #E1141D !important
-}
-
-.flexboxSep .panel-title {
-    color: #4e5d64 !important
-}
-
-.checkout_title .back_btn:hover {
-    background-color: #E1141D !important;
-    color: #fff !important
-}
-
-.col-md-6.field_163446.instructions {
-    box-shadow: 0 0 7px 2px #c1c1c1;
-    background: #fff;
-    width: 46%;
-    margin-left: 18px
-}
-
-.col-md-6.field_163444.instructions {
-    box-shadow: 0 0 7px 2px #c1c1c1;
-    background: #fff;
-    width: 46%;
-    margin-left: 18px
-}
-
-.col-md-6.field_163447.instructions {
-    box-shadow: 0 0 7px 2px #c1c1c1;
-    background: #fff;
-    width: 46%;
-    margin-left: 18px
-}
-
-.col-md-6.field_163445.instructions {
-    box-shadow: 0 0 7px 2px #c1c1c1;
-    background: #fff;
-    width: 46%;
-    margin-left: 18px
-}
-
-/* @font-face {
-        font-family: 'masteruni';
-        src:  url('https://box.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.eot?uv9hf1');
-        src:  url('https://box.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.eot') format('embedded-opentype'),
-          url('https://box.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.ttf?uv9hf1') format('truetype'),
-          url('https://box.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.woff?uv9hf1') format('woff'),
-          url('https://box.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.svg?uv9hf1#masteruni') format('svg');
-        font-weight: normal;
-        font-style: normal;
-        font-display: block;
-      } */
-
-@font-face {
-    font-family: 'masteruni';
-    src: url('https://in5cdn.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.eot?uv9hf1');
-    src: url('https://in5cdn.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.eot') format('embedded-opentype'),
-        url('https://in5cdn.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.ttf?uv9hf1') format('truetype'),
-        url('https://in5cdn.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.woff?uv9hf1') format('woff'),
-        url('https://in5cdn.npfs.co/uploads/template/5000/3258/publish/fonts/masteruni.svg?uv9hf1#masteruni') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
-
-[class^="muni-"],
-[class*=" muni-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'masteruni' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.muni-assignment:before {
-    content: "\e900"
-}
-
-.muni-business:before {
-    content: "\e901"
-}
-
-.muni-check:before {
-    content: "\e902"
-}
-
-.muni-description:before {
-    content: "\e903"
-}
-
-.muni-featured:before {
-    content: "\e904"
-}
-
-.muni-file:before {
-    content: "\e905"
-}
-
-.muni-format_align:before {
-    content: "\e906"
-}
-
-.muni-format_shapes:before {
-    content: "\e907"
-}
-
-.muni-live_tv:before {
-    content: "\e908"
-}
-
-.muni-person:before {
-    content: "\e909"
-}
-
-.muni-Rupee:before {
-    content: "\e90a"
-}
-
-.muni-surround:before {
-    content: "\e90b"
-}
-
-.muni-business_center_24px_outlined-1:before {
-    content: "\e90c"
-}
-
-.muni-school_24px_outlined:before {
-    content: "\e90d"
-}
-
-.muni-settings_24px_outlined:before {
-    content: "\e90e"
-}
-
-.muni-settings_power_24px:before {
-    content: "\e90f"
-}
-
-.muni-speaker_notes_24px_outlined:before {
-    content: "\e910"
-}
-
-.dash_icon:before {
-    color: #83959c;
-    font-size: 18px
-}
-
-.form-page .owl-item .item-inner,
-.form-page .owl-item .items-normal {
-    border-radius: 0;
-    border: 1px solid #f1f1f3
-}
-
-.c100 {
-    background-color: transparent !important;
-    display: none
-}
-
-.form-page .owl-item .item.active .c100:after,
-.form-page .owl-item .item:hover .c100:after {
-    background-color: transparent !important
-}
-
-.form-page .owl-item .item-inner,
-.form-page .owl-item .items-normal {
-    margin: 0 2px
-}
-
-.form-page .owl-item .item {
-    width: 100%
-}
-
-.form-page .owl-item .item.current-stage .c100:after,
-.form-page .owl-item .item.current-stage:hover .c100:after {
-    background-color: transparent !important
-}
-
-.c100:after {
-    background-color: transparent !important
-}
-
-.form-page .owl-item .item.current-stage span {
-    text-shadow: none
-}
-
-div.c100.green.small>div>div.bar,
-div.c100.green.small>div>div.fill {
-    border: 0 !important
-}
-
-.form-page .owl-item .items-normal:hover {
-    background-color: transparent !important
-}
-
-.form-page .owl-item .items-normal.current-stage,
-.form-page .owl-item .items-normal.current-stage:hover {
-    background-color: #fff !important;
-    box-shadow: none;
-    border: 1px solid #f1f1f3
-}
-
-.form-page .owl-item .items-normal.active,
-.form-page .owl-item .items-normal:hover {
-    background-color: #fff !important
-}
-
-h1#form_heading_title {
-    font-size: 34px;
-    color: #4e5d64;
-    font-weight: 600
-}
-
-.steps_class {
-    color: #282d2f;
-    text-align: center;
-    padding-left: 5px;
-    padding-bottom: 15px;
-    font-size: 12px;
-    font-weight: 600
-}
-
-#npf-form .item-inner {
-    text-align: center;
-    background-color: #fff;
-}
-
-p.inner_paragraph {
-    top: auto;
-    left: 18px !important;
-    font-size: 14px;
-    z-index: 9999;
-    bottom: 12px !important;
-    text-align: left !important;
-    margin: 0;
-    font-weight: 600 !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 85% !important;
-    white-space: nowrap
-}
-
-/* .form-page .owl-item .item.current-stage .item-inner,
-      .form-page .owl-item .item.current-stage.items-normal {
-        box-shadow: 0 8px 6px -6px #ddd
-      }
-       */
-/* .olddesign .form-page .owl-item .item.current-stage .item-inner:before,
-      .olddesign .form-page .owl-item .item.current-stage.items-normal:before {
-        content: '';
-        border-color: #fff transparent transparent transparent;
-        border-width: 10px;
-        border-style: solid;
-        position: absolute;
-        left: 50%;
-        bottom: -20px;
-        margin-left: -10px
-      }
-       */
-/* .form-page .owl-item .item.current-stage .item-inner:before,
-      .form-page .owl-item .item.current-stage.items-normal:before {
-        content: '';
-        border-color: #fff transparent transparent transparent;
-        border-width: 10px;
-        border-style: solid;
-        position: absolute;
-        left: 50%;
-        bottom: -9px;
-        margin-left: -10px
-      } */
-
-.form-page .owl-item .item.current-stage.items-normal:before {
-    bottom: -4px
-}
-
-/*       
-      .form-page .owl-item .item.current-stage .item-inner:after,
-      .form-page .owl-item .item.current-stage.items-normal:after {
-        content: '';
-        border-color: #fff transparent transparent transparent;
-        border-style: solid;
-        position: absolute;
-        border-width: 9px;
-        left: 50%;
-        bottom: -18px;
-        margin-left: -9px
-      } */
-
-.form-page .owl-item .item.current-stage.items-normal:after {
-    bottom: -2px
-}
-
-.olddesign .form-page .owl-item .item {
-    text-align: center !important
-}
-
-.form-page #npf-form .owl-item {
-    height: 160px !important
-}
-
-/*
-      .olddesign.scrollActive .steps_class {
-        display: none
-      }
-      */
-.olddesign.scrollActive .form-page #npf-form .owl-item {
-    height: 89px !important
-}
-
-.olddesign.scrollActive p.inner_paragraph {
-    top: 56px;
-    left: 33px !important;
-    color: #b2b2b2 !important;
-    font-weight: 600 !important;
-    text-align: center !important
-}
-
-.top_background {
-    background-color: #f8f9fd;
-    width: 100%;
-    position: absolute;
-    height: auto;
-}
-
-.scrollActive .top_background {
-    display: none
-}
-
-div#form-page-2 {
-    padding-top: 20px;
-    padding-bottom: 0;
-}
-
-h1#form_heading_title {
-    z-index: 9999;
-    position: relative;
-    padding-top: 50px;
-    font-size: 34px;
-    font-weight: 700;
-    padding-bottom: 15px;
-}
-
-div#npf-form+p {
-    display: none
-}
-
-
-.current-stage.item p.inner_paragraph {
-    color: #E1141D !important
-}
-
-.active.item p.inner_paragraph {
-    color: #282d2f !important;
-    font-weight: 600 !important
-}
-
-header#header {
-    z-index: 999999
-}
-
-.current-stage.item span:before {
-    color: #E1141D !important;
-}
-
-.active.item span:before {
-    color: #b1b1b1 !important;
-}
-
-.check_div {
-    position: absolute;
-    left: 62px;
-    z-index: 9999
-}
-
-.check_div .fa.fa-check {
-    color: #98da9a;
-    font-size: 12px;
-    font-weight: 300
-}
-
-.form-page .owl-item .items-normal.active,
-.form-page .owl-item .items-normal:hover {
-    box-shadow: none;
-}
-
-.form-page #npf-form .owl-item {
-    height: 140px !important;
-    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
-    margin-right: 15px;
-    margin-left: 5px;
-    margin-top: 10px;
-}
-
-.form-page .owl-item .item.current-stage .item-inner,
-.form-page .owl-item .item.current-stage.items-normal {
-    box-shadow: none;
-    border: 0;
-}
-
-.form_build {
-    background-color: #f8f9fd;
-    padding: 0 15px;
-}
-
-.form-control {
-    font-size: 16px !important;
-}
-
-.chosen-container-single a span {
-    font-size: 16px !important;
-}
-
-.form-page .owl-item .item-inner,
-.form-page .owl-item .items-normal {
-    border: 0;
-}
-
-.checkbox input[type="checkbox"] {
-    left: -7px;
-}
-
-.field_15 input[type=checkbox],
-.field_15 input[type=radio] {
-    margin: 12px 0 18px;
-}
-
-.checkbox label {
-    margin-right: 50px;
-}
-
-.chosen-results li.active-result:hover {
-    color: #fff !important;
-}
-
-div#collapseTermsandConditions ol li {
-    margin-bottom: 8px;
-    line-height: 22px;
-    font-size: 14px;
-}
-
-.header h2 {
-    font-size: 20px;
-    color: #E1141D;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-ul.nonelist a span {
-    font-weight: 600;
-}
-
-.form-line {
-    font-size: 14px;
-    line-height: 24px;
-}
-
-p.checkbox_instructions {
-    font-size: 16px;
-    padding-top: 5px;
-}
-
-.form-control {
-    height: 40px !important;
-}
-
-.field_15 .checkbox>label {
-    padding-left: 0;
-}
-
-tr.table-dark th {
-    font-weight: 700;
-}
-
-.scrollActive .form-page .owl-item .items-normal.item,
-.scrollActive .form-page .owl-item .items-normal.item:hover {
-    box-shadow: 0 1px 5px 1px rgb(97 97 97 / 65%);
-    margin-top: 5px;
-}
-
-.scrollActive .form-page #npf-form .owl-item {
-    box-shadow: none !important;
-}
-
-.scrollActive .steps_class {
-    display: none;
-}
-
-div#collapseTermsandConditions li a {
-    font-weight: 600;
-}
-
-.accordion-heading a {
-    font-size: 16px;
-    color: #4e5d64;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.otpverifylink a {
-    background-color: #4b7bdd;
-}
-
-form#ProfileForm .form-control {
-    height: 40px !important;
-}
-
-form#ProfileForm button.btn.btn-default.dropdown-toggle.as-is.bs-dropdown-to-select.profile_input {
-    height: 40px !important;
-    border: 0;
-}
-
-.otpverifylink {
-    top: 9px;
-}
-
-.form-page .owl-item .items-normal.active,
-.form-page .owl-item .items-normal:hover {
-    border: 0;
-}
-
-.btn-success {
-    background-color: #E1141D !important;
-    border-color: #E1141D;
-}
-
-.form-page .owl-item .item span {
-    font-size: 35px;
-}
-
-.current-stage .steps_class {
-    color: #E1141D;
-}
-
-.form-page .owl-item .items-normal.active:hover span:before,
-.form-page .owl-item .items-normal:hover {
-    color: #E1141D;
-}
-
-#QueryForm .form-control {
-    height: 34px !important;
-}
-
-.cont-rght-side-fixed .qms-form .chosen-container.chosen-container-single .chosen-single {
-    padding: 4px 10px;
-}
-
-input#attachmentPlaceholder {
-    height: 34px !important;
-}
-
-.btn-success:hover {
-    border-color: #E1141D;
-}
-
-
-
-p.goback a#back-button {
-    color: #fff !important;
-    font-size: 14px;
-    padding: 8px 16px !important;
-}
-
-.chosen-results li.active-result.highlighted:hover {
-    background-color: #E1141D !important;
-}
-
-.chosen-results li.active-result.result-selected:hover {
-    background-color: #E1141D !important;
-    color: #fff !important;
-}
-
-.chosen-results li.active-result.result-selected.highlighted:hover {
-    background-color: #E1141D !important;
-    color: #fff !important;
-}
-
-/** End New Form CSS **/
-
-@media(min-width:800px) {
-    .form-page .owl-item .item p {
-        left: 0;
-        width: 100% !important;
-        position: static;
-        text-align: center !important;
-        margin-top: 5px;
-    }
-
-    .form-page #npf-form .owl-item {
-        width: 200px !important;
-        height: 110px !important;
-    }
-
-    .mbaapplicationform #npf-form .owl-item {
-        width: 247px !important;
-
-    }
-
-    .mbaapplicationform div#npf-form {
-
-        padding-left: 39%;
-    }
-
-
-    .form-page .owl-item .item.current-stage.items-normal:after {
-        display: none;
-    }
-
-    .scrollActive .form-page .owl-item .item p {
-        width: 80% !important;
-        position: absolute;
-        margin-top: 15px;
-    }
-
-    /* .npfFormStatus {
-        text-align: center !important;
-    } */
-    .cont-us-block {
-        width: 400px !important;
-    }
-
-    .open .cont-btn {
-        right: 330px;
-    }
-
-    .btn-npf:hover {
-        background-color: #5b5b5b !important;
-    }
-
-    table.incomplete.category_form_121 td {
-        width: 20%;
-    }
-
-    h1#form_heading_title {
-        font-size: 28px !important;
-        font-weight: 700;
-    }
-
-    /* div#npf-form .owl-wrapper {
-      left: 50% !important;
-      margin-left: -450px !important;
-    } */
-    .scrollActive .form-page .owl-item .item p {
-        left: 49% !important;
-        margin-left: -122px;
-        width: 100% !important;
-    }
-
-
-    .countFormNpf {
-        margin-top: 10px;
-    }
-
-    table.completed.category_form_121.formappcompte-table td {
-        width: 20%;
-    }
-
-}
-
-h2.instheading {
-    font-size: 20px;
-    color: #E1141D;
-    text-transform: uppercase;
-}
-
-h3.marginNone #nmimsinst {
-    color: #555;
-    text-transform: none;
-}
-
-.form-line h4 {
-    font-weight: 700;
-    color: #585858;
-}
-
-.npf-form-group .select_blk select.form-control {
-    background-color: #fff !important;
-}
-
-.active-result.result-selected.highlighted,
-.chosen-container .chosen-results li.highlighted {
-    background-color: #E1141D !important;
-    color: #fff !important;
-}
-
-.image-link {
-    color: yellow;
-}
-
-a.image-link:hover {
-    color: yellow;
-    text-decoration: underline;
-}
-
-.chat-option {
-    border: 1px solid #E1141D;
-    color: #E1141D;
-}
-
-h4.sub-header.category_121 {
-    color: #e1141d !important;
-    font-weight: 700;
-}
-
-button#SaveProfileBtn:hover {
-    background-color: #2C333A;
-}
-
-.cont-us-block .panel-body {
-    padding: 20px 15px;
-}
-
-.cont-rght-side-fixed .qms-form small {
-    font-size: 12px;
-}
-
-ul#statusWiseForms li a,
-ul#statusWiseForms li {
-    border-radius: 22px;
-}
-
-form#QueryForm .form-control {
-    font-size: 14px !important;
-}
-
-form#QueryForm .chosen-container-single a span {
-    font-size: 14px !important;
-}
-
-#QueryForm textarea#description {
-    height: 60px !important;
-}
-
-/** Start Mobile view CSS **/
-
-@media(max-width:768px) {
-    .form-page .item .itemLine {
-        border: 0;
-    }
-
-    .form-page .owl-item .itemCon {
-        border: 0;
-    }
-
-    .form-page .owl-item .itemCon {
-        width: 100%;
-        height: 100%;
-    }
-
-    .form-page #npf-form .owl-item {
-        height: 100px !important;
-        margin-right: 0px;
-        margin-left: 5px;
-
-    }
-
-    .mbaapplicationform #npf-form .owl-item {
-
-        width: 33% !important;
-        height: 60px !important;
-    }
-
-    .npfFormStatus.showhidemobile {
-        margin-left: 27px;
-    }
-
-    .mbaapplicationform .npfFormStatus.showhidemobile {
-        margin-left: 140px;
-    }
-
-    div#npf-form-instruction {
-        padding-top: 15px;
-    }
-
-    .form-page .owl-item .item {
-        text-align: center;
-    }
-
-    .panel-custom .panel-heading.active a,
-    .panel-custom .panel-heading.active .qrc {
-        background-color: #E1141D;
-    }
-
-    td.mobile_btn_block.col5 a.btn.btn-warning {
-        background-color: #E1141D;
-        border-color: #E1141D;
-        margin-right: 5px;
-    }
-
-    .form-page .owl-item .item.active .item-inner .itemCon,
-    .form-page .owl-item .item:hover .item-inner .itemCon {
-        background-color: transparent;
-        border: 0;
-        box-shadow: none;
-    }
-
-    a#next_btn {
-        padding: 0px 20px 10px 18px;
-    }
-
-    .form-group.formAreaCols h3 {
-        font-size: 16px;
-        /* color: #fff; */
-    }
-
-    div#collapseTermsandConditions ol li {
-        text-transform: none;
-    }
-
-    div#nmimsinst {
-        text-transform: none;
-    }
-
-    /* .form-page .owl-item .item.active .itemCon, .form-page .owl-item .item:hover .itemCon {
-      color: #E1141D !important;
-    } */
-    .form-page .owl-item .item.active .itemCon,
-    .form-page .owl-item .item:hover .itemCon {
-        background-color: transparent;
-        border: 0 solid #fff;
-        box-shadow: none;
-    }
-
-    div#accordion h4 a {
-        border-radius: 22px;
-    }
-
-    div#contact-us-block {
-        top: 50px;
-    }
-
-    .modal-content .modal-headr-cust {
-        background-color: #E1141D !important;
-    }
-
-    button#formsubmitbtn {
-        background-color: #E1141D !important;
-    }
-
-    .btn-warning {
-        background-color: #E1141D !important;
-        border-color: #E1141D !important;
-    }
-
-    a.btn.pull-left.dark-grey {
-        color: #000 !important;
-        font-weight: 700;
-    }
-
-    .help_text div {
-        color: #000 !important;
-    }
-
-    div#nmimsinst {
-        color: #000;
-    }
-
-    /* .form-page #npf-form .owl-item{
-      width: 100px !important;
-    } */
-    h2#alertTitle {
-        color: #fff !important;
-    }
-
-    .help_text {
-        color: #000;
-    }
-
-    /* .panel#tr_field_79_1  .parent-name {
-        background-color: #888787 !important;
-    }
-    .panel#tr_field_79_1  .panel-hd {
-        background-color: #888787!important;
-    } */
-
-    div#headingThree .panel-title .qrc {
-        border-radius: 22px !important;
-    }
-
-    .base_receive time {
-        color: #fff;
-    }
-
-    .floatBtn-box .editProfile {
-        background-color: #E1141D;
-        font-size: 16px;
-    }
-
-    span#progress_bar_2 {
-        left: 90% !important;
-    }
-
-    .cont-btn {
-        right: -33px !important;
-    }
-
-    .row {
-        margin: 0 !important;
-    }
-
-    div#SuccessPopupArea {
-        top: 48px;
-    }
-
-    .field_25.instructions .form-group.formAreaCols {
-        color: #E1141D;
-    }
-
-    div#accordion .panel-default>.panel-heading {
-        background-color: transparent;
-    }
-
-    .messages.msg_receive time strong {
-        color: #fff !important;
-    }
-
-    #nmimsinst ul.nav.navbar-right {
-        margin-top: -36px !important;
-    }
-}
-
-.modal-header {
-    background-color: #E1141D;
-}
-
-/** End Mobile view CSS **/
-#nmimsinst li a.collapse-link.fa {
-    font-size: 28px;
-    font-weight: 700;
-}
-
-div#exam_passed {
-    color: #E1141D;
-    text-align: center;
-    font-size: x-large;
-    font-weight: bold;
-}
-
-/*making stage 2 fields like readonly*/
-.form-control.nmatFields.nmatFields {
-    color: #909090 !important;
-}
-
-.nmatFields {
-    color: #909090 !important;
-}
-
-input#graduation_marks {
-    margin-bottom: 20px;
-}
-
-span#otherError_graduation_marks {
-    font-size: 18px;
-}
-
-a.utility-link {
-    font-size: 15px;
-    color: #E1141D;
-}
-
-.dropup.col-md-12.field_1925.instructions {
-    font-weight: bold;
-    color: #E1141D;
-    font-size: 18px;
-}
-
-.dropup.col-md-12.field_347050.instructions {
-    font-weight: bold;
-    font-size: 17px;
-}
-
-table.table.category_form_167 tr td {
-    width: 20%;
-}
-
-div#dropdown_from_ajax_course_one {
-    margin-bottom: 33px;
-}
-
-.requiredError {
-
-    font-size: 13px !important;
-}
-
-input#field_346231 {
-    margin-bottom: 10px;
-}
-
-.app-liabilities-ico:before {
-    color: #d3d2d2;
-}
-
-span#otherError_father_email strong {
-    display: none;
-}
-
-span#otherError_mother_email strong {
-    display: none;
-}
-
-span#otherError_field_346202 {
-    font-size: 12px !important;
-}
-
-.merge_field_div .dropdown-menu .dropdown-menu-list li:hover {
-    background-color: #e1141d !important;
-}
-
-@media(min-width:800px) {
-    .otherError {
-        bottom: -16px !important;
-    }
-
-    .requiredError {
-        bottom: -16px !important;
-    }
-}
-
-.dropup.col-md-6.field_346199.textbox {
-    margin-bottom: 10px;
-}
-
-.dropup.col-md-12.field_349463.instructions {
-    font-size: 20px;
-    font-weight: bold;
-    color: red;
-    text-align: center;
-}
-
-.dropup.col-md-4.alternate_email.email_id {
-    margin-bottom: 20px;
-}
-
-span#otherError_alternate_email {
-    margin-bottom: -20px;
-}
-
-.dropup.col-md-4.father_email.email_id {
-    margin-bottom: 20px;
-}
-
-.dropup.col-md-4.mother_email.email_id {
-    margin-bottom: 20px;
-}
-
-.dropup.col-md-4.field_349983.textbox {
-    margin-bottom: 20px;
-}
-
-input#field_352262 {
-    margin-bottom: 25px;
-}
-
-.form-control.readOnly {
-    background-color: #ccc !important
-}
-
-select option[disabled] {
-    color: #dddddd !important;
-}
-
-.npf-form-group .select_blk select.form-control.readOnly {
-    background-color: #ccc !important;
-    pointer-events: none;
-}
-
-.dropup.col-md-6.field_357604.dropdown {
-    margin-bottom: 10px;
-}
-
-@media(min-width:800px) {
-    #npf-form>div.owl-wrapper-outer .owl-item .item p {
-        margin-top: -0;
-    }
-
-    .scrollActive .form-page .owl-item .item p {
-        margin-top: 18px !important;
-    }
-
-    .scrollActive .form-page .owl-item .item .item-inner,
-    .scrollActive .form-page .owl-item .item .item-inner:hover {
-        box-shadow: 0 1px 5px 1px rgb(97 97 97 / 65%);
-        margin-top: 5px;
-    }
-}
-
-.dropup.col-md-12.field_363521.instructions {
-    text-align: center;
-    font-size: 28px;
-    color: red;
-}
-
-span#requiredError_profile_image {
-    top: 75px;
-}
-
-@media(min-width:480px) {
-    div#home table.table.table-bordered thead th {
-        font-weight: 700;
-    }
-
-    div#home table.table.table-bordered thead th.col1 {
-        width: 16% !important;
-    }
-
-    div#home table.table.table-bordered thead th.col2 {
-        width: 14.7% !important;
-    }
-
-    div#home table.table.table-bordered thead th.col3 {
-        width: 18% !important;
-    }
-
-    div#home table.table.table-bordered thead th.col4 {
-        width: 17% !important;
-    }
-
-    h4.sub-header.category_31 {
-        font-weight: 700;
-    }
-}
-
-.dropup.col-md-12.field_369445.instructions {
-    color: #E1141D;
-    font-size: 20px;
-    text-align: center;
-}
-
-.dropup.col-md-12.field_372691.heading {
-    text-align: center;
-}
-
-a.collapse-link.fa.fa-angle-down {
-    color: red;
-    font-size: 40px;
-    font-weight: bold;
-    margin-top: 25px;
-}
-
-.dropup.col-md-12.field_376477.heading {
-    text-align: center;
-}
-
-.field_378262 {
-    color: #E1141D;
-    text-align: center;
-    font-weight: 900;
-}
-
-.filedropdwn span.total_files {
-    color: #222;
-    margin-top: 15px;
-}
-
-div#dropdown_from_ajax_applicant_school_preference {
-    padding-bottom: 26px;
-}
-
-div#dropdown_from_ajax_specialization_one {
-    padding-bottom: 22px;
-}
-
-div#dropdown_from_ajax_field_378018 {
-    padding-bottom: 22px;
-}
-
-div#dropdown_from_ajax_specialization_two {
-    padding-bottom: 22px;
-}
-
-div#dropdown_from_ajax_specialization_three {
-    padding-bottom: 22px;
-}
-
-div#dropdown_from_ajax_specialization_four {
-    padding-bottom: 22px;
-}
-
-.table-responsive.vMid thead th {
-    width: 16% !important;
-}
-
-table.new_btech_table {
-    max-width: 100%;
-}
-
-table.new_btech_table td {
-    padding: 3px;
-    text-align: center;
-}
-
-.kk {
-    font-weight: 700 !important;
-}
-
-td.new_btech2 {
-    font-weight: 600;
-}
-
-.nmimsuniversity .table-responsive.vMid thead th {
-    width: 16% !important;
-}
-
-.animate-charcter {
-
-    background-image: linear-gradient(-225deg,
-            #e1141e27 0%,
-            #44107a 29%,
-            #ff1361 67%,
-            #E1141D 100%);
-    background-size: auto auto;
-    background-clip: border-box;
-    background-size: 200% auto;
-    color: #fff;
-    background-clip: text;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textclip 4s linear infinite;
-    text-align: center;
-    font-size: 25px;
-}
-
-@keyframes textclip {
-    to {
-        background-position: -100% center;
-    }
-}
-
-span#otherError_grad_degree {
-    bottom: -45px !important;
-}
-
-span#otherError_field_378475 {
-    bottom: -16px !important;
-    width: 250%;
-}
-
-span#otherError_grad_degree {
-    bottom: -15px !important;
-}
-
-a.bookSlotBtnOnThankYou {
-    display: none;
-}
-
-
-/* new css for NPAT 2023 transfer */
-
-
-.TransferTableHTML td {
-    /* height: 20px; */
-    vertical-align: top;
-    padding-top: 15px !important;
-}
-
-.TransferTableHTML th {
-    background: #e1141d;
-    color: #fff;
-    font-weight: bold;
-    padding: 12px;
-}
-
-.TransferTableHTML{
-    box-shadow: 0px 4px 12px #ccc;
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.TransferTableHTML .formAreaCols {
-    padding: 20px;
-}</style><div class="main-content"><div class="container-fluid"><div class="row display-flex"><div class="col-sm-3 col-md-3 col-lg-2 sidebar"  style="background-color: #2C333A !important"><ul class="nav nav-sidebar"><li class="active"><a href="https://apply.nmims.edu/sat/dashboard"><i class="icon-dashboard npf-icon" aria-hidden="true"></i>&nbsp;<span>Dashboard</span></a></li><li class=""><a href="https://apply.nmims.edu/sat/all-application-form"><i class="icon-application npf-icon" aria-hidden="true"></i><span>&nbsp;All Application Form(s)</span></a><ul><div data-simplebar="init" data-simplebar-autohide="true" style="max-height:250px;"><ul class="nav nav-child"><li class="cat" style="color:#D11F51"><form name="post_6329796b1a63b606203542" style="display:none;" method="post" action="https://apply.nmims.edu/sat/all-application-form/application_form"><input type="hidden" name="_method" value="POST"/><input type="hidden" name="_csrfToken" value="57647ff0bc9ae93b29e77a28ecc6b0d4eddc8339"/><input type="hidden" name="category" value="10"/></form><a href="#" onclick="document.post_6329796b1a63b606203542.submit(); event.returnValue = false; return false;">Application Form</a></li></ul></div></ul></li><li class=""><a href="https://apply.nmims.edu/sat/profile"><i class="icon-lead npf-icon" aria-hidden="true"></i><span>My Profile</span></a></li><li class="" ><a href="https://apply.nmims.edu/sat/my-ticket"><i class="fa fa-comments-o npf-icon" aria-hidden="true"></i><span>My Queries</span></a></li><li class=""><a href="https://apply.nmims.edu/sat/my-communications"><i class="icon-communication npf-icon" aria-hidden="true"></i><span>My Communication</span></a></li><li class="" style="display:none;"><a href="https://apply.nmims.edu/sat/my-notification"><i class="fa fa-bell-o npf-icon" aria-hidden="true"></i><span>My Notification</span></a></li><li class="" ><a href="https://apply.nmims.edu/sat/manage-payments"><i class="icon-payment npf-icon" aria-hidden="true"></i><span>My Payments</span></a></li><li><a href="https://apply.nmims.edu/sat/logout" onclick="logoutEvent(393);"><i class="glyphicon glyphicon-off npf-icon" aria-hidden="true"></i><span>Logout</span></a></li></ul></div><div class="col-sm-9 col-md-9 col-lg-10 main"><h1 class="page-header">Dashboard</h1><!-- Nav tabs --><ul class="tabmenu flexTab" role="tablist" id="statusWiseForms"><li role="presentation" class="active" onclick="showFormsByStatus('incomplete');"><a href="#" aria-controls="home" role="tab" data-toggle="tab"><span class="count" id="incompleteSpanCount">No</span>Application(s) In-Progress
-                            <i class="fa fa-hourglass-half tabIcons" aria-hidden="true"></i></a></li><li role="presentation" class="" onclick="showFormsByStatus('completed');"><a href="#" aria-controls="completed-form" role="tab" data-toggle="tab"><span class="count" id="completeSpanCount">No</span>Application(s) Completed
-                            <i class="icon-application tabIcons" aria-hidden="true"></i></a></li><li role="presentation" class="qrc" style="min-height:80px;"><div><div class="pull-left" style="margin-top:1px"><span class="count">No</span><span style="display:block;">Query Raised</span></div><div class="pull-left" style="padding-left:20px;position:relative;margin-top:1px"></div></div><i class="fa fa-comments-o tabIcons" aria-hidden="true"></i></li></ul><!-- Tab panes --><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="home"><div class="table-responsive removeFixedHeader vMid"><div class="table-header"><table class="table table-bordered"><thead><tr><th class="col1 text-left">Application Form</th><th class="col2 text-center">Application Fees</th><th class="col3 text-center">Application No.</th><th class="col4 text-center">Application Submitted On</th><th class="col5 text-center">Action</th></tr></thead><tbody><tr class="no-data-row" style="display:none;"><td colspan="5" class="text-center"><p class="text-muted no-data-text"></p></td></tr></tbody></table></div><div class="table-body"><div class="category-table category_heading" data-category="10"><h4 class="sub-header category_10" style="color:#D11F51;">Application Form</h4><table class="table table-bordered cat1 incomplete category_form_10 form_16389" style="border-left-color:#D11F51;"><tbody><tr><td class="col1 text-left"><strong>B.Tech/MBA Tech (Non CET)</strong></td><td class="col2 text-center"><i class="fa fa-inr"><span class="font0">Rs </span></i>2000.00                                                </td><td class="col3 text-center">-                                                </td><td class="col4 text-center">-                                                </td><td class="col5 text-center"><a href="https://apply.nmims.edu/sat/form/submit/UGRISlRjYU1wOFpsalpUdjJYaStoWS9NOXRkS0xsNHMvanI3OUFLSlgzektIV0g3Qm9jWHBOYWlVd3lmSVYvL2ovaFBtK2ZTRWorVWpNTkE4cDBmaGc0aU4vcHd6Mzc3ZDV3TEdnPT0=" class="btn btn-danger btn-sm" role="button">Continue</a><br/><span class="complete smlFont">Application is <strong>69%</strong>&nbsp; Complete</span><br/></td></tr></tbody></table></div></div></div></div></div><!--                <div class="timeline"  id="divNotificationList"><input type="hidden" id="listPage" value="1" /><h3 class="mb-25">Notification</h3><div class="notificationList"></div></div>--></div></div></div></div><!-- Modal --><div id="feeWithdrawModal" class="modal fade" role="dialog"><div class="modal-dialog modal-md"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button><h4 class="modal-title">Fee withdraw</h4></div><div class="modal-body"><div id="withdrawDiv"></div></div></div></div></div><link rel="stylesheet" href="https://cdn.npfs.co/css/student/web/css/sumoselect.min.css?1642187088"/><footer class="footer"  style="background-color: #E5E5E5 !important"><div class="container-fluid"><div class="row"><div class="col-sm-12 text-right"><span class="npf-logo-footr img-responsive"><img src="/img/npf_black.png" alt="NoPaperForms" width="120"></span><!--a href="https://www.nopaperforms.com" target="_blank" title="nopaperforms"><img src="/img/npf.png" style="max-width:125px;"  alt="NoPaperForms"></a--></div></div></div></footer><div class="cont-rght-side-fixed"><div id="QMSLoaderContainer" class="loader-block"></div><a class="cont-btn" id="cont-us-btn">Any Queries? Ask Us</a><div class="cont-us-block" id="contact-us-block"><div class="panel panel-default"><div class="panel-body"><div id="ParentHtmlContainerDiv"><div id="thankyou_html" style="display:none;"></div><div id="form_container_html"><div class="row"><div class="col-lg-12 col-xs-12"><div class="col-lg-5 col-xs-6 padding-left-0"><h3 class="query-hd">Ask your Query</h3></div><div class="col-lg-7 col-xs-6 padding-right-0"><a href="https://apply.nmims.edu/sat/my-ticket" class="query-ticket-btn" style="margin-left:10px;"><i class="fa fa-comments-o"></i>&nbsp;My Queries</a></div></div></div><div id="qmsFormDiv"></div></div><input type="hidden" id="qms_new_design_applicable" value="1"></div></div></div></div></div><div class="cont-side-fixed-bg"></div><!-- Success Pop up Modal --><a href="#" data-toggle="modal" id="SuccessLink" style="display: none;" data-target="#SuccessPopupArea">Success link</a><div tabindex="-1" data-backdrop="static" class="modal fade in" id="SuccessPopupArea"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" title="Click here to close"><span aria-hidden="true">×</span></button><h2 class="modal-title" id="alertTitle">Success</h2></div><div class="modal-body text-center"><div id="MsgBodyDiv"></div><p id="MsgBody">Please check your inbox we have sent you a link,<br/>Click on it to reset your password</p><span class="text-center oktick"></span><a class="btn btn-fill-blue" href="javascript:void(0);" id="OkBtn" style="display:none">Ok</a></div></div></div></div><!-- Error Pop up Modal --><a href="#" data-toggle="modal" id="ErrorLink" style="display: none;" data-target="#ErrorPopupArea">Error link</a><div tabindex="-1" data-backdrop="static" class="errorTheme modal fade in publishpopup" id="ErrorPopupArea"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="ErroralertTitle">Error</h2></div><div class="modal-body text-center"><p id="ErrorMsgBody">Error</p><a class="btn btn btn-fill-blue" href="javascript:void(0);" id="ErrorOkBtn" data-dismiss="modal">Ok</a></div></div></div></div><!-- Change Status 2 Modal Popup --><div tabindex="-1" class="modal fade in publishpopup" id="ConfirmPopupArea" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-hidden="true" data-dismiss="modal" class="close npf-close" type="button"><span id="crossIcon" aria-hidden="true">×</span></button><h2 class="modal-title" id="confirmTitle">Confirm</h2></div><div class="modal-body text-center"><p class="text-center modalcontent" id="ConfirmMsgBody">Do you want to copy the form Form-name.</p><button type="submit"  data-dismiss="modal" id="confirmNo" class="btn btn-default">No</button><a class="btn btn-fill-blue margin-left-15" href="javascript:void(0);" id="confirmYes">Yes</a></div></div></div></div><!-- Change Status 2 Modal Popup --><div tabindex="-1" class="modal fade in publishpopup" id="ConfirmDeleteArea" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-hidden="true" data-dismiss="modal" class="close npf-close" type="button"><span id="crossIcon" aria-hidden="true">×</span></button><h2 class="modal-title" id="confirmDeleteTitle">Confirm</h2></div><div class="modal-body text-center"><p class="text-center modalcontent" id="ConfirmDeleteMsgBody">Do you want to copy the form Form-name.</p><button type="submit"  data-dismiss="modal" id="confirmDeleteNo" class="btn btn-default">No</button><a class="btn btn-fill-blue margin-left-15" href="javascript:void(0);" id="confirmDeleteYes">Yes</a></div></div></div></div><div tabindex="-1" class="modal fade in" id="paymentFilter" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-hidden="true" data-dismiss="modal" class="close npf-close" type="button"><span id="crossIcon" aria-hidden="true"></span></button><h2 class="modal-title" id="confirmTitle">Confirmation</h2></div><div class="modal-body text-center"><p class="text-center modalcontent"><strong>You have filtered Paid Applicants</strong></p><a class="btn btn-fill-blue margin-left-15" href="javascript:void(0);" data-dismiss="modal">Ok</a></div></div></div></div><div tabindex="-1" class="modal fade in" id="resubmissionAddded" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-hidden="true" data-dismiss="modal" class="close npf-close" type="button"><span id="crossIcon" aria-hidden="true"></span></button><h2 class="modal-title" id="confirmTitle">Confirmation</h2></div><div class="modal-body text-center"><p class="text-center modalcontent">Resubmission Logic added successfully !</p><a class="btn btn-fill-blue margin-left-15" href="javascript:void(0);" data-dismiss="modal">Ok</a></div></div></div></div><!-- Change Status 2 Modal Popup --><div tabindex="-1" class="modal fade in publishpopup" id="ConfirmPopupReassignCounsellor" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Click here to close"><span aria-hidden="true">×</span></button><h2 class="modal-title" id="confirmTitle">Re-assign User</h2></div><div class="modal-body"><div class="modalcontent" id="ConfirmMsgBody"><p class="margin-bottom-5 fw-500" id="assignedToCounsellorText"></p><div class="callout callout-primary" style="margin-top:0;"><h6>This will result in :</h6><ul class="nolist mute margin0" style="padding:0 0 0 15px"><li>Re-assignment of any upcoming follow-ups.</li><li id="completeOverdueMsg"></li></ul></div><div class="margin-bottom-5" style="line-height: 18px;"><span class="fw-500">Select the following to assign/re-assign</span><p class="mute small" id="counsellorNoteText"></p></div><div id="selectOptions"></div><p class="text-center margin-top-30">Are you sure you want to proceed?</p><div class="text-center"><button type="submit"  data-dismiss="modal" id="confirmNo" class="btn btn-default">No</button><a class="btn btn-fill-blue margin-left-15" href="javascript:void(0);" id="confirmYes">Yes</a></div></div></div></div></div></div><div tabindex="-1" class="modal fade in publishpopup" id="confirmPopupEmailMobileEdit" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-hidden="true" data-dismiss="modal" class="close npf-close" type="button"><span aria-hidden="true">×</span></button><h2 class="modal-title" id="confirmPopupEmailMobileEditTitle">Confirm</h2></div><div class="modal-body text-center"><p class="text-center modalcontent" id="confirmPopupEmailMobileEditMsgBody">Do you want to copy the form Form-name.</p><button type="submit" style="margin-right:10px;" data-dismiss="modal" id="confirmPopupEmailMobileEditNo" class="btn btn-line-secondary">Cancel</button><a class="btn btn-fill-blue" href="javascript:void(0);" id="confirmPopupEmailMobileEditYes">Save Anyway</a></div></div></div></div><!-- Editor Modal Pop-up --><div tabindex="-1" class="modal fade in" id="CustomScriptEditorPopup"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-hidden="true" data-dismiss="modal" class="close npf-close" type="button"><span aria-hidden="true">×</span></button><h2 class="modal-title" id="confirmTitle">Script Editor</h2></div><div class="modal-body text-center" style="max-height: 500px; overflow-y: scroll;"><div class="row"><div class="col-md-12"><div class="alert alert-dismissible" id="message_div" style="display:none;"></div></div></div><form method="post" accept-charset="utf-8" id="CustomScriptEditorForm" role="form" action="/sat/dashboard"><div style="display:none;"><input type="hidden" name="_method" value="POST"/><input type="hidden" name="_csrfToken" value="57647ff0bc9ae93b29e77a28ecc6b0d4eddc8339"/></div><input type="hidden" name="cs_form_id" id="cs_form_id" value="0"/><label for="script_editor">Conditional JS</label><div class="input textarea"><textarea name="script_editor" id="script_editor" class="form-control" placeholder="Insert Javascript Code" rows="5"></textarea></div><label for="custom_script_autoload">Autoload JS</label><div class="input textarea"><textarea name="custom_script_autoload" id="custom_script_autoload" class="form-control" placeholder="Insert Javascript Code" rows="5"></textarea></div><label for="custom_script_fields">load field all pages</label><div class="input textarea"><textarea name="custom_script_fields" id="custom_script_fields" class="form-control" placeholder="Insert comma separated field id" rows="5"></textarea></div><button type="button" class="btn btn-fill-blue" id="confirmYes" onClick="return CustomScriptEditorSave();">Submit</button></form></div></div></div></div><!--Activity Log Popup Content Here--><a href="#" data-toggle="modal" id="ActivityLogPopupLink" style="display: none;" data-target="#ActivityLogPopupArea">Activity Log Popup link</a><div tabindex="-1" class="modal fade offCanvasModal right in" id="ActivityLogPopupArea"><div class="modal-dialog"><div class="modal-content"><div class="modal-header offCanvasModalheader"><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="" data-original-title="Click here to close"><span class="glyphicon glyphicon-remove"></span></button><h2 class="modal-title" id="alertTitle">Communication</h2></div><div class="modal-body"><div id="ActivityLogPopupHTMLSection"></div></div></div></div></div><!--Fail Status Log Popup Content Here--><a href="#" data-toggle="modal" id="StatusDetailPopupLink" style="display: none;" data-target="#StatusDetailPopupArea">Status Detail</a><div tabindex="-1" class="modal fade in" id="StatusDetailPopupArea"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-hidden="true" data-dismiss="modal" class="close npf-close" type="button"  data-toggle="tooltip" data-placement="left" title="Click here to close"><span aria-hidden="true">×</span></button><h2 class="modal-title" id="alertTitle">Status Detail</h2></div><div class="modal-body text-center"><div class="row"><div class="col-md-12"><div id="StatusDetailPopupHTMLSection"></div></div></div></div></div></div></div><!-- Modal Popup Misc --><div tabindex="-1" class="modal fade offCanvasModal right" id="miscModal"><div class="modal-dialog"><div class="modal-content"><div class="modal-header offCanvasModalheader"><button aria-hidden="true" data-dismiss="modal" class="close-modal" type="button"><span class="glyphicon glyphicon-remove"></span></button><h2 class="modal-title" id="modalTitle">Confirm</h2></div><div class="modal-body"><div id="ConMsgBody">Do you want to copy the form Form-name.</div></div><div class="modal-footer"><button type="button" class="btn btn-line-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Reset</button><a class="btn btn-fill-blue pull-right margin-left-15" href="javascript:void(0);" id="conYes">Yes</a></div></div></div></div><!-- Communication Preferences Modal --><div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--><h4 class="modal-title" id="preferencesModalLabel">Communication Preference</h4></div><div class="modal-body" id="comm_pref"></div></div></div></div><!-- View Schedule Modal --><div class="modal fade offCanvasModal right" id="viewExamScheduleModal" tabindex="-1" role="dialog" aria-labelledby="viewScheduleModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header offCanvasModalheader"><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="" data-original-title="Click here to close"><span class="glyphicon glyphicon-remove"></span></button><h4 class="modal-title" id="viewScheduleModalLabel">View Exam Status</h4></div><div class="modal-body" id="showExamScheduleList"></div></div></div></div><!-- Change Status 2 Modal Popup --><div tabindex="-1" class="modal fade in publishpopup" id="ConfirmDownloadPopupArea" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button aria-hidden="true" data-dismiss="modal" class="close npf-close" type="button"><span aria-hidden="true">×</span></button><h2 class="modal-title" id="confirmDownloadTitle">Confirm</h2></div><div class="modal-body text-center"><p class="text-center confirmDownloadModalContent" id="ConfirmDownloadMsgBody">Do you want to continue.</p><span id='download_type' hidden><p>Download As <input type="radio" id="csv" name="export_type" value="csv" checked><label for="csv">&nbsp;CSV &nbsp;&nbsp;</label><input type="radio" id="excel" name="export_type" value="excel" hidden><label for="excel" hidden>&nbsp;Excel</label></p></span><button type="submit"  data-dismiss="modal" id="popupDismiss"  class="btn btn-line-secondry">Cancel </button><a class="btn btn-fill-blue margin-left-15" href="javascript:void(0);" id="confirmDownloadYes">Download</a></div></div></div></div><!-- Change Status 2 Modal Popup --><div tabindex="-1" class="modal fade in publishpopup" id="confirmProductivityDownload" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><!--<button aria-hidden="true" data-dismiss="modal" class="close npf-close" type="button"><span class="glyphicon glyphicon-remove"></span></button>--><button data-dismiss="modal" type="button" class="close" data-toggle="tooltip" data-placement="left" title="" data-original-title="Click here to close"><span aria-hidden="true">×</span></button><h2 class="modal-title" id="confirmProductivityDownloadTitle">Confirmation</h2></div><div class="modal-body text-center"><p class="text-center confirmDownloadModalContent" id="ConfirmDownloadMsgBody">Do you want to download this file?</p><span id='download_type' hidden><p>Download As <input type="radio" id="excel" name="export_type" value="excel" checked><label for="excel" hidden>&nbsp;Excel</label></p></span><button type="submit"  data-dismiss="modal" id="popupDismiss"  class="btn btn-secondary-2">No </button><a class="btn btn-fill-blue margin-left-15" href="javascript:void(0);" id="confirmProductivityDownloadYes">Yes</a></div></div></div></div><!--Activity Log Popup Content Here--><a href="#" data-toggle="modal" id="gmailContentPopupLink" style="display: none;" data-target="#gmailContentPopupArea">Activity Log Popup link</a><div tabindex="-1" class="modal fade offCanvasModal right in" id="gmailContentPopupArea"><div class="modal-dialog"><div class="modal-content"><div class="modal-header offCanvasModalheader"><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="" data-original-title="Click here to close"><span class="glyphicon glyphicon-remove"></span></button><h2 class="modal-title" id="alertTitle">Gmail Content</h2></div><div class="modal-body"><div id="gmailContentPopupHTMLSection"></div></div></div></div></div><div class="modal fade" id="viewOnlineOfflineModal" tabindex="-1" role="dialog" aria-labelledby="viewOnlineOfflineModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="" data-original-title="Click here to close"><span aria-hidden="true">×</span></button><h4 class="modal-title" id="viewScheduleModalLabel">Change Exam Mode</h4></div><div class="modal-body" id="viewOnlineOffline"></div></div></div></div><div class="modal fade" id="viewReSubsribedModal" tabindex="-1" role="dialog" aria-labelledby="viewReSubsribedModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="" data-original-title="Click here to close"><span aria-hidden="true">×</span></button><h4 class="modal-title" id="viewScheduleModalLabel">Resubscribe User </h4></div><div class="modal-body text-center"><span id="dynamicData" style="display:none;"></span><p class="text-center font500" id="ConfirmMsgBody">This Lead/Applicant is unsubscribed from your mailing list hence not receiving any Emails that you send. <br />Do you want to Re-Subscribe this Lead/Applicant?</p><button type="submit"  data-dismiss="modal"  class="btn btn-line-secondry">Cancel</button><a class="btn btn-fill-blue margin-left-15" href="javascript:void(0);" onclick="javascript:singleReSubscribeWindow();">Resubscribe User</a></div></div></div></div><div class="modal fade" id="emailSwapModal" tabindex="-1" role="dialog" aria-labelledby="emailSwapModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Click here to close"><span aria-hidden="true">×</span></button><h4 class="modal-title" id="emailSwapModalLabel">Confirmation </h4></div><div class="modal-body text-center"><span id="EmailcrntUserId" style="display:none;"></span><span id="EmailcollegeId" style="display:none;"></span><p class="text-center" id="ConfirmMsgBody">You are about to swap <span id="fromemail" class="font500"></span>&nbsp; to <span id="toemail" class="font500"></span>. <br><br>Are you sure you want to proceed?</p><button type="submit"  data-dismiss="modal"  class="btn btn-line-secondary">No</button><a class="btn btn-fill-blue margin-left-15" href="javascript:void(0);" onclick="javascript:singleEmailSwapping();">Yes</a></div></div></div></div><div class="modal fade" id="mobileSwapModal" tabindex="-1" role="dialog" aria-labelledby="mobileSwapModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Click here to close"><span aria-hidden="true">×</span></button><h4 class="modal-title" id="mobileSwapModalLabel">Confirmation </h4></div><div class="modal-body text-center"><span class="fw500" id="MobilecrntUserId" style="display:none;"></span><span class="fw500" id="MobilecollegeId" style="display:none;"></span><p class="text-center" id="ConfirmMsgBody">You are about to swap <span id="frommobile" class="fw500"></span>&nbsp;to <span id="tomobile" class="fw500"></span>.<br><br>Are you sure you want to proceed?</p><button type="submit"  data-dismiss="modal"  class="btn btn-line-secondary margin-right-15">No</button><a class="btn btn-fill-blue" href="javascript:void(0);" onclick="javascript:singleMobileSwapping();">Yes</a></div></div></div></div><!-- templatePreviewModal modal start --><div class="modal fade offCanvasModal right" style="z-index:11111" id="templatePreviewModal" tabindex="-1" role="dialog" aria-labelledby="templatePreviewModalLabel"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header offCanvasModalheader"><div class="dropdown template-preview-dropdown dropdown-stop-propagation"><button class="email-btn" aria-expanded="false" data-toggle="dropdown"><span class="draw-communication" aria-hidden="true" data-toggle="tooltip" data-placement="left" data-trigger="hover" data-container="#templatePreviewModal"></span></button><div class="dropdown-menu"><div id="testCommunicationContent"></div><div class="communicationTestMailMsg"></div></div></div><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Click here to close"><span class="glyphicon glyphicon-remove"></span></button><h2 class="modal-title" id="templatePreviewModalLabel">Template Name (1) </h2></div><div class="modal-body"><div id="MsgBody"></div></div></div></div></div><!-- templatePreviewModal modal start --><!-- Purge Data Modal Popup --><div tabindex="-1" class="modal fade offCanvasModal right in" id="purgeDeleteModal"><div class="modal-dialog modal-md"><div class="modal-content"><div class="modal-header offCanvasModalheader"><button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Click here to close"><span class="glyphicon glyphicon-remove"></span></button><h2 class="modal-title text-capitalize" id="purgeAlertTitle">Delete</h2></div><div class="modal-body"><div class="bs-callout bs-callout-danger mt-0 shrink">You have selected <span data-text="{{count}} {{module}} " class="text-danger record_count"></span>to be deleted from the system.</div><p id="textModuleName">All the Below mentioned data points will be deleted along with the {{module}}.</p><p><strong>Note</strong>: These Data Points will also be deleted from the Publisher Panel.</p><ul id="purgeDataPoints" class="margin-left-20 margin-top-10"></ul><p class="mb-15"><strong>Please note that the data once deleted is not recoverable
-                    </strong></p><p>Type "<strong data-text='Delete {{count}} {{module}}' data-validate="true" class="text-danger record_count text-capitalize exact_record_count"></strong>" to confirm:</p><div class="row"><div class="col-sm-11"><input type="text" id="purgeDeleteModalInput" class="form-control text-danger text-left " style="color: red !important" placeholder=""><input type="hidden" id="confirmPurgeDataModule" /><input type="hidden" id="singlePurge" value="" /></div></div><br><br><br></div><div class="modal-footer"><div class="row"><div class="col-xs-12"><button name="reset_btn" data-dismiss="modal" type="button" class="btn btn-line-secondary ">Cancel</button><button name="search-btn" id="confirmPurgeDataYes" type="button" class="btn btn-danger pull-right disabled">Delete</button></div></div></div></div></div></div><div class="newLoader"><img src="/img/npfLoader.gif" alt="Loading..."></div><script src="https://cdn.npfs.co/js/jquery.min.js?1640169024"></script><script src="https://cdn.npfs.co/js/bootstrap.min.js?1640169024"></script><script src="https://cdn.npfs.co/js/bootstrap-tooltip.js?1640169024"></script><script src="https://cdn.npfs.co/js/students/simplebar.js?1640169024"></script><script src="https://cdn.npfs.co/js/publisher/chosen.jquery.min.js?1640169024"></script><script src="https://cdn.npfs.co/js/students/common.js?1640169024"></script><script src="https://cdn.npfs.co/js/qms/qms.js?1662051363"></script><script src="https://cdn.npfs.co/js/lib/jquery.form.min.js?1640169024"></script><script src="https://cdn.npfs.co/js/jquery.sumoselect.min.js?1640169024"></script><script src="https://cdn.npfs.co/js/students/dashboard.js?1655472174"></script><script src="https://cdn.npfs.co/js/students/notification.js?1640169024"></script><script>//<![CDATA[
-var completeApplicationCount = false;$(document).ready(function () {$('#incompleteSpanCount').text('01');$('#completeSpanCount').text('No');if(completeApplicationCount==true){  changeToCompletedTab(); }});
-//]]></script><script>$(document).ready(function () {
-    //Next session mba 2023 code starting from here: Warning do not touch this code this is used to show and hide the form from the dashboard if a candidate is not registerd in NMAT
-    $('.complete:contains(Application)').hide();
-
-    function isCandidateNmatRegisterd() {
-        //if condition getting satisfied it means candidate is yet to registerd in NMAT because after registerd in NMAT the Registration form name will be changed to Continue In registration form
-        if (jsVars.fieldRegisteredForNmat !== "Yes;;;Yes") {
-            $('.form_17215').remove();
-            $('h4:contains(Post Graduate Program)').remove();
-        }
-    }
-    isCandidateNmatRegisterd();
-    //calling this function after ajax request complete also because once a user hit from search filter a ajax request load form again according to the values
-    $(document).ajaxStop(function () {
-        isCandidateNmatRegisterd();
-    });
-    //MBA 2023 code end here..
-
-    if ($('.form_15291:contains(MPSTMEBTI-202200046)').length == 1) {
-        $('.btn-raised.btn-success:contains(Offer Details)').remove();
-    }
-
-    jsVars.user_email != 'krutika5201@gmail.com' && $('.form_16342 a[role=button]:contains("Admission Form")').remove();
-
-
-    jsVars.user_email != 'nnsojitra@gmail.com' && jsVars.user_email != 'nnsojitra@gmail.com' && $('.form_16340 a[role=button]:contains("Admission Form")').remove();
-
-    /* jsVars.user_email != 'aahna.arora19@gmail.com' && $('.form_16261 a[role=button]:contains("Admission Form")').remove(); */
-    jsVars.user_email != 'dhanyapandey2@gmail.com' && $('.form_16332 a[role=button]:contains("Admission Form")').remove();
-
-
-    /*   jsVars.user_email != 'satrushna@yahoo.co.in' && jsVars.user_email != 'nair.athena@gmail.com' && jsVars.user_email != 'pranav.joshi170702@gmail.com' && jsVars.user_email != 'aarnaspopat@gmail.com' && jsVars.user_email != 'Irasoni24@gmail.com' && jsVars.user_email != 'shreyagarg401@gmail.com' && 
-      jsVars.user_email != 'jiyaasharma15@gmail.com' && jsVars.user_email != 'saanvigulati31@gmail.com' && $('.form_16331 a[role=button]:contains("Admission Form")').remove();   */
-    /* jsVars.user_email != 'arya.bundi@gmail.com' && jsVars.user_email != 'mihika.keshari@hotmail.com' && jsVars.user_email != 'jainkp82@gmail.com' && $('.form_16358 a[role=button]:contains("Admission Form")').remove();*/
-    jsVars.user_email != 'dreamerjahanvi@gmail.com' && jsVars.user_email != 'ayaanbatliwala.38@gmail.com' && jsVars.user_email != 'geetha7us@yahoo.com' && jsVars.user_email != 'primapinto8786@gmail.com' ? $('.form_16337 a[role=button]:contains("Admission Form")').remove() : '';
-    /*  jsVars.user_email == 'nilanjan0512@gmail.com' && $('.form_16325 a[role=button]:contains("Admission Form")').remove();*/
-
-    /* jsVars.user_email != 'anaghaknair.clat@gmail.com' && jsVars.user_email != 'humak5789@gmail.com' && jsVars.user_email != 'anavinaik28@gmail.com' && jsVars.user_email != 'mrudul.naik@gmail.com' && jsVars.user_email != 'kanakchhabariya41@gmail.com' && jsVars.user_email != 'ishnabachle@gmail.com' && jsVars.user_email != 'architd10@gmail.com' && jsVars.user_email != 'jaankie2004@gmail.com' ? $('.form_16575 a[role=button]:contains("Admission Form")').remove() : ''; */
-    jsVars.user_email == 'firdows.matheen@gmail.com' && $('.form_16353 a[role=button]:contains("Admission Form")').remove();
-    jsVars.user_email == 'srinivasan.iyer1973@gmail.com'
-
-
-    $('a:contains(Pref1),a:contains(Pref2),a:contains(Prog1),a:contains(Prog2)').hide();
-
-    //hide waitlist letter
-    let emails = ['shrishtipuri17@gmail.com', 'aditimittal196@gmail.com', 'riteshshirsat17112001@rjcollege.edu.in', 'rppatki@gmail.com', 'suzetmachado@gmail.com', 'darnab33@gmail.com', 'schutake2001@gmail.com', 'diyamahbubani@gmail.com', 'amishakaswankar1@gmail.com', 'nandanarajan15@gmail.com', 'gautamkanojia03@gmail.com', 'gilda.dhruv11@gmail.com', 'ruchashinde2001@gmail.com', 'krutika5201@gmail.com', 'jaishreesharma658@gmail.com', 'singhadi348@gmail.com', 'thabe.shriya8@gmail.com', 'sahilsawant2000@gmail.com', 'shivanipande2500@gmail.com', 'aishwaryaparab01@gmail.com', 'jyotijagdale891@gmail.com', 'rajankulkarni190901@gmail.com']
-
-    if (emails.indexOf(jsVars.user_email) !== -1) {
-        $('.form_16342 a.utility-link:contains(Waitlist Letter)').remove();
-    }
-    jsVars.user_email == 'sahilsawant2000@gmail.com' && $('.form_16342 a[role=button]:contains("Admission Form")').remove();
-
-    $('.utility-link:contains(Offer Placed Yes)').hide();
-
-    $('#home').append('<div class="notes-section" style="color:#000; padding-top:10px;font-size:16px;"><strong></strong></div>');
-    $('a:contains(Offer Letter)').css('text-shadow', '1px 1px #ff0000');
-    $('a[role="button"]:contains(Pay Additional Program Fees)').hide();
-
-    if ($('a[class="utility-link"]:contains(Admission PDF)').length === 1 && $('.msgarw:contains(Thank you for accepting offer for)').length === 1) {
-        $('.notes-section').text('Your application is being reviewed, after the verification is done you will receive an email on your registered email id.');
-    }
-    $('.msgarw:contains(Thank you for accepting)').show();
-
-
-    var dox = ['Ack. Receipt', 'Application Form', 'Offer Letter', 'Admission Form'];
-
-    $(dox).each(function (i, e) {
-        $(".form_16255 .utility-link:contains(" + dox[i] + ")").after($(".form_16255 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16260 .utility-link:contains(" + dox[i] + ")").after($(".form_16260 .utility-link:contains(" + dox[i + 1] + ")"));
-
-    }); /* To form name change */
-
-    $("strong:contains(Dual Degree in (MBA DSA) and (MS in Business Analytics and Information Management) from Purdue University)").text("Dual Degree in MBA Decision Science & Analytics + MS in Business Analytics & Information Management from Purdue University for GMAT/GRE Takers");
-    $('.msgarw').hide();
-    $("div.category-table").find("table.table-bordered").each(function (i, e) {
-        if ($(e).attr('class').search("16219") !== -1) {
-            if ($(e).find('span[class="msgarw pull-right"]').length) {
-                if ($(e).find('span[class="msgarw pull-right"]').text().trim() === '6') {
-                    if (jsVars.user_email !== "me.anshul96@gmail.com" && jsVars.user_email !== "litzenmenezes@gmail.com") {
-                        $('a[role="button"]:contains(Add Program Preferences)').remove();
-                    }
+>
+
+<!-- main content -->
+<section class="content patients">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>All Student</h2>
+            <small class="text-muted">Welcome to Kingster application</small>
+        </div>
+
+        <div class="row">
+
+
+
+
+
+            <table id="example" class="table col-12 table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone No.</th>
+                        <th>Course</th>
+                        <th>Qualification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011-04-25</td>
+                        <td>$320,800</td>
+                    </tr>
+                    <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                        <td>2011-07-25</td>
+                        <td>$170,750</td>
+                    </tr>
+                    <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009-01-12</td>
+                        <td>$86,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>2012-03-29</td>
+                        <td>$433,060</td>
+                    </tr>
+                    <tr>
+                        <td>Airi Satou</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>33</td>
+                        <td>2008-11-28</td>
+                        <td>$162,700</td>
+                    </tr>
+                    <tr>
+                        <td>Brielle Williamson</td>
+                        <td>Integration Specialist</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>2012-12-02</td>
+                        <td>$372,000</td>
+                    </tr>
+                    <tr>
+                        <td>Herrod Chandler</td>
+                        <td>Sales Assistant</td>
+                        <td>San Francisco</td>
+                        <td>59</td>
+                        <td>2012-08-06</td>
+                        <td>$137,500</td>
+                    </tr>
+                    <tr>
+                        <td>Rhona Davidson</td>
+                        <td>Integration Specialist</td>
+                        <td>Tokyo</td>
+                        <td>55</td>
+                        <td>2010-10-14</td>
+                        <td>$327,900</td>
+                    </tr>
+                    <tr>
+                        <td>Colleen Hurst</td>
+                        <td>Javascript Developer</td>
+                        <td>San Francisco</td>
+                        <td>39</td>
+                        <td>2009-09-15</td>
+                        <td>$205,500</td>
+                    </tr>
+                    <tr>
+                        <td>Sonya Frost</td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008-12-13</td>
+                        <td>$103,600</td>
+                    </tr>
+                    <tr>
+                        <td>Jena Gaines</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>30</td>
+                        <td>2008-12-19</td>
+                        <td>$90,560</td>
+                    </tr>
+                    <tr>
+                        <td>Quinn Flynn</td>
+                        <td>Support Lead</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>2013-03-03</td>
+                        <td>$342,000</td>
+                    </tr>
+                    <tr>
+                        <td>Charde Marshall</td>
+                        <td>Regional Director</td>
+                        <td>San Francisco</td>
+                        <td>36</td>
+                        <td>2008-10-16</td>
+                        <td>$470,600</td>
+                    </tr>
+                    <tr>
+                        <td>Haley Kennedy</td>
+                        <td>Senior Marketing Designer</td>
+                        <td>London</td>
+                        <td>43</td>
+                        <td>2012-12-18</td>
+                        <td>$313,500</td>
+                    </tr>
+                    <tr>
+                        <td>Tatyana Fitzpatrick</td>
+                        <td>Regional Director</td>
+                        <td>London</td>
+                        <td>19</td>
+                        <td>2010-03-17</td>
+                        <td>$385,750</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Silva</td>
+                        <td>Marketing Designer</td>
+                        <td>London</td>
+                        <td>66</td>
+                        <td>2012-11-27</td>
+                        <td>$198,500</td>
+                    </tr>
+                    <tr>
+                        <td>Paul Byrd</td>
+                        <td>Chief Financial Officer (CFO)</td>
+                        <td>New York</td>
+                        <td>64</td>
+                        <td>2010-06-09</td>
+                        <td>$725,000</td>
+                    </tr>
+                    <tr>
+                        <td>Gloria Little</td>
+                        <td>Systems Administrator</td>
+                        <td>New York</td>
+                        <td>59</td>
+                        <td>2009-04-10</td>
+                        <td>$237,500</td>
+                    </tr>
+                    <tr>
+                        <td>Bradley Greer</td>
+                        <td>Software Engineer</td>
+                        <td>London</td>
+                        <td>41</td>
+                        <td>2012-10-13</td>
+                        <td>$132,000</td>
+                    </tr>
+                    <tr>
+                        <td>Dai Rios</td>
+                        <td>Personnel Lead</td>
+                        <td>Edinburgh</td>
+                        <td>35</td>
+                        <td>2012-09-26</td>
+                        <td>$217,500</td>
+                    </tr>
+                    <tr>
+                        <td>Jenette Caldwell</td>
+                        <td>Development Lead</td>
+                        <td>New York</td>
+                        <td>30</td>
+                        <td>2011-09-03</td>
+                        <td>$345,000</td>
+                    </tr>
+                    <tr>
+                        <td>Yuri Berry</td>
+                        <td>Chief Marketing Officer (CMO)</td>
+                        <td>New York</td>
+                        <td>40</td>
+                        <td>2009-06-25</td>
+                        <td>$675,000</td>
+                    </tr>
+                    <tr>
+                        <td>Caesar Vance</td>
+                        <td>Pre-Sales Support</td>
+                        <td>New York</td>
+                        <td>21</td>
+                        <td>2011-12-12</td>
+                        <td>$106,450</td>
+                    </tr>
+                    <tr>
+                        <td>Doris Wilder</td>
+                        <td>Sales Assistant</td>
+                        <td>Sydney</td>
+                        <td>23</td>
+                        <td>2010-09-20</td>
+                        <td>$85,600</td>
+                    </tr>
+                    <tr>
+                        <td>Angelica Ramos</td>
+                        <td>Chief Executive Officer (CEO)</td>
+                        <td>London</td>
+                        <td>47</td>
+                        <td>2009-10-09</td>
+                        <td>$1,200,000</td>
+                    </tr>
+                    <tr>
+                        <td>Gavin Joyce</td>
+                        <td>Developer</td>
+                        <td>Edinburgh</td>
+                        <td>42</td>
+                        <td>2010-12-22</td>
+                        <td>$92,575</td>
+                    </tr>
+                    <tr>
+                        <td>Jennifer Chang</td>
+                        <td>Regional Director</td>
+                        <td>Singapore</td>
+                        <td>28</td>
+                        <td>2010-11-14</td>
+                        <td>$357,650</td>
+                    </tr>
+                    <tr>
+                        <td>Brenden Wagner</td>
+                        <td>Software Engineer</td>
+                        <td>San Francisco</td>
+                        <td>28</td>
+                        <td>2011-06-07</td>
+                        <td>$206,850</td>
+                    </tr>
+                    <tr>
+                        <td>Fiona Green</td>
+                        <td>Chief Operating Officer (COO)</td>
+                        <td>San Francisco</td>
+                        <td>48</td>
+                        <td>2010-03-11</td>
+                        <td>$850,000</td>
+                    </tr>
+                    <tr>
+                        <td>Shou Itou</td>
+                        <td>Regional Marketing</td>
+                        <td>Tokyo</td>
+                        <td>20</td>
+                        <td>2011-08-14</td>
+                        <td>$163,000</td>
+                    </tr>
+                    <tr>
+                        <td>Michelle House</td>
+                        <td>Integration Specialist</td>
+                        <td>Sydney</td>
+                        <td>37</td>
+                        <td>2011-06-02</td>
+                        <td>$95,400</td>
+                    </tr>
+                    <tr>
+                        <td>Suki Burks</td>
+                        <td>Developer</td>
+                        <td>London</td>
+                        <td>53</td>
+                        <td>2009-10-22</td>
+                        <td>$114,500</td>
+                    </tr>
+                    <tr>
+                        <td>Prescott Bartlett</td>
+                        <td>Technical Author</td>
+                        <td>London</td>
+                        <td>27</td>
+                        <td>2011-05-07</td>
+                        <td>$145,000</td>
+                    </tr>
+                    <tr>
+                        <td>Gavin Cortez</td>
+                        <td>Team Leader</td>
+                        <td>San Francisco</td>
+                        <td>22</td>
+                        <td>2008-10-26</td>
+                        <td>$235,500</td>
+                    </tr>
+                    <tr>
+                        <td>Martena Mccray</td>
+                        <td>Post-Sales support</td>
+                        <td>Edinburgh</td>
+                        <td>46</td>
+                        <td>2011-03-09</td>
+                        <td>$324,050</td>
+                    </tr>
+                    <tr>
+                        <td>Unity Butler</td>
+                        <td>Marketing Designer</td>
+                        <td>San Francisco</td>
+                        <td>47</td>
+                        <td>2009-12-09</td>
+                        <td>$85,675</td>
+                    </tr>
+                    <tr>
+                        <td>Howard Hatfield</td>
+                        <td>Office Manager</td>
+                        <td>San Francisco</td>
+                        <td>51</td>
+                        <td>2008-12-16</td>
+                        <td>$164,500</td>
+                    </tr>
+                    <tr>
+                        <td>Hope Fuentes</td>
+                        <td>Secretary</td>
+                        <td>San Francisco</td>
+                        <td>41</td>
+                        <td>2010-02-12</td>
+                        <td>$109,850</td>
+                    </tr>
+                    <tr>
+                        <td>Vivian Harrell</td>
+                        <td>Financial Controller</td>
+                        <td>San Francisco</td>
+                        <td>62</td>
+                        <td>2009-02-14</td>
+                        <td>$452,500</td>
+                    </tr>
+                    <tr>
+                        <td>Timothy Mooney</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>37</td>
+                        <td>2008-12-11</td>
+                        <td>$136,200</td>
+                    </tr>
+                    <tr>
+                        <td>Jackson Bradshaw</td>
+                        <td>Director</td>
+                        <td>New York</td>
+                        <td>65</td>
+                        <td>2008-09-26</td>
+                        <td>$645,750</td>
+                    </tr>
+                    <tr>
+                        <td>Olivia Liang</td>
+                        <td>Support Engineer</td>
+                        <td>Singapore</td>
+                        <td>64</td>
+                        <td>2011-02-03</td>
+                        <td>$234,500</td>
+                    </tr>
+                    <tr>
+                        <td>Bruno Nash</td>
+                        <td>Software Engineer</td>
+                        <td>London</td>
+                        <td>38</td>
+                        <td>2011-05-03</td>
+                        <td>$163,500</td>
+                    </tr>
+                    <tr>
+                        <td>Sakura Yamamoto</td>
+                        <td>Support Engineer</td>
+                        <td>Tokyo</td>
+                        <td>37</td>
+                        <td>2009-08-19</td>
+                        <td>$139,575</td>
+                    </tr>
+                    <tr>
+                        <td>Thor Walton</td>
+                        <td>Developer</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>2013-08-11</td>
+                        <td>$98,540</td>
+                    </tr>
+                    <tr>
+                        <td>Finn Camacho</td>
+                        <td>Support Engineer</td>
+                        <td>San Francisco</td>
+                        <td>47</td>
+                        <td>2009-07-07</td>
+                        <td>$87,500</td>
+                    </tr>
+                    <tr>
+                        <td>Serge Baldwin</td>
+                        <td>Data Coordinator</td>
+                        <td>Singapore</td>
+                        <td>64</td>
+                        <td>2012-04-09</td>
+                        <td>$138,575</td>
+                    </tr>
+                    <tr>
+                        <td>Zenaida Frank</td>
+                        <td>Software Engineer</td>
+                        <td>New York</td>
+                        <td>63</td>
+                        <td>2010-01-04</td>
+                        <td>$125,250</td>
+                    </tr>
+                    <tr>
+                        <td>Zorita Serrano</td>
+                        <td>Software Engineer</td>
+                        <td>San Francisco</td>
+                        <td>56</td>
+                        <td>2012-06-01</td>
+                        <td>$115,000</td>
+                    </tr>
+                    <tr>
+                        <td>Jennifer Acosta</td>
+                        <td>Junior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>43</td>
+                        <td>2013-02-01</td>
+                        <td>$75,650</td>
+                    </tr>
+                    <tr>
+                        <td>Cara Stevens</td>
+                        <td>Sales Assistant</td>
+                        <td>New York</td>
+                        <td>46</td>
+                        <td>2011-12-06</td>
+                        <td>$145,600</td>
+                    </tr>
+                    <tr>
+                        <td>Hermione Butler</td>
+                        <td>Regional Director</td>
+                        <td>London</td>
+                        <td>47</td>
+                        <td>2011-03-21</td>
+                        <td>$356,250</td>
+                    </tr>
+                    <tr>
+                        <td>Lael Greer</td>
+                        <td>Systems Administrator</td>
+                        <td>London</td>
+                        <td>21</td>
+                        <td>2009-02-27</td>
+                        <td>$103,500</td>
+                    </tr>
+                    <tr>
+                        <td>Jonas Alexander</td>
+                        <td>Developer</td>
+                        <td>San Francisco</td>
+                        <td>30</td>
+                        <td>2010-07-14</td>
+                        <td>$86,500</td>
+                    </tr>
+                    <tr>
+                        <td>Shad Decker</td>
+                        <td>Regional Director</td>
+                        <td>Edinburgh</td>
+                        <td>51</td>
+                        <td>2008-11-13</td>
+                        <td>$183,000</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Bruce</td>
+                        <td>Javascript Developer</td>
+                        <td>Singapore</td>
+                        <td>29</td>
+                        <td>2011-06-27</td>
+                        <td>$183,000</td>
+                    </tr>
+                    <tr>
+                        <td>Donna Snider</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td>27</td>
+                        <td>2011-01-25</td>
+                        <td>$112,000</td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <script>
+                // $(document).ready(function () {
+                //});//
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    // code...
+                    const table = document.getElementById('example')
+                    new DataTable(table, {
+                        width: '100%'
+                    });
+                    //$('#example').DataTable();
+                });
+            </script>
+
+            <style>
+                .dataTable-wrapper {
+                    width: 100% !important;
                 }
-            }
-        }
-        //for CET
-        if ($(e).attr('class').search("16560") !== -1) {
-            if ($(e).find('span[class="msgarw pull-right"]').length) {
-                if ($(e).find('span[class="msgarw pull-right"]').text().trim() === "Already opted for Both Schools" || $(e).find('span[class="msgarw pull-right"]:contains(payment_done_post_edit)').length) {
-                    if (jsVars.user_email !== "me.anshul96@gmail.com") {
-                        $('a[role="button"]:contains(Add Program Preferences)').remove();
-                    }
-                }
-            }
-        }
-    });
-    $('a:contains(Pref1),a:contains(Pref2),a:contains(Prog1),a:contains(Prog2)').hide();
+            </style>
 
-    $('.utility-link:contains(Offer Placed Yes)').hide();
-    $('a:contains(Offer Letter)').css('text-shadow', '1px 1px #ff0000');
-    $('a[role="button"]:contains(Pay Additional Program Fees)').hide();
-    $('.msgarw:contains(Thank you for accepting)').show();
 
-    var dox = ['Ack. Receipt', 'Application Form', 'Admit Card', 'Call Letter', 'PI Call Letter', 'Offer Letter', 'Waitlist Letter', 'Counselling Letter', 'Admission Form PDF'];
 
-    $(dox).each(function (i, e) {
-        $(".form_16255 .utility-link:contains(" + dox[i] + ")").after($(".form_16255 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16406 .utility-link:contains(" + dox[i] + ")").after($(".form_16406 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16234 .utility-link:contains(" + dox[i] + ")").after($(".form_16234 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16560 .utility-link:contains(" + dox[i] + ")").after($(".form_16560 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16260 .utility-link:contains(" + dox[i] + ")").after($(".form_16260 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16228 .utility-link:contains(" + dox[i] + ")").after($(".form_16228 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16232 .utility-link:contains(" + dox[i] + ")").after($(".form_16232 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16224 .utility-link:contains(" + dox[i] + ")").after($(".form_16224 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16320 .utility-link:contains(" + dox[i] + ")").after($(".form_16320 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16190 .utility-link:contains(" + dox[i] + ")").after($(".form_16190 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16403 .utility-link:contains(" + dox[i] + ")").after($(".form_16403 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16176 .utility-link:contains(" + dox[i] + ")").after($(".form_16176 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16214 .utility-link:contains(" + dox[i] + ")").after($(".form_16214 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16318 .utility-link:contains(" + dox[i] + ")").after($(".form_16318 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16139 .utility-link:contains(" + dox[i] + ")").after($(".form_16139 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16187 .utility-link:contains(" + dox[i] + ")").after($(".form_16187 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16205 .utility-link:contains(" + dox[i] + ")").after($(".form_16205 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16322 .utility-link:contains(" + dox[i] + ")").after($(".form_16322 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16784 .utility-link:contains(" + dox[i] + ")").after($(".form_16784 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16233 .utility-link:contains(" + dox[i] + ")").after($(".form_16233 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16218 .utility-link:contains(" + dox[i] + ")").after($(".form_16218 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16237 .utility-link:contains(" + dox[i] + ")").after($(".form_16237 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16222 .utility-link:contains(" + dox[i] + ")").after($(".form_16222 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16399 .utility-link:contains(" + dox[i] + ")").after($(".form_16399 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16320 .utility-link:contains(" + dox[i] + ")").after($(".form_16320 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16358 .utility-link:contains(" + dox[i] + ")").after($(".form_16358 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16337 .utility-link:contains(" + dox[i] + ")").after($(".form_16337 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16299 .utility-link:contains(" + dox[i] + ")").after($(".form_16299 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16342 .utility-link:contains(" + dox[i] + ")").after($(".form_16342 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16223 .utility-link:contains(" + dox[i] + ")").after($(".form_16223 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16353 .utility-link:contains(" + dox[i] + ")").after($(".form_16353 .utility-link:contains(" + dox[i + 1] + ")"));
-        $(".form_16177 .utility-link:contains(" + dox[i] + ")").after($(".form_16177 .utility-link:contains(" + dox[i + 1] + ")"));
+        </div>
+</section>
+<!-- main content -->
 
+<div class="color-bg"></div>
 
-    });
-    phase1AdmissionFormEmail = ["pjsharma2509@gmail.com",
-        "sailor.mayur9969@gmail.com",
-        "anjalipant0202@gmail.com",
-        "shrutikanoi@outlook.com",
-        "komalsutar680@gmail.com",
-        "memonaftab2709@gmail.com",
-        "harshparmar84.hp@gmail.com",
-        "himanshusingh2312@gmail.com",
-        "satbir.singh19987@gmail.com",
-        "sarkar.98mehul@gmail.com",
-        "hemrajrathod777@gmail.com",
-        "gaganpoddar.gp@gmail.com",
-        "ginabhaskar32@gmail.com",
-        "saanvi.sharma700@gmail.com",
-        "anshiyeradmission@gmail.com",
-        "nimisha_pagaria@yahoo.com",
-        "manava.savla@gmail.com",
-        "aarya2408shah@gmail.com",
-        "meghna@devangvisaria.com",
-        "sawantaru@gmail.com",
-        "aryakakani@gmail.com",
-        "omgawali110806@gmail.com",
-        "janavdshah30@gmail.com",
-        "jigsnp@hotmail.com",
-        "vishal.paul@ymail.com",
-        "kathirvelsubashkumar@gmail.com"
-    ];
 
-    function removeAdmissionButton() {
-        if (phase1AdmissionFormEmail.indexOf(jsVars.user_email) !== -1) {
-            $('.form_16228').find('tr').each(function () {
+<link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet"
+    type="text/css">
+<script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js"
+    type="text/javascript"></script>
 
-                //  $(this).find('a[role="button"]:contains(Admission Form)').remove();
-            });
-            $('.form_16260').find('tr').each(function () {
-                if (jsVars.user_email !== 'supriyakiro9@gmail.com' || jsVars.user_email !== "sahilraipurkar1@gmail.com" || jsVars.user_email !== "aadhvan.c2011@gmail.com" || jsVars.user_email !== "dhanush.k1728@gmail.com") {
-                    $(this).find('a[role="button"]:contains(Admission Form)').remove();
-                }
-            });
-            $('.form_16255').find('tr').each(function () {
+</body>
 
-                $(this).find('a[role="button"]:contains(Admission Form)').remove();
-            });
+<!-- Mirrored from thememakker.com/templates/swift/university/students.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2019 12:27:17 GMT -->
 
-        }
-
-
-
-        $('.form_16187').find('tr').each(function () {
-            if (jsVars.user_email !== 'rohit.chide@gmail.com' && jsVars.user_email !== 'dhrumit63@gmail.com') {
-                $(this).find('a[class="utility-link"]:contains(=<<)').hide();
-                $(this).find('a[role="button"]:contains(Admission Form)').remove();
-            }
-        });
-
-        $('.form_16320').find('tr').each(function () {
-            if (jsVars.user_email !== 'vishalmadhurkar2002@gmail.com' && jsVars.user_email !== 'kairavkang@gmail.com' && jsVars.user_email !== 'khatriharshwardhan@gmail.com' && jsVars.user_email !== 'agrawal.pratik33@gmail.com' && jsVars.user_email !== 'anavi.shrishrimal@gmail.com') {
-                $(this).find('a[role="button"]:contains(Admission Form)').remove();
-            }
-        });
-
-
-        /*$('.form_16176').find('tr').each(function () {
-            $(this).find('a[role="button"]:contains(Admission Form)').remove();
-        });*/
-
-        // ReSubmission Button Rename for one candidate (Npat Form)
-        $('.form_16219').find('tr').each(function () {
-            if (jsVars.user_email == 'diyan3123@gmail.com') {
-                $(this).find('a[role="button"]:contains(Pay Additional Attempt Fee (Retake 1))').text("Additional Attempt (Retake1)");
-            }
-        });
-
-        // Remove Admission Btn in B.Des Form
-        $('.form_16139').find('tr').each(function () {
-            var emailId = ["ishaninandagopal@gmail.com", "saikanth2503@gmail.com", "roymonjish@gmail.com", "gayatrichheda26@gmail.com", "srishtisarkar.544@gmail.com", "ishisamant@gmail.com", "gaia3.jk@gmail.com", "kavyaadmission12@gmail.com", "mehekdoshi04@gmail.com", "aamishabehl@gmail.com", "avanikapse22124@gmail.com", "sarthakiekbote@gmail.com", "sidgiddivarada@gmail.com", "aneeshnjoshi06@gmail.com", "ruchasarlashkar@gmail.com", "katikarpratyush@gmail.com", "harpritakedia@gmail.com", "fatnanimeerali@gmail.com", "anushka.asj@gmail.com", "sakshism2034@gmail.com", "khushisinghal.nov1@gmail.com", "shahrv31@gmail.com", "sharmanavdha2002@gmail.com", "yadav.a+938383@nopaperforms.com", "revathorat04@gmail.com", "anoushka0823@gmail.com", "shahvrisha05@gmail.com", "samridhi.shetty.99@gmail.com"];
-
-            if (emailId.indexOf(jsVars.user_email) !== -1) {
-                $(this).find('a[role="button"]:contains(Admission Form)').remove();
-            }
-        });
-
-    }
-    removeAdmissionButton();
-    //removewaitlist();
-    //to remove the add program preference if main attempt disposition is available
-    $('a[class="utility-link"]:contains(dispositionAvailable)').hide();
-    var formIds = ["form_16219", "form_16560"];
-    formIds.forEach(function (getFormId) {
-        $('.' + getFormId).each(function (i, e) {
-            if ($(this).find('a[class="utility-link"]:contains(dispositionAvailable)').length) {
-                $(this).find('a[role="button"]:contains(Add Program Preferences)').remove();
-            }
-        });
-    });
-    $('.utility-link:contains("Test")').hide();
-
-    function enableAdditionalPayment() {
-        var userEmails = ['soumyabhargava18@gmail.com'];
-        if (userEmails.indexOf(jsVars.user_email) !== -1) {
-            if ($('a[role="button"]:contains(Pay Additional Program Fees)').length) {
-                $('a[role="button"]:contains(Pay Additional Program Fees)').show();
-            }
-        }
-    }
-    if ($('.form_16560').find('a[class="utility-link"]:contains(spotAdmission)').length === 1) {
-        $('a[class="utility-link"]:contains(spotAdmission)').hide();
-        $('a[role="button"]:contains(Book Exam Slot)').remove();
-        $('a[role="button"]:contains(Add Program Preferences)').remove();
-    }
-    enableAdditionalPayment();
-    //to hide the pay fees block in case of all other form except below condition form id
-
-    $("div.category-table").find("table.table-bordered").each(function (index, eVal) {
-        if ($(eVal).attr('class').search("form_16342") !== -1) {
-            $(eVal).find('th[class="col6 text-center"]').show();
-            $(eVal).find('td[class="col6 text-center"]').show();
-            $(eVal).find('.mobile_btn_block.col6').show();
-        } else {
-            if (jsVars.user_email !== "lakshay.bansal0111@gmail.com") {
-                $('th[class="col6 text-center"]:contains(Pay Fee)').hide();
-                $(eVal).find('th[class="col6 text-center"]').hide();
-                $(eVal).find('td[class="col6 text-center"]').hide();
-                $(eVal).find('.mobile_btn_block.col6').hide();
-            }
-        }
-    });
-
-    if (jsVars.user_email === "lakshay.bansal0111@gmail.com") {
-        $('a[role="button"]:contains(Pay Additional Program Fees)').show();
-    }
-
-    if ($('.btn-success').length == 1) {
-        $('.btn-success:contains(Book Retake 1 (Real Time No) - NCET)').text('Book Retake 1')
-    }
-
-    $('.table.table-bordered').each(function (neha, ravi) {
-        if ($(ravi).find('strong[class="text-success"]').text().search("Submitted") !== -1) {
-            $(ravi).find('span[class="complete smlFont"]:contains(Application is)').text('Application is 100% Complete');
-        }
-    });
-    var emailIdss = ['vedk1510@gmail.com', 'ajitsumedha@gmail.com'];
-    if (emailIdss.indexOf(jsVars.user_email) === -1) {
-        if ($('.form_16299').find('a[class="utility-link"]:contains(Counselling Letter)').length === 0) {
-            $('.form_16299').find('a[role="button"]:contains(Admission Form)').remove();
-        }
-    }
-    $('a[role="button"]:contains(Book Exam Slot)').remove();
-    $('a[role="button"]:contains(Book Retake Exam)').remove();
-
-    var formIdArrayss = ['form_16575', 'form_16219', 'form_16560'];
-    formIdArrayss.forEach(function (getFormIds) {
-        $('.' + getFormIds).find('tr').each(function () {
-            console.log($(this).find('a[class="utility-link"]:contains(MeritListDates)').length);
-            if ($(this).find('a[class="utility-link"]:contains(MeritListDates)').length) {
-                $(this).find('a[class="utility-link"]:contains(MeritListDates)').hide();
-
-                $('.notes-section').after('<table border="1" style="margin-top:4vh;"><tbody><tr><td colspan="2" style="padding: 12px;"><strong style="color:#E1141D">The merit list will be declared by these dates, you are required to check your dashboard/registered email regularly:-</strong></td></tr><tr><td style="padding: 12px;"><b>Programs</b></td><td style="padding: 12px;"><b>Dates</b></td></tr><tr><td style="padding: 12px;">B.Tech /MBA Tech</td><td style="padding: 12px;">12th July</td></tr><tr><td style="padding: 12px;">B.Pharma and MBA</td><td style="padding: 12px;">13th July</td></tr><tr><td style="padding: 12px;">BBA /B.Com/B.Sc Finance</td><td style="padding: 12px;">15th July</td></tr><tr><td style="padding: 12px;">B.Sc Economics</td><td style="padding: 12px;">18th July</td></tr><tr><td style="padding: 12px;">BBA Branding & Advertising</td><td style="padding: 12px;">19th July</td></tr><tr><td style="padding: 12px;">BA/BBA LLB</td><td style="padding: 12px;">20th July</td></tr><tr><td style="padding: 12px;">BA Liberal Arts</td><td style="padding: 12px;">20th July</td></tr><tr><td style="padding: 12px;">Bachelor in Business Management & Marketing</td><td style="padding: 12px;">21st July</td></tr><tr><td style="padding: 12px;">BBA (International Business)</td><td style="padding: 12px;">21st July</td></tr></tbody></table>')
-            }
-        });
-    });
-    //to show transfer form msg
-    if ($('.form_16219').length === 1) {
-        $('.notes-section').html('Transfer form will be available from 25th July 2022 -2PM till 26th July 2022 -11.59PM on your dashboard.<br>Admission/ Transfer will be done only if candidate qualify the program/campus cut off & if there are Vacant seats. Transfer is not applicable for waitlisted program/campus. Please check dashboard on regular basis for transfer update.');
-    }
-
-    var emailId = ['nupoormukadam03@gmail.com'];
-    if (emailId.indexOf(jsVars.user_email) === -1) {
-
-        $('.form_16299').find('a[role="button"]:contains(Admission Form)').remove();
-
-    }
-
-    $('.form_16219').find('tr:first').after('<tr><td colspan="5" id="stepsToFollow"></td></tr>');
-    $('#stepsToFollow').html('<a href="https://apply.nmims.edu/downloads/62d1687094c96083730267_STEPSTOACCEPTOFFERCOMPLETEADMISSIONPROCESS.pdf" target="_blank" class="utility-link"><i class="fa fa-download"></i>Steps for Offer Accept</a>');
-
-
-
-    if ($('.form_16219').find('a[class="utility-link"]:contains(Admission Form)').length) {
-        $('.notes-section').text('You will receive RTGS details for payment on the email within 48 hours.');
-    }
-
-
-    $('.form_16223').find('tr').each(function () {
-        if (jsVars.user_email !== "onlymejkv@gmail.com" && jsVars.user_email !== "singhvishal261165@gmail.com")
-            $(this).find('a[role="button"]:contains(Admission Form)').remove();
-        // $(this).find('a[class="utility-link"]:contains(Waitlist Letter)').hide();
-    });
-
-
-
-    function ifOfferDatePassed() {
-        var getAcceptedProgram = $('.msgarw').text() !== "" &&
-
-            $('.msgarw').length === 1 ? $('.msgarw').text().split("in ")[1] : "";
-
-        if (getAcceptedProgram === "Bachelors ") {
-            getAcceptedProgram = "Bachelors in Business Management and Marketing (BBMM) - Mumbai";
-        }
-
-        var offerDatePassedProgram = ["Bachelor of Business Administration - Chandigarh", "Bachelor of Business Administration - Dhule", "Bachelor of Business Administration - Hyderabad", "Bachelor of Business Administration - Indore", "B.Com (Hons.) - Chandigarh", "B.Com (Hons.) - Dhule", "B.Com (Hons.) - Hyderabad", "B.Com (Hons.) - Indore", "Bachelor of Business Administration - Bengaluru", "Bachelor of Business Administration - Mumbai", "Bachelor of Business Administration - Navi Mumbai", "B.Com (Hons.) - Bengaluru", "B.Com (Hons.) - Mumbai", "B.Com (Hons.) - Navi Mumbai", "B.Sc Finance - Mumbai", "B.Sc Finance - Navi Mumbai", "B.Sc Finance - Bengaluru", "B.Sc (Economics) - Bengaluru", "B.Sc (Economics) - Mumbai", "B.Sc (Economics) - Navi Mumbai", "Bachelors in Business Management and Marketing (BBMM) - Mumbai", "Bachelor of Arts (Hons.) Liberal Arts - Mumbai", "BBA (Branding and Advertising) - Mumbai", "BBA (International Business) - Mumbai"];
-        //we need to uncomment above values on sharp 11:00 AM 25th July
-        var specialUserEmail = ['vgndxbx@gmail.com', 'yashvardhan.nayal@gmail.com', 'sanya.dpsvk22@gmail.com', 'aroraaryan086@gmail.com', 'krishna.maniyar2204@gmail.com', 'deevasharma1804@gmail.com', 'lehar@sripal.in', 'lkbatra75@gmail.com', 'anshultuteja05@gmail.com', 'arjansingh1301@gmail.com', 'garvmakrani@gmail.com', 'vishistar1@gmail.com', 'malhar.kulkarni22@gmail.com', 'kopalrungta03@gmail.com', 'muskan.kaur0801@gmail.com', 'pahals0305@gmail.com', 'mohitbelani31@gmail.com', 'lakhiasanya21@gmail.com', 'lakshyaagg24@gmail.com', 'vanshikamittal2808@gmail.com', 'shivam28.naik@gmail.com', 'shreysigulati10@gmail.com', 'amaansiddiqui988@gmail.com', 'zeeyapmehta01@gmail.com', 'kananagg@gmail.com', 'maitypoulami3@gmail.com', 'monikaabrolg@gmail.com', 'agrawalrishit2003@gmail.com', 'sanatarora43@gmail.com', 'aryajain175@gmail.com', 'daksh04jeewani@gmail.com', 'goel24109@gmail.com', 'gulnarula01@gmail.com', 'vijayrana73@gmail.com', 'khushi.chibber@gmail.com', 'bhojraj9423@gmail.com', 'eshnachhillar27@gmail.com', 'rajveerbhatia07@gmail.com', 'ilhan.kably@gmail.com', 'abhaytrisha1807@gmail.com', 'jainvatsal205@gmail.com', 'enasharma3004@gmail.com', 'yash.dk.kapoor@gmail.com', 'pranithd1@gmail.com', 'saanvisekhri04@gmail.com', 'kashishmehta4012@gmail.com', 'aashvikamdar23@gmail.com', 'mohnishdodhia@gmail.com', 'abhaytrisha1807@gmail.com', 'ridhimasahni@outlook.com', /*soba special cases*/ 'ezainmomin149@gmail.com', 'ujj04sri@gmail.com', 'sahilgadhe.1@gmail.com', 'eshnachhillar27@gmail.com', 'krishaaaa2004@gmail.com', 'adishandilya10@gmail.com', 'ashvikamdar23@gmail.com', 'sgupta.rci@gmail.com', 'adishandilya10@gmail.com', 'pooshansoni777@gmail.com', 'tanishquamadanpotra@gmail.com', 'sanatarora43@gmail.com', 'mansiverma5564@gmail.com', 'pranayg.2004@gmail.com', 'krishnagindodia777@gmail.com', 'parshuramb77@gmail.com', 'reach.shubhamgujral@gmail.com', 'anushkaahire036@gmail.com', 'dyvikanjali@gmail.com', 'jashsancheti@gmail.com', 'prashamdungarwal88@gmail.com', 'nehalkothari03@gmail.com', 'prashamdungarwal88@gmail.com', 'garvneelam@gmail.com', 'virtimehta2004@gmail.com', 'vishvashah1467@gmail.com', 'harshilgoyal212@gmail.com', 'tushanpokarna2244@gmail.com', 'khandelwalmuskan101@gmail.com', 'rishavseth259@gmail.com' /* SOC TRANSFER CANDIDATE */ , 'darayas.bhappoo@gmail.com', 'bharatjayakrishnan27@gmail.com', 'tushanpokarna2244@gmail.com', 'rishavseth259@gmail.com', 'gargmaitri42@gmail.com', 'simranakhanuja@yahoo.com', 'sanatarora43@gmail.com', 'khandelwalmuskan101@gmail.com', 'simransaluja364@gmail.com', 'nathanmylabathula@gmail.com', 'yukthapuvvada@gmail.com', 'puravvjain@gmail.com', 'gangwalkshiti@gmail.com', 'singhjaskaran1769@gmail.com', 'dakshpratapsinghchauhan1234@gmail.com', 'bhojraj9423@gmail.com', 'regell_73@yahoo.com', 'ranka.kaushal@gmail.com', 'rohitbhansali3@gmail.com', 'neelmadhavgoyal@gmail.com', 'mitaligupta157@gmail.com', 'prashamdungarwal88@gmail.com', 'sharma.shouryaa@gmail.com', 'manshita.jain04@gmail.com', 'ranvijaysbais@gmail.com', 'shreshthabhatia09@gmail.com', 'shirshagrawal812@gmail.com', 'rishit.parasme@gmail.com', 'poonam.sunkey@gmail.com', 'snehasanotia@gmail.com', 'krishkataria80@gmail.com', 'shuklaheeral04@gmail.com', 'jorrauday@gmail.com', 'suhani03.2020@gmail.com', 'shagunbiyani7479@gmail.com', 'sanskritipipersaniya@gmail.com', 'sidd03.bhandari@gmail.com', 'charvisharma040@gmail.com', 'shreshth.agrawal123@gmail.com', 'shrutibanka9@gmail.com', 'mythrikanagadda04@gmail.com', 'rsudheerya2004@gmail.com', 'salonisharma3067@gmail.com', 'vidhisoni2005@gmail.com', 'pallavirathore367@gmail.com', 'ved.lokhande20@gmail.com', 'adityashm04@gmail.com', 'sohamajmera77@gmail.com', 'itswolv3rinegaming@gmail.com', 'nikitav163@gmail.com', 'raghavdps21@gmail.com', 'mukundgupta204@gmail.com', 'saranyasingh2011@gmail.com', 'tanmayverma1218@gmail.com', 'divyansh.m0711@gmail.com', 'ruchirekhadas@gmail.com', 'lakshyjain2411@gmail.com', 'sujeetjain2011@gmail.com', 'aadityaagrawal02@gmail.com', 'shauryakhatri10@gmail.com', 'saboonr1@hotmail.com', 'julania.pari@gmail.com', 'kochharvanisha5@gmail.com', 'anshkhandelwal004@gmail.com', 'agrawalmahima03@gmail.com', 'anil.chawla33@gmail.com', 'divyagarg9166@gmail.com', 'sinhaadamya@gmail.com', 'itskirtan123@gmail.com', 'goyalkhushi581@gmail.com', 'pujabaldawa0703@gmail.com', 'dalmiyabhavesh@gmail.com', 'anushkaahire036@gmail.com', 'ishaan.shandilya2004@gmail.com', 'sakshigupta1680@gmail.com', 'keshavmittalsurat@gmail.com', 'ameegoel05@gmail.com', 'anshraj.solanki500@gmail.com', 'simranakhanuja@yahoo.com', 'dakshpratapsinghchauhan1234@gmail.com', 'sharma.shouryaa@gmail.com', 'shreshth.agrawal123@gmail.com', 'itswolv3rinegaming@gmail.com', 'saranyasingh2011@gmail.com', 'lakshyjain2411@gmail.com', 'sujeetjain2011@gmail.com', 'aadityaagrawal02@gmail.com', 'shauryakhatri10@gmail.com', 'kochharvanisha5@gmail.com', 'ishaan.shandilya2004@gmail.com', 'sakshigupta1680@gmail.com', 'keshavmittalsurat@gmail.com', 'ameegoel05@gmail.com', 'anirudh2439@gmail.com', 'aashutosh.orpl@gmail.com', 'jaintula@yahoo.co.in', 'alizaaimanimtiaz@gmail.com', 'amitbindlish@yahoo.co.in', 'sakethreddy91@gmail.com', 'aashutosh.orpl@gmail.com'];
-        //hiding the test document on dashboard
-        $('a[class="utility-link"]:contains(sobaMeritListSubs)').hide();
-        if (offerDatePassedProgram.indexOf(getAcceptedProgram) !== -1) {
-            if (specialUserEmail.indexOf(jsVars.user_email) === -1 && $('a[class="utility-link"]:contains(sobaMeritListSubs)').length === 0 && $('a[class="utility-link"]:contains(CisStudent)').length === 0) {
-                $('table .col5').css('width', '17%');
-                $('.form_16219').find('a[role="button"]:contains(Admission Form)').remove();
-            }
-        }
-    }
-    ifOfferDatePassed();
-
-    /* function cetSPTMFormDatePassed() {
-        if (jsVars.user_email !== "vrashabhbalasahebgaikwad@gmail.com" && jsVars.user_email !== "hardikj357@gmail.com" && jsVars.user_email !== "harshalpatil020304@gmail.com" && jsVars.user_email !== "shivani1827@protonmail.com" && jsVars.user_email !== "divyaratadiya0109@gmail.com") {
-            if ($('.form_16560').find('a[class="utility-link"]:contains(Counselling Letter)').length === 0 && $('.form_16560').find('span[class="msgarw pull-right"]:contains(Thank you for accepting the offer)').length === 1) {
-                $('.form_16560').find('a[role="button"]:contains(Admission Form)').after('SPTM Admission Form is Closed');
-                $('.form_16560').find('a[role="button"]:contains(Admission Form)').remove();
-            }
-        }
-
-        if (jsVars.user_email !== "hardikj357@gmail.com" && jsVars.user_email !== "harshalpatil020304@gmail.com" && jsVars.user_email !== "shivani1827@protonmail.com" && jsVars.user_email !== "divyaratadiya0109@gmail.com") {
-            if ($('.form_16560').find('a[class="utility-link"]:contains(spotAdmission)').length === 0) {
-                $('.form_16560').find('a[role="button"]:contains(Admission Form)').remove();
-            }
-        }
-    }
-    cetSPTMFormDatePassed();
- */
-
-    //creating a nav bar for program trasnferbutton here LIVE
-    if ($('.form_16219').find('a[role="button"]:contains(Transfer Request)').length) {
-        $('li:contains(My Payments)').after('<li class="transfer-formNPAT"><a id="transferFormNPAT" href=""><span class="glyphicon glyphicon-transfer"></span><span>Request for Transfer(NPAT)</span></a></li>');
-        let getTransferFormLink = $('.form_16219').find('a[role="button"]:contains(Transfer Request)').attr('href');
-        getTransferFormLink ? $('#transferFormNPAT').attr('href', getTransferFormLink) : console.log('NOtDone');
-        $('.form_16219').find('a[role="button"]:contains(Transfer Request)').hide();
-    }
-
-    //creating a nav bar for program trasnferbutton here LIVE (LAT FORM)
-    if ($('.form_16575').find('a[role="button"]:contains(Request for Program Transfer)').length) {
-        $('li:contains(My Payments)').after('<li class="transfer-formLAT"><a id="transferFormLAT" href=""><span class="glyphicon glyphicon-transfer"></span><span>Request for Transfer(LAT)</span></a></li>');
-        let getTransferFormLink = $('.form_16575').find('a[role="button"]:contains(Request for Program Transfer)').attr('href');
-        getTransferFormLink ? $('#transferFormLAT').attr('href', getTransferFormLink) : console.log('NOtDone');
-        $('.form_16575').find('a[role="button"]:contains(Request for Program Transfer)').hide();
-    }
-
-    if ($('.transfer-formNPAT').length) {
-        if ($('.form_16560').find('a[role="button"]:contains(Request for Program Transfer)').length) {
-            $('.transfer-formNPAT').after('<li class="transfer-formCET"><a id="transferFormCET" href=""><span class="glyphicon glyphicon-transfer"></span><span>Request for Transfer(CET)</span></a></li>');
-            let getTransferFormLink = $('.form_16560').find('a[role="button"]:contains(Request for Program Transfer)').attr('href');
-            getTransferFormLink ? $('#transferFormCET').attr('href', getTransferFormLink) : console.log('NOtDone');
-            $('.form_16560').find('a[role="button"]:contains(Request for Program Transfer)').hide();
-        }
-    } else {
-        if ($('.form_16560').find('a[role="button"]:contains(Request for Program Transfer)').length) {
-            $('li:contains(My Payments)').after('<li class="transfer-formCET"><a id="transferFormCET" href=""><span class="glyphicon glyphicon-transfer"></span><span>Request for Transfer(CET)</span></a></li>');
-            let getTransferFormLink = $('.form_16560').find('a[role="button"]:contains(Request for Program Transfer)').attr('href');
-            getTransferFormLink ? $('#transferFormCET').attr('href', getTransferFormLink) : console.log('NOtDone');
-            $('.form_16560').find('a[role="button"]:contains(Request for Program Transfer)').hide();
-        }
-    }
-
-    $('a[class="utility-link"]:contains(CisStudent)').hide();
-    if ($('.form_16219').find('a[class="utility-link"]:contains(CisStudent)').length === 1) {
-        $('.form_16219').append('<tr><td colspan="5" style="margin-top:5vh;"><b>For CIS Program : Link of the webinar for your reference : </b><a href="https://youtu.be/2Qai4v5n5-k">https://youtu.be/2Qai4v5n5-k</a><br><b>For any fee related clarification please call on 022-42335062/5064 OR email :</b><a href="mailto:deepali.Kamle@nmims.edu">Deepali.Kamle@nmims.edu </a>/ <a href="mailto:shweta.patil@nmims.edu">Shweta.patil@nmims.edu</a></td></tr>');
-    }
-
-    //any new function start from here
-    function cancelletionLink() {
-        if (($('a[class="utility-link"]:contains(Offer Letter)').length || $('a[class="utility-link"]:contains(Counselling Letter)').length) && ($('a[class="utility-link"]:contains(Admission Form)').length || $('a[class="utility-link"]:contains(Admission PDF)').length)) {
-            $('li:contains(My Payments)').after('<li class="cancellation-Link"><a id="cancellationLink" href="https://upload.nmims.edu/admission/cancellation/" target="_blank"><span>Request for Cancellation</span></a></li>');
-        }
-    }
-    cancelletionLink();
-
-
-
-
-
-    // Master of Physiotherapy 
-    $('.form_16224').find('tr').each(function () {
-        if (jsVars.user_email !== "nikitap2498@gmail.com")
-            $(this).find('a[role="button"]:contains(Admission Form)').remove();
-    });
-
-    // NPAT
-    $('.form_16219').find('tr').each(function () {
-        if (jsVars.user_email === "sakethreddy91@gmail.com") {
-            //$(this).find('a[role="button"]:contains(Admission Form)').remove();
-        }
-        if (jsVars.user_email === "nehalkothari03@gmail.com") {
-            $(this).find('a[role="button"]:contains(Offer Details)').remove();
-        }
-    });
-
-    $('.form_16219').find('a[role="button"]:contains(Update Details)').hide();
-    //function to open the post editable to edit the 12th details
-    function open12THPcmData() {
-        $('.form_16219').find('a[class="utility-link"]:contains(12THPCM)').hide();
-        if ($('.form_16219').find('a[class="utility-link"]:contains(12THPCM)').length === 0) {
-            $('a[role="button"]:contains(Update your 12th Details)').remove();
-        }
-    }
-    open12THPcmData();
-    /* CET Form  */
-    var specialUserEmailCET = ['pratikshajainhittal@gmail.com', 'rakeshs@sentier.co.in'];
-    //hiding the test document on dashboard
-    $('a[class="utility-link"]:contains(CETMeritListSubs)').hide();
-    if (specialUserEmailCET.indexOf(jsVars.user_email) === -1 && $('a[class="utility-link"]:contains(CETMeritListSubs)').length === 0 && $('#course_one').val() == '') {
-        $('.form_16560').find('a[role="button"]:contains(Admission Form)').remove();
-    }
-
-    /* $('.form_16386').find('tr').each(function () {
-        if (jsVars.user_email !== "gauurikaarao9@gmail.com" && jsVars.user_email !== "ayushsapphire2312@gmail.com") {
-            $(this).find('a[role="button"]:contains(Admission Form)').remove();
-        }
-    }); */
-
-
-    // BBA LLB FORM 
-    /* LLB_CandidateEmail = ["gauurikaarao9@gmail.com", "ayushsapphire2312@gmail.com", "shawnphilgracias@gmail.com", "sahanapisapati@gmail.com", "pathaksanya07@gmail.com"];
-
-    if (LLB_CandidateEmail.indexOf(jsVars.user_email) == -1) {
-        $('.form_16386').find('tr').each(function () {
-            $(this).find('a[role="button"]:contains(Admission Form)').remove();
-        });
-    } */
-    //$('.form_16386').find('a[role="button"]:contains(Update Parent signature)').hide();
-
-    // HealthCare 
-    HealthCareCandidate = ["dakshitathakkar@gmail.com", "fahad.a.khan1771@gmail.com", "yadnyaborase99@gmail.com", "yeahniki77@gmail.com", "prasaddethe69@gmail.com", "shreyaparab347@gmail.com", "kushthakkar9@gmail.com"];
-
-    if (HealthCareCandidate.indexOf(jsVars.user_email) == -1) {
-        $('.form_16784').find('tr').each(function () {
-            $(this).find('a[role="button"]:contains(Admission Form)').remove();
-        });
-    }
-
-    // M Arch
-    M_Arch_Candidate = ["jainsaurabh417@gmail.com", "pannagnshet@gmail.com"];
-
-    if (M_Arch_Candidate.indexOf(jsVars.user_email) == -1) {
-        $('.form_16237').find('tr').each(function () {
-            $(this).find('a[role="button"]:contains(Admission Form)').remove();
-        });
-    }
-
-    // APPLD PSY
-    var bscApplied = ['singhgarimaa17@gmail.com', 'mrunmayee930@gmail.com', 'kamanikhushi77@gmail.com', 'hrishikarjain@gmail.com', 'kavyaaseth2508@gmail.com', 'chhedaisha22@gmail.com', 'ishitasatra04@gmail.com', 'dhruvrajeshahuja@gmail.com', 'viranchilunvara27@gmail.com', 'krina.maru07@gmail.com', 'poonam564.mail@gmail.com', 'pranav.joshi170702@gmail.com', 'saniarehmani28@gmail.com', 'parnikachaudhary9@gmail.com', 'principal.sda@gmail.com', 'ayeshamehra9@gmail.com', 'sadhikawahi@gmail.com', 'ashbhatara@gmail.com', 'prathamdass12@gmail.com', 'sparsharai04@gmail.com', 'aarnaspopat@gmail.com', 'prishamuttreja@gmail.com', 'safiabhaiji@gmail.com', 'nair.athena@gmail.com', 'shindedurva13@gmail.com', 'prachipurohit1108@gmail.com', 'rahie06@gmail.com', 'reacheshaana@gmail.com', 'muskaanlohiya1256@gmail.com', 'shradha.pattnayak@gmail.com', 'ananyaduggal@yahoo.com', 'nandinisehgal5@gmail.com', 'vaishnavi.patel188@gmail.com', 'surbhibindra26@gmail.com', 'hetchok06@gmail.com', 'poojaak2411@gmail.com', 'kashafsayed786@gmail.com', 'monikaoza22@gmail.com', 'shanr1@yahoo.com', 'kaltamash65@gmail.com', 'rujuldawn13@gmail.com', 'vidhigandhi07@gmail.com', 'alkesh_doshi@hotmail.com', 'rheabanga@yahoo.in', 'getanisa26@hotmail.com', 'pareekhanna670@gmail.com', 'yashwardhangoyal@gmail.com', 'surabhichadha2004@gmail.com'];
-
-    if (bscApplied.indexOf(jsVars.user_email) == -1) {
-        $('.form_16331').each(function () {
-            $(this).find('a[role="button"]:contains(Admission Form)').remove();
-        });
-    }
-
-
-
-
-    // NLAT
-    /*NLAT_CandidateEmail = ["humak5789@gmail.com", "ig.lakshya.25@gmail.com"];
-
-    if (NLAT_CandidateEmail.indexOf(jsVars.user_email) == -1) {
-        $('.form_16575').find('tr').each(function () {
-            $(this).find('a[role="button"]:contains(Admission Form)').remove();
-        });
-    }*/
-
-    // NPAT (Satendra)
-    NPAT_CandidateEmail = ["vishvashah1467@gmail.com", "harshilgoyal212@gmail.com", "khandelwalmuskan101@gmail.com", "sakethreddy91@gmail.com", "shrutibanka9@gmail.com"];
-
-    if (NPAT_CandidateEmail.indexOf(jsVars.user_email) !== -1) {
-        $('.form_16219').find('tr').each(function () {
-            $(this).find('a[role="button"]:contains(Offer Details)').remove();
-        });
-        var Satendraflag = true;
-        $('.form_16219 a:contains("Admission Form")').each(function (i, e) {
-            if (Satendraflag == true) {
-                console.log("IM IN", Satendraflag);
-                $(e).addClass("Satendra");
-                $('.Satendra').hide();
-                Satendraflag = false;
-            }
-        });
-    }
-
-    // NPAT (Satendra)
-    NPAT1_CandidateEmail = ["prashamdungarwal88@gmail.com"];
-
-    if (NPAT1_CandidateEmail.indexOf(jsVars.user_email) !== -1) {
-        var Satendraflag = true;
-        $('.form_16219 a:contains("Offer Details")').each(function (i, e) {
-            if (Satendraflag == true) {
-                console.log("IM IN", Satendraflag);
-                $(e).addClass("Satendra");
-                $('.Satendra').hide();
-                Satendraflag = false;
-            }
-        });
-    }
-   
-    //B.sc applied psy
-    Psy_CandidateEmail = ["singhgarimaa17@gmail.com"];
-
-    if (Psy_CandidateEmail.indexOf(jsVars.user_email) !== -1) {
-        var Satendraflag123 = true;
-        $('.form_16331 a:contains("Admission Form")').each(function (i, e) {
-            if (Satendraflag123 == true) {
-                console.log("IM IN", Satendraflag123);
-                $(e).addClass("Satendra");
-                $('.Satendra').hide();
-                Satendraflag123 = false;
-            }
-        });
-    }
-
-    //nlat subsequent merit list handling
-    $('.form_16575').find('a[class="utility-link"]:contains(subsequentMerit)').hide();
-    if ($('.form_16575').find('a[class="utility-link"]:contains(subsequentMerit)').length === 0) {
-        jsVars.user_email != 'srinivasan.iyer1973@gmail.com' && jsVars.user_email != 'ig.lakshya.25@gmail.com' && $('.form_16575').find('a[role="button"]:contains(Admission Form)').remove();
-    }
-    //$('.form_16575').find('a:contains(Offer Details)').hide();
-    //$('.form_16575').find('a:contains(Offer Detail)').hide();
-    if (jsVars.user_email == "prashamdungarwal88@gmail.com") {
-        $('.form_16219').find('a[role="button"]:contains(Offer Details)').show();
-    }
-
-    // Remove admission btn for candidates (CET)
-    // let satyyArraynpat = ['mann98262@gmail.com'];
-    // if (satyyArraynpat.indexOf(jsVars.user_email) !== -1) {
-    //     $('.form_16560').find('a[role="button"]:contains(Admission Form)').remove();
-    // }
-    $('a[class="utility-link"]:contains(EnabledUploadDOC)').hide();
-
-    //npat
-
-    let satyArraynpat = ['dakshpratapsinghchauhan1234@gmail.com', 'sharma.shouryaa@gmail.com', 'sujeetjain2011@gmail.com', 'lakshyjain2411@gmail.com', 'simranakhanuja@yahoo.com', 'bharatjayakrishnan27@gmail.com', 'vidhisoni2005@gmail.com', 'itskirtan123@gmail.com', 'yukthapuvvada@gmail.com', 'nathanmylabathula@gmail.com', 'regell_73@yahoo.com', 'poonam.sunkey@gmail.com', 'mythrikanagadda04@gmail.com', 'rsudheerya2004@gmail.com', 'pallavirathore367@gmail.com', 'ved.lokhande20@gmail.com'];
-    if (satyArraynpat.indexOf(jsVars.user_email) !== -1) {
-        $('.form_16219').find('a[role="button"]:contains(Offer Details)').remove();
-    }
-    
-
-    if ((jsVars.user_email) === 'kochharvanisha5@gmail.com' || (jsVars.user_email) === 'shauryakhatri10@gmail.com' || (jsVars.user_email) === 'aadityaagrawal02@gmail.com' || (jsVars.user_email) === 'saranyasingh2011@gmail.com' || (jsVars.user_email) === 'kunalch23@gmail.com') {
-        $('.form_16219').find('a[role="button"]:contains(Admission Form)').remove();
-    }
-
-
-    // applied stat
-    let pranjalStat = ['prajwalvaidya13@gmail.com'];
-    if (pranjalStat.indexOf(jsVars.user_email) !== -1) {
-        $('.form_16326').find('a[role="button"]:contains(Offer Details)').remove();
-    }
-
-
-    if (jsVars.user_email === "srivastavanishtha89@gmail.com" || jsVars.user_email === "tatiaanushka1404@gmail.com") {
-        if ($('.form_16386').find('a[role="button"]:contains(Offer Details)').length === 1) {
-            $('.form_16386').find('a[class="utility-link"]:contains(Admission Form)').hide();
-        }
-    }
-    // Enabled upload 
-    let formIDSS = ['16219', '16187', '16232', '16318', '16214', '16233', '16228', '16322'];
-
-    formIDSS.forEach(function (e) {
-
-        if ($(`.form_${e}`).find('a[class="utility-link"]:contains(EnabledUploadDOC)').length == 0) {
-            $(`.form_${e}`).find('a[role="button"]:contains(Upload Documents)').remove();
-        }
-    });
-
-
-    /* function removeAdmissionForNpat() {
-        //this condition is checking here if the candidate is considerd into the subsequent merit list
-        if ($('.form_16219').find('a[class="utility-link"]:contains(CisStudent)').length === 1) {} else {
-            $('.form_16219').find('a[role="button"]:contains(Admission Form)').remove();
-        }
-    }
-    removeAdmissionForNpat(); */
-    /*$('.form_16575').find('a[role="button"]:contains(Offer Details)').hide();*/
-    /*$('.form_16575').find('a[role="button"]:contains(Offer Details)').hide();*/
-
-
-
-    /* Hide unnecessary Admission Form pdf here For NPAT */
-    if ($('.form_16219').find('a[role="button"]:contains(Admission Form)').length === 1) {
-        $('.form_16219').find('a[class="utility-link"]:contains(Admission Form)').hide();
-    }
-
-    // Remove extra offer Details btn in npat
-    function hideExtraBtn() {
-        var extraFlagg = true;
-        $('.form_16219 a[role="button"]:contains("Offer Details")').each(function (i, e) {
-            if ($('.form_16219 a[role="button"]:contains("Offer Details")').length == 2) {
-                if (extraFlagg == true) {
-                    $(e).addClass("removeSingleBtn");
-                    $('.removeSingleBtn').hide();
-                    extraFlagg = false;
-                }
-            }
-        });
-    }
-    hideExtraBtn();
-
-
-    $('a[class="utility-link"]:contains(phase3candidate)').hide();
-
-    function removeAdmissionForNpat() {
-        //this condition is checking here if the candidate is considerd into the subsequent merit list
-        if ($('.form_16219').find('a[class="utility-link"]:contains(phase3candidate)').length === 1) {} else {
-            $('.form_16219').find('a[role="button"]:contains(Admission Form)').remove();
-        }
-    }
-    removeAdmissionForNpat();
-
-    // interior 
-    if (jsVars.user_email !== "ishitakataria002@gmail.com") {
-        $('.form_16222').find('a[role="button"]:contains(Admission Form)').remove();
-    }
-
-    // CET
-    if ($('.form_16560').find('a[role="button"]:contains(Offer Details)').length === 1) {
-        $('.form_16560').find('a[role="button"]:contains(Admission Form)').remove();
-    }
-
-    // NPAT
-
-    // B Pharm Lit.
-    if ($('.form_16377').find('a[role="button"]:contains(Offer Detail)').length === 1) {
-        $('.form_16377').find('a[role="button"]:contains(Admission Form)').remove();
-    }
-    // Spot admission pdf
-    if (jsVars.user_email !== "akellajagan34@gmail.com") {
-        $('.form_17414').find('a[class="utility-link"]:contains(Admission Form)').remove();
-    }
-   if (jsVars.user_email !== "simransc713@gmail.com" && jsVars.user_email !== "loveyourself.8124@gmail.com" && jsVars.user_email !== "mini.wani00@gmail.com" && jsVars.user_email !== "tanyadas184@gmail.com") {
-    $('.form_16325').find('a[role="button"]:contains(Admission Form)').remove();
-}
-
-
-
-
-    if (jsVars.user_email === "mahekmathurawala@gmail.com") {
-        $('.form_16386').find('a[role="button"]:contains(Offer Details)').remove();
-    }
-
-    /* $('.form_15291').find('a[role="button"]:contains(Offer Details)').hide(); */
-
-    if ($('.form_15291').find('a[role="button"]:contains(Offer Details)').length === 1) {
-        $('.form_15291').find('a[role="button"]:contains(Admission Form)').remove();
-    }
-});
-
-if ($('.form_16386').find('a[role="button"]:contains(Offer Details)').length === 1) {
-    $('.form_16386').find('a[role="button"]:contains(Admission Form)').remove();
-}
-
-if ($('.form_16261').find('a[role="button"]:contains(offer Details)').length === 1) {
-    $('.form_16261').find('a[role="button"]:contains(Admission Form)').remove();
-}
-
-
-if (jsVars.user_email == "agovind864@gmail.com") {
-    $('.form_16379').find('a[class="utility-link"]:contains(Counselling Letter)').remove();
-}
-
-
-
-$('table').each(function () {
-       if($(this).find('a:contains(NewCallLetter)').length){
-    $(this).find('a:contains(Call Letter)').remove();
-    $(this).find('a:contains(NewCallLetter)').html(`<i class="fa fa-download"></i>Call Letter`);
-    }
-})
-
-
-$('.form_17558').find('a[class="utility-link"]:contains(Application Form)').remove();</script></body></html>
+</html>

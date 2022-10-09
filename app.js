@@ -8,6 +8,7 @@ const session = require('express-session')
 
 const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin');
+const teacherRouter = require('./routes/teacher');
 const { format } = require('path');
 const multer = require('multer')
 
@@ -24,7 +25,10 @@ app.engine('hbs', hbs.engine({
     format: function (date) {
       newdate = date.toUTCString()
       return newdate.slice(0, 22)
-    }
+    },
+    trim: function(data){
+      return data.replace(/\s/g,'')
+    },
     
   }
 })
@@ -49,6 +53,7 @@ app.use(session({
 
 app.use('/', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/teacher',teacherRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

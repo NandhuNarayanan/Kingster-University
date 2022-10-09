@@ -1,0 +1,90 @@
+<!-- main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Widgets</h2>
+            <small class="text-muted">Welcome to Swift application</small>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Student Name</th>
+                                        <th>Query</th>
+                                        <th>Category</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Response</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each studentsQuery}}
+                                    <tr>
+                                        <td><span class="text-success">{{this.urname}}</span></td>
+                                        <td class="txt-oflo">{{this.message}}</td>
+                                        <td class="txt-oflo">{{this.queryCategory}}</td>
+                                        <td><span class="label label-success">{{format this.createdAt}}</span> </td>
+                                        <td><span class="text-success">open</span></td>
+                                        <td><a class="btn"  href="/admin/queryResponse/{{this._id}}">replay</a></td>
+                                        
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- main content -->
+
+<div class="color-bg"></div>
+
+
+{{!-- <!-- Default Size -->
+{{#each studentsQuery}}
+<div class="modal fade" id="{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ask your Query</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="/admin/queryResponse">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="{{this._id}}">
+                        <label for="recipient-name" class="col-form-label">To:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="urname" value="{{this.urname}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <input class="form-control" id="message-text" name="replay" required>
+                    </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<script>
+    function showModal(id)
+    {
+        $("#exampleModal").modal()
+    }
+</script> --}}

@@ -1,0 +1,30 @@
+<!-- main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>All Professors</h2>
+            <small class="text-muted">Welcome to Kingster University</small>
+        </div>
+        <div class="row clearfix">
+                        {{#each viewprofessors}}
+                   <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card all-patients">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 m-b-0">
+                                <a href="#" class="p-profile-pix"><img src="/assets/images/student/random-avatar1.jpg" alt="user" class="img-thumbnail img-fluid"></a>
+                            </div>
+                            <div class="col-lg-8 col-md-12 m-b-0">
+                                <h5 class="m-b-0">{{this.professors}}</h5> <small>{{this.depatment.department}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        {{/each}}
+        </div>
+    </div>
+</section>
+<!-- main content -->
+
+<div class="color-bg"></div>

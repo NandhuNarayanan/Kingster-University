@@ -8,7 +8,7 @@ const mongoose =require('mongoose')
 const twilio = require('../controllers/twilioController');
 const twilioController = require('../controllers/twilioController');
 const { response } = require('../app');
-const { findOne, populate } = require('../models/userModel');
+const { findOne, populate, findById } = require('../models/userModel');
 const courseModel = require('../models/courseModel')
 const programModel = require('../models/programModel');
 const qualificationModel = require('../models/qualificationModel');
@@ -19,7 +19,13 @@ const multer = require('multer');
 const notificationModel = require('../models/notificationModel');
 const applicationModel = require('../models/applicationModel');
 const paymentModel = require('../models/paymentModel');
-
+const generalInformationModel = require('../models/InformationOfgeneralModel')
+const InformationOfqualificationModel = require('../models/InformationOfqualificationModel')
+const ProgramOfferedModel = require('../models/ProgramOfferedModel')
+const quaryModel = require('../models/QueriesModel');
+const departmentModel = require('../models/departmentModel');
+const admissionDetailsModel = require('../models/admissionDetailsModel');
+const attendanceModel = require('../models/attendenceModel');
 
 
 const verifylogin = (req,res,next)=>{
@@ -49,15 +55,27 @@ router.get('/',function(req, res, next) {
   if(req.session.login){
     res.redirect('/studentdash')
   }else{
-    res.render('users/landingPage')
+    res.render('users/landingPage',{home_header:true})
   }
   
 });
 
 
 router.get('/admissions',(req,res)=>{
-  res.render('users/admissions')
+  res.render('users/admissions',{home_header:true})
 });
+
+router.get('/course',async(req,res)=>{
+  const viewcourses = await courseModel.find().lean()
+ 
+  res.render('users/courses/course',{home_header:true,viewcourses})
+});
+
+router.get('/courses/:id',async(req,res)=>{
+  const viewcourses = await courseModel.findById(req.params.id).lean()
+  res.render('users/courses/course1',{viewcourses,home_header:true})
+});
+
 
 
 ////////////////////////////////_______login section_______////////////////////////////////////
@@ -66,7 +84,7 @@ router.get('/login',(req,res)=>{
   if (req.session.login) {
     res.redirect('/')
   }else{
-    res.render('users/loginUsers')
+    res.render('users/loginUsers',{home_header:true})
   }
 });
 
@@ -95,17 +113,20 @@ router.post('/login',async(req,res)=>{
 
 ////////////////////////////////_______signup section_______////////////////////////////////////
 
-router.get('/signup', (req, res, next)=> {  
+router.get('/signup',async(req, res, next)=> {  
 if (req.session.login) {
   res.redirect('/')
 }else{
-  res.render('users/signupUsers')
+  const qualification = await qualificationModel.find().lean()
+  const course = await courseModel.find().lean()
+  res.render('users/signupUsers',{qualification,course})
 
 }
   
   });
 
   router.post('/signup',async(req,res)=>{
+    console.log(req.body);
  try {
     const olduser = await userModel.findOne({email:req.body.email})
 
@@ -120,7 +141,8 @@ if (req.session.login) {
    return res.redirect('/signupotp')
 
  } catch (error) {
-    
+
+    console.log(error);
  }   
   });
 /////////////////////////////////_____________________________________________///////////////////////////////////
@@ -151,11 +173,13 @@ router.post('/signupverify',(req,res)=>{
       // console.log(req.query)
       // const {qualification,course,program}= req.query
        const viewqualification = await qualificationModel.find().lean()
-      const viewcourses = await courseModel.find().lean() ;
+      const viewcourses = await courseModel.find().lean()
       const viewprogram = await programModel.find().lean()
       const notification = await notificationModel.find().lean()
-      const applyedProgram = await paymentModel.find({userId:req.session.user._id}).populate('program').lean()
-      res.render('users/studentDash',{viewqualification,viewcourses,viewprogram,notification,applyedProgram})
+      const user =  await userModel.findById(req.session.user._id).lean()
+      const applyedProgram = await paymentModel.find({userId:req.session.user._id}).populate('program').populate('course').lean()
+      console.log(applyedProgram,'applicationModel ');
+      res.render('users/studentDash',{user,viewqualification,viewcourses,viewprogram,notification,applyedProgram,layout:'student-layout',student_header:true})
      } catch (error) {
       console.log(error);
     }
@@ -165,7 +189,7 @@ router.post('/signupverify',(req,res)=>{
   router.get('/studentprofile',verifylogin,async(req,res,next)=>{
     const user =  await userModel.findById(req.session.user._id).lean()
     const notification = await notificationModel.find().lean()
-    res.render('users/student_profile',{user,invalid:req.session.invaild,notification})
+    res.render('users/student_profile',{user,invalid:req.session.invaild,notification,layout:'student-layout',student_header:true})
 
   });
 
@@ -240,8 +264,8 @@ router.get('/application',verifylogin,async(req,res)=>{
     const viewcourses = await courseModel.find().lean() ;
     const viewprogram = await programModel.find().lean()
     const notification = await notificationModel.find().lean()
-    const userId = await userModel.findById(req.session._id)
-    res.render('users/studentApplication',{viewqualification,viewcourses,viewprogram,notification})
+    const userId = await userModel.findById(req.session.user._id)
+    res.render('users/studentApplication',{viewqualification,viewcourses,viewprogram,notification,layout:'student-layout',student_header:true})
    } catch (error) {
     console.log(error);
   }
@@ -258,13 +282,12 @@ router.post('/application',async(req,res)=>{
         element._id = element._id.toString().replace(/ObjectId\("(.*)"\)/, "$1");
         courseIds.push(element._id);
        });
-       console.log("courseIds",courseIds)
         viewprogram =  await programModel.find({$in:{course: id}}).lean()
         // viewprogram.forEach(element => {
         //   element._id = element._id.toString().replace(/ObjectId\("(.*)"\)/, "$1");
         //   programIds.push(element._id);
         //  });  
-        console.log('viewprogram',viewprogram)
+        
  
     }
     else{
@@ -283,7 +306,7 @@ router.post('/application',async(req,res)=>{
 
 
 router.get('/help',verifylogin,(req,res)=>{
-  res.render('users/studentsHelp')
+  res.render('users/studentsHelp',{layout:'student-layout',student_header:true})
 });
 
 
@@ -294,7 +317,7 @@ router.get('/help',verifylogin,(req,res)=>{
 router.get('/notification',verifylogin,async(req,res)=>{
   try {
     const notification = await notificationModel.find().lean()
-    res.render('users/studentNotification',{notification})
+    res.render('users/studentNotification',{notification,layout:'student-layout',student_header:true})
   } catch (error) {
     
   }
@@ -307,18 +330,15 @@ router.get('/notification',verifylogin,async(req,res)=>{
 ////////---------------------Personal_Details
 
 router.get('/personalform',verifylogin,async(req,res)=>{
-  console.log('query',req.query)
   try {
     const olduser = await applicationModel.findOne({userId:req.session.user._id})
     
     if (!olduser) {
     const users = await userModel.findById(req.session.user._id).lean()
-    const applyDetails = await new applicationModel({userId:req.session.user._id,program:req.query.id})
+    const applyDetails = new applicationModel({userId:req.session.user._id,program:req.query.id})
     applyDetails.save()
-    const selectedProgram = await applicationModel.find({userId:req.session.user._id}).populate('program').lean()
     const notification = await notificationModel.find().lean()
-    console.log('selectedProgram',selectedProgram);
-    res.render('users/personalDetailsForm',{users,selectedProgram,notification})
+    res.render('users/personalDetailsForm',{users,notification})
   }else{
     res.redirect('/application')
   }
@@ -375,7 +395,7 @@ router.get('/payment',verifylogin,async(req,res)=>{
     const payDetailes = await userModel.findById(req.session.user._id).lean()
     const fee = await applicationModel.findOne({userId:req.session.user._id}).populate('program').lean()
     const notification = await notificationModel.find().lean()
-    res.render('users/studentPayment',{payDetailes,fee:fee.program.applicationFee,kit:fee.program.kitAmount,notification})
+    res.render('users/studentPayment',{notification,payDetailes,fee:fee.program.applicationFee,kit:fee.program.kitAmount,layout:'student-layout',student_header:true})
   } catch (error) {
     console.log(error);
   }
@@ -388,7 +408,6 @@ router.post('/makepayment',async(req,res)=>{
     const findProgram = await applicationModel.findOne({userId:req.session.user._id}).populate('program').lean()
     const finalPayment = await new paymentModel({finalAmount:req.body.Grandtotal,userId:req.session.user._id,program:findProgram.program})
     finalPayment.save()
-    console.log(finalPayment,'qwerty');
     paymentController.generateRazorpay(finalPayment).then((response)=>{
     res.json(response)
     })
@@ -399,11 +418,8 @@ router.post('/makepayment',async(req,res)=>{
 
 ////////---------------------verify_PAYMENT
 router.post('/verifyPayment',(req,res)=>{
-  console.log(req.body,"req.body");
   paymentController.verifyPayment(req.body).then(()=>{
-    console.log(req.body,'in verify ');
     paymentController.changePaymentStatus(req.body.receipt).then(()=>{
-      console.log('Payment Successfull');
       res.json({status:true})
     })
   }).catch((error)=>{
@@ -433,15 +449,178 @@ router.post('/applyKit',async(req,res)=>{
 router.get('/history',verifylogin,async(req,res)=>{
   try {
     const paymentHistory = await paymentModel.find({userId:req.session.user._id}).populate('program').lean()
-    res.render('users/studentPayhistory',{paymentHistory})
+    res.render('users/studentPayhistory',{paymentHistory,layout:'student-layout',student_header:true})
   } catch (error) {
-    // {program:paymentHistory.program.program,Amount:paymentHistory.finalAmount,paymentStatus:paymentHistory.paymentStatus}
+   console.log(error);
   }
 });
 
 
+router.get('/generalInformation',(req,res)=>{
+  const admissionDetails = new admissionDetailsModel({userId:req.session.user._id,program:req.query.id})
+    admissionDetails.save()
+  res.render('users/generalInformation')
+})
 
 
+router.post('/generalInformation',(req,res)=>{
+  try {
+    const generalInformation = new generalInformationModel(req.body)
+    generalInformation.save()
+    res.redirect('/qualificationInformation')
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+
+
+router.get('/qualificationInformation',(req,res)=>{
+  try {
+    res.render('users/qualificationInformation')
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+router.post('/qualificationInformation',(req,res)=>{
+  try {
+    const qualificationInformation = new InformationOfqualificationModel(req.body)
+    qualificationInformation.save()
+    res.redirect('/ProgramOffered')
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+router.get('/ProgramOffered',async(req,res)=>{
+  try {
+    const programDetails = await courseModel.find().lean();
+
+    res.render('users/ProgramOffered',{programDetails})
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+router.post('/ProgramOffered',async(req,res)=>{
+const course = await courseModel.findById(req.body.courseid)
+const courseName = course.course;
+const coursePrice = course.price
+res.json({courseName,coursePrice})
+})
+
+router.post('/ProgramOffered/makePayment',(req,res)=>{
+  try {
+    console.log(req.body,'❤️❤️❤️❤️');
+    const {course,amountPayable} = req.body
+    const makePayment = new ProgramOfferedModel({amountPayable,course,userId:req.session.user._id})
+    makePayment.save()
+    res.redirect('/admissionPayment')
+  } catch (error) {
+    console.log(error);
+  }
+})
+  
+
+
+
+
+router.get('/admissionPayment',async(req,res)=>{
+  try {
+    const payableAmount = await ProgramOfferedModel.findOne({userId:req.session.user._id}).populate('userId').lean()
+    console.log(payableAmount,'TokenExpired');
+    res.render('users/takeACoursePayment',{payableAmount,fee:payableAmount.amountPayable,username:payableAmount.userId.fname,lastname:payableAmount.userId.lname,email:payableAmount.userId.email,phone:payableAmount.userId.mobile,layout:'student-layout',student_header:true})
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+////////---------------------PAYMENT_ID
+router.post('/payamount',async(req,res)=>{  
+  try {
+    const findCourse = await ProgramOfferedModel.findOne({userId:req.session.user._id}).lean()
+    const finalPayment = await new paymentModel({finalAmount:req.body.totalFee,userId:req.session.user._id,course:findCourse.course})
+    finalPayment.save()
+    console.log(finalPayment,'❤️❤️❤️');
+    paymentController.generateRazorpay(finalPayment).then((response)=>{
+    res.json(response)
+    })
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+////////---------------------verify_PAYMENT
+router.post('/Paymentverify',(req,res)=>{
+  paymentController.verifyPayment(req.body).then(()=>{
+    paymentController.changePaymentStatus(req.body.receipt).then(()=>{
+      res.json({status:true})
+    })
+  }).catch((error)=>{
+    console.log(error);
+    res.json({status:false})
+  })
+})
+
+
+
+
+
+
+
+
+router.get('/invoice',verifylogin,async(req,res)=>{
+  try {
+    const invocePayment = await paymentModel.findOne({userId:req.session.user._id}).populate('program').populate('userId').lean()
+    const notification = await notificationModel.find().lean()
+    res.render('users/student-invoice',{notification,invocePayment,layout:'student-layout',student_header:true})
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+
+
+router.get('/quary',verifylogin,async(req,res)=>{
+  try {
+    const showquery = await quaryModel.find().populate('userId').lean()
+    res.render('users/quary',{showquery,layout:'student-layout',student_header:true})
+  } catch (error) {
+    
+  }
+});
+
+
+router.post('/getquery',(req,res)=>{
+  try {
+    const askQuary = new quaryModel(req.body)
+    askQuary.save()
+  res.json('success')
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+
+router.get('/quaryDetails/:id',verifylogin,async(req,res)=>{
+  try {
+    const studentsQuery = await quaryModel.findById(req.params.id).lean()
+    const showquery = await quaryModel.find().populate('userId').lean()
+    res.render('users/queryDetails',{studentsQuery,showquery,layout:'student-layout',student_header:true})
+  } catch (error) {
+    
+  }
+});
+
+router.get('/showStudentAttendance',async(req,res)=>{
+  const showAttendance = await attendanceModel.find({studentId:req.session.user._id}).lean()
+  res.render('users/showStudentAttendance',{showAttendance,layout:'student-layout',student_header:true})
+})
 //////////////////////////////////////______logout_______//////////////////////////////////////
 
   router.get('/logout',(req,res)=>{

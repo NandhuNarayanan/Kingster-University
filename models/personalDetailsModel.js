@@ -3,8 +3,7 @@ const mongoose = require('mongoose')
 
 personalDetailsSchema = new mongoose.Schema({
     userId: {
-        type: String,
-        required: true
+        type: String
     },
     photograph: {
 

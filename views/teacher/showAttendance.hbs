@@ -1,0 +1,138 @@
+            <!-- Header Layout Content -->
+            <div class="mdk-header-layout__content">
+
+                <div data-push
+                     data-responsive-width="992px"
+                     class="mdk-drawer-layout js-mdk-drawer-layout">
+                    <div class="mdk-drawer-layout__content page ">
+
+                        <div class="container-fluid page__container">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/teacher/teacherDash">Home</a></li>
+                                <li class="breadcrumb-item active">Attendance</li>
+                            </ol>
+                            <h1 class="h2">Student Attendance</h1>
+                            <div class="row">
+                                
+         <table id="example" class="table col-12 table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Attendance</th>
+                <th>Semester</th>
+                <th>Month</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each studentAttendance}}
+            <tr>
+                <td>{{this.studentId.fname}}{{this.studentId.lname}}</td>
+                <td>{{this.depatment.department}}</td>
+                <td>{{this.attendance}}</td>
+                <td>{{this.semester}}</td>
+                <td>{{this.month}}</td>
+            </tr>
+                            {{/each}}
+         
+        </tbody>
+       
+    </table>
+<script>
+   // $(document).ready(function () {
+//});//
+
+document.addEventListener("DOMContentLoaded", function() {
+  // code...
+  const table = document.getElementById('example')
+  new DataTable(table,{
+    width :'100%'
+  });
+    //$('#example').DataTable();
+});
+</script>
+
+<style>
+    .dataTable-wrapper{
+        width: 100% !important;
+    }
+</style>
+                            </div>
+                        </div>
+
+                    </div>
+
+        <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+            <div class="mdk-drawer__content ">
+                <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
+                    <div class="sidebar-p-y">
+                        <div class="sidebar-heading">APPLICATIONS</div>
+                        <ul class="sidebar-menu sm-active-button-bg">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="/teacher/teacherDash">
+                                    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
+                                    Instructor
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Account menu -->
+                        <div class="sidebar-heading">Account</div>
+                        <ul class="sidebar-menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
+                                    href="#account_menu">
+                                    <i
+                                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons">check</i>
+                                    Attendence
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu sm-indent collapse" id="account_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/teacher/attendance">
+                                            <span class="sidebar-menu-text">Add Attendence</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="sidebar-submenu sm-indent collapse" id="account_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/teacher/showAttendance">
+                                            <span class="sidebar-menu-text">Show Attendence</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" data-toggle="collapse" href="#messages_menu">
+                                    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">comment</i>
+                                    Messages
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu sm-indent collapse" id="messages_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="#">
+                                            <span class="sidebar-menu-text">Conversation</span>
+                                            <span
+                                                class="sidebar-menu-badge badge badge-primary badge-notifications ml-auto">2</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<script src="/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="/assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="/assets/bundles/morphingsearchscripts.bundle.js"></script> <!-- Main top morphing search --> 
+
+<script src="/assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
+
+<link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+<script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>

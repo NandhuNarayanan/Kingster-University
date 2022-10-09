@@ -11,6 +11,9 @@ const { populate } = require('../models/userModel');
 const departmentModel = require('../models/departmentModel');
 const couponModel = require('../models/couponModel')
 const notificationModel = require('../models/notificationModel')
+const paymentModel = require('../models/paymentModel');
+const quaryModel = require('../models/QueriesModel')
+const professorsModel = require('../models/professorsModel')
 
 
 // router.get('/adminsignup',(req,res)=>{
@@ -33,7 +36,7 @@ const notificationModel = require('../models/notificationModel')
 
 router.get('/admindash',(req,res)=>{
 
-  res.render('admin/adminDash')
+  res.render('admin/adminDash',{layout:'admin-layout',admin_header:true})
 });
 
 //////////////////////////////////////////////_______________________ADD-LOGIN_________________________/////////////////////////////////////////////////////////////
@@ -43,7 +46,7 @@ router.get('/',(req,res)=>{
   if(req.session.login){
     res.redirect('/admin/admindash')
   }
-  res.render('admin/adminlogin')
+  res.render('admin/adminlogin',{layout:'admin-layout'})
 })
 
 router.post('/',async(req,res)=>{
@@ -67,7 +70,7 @@ router.post('/',async(req,res)=>{
 router.get('/viewstudent',async(req,res)=>{
   try {
     const allStudents = await userModel.find().lean()
-   res.render('admin/viewStudents',{allStudents}).toUpperCase()
+   res.render('admin/viewStudents',{allStudents,layout:'admin-layout',admin_header:true}).toUpperCase()
 
 
   } catch (error) {
@@ -77,14 +80,14 @@ router.get('/viewstudent',async(req,res)=>{
 
 
 router.get('/addstudents',(req,res)=>{
-  res.render('admin/addStudents')
+  res.render('admin/addStudents',{layout:'admin-layout',admin_header:true})
 })
 
 
 //////////////////////////////////////////////_______________________ADD-DEPARTMENT_________________________///////////////////////////////////////////////////////
 
 router.get('/adddepartment',(req,res)=>{
-  res.render('admin/addDepartment')
+  res.render('admin/addDepartment',{layout:'admin-layout',admin_header:true})
 })
 
 router.post('/adddepartment',async(req,res)=>{
@@ -104,13 +107,67 @@ router.post('/adddepartment',async(req,res)=>{
 });
 
 
+//////////////////////////////////////////////_______________________ADD-PROFESSERS_________________________////////////////////////////////////////////////////////
+
+
+router.get('/addprofessors',async(req,res)=>{
+  try {
+    const getDepartment = await departmentModel.find().lean()
+    res.render('admin/addProfessors',{getDepartment,layout:'admin-layout',admin_header:true})
+  } catch (error) {
+    console.log(error);
+  }
+  
+})
+
+router.post('/addprofessors',async(req,res)=>{
+  try {
+    const professors = await new  professorsModel(req.body)
+    const qualificationIDUpdate = await departmentModel.findOneAndUpdate(req.body.professors,{$push:{professorsID:professors._id}})
+    console.log(qualificationIDUpdate,'update');
+    professors.save()
+
+     res.redirect('/admin/addprofessors')
+  
+    
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+
+
+//////////////////////////////////////////////_______________________VIEW-PROFESSORS_________________________////////////////////////////////////////////////////////
+
+
+
+
+router.get('/viewprofessors',async(req,res)=>{
+  try {
+    const viewprofessors = await professorsModel.find().populate('depatment').lean()
+    console.log(viewprofessors,'update');
+    res.render('admin/viewProfessors',{viewprofessors,layout:'admin-layout',admin_header:true})
+
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+
+
+
+
+
+
+
 //////////////////////////////////////////////_______________________VIEW-COURSES_________________________////////////////////////////////////////////////////////
 
 
 router.get('/viewcourse',async(req,res)=>{
   try {
     const viewcourses = await courseModel.find().lean()
-    res.render('admin/viewCourses',{viewcourses})
+    res.render('admin/viewCourses',{viewcourses,layout:'admin-layout',admin_header:true})
 
   } catch (error) {
     console.log(error);
@@ -125,7 +182,7 @@ router.get('/addcourse',async(req,res)=>{
   try {
     const getqualificaton = await  qualificationModel.find().lean()
     const getDepartment = await departmentModel.find().lean()
-    res.render('admin/addCourse',{getqualificaton,getDepartment})
+    res.render('admin/addCourse',{getqualificaton,getDepartment,layout:'admin-layout',admin_header:true})
   } catch (error) {
     console.log(error);
   }
@@ -155,7 +212,7 @@ router.post('/addcourse',async(req,res)=>{
 router.get('/addprograms',async(req,res)=>{
   try {
     const getcourse = await  courseModel.find().lean()
-    res.render('admin/addPrograms',{getcourse})
+    res.render('admin/addPrograms',{getcourse,layout:'admin-layout',admin_header:true})
   } catch (error) {
     console.log(error);
   }
@@ -183,7 +240,7 @@ router.post('/addprograms',async(req,res)=>{
 
 
 router.get('/addqualification',(req,res)=>{
-  res.render('admin/addQualification')
+  res.render('admin/addQualification',{layout:'admin-layout',admin_header:true})
 })
 
 
@@ -205,11 +262,11 @@ router.post('/addqualification',async(req,res)=>{
 });
 
 //////////////////////////////////////////////_______________________ADD-COUPONS_________________________/////////////////////////////////////////////////////////
-router.get('/addcoupon',(req,res)=>{
-  res.render('admin/addCoupon')
+router.get('/paymentDetails',(req,res)=>{
+  res.render('admin/paymentDetails',{layout:'admin-layout',admin_header:true})
 })
 
-router.post('/addcoupon',async(req,res)=>{
+router.post('/paymentDetails',async(req,res)=>{
   console.log(req.body)
 
   try {
@@ -218,7 +275,7 @@ router.post('/addcoupon',async(req,res)=>{
     setTimeout(myFunc,1000);
   
   function myFunc() {
-     res.redirect('/admin/addcoupon')
+     res.redirect('/admin/paymentDetails')
   }
     
   } catch (error) {
@@ -229,7 +286,7 @@ router.post('/addcoupon',async(req,res)=>{
 
 
 router.get('/notificationcontent',(req,res)=>{
-  res.render('admin/notification')
+  res.render('admin/notification',{layout:'admin-layout',admin_header:true})
 });
 
 router.post('/notificationcontent',async(req,res)=>{
@@ -251,6 +308,55 @@ router.post('/notificationcontent',async(req,res)=>{
 
 
 
+router.get('/paymenthistory',async(req,res)=>{
+  try {
+    const paymentHistory = await paymentModel.find().populate('program').lean()
+    res.render('admin/paymentHistory',{paymentHistory,layout:'admin-layout',admin_header:true})
+  } catch (error) {
+    
+  }
+
+})
+
+router.get('/studentsQuery',async(req,res)=>{
+  try {
+    const studentsQuery = await quaryModel.find().populate('userId').lean()
+    res.render('admin/studentsQuery',{studentsQuery,layout:'admin-layout',admin_header:true})
+  } catch (error) {
+    
+  }
+
+})
+
+
+router.get('/queryResponse/:id',async(req,res)=>{
+  try {
+    const studentsQuery = await quaryModel.findById(req.params.id).lean()
+    console.log(studentsQuery,'1234567');
+    res.render('admin/queryReplay',{studentsQuery,layout:'admin-layout',admin_header:true})
+  } catch (error) {
+    
+  }
+
+})
+
+
+router.post('/queryResponse',async(req,res)=>{
+  try {
+    console.log(req.body,'rtyuiolkjhgfdsa');
+   const updateModal = await quaryModel.findOneAndUpdate({_id:req.body.id},{$set:{replay:req.body.replay}})
+   console.log(updateModal,'updateModal12345');
+    res.redirect('/admin/studentsQuery')
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+
+
+
+
 
 
 
@@ -258,7 +364,7 @@ router.post('/notificationcontent',async(req,res)=>{
 
 router.get('/logout',(req,res)=>{
   req.session.login = false
-  res.redirect('/admin')
+  res.redirect('/admin/login')
 })
 
 module.exports=router;

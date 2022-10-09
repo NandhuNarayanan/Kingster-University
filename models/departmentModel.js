@@ -9,7 +9,8 @@ const departmentSchema = new mongoose.Schema({
         type:String
     },
     HOD:{
-        type:String
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Qualification'
     }
    
        

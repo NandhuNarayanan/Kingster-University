@@ -1,0 +1,266 @@
+<!-- Header Layout Content -->
+<div class="mdk-header-layout__content">
+
+    <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
+        <div class="mdk-drawer-layout__content page ">
+
+            <div class="container-fluid page__container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/studentdash">Home</a></li>
+                    <li class="breadcrumb-item active">Queries</li>
+                </ol>
+                <h1 class="h2">Queries</h1>
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <!-- Wrapper -->
+                            <div class="table-responsive" data-toggle="lists" data-lists-values='["name"]'>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal" data-whatever="Any Queries? Ask Us">Any Queries? Ask
+                                    Us</button>
+                                <!-- Search -->
+                                <div class="search-form search-form--light mb-3">
+
+                                </div>
+
+                                <!-- Table -->
+                                <table class="table" id="table">
+                                    <thead>
+
+                                        <tr>
+                                            <th><i
+                                                    class="sidebar-menu-icon sidebar-menu-icon--left material-icons">forum</i>Query
+                                            </th>
+                                            <th><i
+                                                    class="sidebar-menu-icon sidebar-menu-icon--left material-icons">category</i>Category
+                                            </th>
+                                            <th><i
+                                                    class="sidebar-menu-icon sidebar-menu-icon--left material-icons">event_note</i>Date
+                                            </th>
+                                            <th><i
+                                                    class="sidebar-menu-icon sidebar-menu-icon--left material-icons">repeat</i>Status
+                                            </th>
+                                            <th><i
+                                                    class="sidebar-menu-icon sidebar-menu-icon--left material-icons">feedback</i>Feedback
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    {{#each showquery}}
+                                    <tbody class="list">
+
+                                        <tr>
+                                            <td class="name"><a href="/quaryDetails/{{this._id}}">{{this.message}}</a>
+                                            </td>
+                                            <td>{{this.queryCategory}}</td>
+                                            <td>{{format this.createdAt}}</td>
+                                            <td>open</td>
+                                            <td>feedback</td>
+                                        </tr>
+                                    </tbody>
+                                    {{/each}}
+                                </table>
+                            </div>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+            <div class="mdk-drawer__content ">
+                <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
+                    <div class="sidebar-p-y">
+                        <div class="sidebar-heading">APPLICATIONS</div>
+                        <ul class="sidebar-menu sm-active-button-bg">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="/studentdash">
+                                    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="/application">
+                                    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">book</i>
+                                    All Application Form(s)
+                                    <a class="sidebar-menu-button" href="/application">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">book</i>
+                                        Application Form
+                                    </a>
+                            </li>
+                        </ul>
+                        <!-- Account menu -->
+                        <div class="sidebar-heading">Account</div>
+                        <ul class="sidebar-menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
+                                    href="#account_menu">
+                                    <i
+                                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person_outline</i>
+                                    Account
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu sm-indent collapse" id="account_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/history">
+                                            <span class="sidebar-menu-text">Payment History</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/invoice">
+                                            <span class="sidebar-menu-text">Student Invoice</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" data-toggle="collapse" href="#messages_menu">
+                                    <i
+                                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons">notifications</i>
+                                    Notifications
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu sm-indent collapse" id="messages_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/notification">
+                                            <span class="sidebar-menu-text">Notifications</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="sidebar-heading">Student</div>
+                        <ul class="sidebar-menu sm-active-button-bg">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="/quary">
+                                    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">message</i>
+                                    My Queries
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="/showStudentAttendance">
+                                    <i
+                                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons">import_contacts</i>
+                                    View Attendance
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ask your Query</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="query" onsubmit="askQuery(event)">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">name:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="urname"
+                            value="{{user.fname}}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Query Category*</label>
+                        <div class="form">
+                            <select class="form-control" name="queryCategory" required>
+                                <option class="active-selected" value="">Select Query Category</option>
+                                {{#each viewprogram}}
+                                <option value="{{this.program}}">{{this.program}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Select Form*</label>
+                        <div class="form">
+                            <select class="form-control" name="selectForm" required>
+                                <option class="active-selected" value="">Select Form</option>
+                                {{#each viewcourses}}
+                                <option value="{{this.course}}">{{this.course}}</option>
+                                {{/each}}
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text" name="message" required></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#submitModal">
+                            Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ask your Query</h5>
+                <button type="button" class="btn">
+                    <a href="/quary"> My Queries</a>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="get" action="/askQuary">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Dear {{user.fname}},</label>
+                        <p>We are in receipt of your query. your quary will be answered shortly.You may check the status
+                            of your quary at <a href="/quary">My Queries</a></p>
+                    </div>
+                    <div>
+                        <p>Best wishes, <br> Kingster University</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="closeModal()" id="close" class="close" data-dismiss="modal"
+                            aria-label="Close">ok</button>
+                        {{!-- <button type="" class="btn btn-primary">ok</button> --}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script>
+    function closeModal() {
+        $("#exampleModal").modal('hide');
+    };
+
+    function askQuery(e) {
+        e.preventDefault()
+
+        $.ajax({
+            url: "/getquery",
+            method: "POST",
+            data: $('#query').serialize()
+
+        })
+    }
+</script>

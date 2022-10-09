@@ -10,10 +10,10 @@ const programSchema = new mongoose.Schema({
     kitAmount:{
         type:Number
     },
-    course:[{
+    course:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Course"
-    }]
+    }
 },{timestamps:true})
 
 const programModel = mongoose.model('Program',programSchema);

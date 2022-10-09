@@ -1,0 +1,296 @@
+<!-- Header Layout -->
+<div class="mdk-header-layout js-mdk-header-layout">
+
+    <!-- Header -->
+
+    <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
+        <div class="mdk-header__content">
+
+            <!-- Navbar -->
+            <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
+                <div class="container-fluid">
+                    <!-- Toggle sidebar -->
+                    <button class="navbar-toggler d-block" data-toggle="sidebar" type="button">
+                        <span class="material-icons">menu</span>
+                    </button>
+
+                    <!-- Brand -->
+                    <a href="/" class="navbar-brand">
+                        <img src="assets/images/logo/white.svg" class="mr-2" alt="LearnPlus" />
+                        <span class="d-none d-xs-md-block">Kingster University</span>
+                    </a>
+
+                    <!-- Search -->
+                    <form class="search-form d-none d-md-flex">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <button class="btn" type="button"><i class="material-icons font-size-24pt">search</i></button>
+                    </form>
+                    <!-- // END Search -->
+
+                    <div class="flex"></div>
+                    <!-- Menu -->
+                    <ul class="nav navbar-nav flex-nowrap">
+
+                        <!-- Notifications dropdown -->
+                        <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
+                            <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
+                                data-dropdown-disable-document-scroll data-caret="false">
+                                <i class="material-icons">notifications</i>
+                                <span class="badge badge-notifications badge-danger">.</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div data-perfect-scrollbar class="position-relative">
+                                    <div class="dropdown-header"><strong>Notifications</strong></div>
+                                    <div class="list-group list-group-flush mb-0">
+                                        {{#each notification}}
+                                        <a href="/notification"
+                                            class="list-group-item list-group-item-action border-left-3 border-left-danger">
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <span class="avatar-title rounded-circle bg-light">
+                                                        <i
+                                                            class="material-icons font-size-16pt text-danger">notifications</i>
+                                                    </span>
+                                                </span>
+                                                <span class="flex d-flex flex-column">
+
+                                                    <span class="text-black-70">{{this.header}}</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- // END Notifications dropdown -->
+                        <!-- User dropdown -->
+                        <li class="nav-item dropdown ml-1 ml-md-3">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
+                                    src="/assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
+                                    width="40"></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="/studentdash">
+                                    <i class="material-icons">account_box</i> Dashboard
+                                </a>
+                                <a class="dropdown-item" href="/studentprofile">
+                                    <i class="material-icons">edit</i> Edit Account
+                                </a>
+                                <a class="dropdown-item" href="/logout">
+                                    <i class="material-icons">lock</i> Logout
+                                </a>
+                            </div>
+                        </li>
+                        <!-- // END User dropdown -->
+
+                    </ul>
+                    <!-- // END Menu -->
+                </div>
+            </nav>
+            <!-- // END Navbar -->
+
+        </div>
+    </div>
+
+    <!-- // END Header -->
+
+    <!-- Header Layout Content -->
+    <div class="mdk-header-layout__content">
+
+        <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
+            <div class="mdk-drawer-layout__content page ">
+
+                <div class="container-fluid page__container p-0">
+                    <div class="row m-0">
+                        <div class="col-lg container-fluid page__container">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/studentdash">Home</a></li>
+                                <li class="breadcrumb-item ">Invoice</li>
+                            </ol>
+
+                            <div id="invoice">
+                                <div class="card">
+                                    <div class="card-header media align-items-center">
+                                        <div class="media-body">
+                                            <h1 class="card-title h2">Invoice</h1>
+                                            <div class="card-subtitle">Document {{invocePayment._id}} / {{format
+                                                invocePayment.updatedAt}}</div>
+                                        </div>
+                                        <div class="media-right d-flex align-items-center">
+                                            <a href="javascript:window.print()"
+                                                class="btn btn-flush text-muted d-print-none mr-3"><i
+                                                    class="material-icons font-size-24pt">print</i></a>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="text-black-70 m-0"><strong>Prepared for</strong></p>
+                                                <h2>{{invocePayment.userId.fname}} {{invocePayment.userId.lname}}</h2>
+                                                <div class="text-black-50">
+                                                    {{invocePayment.userId.email}} <br>
+                                                    {{invocePayment.userId.mobile}}
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="text-black-70 m-0"><strong>Prepared by</strong></p>
+                                                <h2>Kingster University</h2>
+                                                <div class="text-black-50">
+                                                    kingsteruniversity@gmail.com<br>
+                                                    Tax ID RO18880609
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card table-responsive">
+                                <table class="table mb-0 table--elevated">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th class="border-top-0">Description</th>
+                                            <th class="border-top-0 text-right" style="width: 120px;">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <a href="#" class="avatar avatar-4by3 avatar-sm mr-3">
+                                                        <img src="/assets/images/gulp.png"
+                                                            alt="Learn Angular Fundamentals" class="avatar-img rounded">
+                                                    </a>
+                                                    <div class="flex">
+                                                        <a href="#" class="text-body">
+                                                            <strong>{{invocePayment.program.program}}</strong>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right"><strong>₹{{invocePayment.finalAmount}} INR</strong>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="table mb-0">
+                                    <tfoot>
+                                        <tr>
+                                            <td class="text-right text-black-70"><strong>Subtotal</strong></td>
+                                            <td style="width: 120px;" class="text-right">
+                                                <strong>₹{{invocePayment.finalAmount}}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right text-black-70"><strong>Total</strong></td>
+                                            <td style="width: 120px;" class="text-right">
+                                                <strong>₹{{invocePayment.finalAmount}}</strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+                <div class="mdk-drawer__content ">
+                    <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
+                        <div class="sidebar-p-y">
+                            <div class="sidebar-heading">APPLICATIONS</div>
+                            <ul class="sidebar-menu sm-active-button-bg">
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/studentdash">
+                                        <i
+                                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/application">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">book</i>
+                                        All Application Form(s)
+                                        <a class="sidebar-menu-button" href="/application">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">book</i>
+                                            Application Form
+                                        </a>
+                                </li>
+                            </ul>
+                            <!-- Account menu -->
+                            <div class="sidebar-heading">Account</div>
+                            <ul class="sidebar-menu">
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
+                                        href="#account_menu">
+                                        <i
+                                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person_outline</i>
+                                        Account
+                                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                    </a>
+                                    <ul class="sidebar-submenu sm-indent collapse" id="account_menu">
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/history">
+                                                <span class="sidebar-menu-text">Payment History</span>
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/invoice">
+                                                <span class="sidebar-menu-text">Student Invoice</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" data-toggle="collapse" href="#messages_menu">
+                                        <i
+                                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons">notifications</i>
+                                        Notifications
+                                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                    </a>
+                                    <ul class="sidebar-submenu sm-indent collapse" id="messages_menu">
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/notification">
+                                                <span class="sidebar-menu-text">Notifications</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="sidebar-heading">Student</div>
+                            <ul class="sidebar-menu sm-active-button-bg">
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/quary">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">message</i>
+                                        My Queries
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/showStudentAttendance">
+                                        <i
+                                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons">import_contacts</i>
+                                        View Attendance
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- App Settings FAB -->
+        <div id="app-settings">
+            <app-settings layout-active="default" :layout-location="{
+      'fixed': 'fixed-student-invoice.html',
+      'default': 'student-invoice.html'
+    }" sidebar-variant="bg-transparent border-0"></app-settings>
+        </div>
+
+    </div>
+</div>

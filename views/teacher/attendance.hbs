@@ -1,0 +1,231 @@
+
+<!-- main content -->
+<section class="content patients py-5">
+    <div class="container-fluid py-5">
+        <div class="block-header">
+            <h2>Student Attendance Field</h2>
+        </div>
+
+        <div class="row">
+                    <form method="post" action="/teacher/attendance">
+
+
+            <div class="container-fluid row">
+                <div>
+                        <div class="form-group">
+                            <div class="input-group input-group-merge">
+                                <label class="form-label" for="name">Select Day:</label>
+                                <select id="selects" class="select" name="day" required
+                                    style="width: 90%;padding: 10px;" type="course">
+                                    <option value="">Select Day</option>
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                </select>
+                            </div>
+                        </div>
+                </div>
+                <div class="mx-4">
+                    <div class="form-group">
+                        <div class="input-group input-group-merge">
+                            <label class="form-label" for="name">Select Depatment:</label>
+                            <select id="selectdepartment" class="select" name="depatment"
+                                style="width: 90%;padding: 10px;" type="course">
+                                <option value="">Choose department</option>
+                                {{#each departments}}
+                                <option value="{{this._id}}">{{this.department}}</option>
+                                {{/each}}
+                                {{!-- <option value="designer">Designer</option>
+                                <option value="marketing">Marketing</option> --}}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mx-1">
+                    <div class="form-group ">
+                        <div class="input-group input-group-merge">
+                            <label class="form-label" for="name">Select Semester:</label>
+                            <select id="selects" class="select" name="semester" style="width: 90%;padding: 10px;"
+                                type="course">
+                                <option value="">Select Semester</option>
+                                <option value="Semester-1">Semester-1</option>
+                                <option value="Semester-2">Semester-2</option>
+                                <option value="Semester-3">Semester-3</option>
+                                <option value="Semester-4">Semester-4</option>
+                                <option value="Semester-5">Semester-5</option>
+                                <option value="Semester-6">Semester-6</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <table id="example" class="table col-12 table-striped table-bordered " style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Attendance Field</th>
+                    </tr>
+                </thead>
+                <tbody id="attendencetable">
+
+
+
+                </tbody>
+            </table>
+            <div class=" text-center">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            </form>
+            <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+            <div class="mdk-drawer__content ">
+                <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
+                    <div class="sidebar-p-y">
+                        <div class="sidebar-heading">APPLICATIONS</div>
+                        <ul class="sidebar-menu sm-active-button-bg">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="/teacher/teacherDash">
+                                    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
+                                    Instructor
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Account menu -->
+                        <div class="sidebar-heading">Account</div>
+                        <ul class="sidebar-menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
+                                    href="#account_menu">
+                                    <i
+                                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons">check</i>
+                                    Attendence
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu sm-indent collapse" id="account_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/teacher/attendance">
+                                            <span class="sidebar-menu-text">Add Attendence</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="sidebar-submenu sm-indent collapse" id="account_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/teacher/showAttendance">
+                                            <span class="sidebar-menu-text">Show Attendence</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" data-toggle="collapse" href="#messages_menu">
+                                    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">comment</i>
+                                    Messages
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu sm-indent collapse" id="messages_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="#">
+                                            <span class="sidebar-menu-text">Conversation</span>
+                                            <span
+                                                class="sidebar-menu-badge badge badge-primary badge-notifications ml-auto">2</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+              </div>
+              
+</section>
+            <script>
+                // $(document).ready(function () {
+                //});//
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    // code...
+                    const table = document.getElementById('example')
+                    new DataTable(table, {
+                        width: '100%'
+                    });
+                    //$('#example').DataTable();
+                });
+            </script>
+
+            <style>
+                .dataTable-wrapper {
+                    width: 100% !important;
+                }
+            </style>
+
+
+
+      
+<!-- main content -->
+
+<div class="color-bg"></div>
+
+<script>
+    function _(element) {
+        return document.getElementById(element)
+    }
+
+    _('selectdepartment').onchange = function () {
+        fetchData(_('selectdepartment'))
+
+    }
+
+    function fetchData(department) {
+        let data = department.value
+        console.log(department.value)
+        fetch('/teacher/getDepartment', {
+            method: "POST",
+            body: JSON.stringify({ data }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response) => response.json()).then((response) => {
+            let table = document.getElementById('attendencetable')
+            let html;
+            response.users.map(values => {
+                console.log(values)
+                html += `<tr class="row">
+                    
+                      
+                        <td>${values.fname} ${values.lname}</td>
+                        <td>
+                            <div class="form-group col-md-4">
+                            <label class="form-label" for="name">Mark Attendance:</label>
+                            <input hidden name="stdId" value="${values._id}">
+                        <div class="input-group input-group-merge">
+                            <select name="attendenceStatus" >
+                                <option value="">chose</option>
+                                <option value="Present">Present</option>
+                                <option value="Absent">Absent</option>
+                            </select>
+                        </div>
+                        </td>
+                    </tr>`
+
+            })
+            table.innerHTML = html
+
+        })
+    }
+
+    function submitAttendance(e) {
+        e.preventDefault();
+        let rows = document.getElementsByClassName('row');
+        console.log(rows)
+    }
+
+</script>
+

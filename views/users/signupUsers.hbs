@@ -14,23 +14,22 @@
     rel="stylesheet" />
 
   <!-- Perfect Scrollbar -->
-  <link type="text/css" href="assets/vendor/perfect-scrollbar.css" rel="stylesheet" />
+  <link type="text/css" href="/assets/vendor/perfect-scrollbar.css" rel="stylesheet" />
 
   <!-- Material Design Icons -->
-  <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet" />
+  <link type="text/css" href="/assets/css/material-icons.css" rel="stylesheet" />
 
   <!-- Font Awesome Icons -->
-  <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet" />
+  <link type="text/css" href="/assets/css/fontawesome.css" rel="stylesheet" />
 
   <!-- Preloader -->
-  <link type="text/css" href="assets/vendor/spinkit.css" rel="stylesheet" />
+  <link type="text/css" href="/assets/vendor/spinkit.css" rel="stylesheet" />
 
   <!-- App CSS -->
-  <link type="text/css" href="assets/css/app.css" rel="stylesheet" />
+  <link type="text/css" href="/assets/css/app.css" rel="stylesheet" />
 
   {{! icon CDN }}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/bootstrap-icons.svg" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
     integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
@@ -53,7 +52,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center mb-5 navbar-light">
-        <a href="student-dashboard.html" class="navbar-brand m-0">Kingster
+        <a href="/" class="navbar-brand m-0">Kingster
           University</a>
       </div>
       <div class="card navbar-shadow">
@@ -62,25 +61,13 @@
           <p class="card-subtitle">Create a new account</p>
         </div>
         <div class="card-body">
-          <form method="post" action="/signup" id="myForm">
-            {{! <div class="form-group">
-              <label class="form-label" for="name">Name:</label>
-              <div class="input-group input-group-merge">
-                <input id="name" type="text" required="" class="form-control form-control-prepended"
-                  placeholder="Your first and last name" name="fname" name="lname">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <span class="far fa-user"></span>
-                  </div>
-                </div>
-              </div>
-            </div> }}
+          <form method="post" action="/signup" id="signupForm">
             <div class="form-group row">
               <label for="name" class="col-sm-3 col-form-label form-label">Full Name</label>
               <div class="col-sm-8">
                 <div class="row">
                   <div class="col-md-6">
-                    <input id="name" type="text" class="form-control" placeholder="First Name" name="fname" />
+                    <input id="fname" type="text" class="form-control" placeholder="First Name" name="fname" />
                   </div>
                   <div class="col-md-6">
                     <input type="text" class="form-control" placeholder="Last Name" name="lname" />
@@ -103,7 +90,7 @@
             <div class="form-group">
               <label class="form-label" for="name">MOBILE NO:</label>
               <div class="input-group input-group-merge">
-                <input id="name" type="number" name="mobile" required="" class="form-control form-control-prepended"
+                <input id="mobile" type="number" name="mobile" required="" class="form-control form-control-prepended"
                   placeholder="Enter Phone Number" />
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -113,65 +100,62 @@
               </div>
             </div>
             <div class="row form-group">
-              <form>
-                <div class="form-group col-md-6">
-                  <label for="inputState">State</label>
-                  <select class="form-control" id="inputState">
-                    <option value="SelectState">Select State</option>
-                    <option value="Andra Pradesh">Andra Pradesh</option>
-                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                    <option value="Assam">Assam</option>
-                    <option value="Bihar">Bihar</option>
-                    <option value="Chhattisgarh">Chhattisgarh</option>
-                    <option value="Goa">Goa</option>
-                    <option value="Gujarat">Gujarat</option>
-                    <option value="Haryana">Haryana</option>
-                    <option value="Himachal Pradesh">Himachal Pradesh</option>
-                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                    <option value="Jharkhand">Jharkhand</option>
-                    <option value="Karnataka">Karnataka</option>
-                    <option value="Kerala">Kerala</option>
-                    <option value="Madya Pradesh">Madya Pradesh</option>
-                    <option value="Maharashtra">Maharashtra</option>
-                    <option value="Manipur">Manipur</option>
-                    <option value="Meghalaya">Meghalaya</option>
-                    <option value="Mizoram">Mizoram</option>
-                    <option value="Nagaland">Nagaland</option>
-                    <option value="Orissa">Orissa</option>
-                    <option value="Punjab">Punjab</option>
-                    <option value="Rajasthan">Rajasthan</option>
-                    <option value="Sikkim">Sikkim</option>
-                    <option value="Tamil Nadu">Tamil Nadu</option>
-                    <option value="Telangana">Telangana</option>
-                    <option value="Tripura">Tripura</option>
-                    <option value="Uttaranchal">Uttaranchal</option>
-                    <option value="Uttar Pradesh">Uttar Pradesh</option>
-                    <option value="West Bengal">West Bengal</option>
-                    <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
-                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                    <option value="Chandigarh">Chandigarh</option>
-                    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-                    <option value="Daman and Diu">Daman and Diu</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Lakshadeep">Lakshadeep</option>
-                    <option value="Pondicherry">Pondicherry</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputDistrict">District</label>
-                  <select class="form-control" id="inputDistrict">
-                    <option value="">-- select one -- </option>
-                  </select>
-                </div>
 
-              </form>
+              <div class="form-group col-md-6">
+                <label for="inputState">State</label>
+                <select class="form-control" id="inputState">
+                  <option value="SelectState">Select State</option>
+                  <option value="Andra Pradesh">Andra Pradesh</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madya Pradesh">Madya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Orissa">Orissa</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttaranchal">Uttaranchal</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                  <option value="Daman and Diu">Daman and Diu</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Lakshadeep">Lakshadeep</option>
+                  <option value="Pondicherry">Pondicherry</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputDistrict">District</label>
+                <select class="form-control" id="inputDistrict">
+                  <option value="">-- select one -- </option>
+                </select>
+              </div>
+
+
             </div>
             <div class="form-group">
               <label class="form-label" for="name">GENDER:</label>
               <div class="input-group input-group-merge">
-                {{! <input id="name" type="text" required="" class="form-control form-control-prepended"
-                  placeholder="Your first and last name">
-                }}
                 <select class="select" name="gender" style="width: 90%;padding: 10px;">
                   <option value="1"></option>
                   <option value="2">Male</option>
@@ -188,14 +172,11 @@
             <div class="form-group">
               <label class="form-label" for="name">QUALIFICATION:</label>
               <div class="input-group input-group-merge">
-                {{! <input id="name" type="text" required="" class="form-control form-control-prepended"
-                  placeholder="Your first and last name">
-                }}
                 <select class="select" name="QUALIFICATION" style="width: 90%;padding: 10px;" id="QUALIFICATION">
                   <option value="1"></option>
-                  <option value="12">12th</option>
-                  <option value="ug">Graduate</option>
-                  <option value="pg">Post Graduate</option>
+                  {{#each qualification}}
+                  <option value="{{this.qualification}}">{{this.qualification}}</option>
+                  {{/each}}
                 </select>
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -207,14 +188,10 @@
             <div class="form-group">
               <label class="form-label" for="name">Select Course:</label>
               <div class="input-group input-group-merge">
-                {{! <input id="name" type="text" required="" class="form-control form-control-prepended"
-                  placeholder="Your first and last name">
-                }}
                 <select id="selects" class="select" name="course" style="width: 90%;padding: 10px;" type="course">
-                  <option value=""></option>
-
-                  <option value="designer">Designer</option>
-                  <option value="marketing">Marketing</option>
+                  {{#each course}}
+                  <option value="{{this.course}}">{{this.course}}</option>
+                  {{/each}}
                 </select>
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -247,8 +224,10 @@
                 </div>
               </div>
             </div>
+
             <button type="submit" class="btn btn-primary btn-block mb-3">Sign
               Up</button>
+
             <div class="form-group text-center mb-0">
               <div class="custom-control custom-checkbox">
                 <input id="terms" type="checkbox" class="custom-control-input" checked required="" />
@@ -268,20 +247,6 @@
   <!-- jQuery -->
   <script src="/assets/vendor/jquery.min.js"></script>
   <script>
-    $(document).ready(() => {
-      $('#QUALIFICATION').on('blur', function () {
-        const QUALIFICATION = $(this).val()
-        console.log(QUALIFICATION)
-        if (QUALIFICATION == 12) {
-          $('#selects').html(' <option value="Ayurvedic Pharmaceutical Sciences">Ayurvedic Pharmaceutical Sciences</option><option value="Botany">Botany</option><option value="Agriculture">Agriculture</option><option value="Architecture">Architecture</option><option value="Arts (Humanities)">Arts (Humanities)</option><option value="Biotechnology">Biotechnology</option><option value="Chemistry">Chemistry</option><option value="Commerce">Commerce</option><option value="Computer Applications">Computer Applications</option><option value="Economics">Economics</option><option value="Engineering">Engineering</option><option value="Fashion Design">Fashion Design</option><option value="Fine Arts">Fine Arts</option><option value="Food Technology">Food Technology</option><option value="Forensic Sciences">Forensic Sciences</option><option value="Hotel Management and Tourism">Hotel Management and Tourism</option><option value="Interaction Design">Interaction Design</option><option value="Interior and Furniture Design">Interior and Furniture Design</option><option value="Journalism and Film Production">Journalism and Film Production</option><option value="Law">Law</option><option value="Library Science">Library Science</option><option value="Management">Management</option><option value="Mathematics">Mathematics</option><option value="Medical Laboratory Sciences">Medical Laboratory Sciences</option><option value="Microbiology">Microbiology</option><option value="Multimedia and Animation">Multimedia and Animation</option><option value="Nutrition and Dietetics">Nutrition and Dietetics</option><option value="Performing Arts">Performing Arts</option><option value="Pharmaceutical Sciences">Pharmaceutical Sciences</option><option value="Physical Education">Physical Education</option><option value="Physics">Physics</option><option value="Physiotherapy">Physiotherapy</option><option value="Planning">Planning</option><option value="Product and Industrial Design">Product and Industrial Design</option><option value="Zoology">Zoology</option>')
-        } else if (QUALIFICATION == Graduate)
-          $('#selects').html('<option value="Agriculture">Agriculture</option><option value="Architecture">Architecture</option><option value="Ayurvedic Pharmaceutical Sciences">Ayurvedic Pharmaceutical Sciences</option><option value="Bioinformatics">Bioinformatics</option><option value="Biotechnology">Biotechnology</option><option value="Botany">Botany</option><option value="Chemistry">Chemistry</option><option value="Commerce">Commerce</option><option value="Computer Applications">Computer Applications</option><option value="Economics">Economics</option><option value="Education">Education</option><option value="Engineering">Engineering</option><option value="Engineering (CE)">Engineering (CE)</option><option value="Engineering (CSE)">Engineering (CSE)</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option><option value="designer">Designer</option>')
-      })
-    })
-
-
-
-
     var AndraPradesh = ["Anantapur", "Chittoor", "East Godavari", "Guntur", "Kadapa", "Krishna", "Kurnool", "Prakasam", "Nellore", "Srikakulam", "Visakhapatnam", "Vizianagaram", "West Godavari"];
     var ArunachalPradesh = ["Anjaw", "Changlang", "Dibang Valley", "East Kameng", "East Siang", "Kra Daadi", "Kurung Kumey", "Lohit", "Longding", "Lower Dibang Valley", "Lower Subansiri", "Namsai", "Papum Pare", "Siang", "Tawang", "Tirap", "Upper Siang", "Upper Subansiri", "West Kameng", "West Siang", "Itanagar"];
     var Assam = ["Baksa", "Barpeta", "Biswanath", "Bongaigaon", "Cachar", "Charaideo", "Chirang", "Darrang", "Dhemaji", "Dhubri", "Dibrugarh", "Goalpara", "Golaghat", "Hailakandi", "Hojai", "Jorhat", "Kamrup Metropolitan", "Kamrup (Rural)", "Karbi Anglong", "Karimganj", "Kokrajhar", "Lakhimpur", "Majuli", "Morigaon", "Nagaon", "Nalbari", "Dima Hasao", "Sivasagar", "Sonitpur", "South Salmara Mankachar", "Tinsukia", "Udalguri", "West Karbi Anglong"];

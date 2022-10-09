@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Student - Pay</title>
+
+    <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
+    <meta name="robots" content="noindex">
+
+    <!-- Custom Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="/assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="/assets/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="/assets/css/fontawesome.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="/assets/vendor/spinkit.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="/assets/css/app.css" rel="stylesheet">
+
+    <!-- chat_bot -->
+    <link type="text/css" href="/assets/css/jquery.convform.css" rel="stylesheet">
+
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body class=" layout-fluid">
+
+    <!-- chatBot -->
+    <div class="chat_icon">
+        <i class="material-icons">chat</i>
+    </div>
+    <div class="chat_box">
+        <div class="conv-form-wrapper">
+            <form action="" method="get" onsubmit="chatbot()" class="hidden">
+                <select name="help"
+                    data-conv-question="Welcome to Admission Helpline of Kingster University. How can I help you ?">
+                    <option value="Query">Query</option>
+                    <option value="Contact">Contact</option>
+                </select>
+                <div data-conv-fork="help">
+                    <div data-conv-case="Query">
+                        <input type="text" name="name"
+                            data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
+                        <input type="text" data-conv-question="Howdy, {name}:0! It's a pleasure to meet you."
+                            data-no-answer="true">
+                        <input data-conv-question="Type in your e-mail"
+                            data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                            id="email" type="email" name="email" required placeholder="What's your e-mail?">
+                        <input type="text" data-conv-question="{name}:0! we will connect you." data-no-answer="true">
+                    </div>
+                    <div data-conv-case="Contact">
+                        <input type="text"
+                            data-conv-question="Hey there! if you are free I will get the right person from my team to contact."
+                            data-no-answer="true">
+                        <input type="text" name="name" data-conv-question="please give as your Phone number.">
+                        <input type="text" data-conv-question="our team will connect you soon!!!" data-no-answer="true">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!-- chatBot End -->
+
+    <style>
+        .chat_icon {
+            position: fixed;
+            right: 30px;
+            bottom: 0;
+            font-size: 100px;
+            color: teal;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .chat_box {
+            position: fixed;
+            right: 20px;
+            bottom: 75px;
+            width: 400px;
+            height: 80vh;
+            background: #dedede;
+            z-index: 1000;
+            transition: all 0.3s ease-out;
+            transform: scaleY(0);
+        }
+
+        .chat_box.active {
+            transform: scaleY(1);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .conv-form-wrapper textarea {
+            height: 30px;
+            overflow: hidden;
+            resize: none;
+        }
+
+        #messages {
+            padding: 20px;
+        }
+    </style>
+
+
+
+
+    <div class="preloader">
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+
+    </div>
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header -->
+
+        <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
+            <div class="mdk-header__content">
+
+                <!-- Navbar -->
+                <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
+                    <div class="container-fluid">
+
+                        <!-- Brand -->
+                        <a href="/" class="navbar-brand">
+                            <img src="/assets/images/logo/white.svg" class="mr-2" alt="LearnPlus" />
+                            <span class="d-none d-xs-md-block">Kingster University</span>
+                        </a>
+
+                        <div class="flex"></div>
+
+                        <!-- Menu -->
+                        <ul class="nav navbar-nav flex-nowrap">
+
+                            <!-- Notifications dropdown -->
+                            <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
+                                <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
+                                    data-dropdown-disable-document-scroll data-caret="false">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="badge badge-notifications badge-danger">.</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div data-perfect-scrollbar class="position-relative">
+                                        <div class="dropdown-header"><strong>Notifications</strong></div>
+                                        <div class="list-group list-group-flush mb-0">
+                                            {{#each notification}}
+                                            <a href="/notification"
+                                                class="list-group-item list-group-item-action border-left-3 border-left-danger">
+                                                <span class="d-flex">
+                                                    <span class="avatar avatar-xs mr-2">
+                                                        <span class="avatar-title rounded-circle bg-light">
+                                                            <i
+                                                                class="material-icons font-size-16pt text-danger">notifications</i>
+                                                        </span>
+                                                    </span>
+                                                    <span class="flex d-flex flex-column">
+
+                                                        <span class="text-black-70">{{this.header}}</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- // END Notifications dropdown -->
+                            <!-- User dropdown -->
+                            <li class="nav-item dropdown ml-1 ml-md-3">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
+                                        src="assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
+                                        width="40"></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="/studentdash">
+                                        <i class="material-icons">account_box</i> Dashboard
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="material-icons">edit</i> Edit Account
+                                    </a>
+                                    <a class="dropdown-item" href="/logout">
+                                        <i class="material-icons">lock</i> Logout
+                                    </a>
+                                </div>
+                            </li>
+                            <!-- // END User dropdown -->
+
+                        </ul>
+                        <!-- // END Menu -->
+                    </div>
+                </nav>
+                <!-- // END Navbar -->
+
+            </div>
+        </div>
+
+        <!-- // END Header -->
+
+        <!-- Header Layout Content -->
+        <div class="mdk-header-layout__content">
+
+            <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
+                <div class="mdk-drawer-layout__content page ">
+                    <div class="container page__container">
+                        <h4 class="h2">Review Your Payment Details</h4>
+                        <div class="media-right py-4">
+                            <a href="/academicform" class="btn btn-primary" style="color: white;">BACK TO FORM</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg">
+                                <ul class="card list-group list-group-fit">
+                                    <li class="list-group-item">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="column2">
+                                                    <h5 class="panel-title">Personal Details</h5>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="f_info"><label>Name</label>:&nbsp;
+                                                                {{username}}{{lastname}}</div>
+                                                            <div class="f_info"><label>Email Id</label>:&nbsp;
+                                                                {{email}}</div>
+                                                            <div class="f_info"><label>Phone Number</label>:&nbsp;
+                                                                +91-{{phone}}</div>
+                                                        </div>
+                                                        <div class="col-sm-6" style="margin-top:-35px"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <style>
+                                        :root {
+                                            --radius: 2px;
+                                            --baseFg: dimgray;
+                                            --baseBg: white;
+                                            --accentFg: #006fc2;
+                                            --accentBg: #bae1ff;
+                                        }
+
+                                        select {
+                                            font: 400 12px/1.3 sans-serif;
+                                            -webkit-appearance: none;
+                                            appearance: none;
+                                            color: var(--baseFg);
+                                            border: 1px solid var(--baseFg);
+                                            line-height: 1;
+                                            outline: 0;
+                                            padding: 0.65em 2.5em 0.55em 0.75em;
+                                            border-radius: var(--radius);
+                                            background-color: var(--baseBg);
+                                            background-image: linear-gradient(var(--baseFg), var(--baseFg)),
+                                                linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
+                                                linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
+                                                linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
+                                            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                                            background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
+                                            background-position: right 20px center, right bottom, right bottom, right bottom;
+                                        }
+                                    </style>
+
+                                    <li class="list-group-item">
+                                        <div class="column2">
+                                            <h5 class="panel-title">Order Details</h5>
+                                            <div class="rowProduct">
+                                                <!--<h4 class="margin-top-0">Selected Product</h4>-->
+                                                <div class="prdList">
+                                                    <div class="pull-left prdItemName"><label>KUNEST Fee
+                                                            <small>(1) :</small></label></div>
+                                                    <div id="orderDetails" class="pull-right prdItemPrice"><i
+                                                            class="fa fa-inr"></i>&nbsp;{{fee}}</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <h5>Payment Details</h5>
+                                        </div>
+                                        <div>
+                                            <label><input type="radio" checked value="yes"name="select"
+                                                    id="lpunest">&nbsp;Online
+                                            </label>
+                                        </div>
+                                        <div class="form-group row">
+
+                                            <label class="col-form-label form-label col-md-4">Sub Total
+                                                (1) :</label>
+                                            <div class="col-md-8 py-2">
+                                                <p id="subTotal">₹ {{fee}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <h5 class="col-form-label form-label col-md-4">Total :</h5>
+                                            <div class="col-md-8 py-2">
+
+                                               <p>₹</p> <p id="total"> {{fee}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button onclick="makePayment()" class="btn btn-success">Make Payment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function chatbot(e) {
+            e.preventDefault()
+        }
+    </script>
+
+    <!-- jQuery -->
+
+
+    <!-- Bootstrap -->
+    <script src="/assets/vendor/popper.min.js"></script>
+    <script src="/assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="/assets/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- MDK -->
+    <script src="/assets/vendor/dom-factory.js"></script>
+    <script src="/assets/vendor/material-design-kit.js"></script>
+
+    <!-- App JS -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- Highlight.js -->
+    <script src="/assets/js/hljs.js"></script>
+
+    <!-- App Settings (safe to remove) -->
+    <script src="/assets/js/app-settings.js"></script>
+
+    <!-- chat_bot -->
+    <script src="/assets/js/jquery.convform.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+
+        // chatBot
+        $(document).ready(function () {
+            $('.chat_icon').click(function (event) {
+                $('.chat_box').toggleClass('active')
+            });
+            $('.conv-form-wrapper').convform({ selectInputStyle: 'disable' });
+        })
+
+
+        //Razorpay
+        let Gtotal = 0
+
+        function makePayment() {
+            console.log("makePayment")
+            let totalFee = document.getElementById('total').innerHTML
+            console.log(totalFee)
+        
+            console.log(typeof(totalFee))
+            axios({
+                method: 'post',
+                url: '/payamount',
+                data: {
+                    totalFee
+                }
+            }).then((e) => {
+                console.log(e)
+                if (e.data) {
+                    rayzorpayPayment(e.data)
+                }
+
+            })
+        }
+        console.log(order)
+        function rayzorpayPayment(order) {
+            var options = {
+                "key": "rzp_test_ZA6QWhav78sinI", // Enter the Key ID generated from the Dashboard
+                "amount": order, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "currency": "INR",
+                "name": "Kingster University",
+                "description": "Test Transaction",
+                "image": "https://example.com/your_logo",
+                "order_id": '' + order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "handler": function (response) {
+                    verifyPayment(response, order)
+                },
+                "prefill": {
+                    "name": "Gaurav Kumar",
+                    "email": "gaurav.kumar@example.com",
+                    "contact": "9999999999"
+                },
+                "notes": {
+                    "address": "Razorpay Corporate Office"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        }
+
+        async function verifyPayment(Payment, order) {
+            try {
+                const res = await axios.post('/Paymentverify', {
+                    Payment,
+                    order
+                }).then((e) => {
+                    console.log(e)
+                    if (e.status) {
+                        alert("payment Successfull")
+                    } else {
+                        alert("Payment Failed")
+                    }
+                })
+            } catch (err) {
+
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

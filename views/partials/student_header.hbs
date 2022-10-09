@@ -1,0 +1,94 @@
+<!-- Header Layout -->
+<div class="mdk-header-layout js-mdk-header-layout">
+
+    <!-- Header -->
+
+    <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
+        <div class="mdk-header__content">
+
+            <!-- Navbar -->
+            <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
+                <div class="container-fluid">
+                    <!-- Toggle sidebar -->
+                    <button class="navbar-toggler d-block" data-toggle="sidebar" type="button">
+                        <span class="material-icons">menu</span>
+                    </button>
+
+                    <!-- Brand -->
+                    <a href="/" class="navbar-brand">
+                        <span class="d-none d-xs-md-block">Kingster University</span>
+                    </a>
+
+                    <!-- Search -->
+                    <form class="search-form d-none d-md-flex">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <button class="btn" type="button"><i class="material-icons font-size-24pt">search</i></button>
+                    </form>
+                    <!-- // END Search -->
+
+                    <div class="flex"></div>
+                    <!-- Menu -->
+                    <ul class="nav navbar-nav flex-nowrap">
+
+                        <!-- Notifications dropdown -->
+                        <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
+                            <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
+                                data-dropdown-disable-document-scroll data-caret="false">
+                                <i class="material-icons">notifications</i>
+                                <span class="badge badge-notifications badge-danger">.</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div data-perfect-scrollbar class="position-relative">
+                                    <div class="dropdown-header"><strong>Notifications</strong></div>
+                                    <div class="list-group list-group-flush mb-0">
+                                        {{#each notification}}
+                                        <a href="/notification"
+                                            class="list-group-item list-group-item-action border-left-3 border-left-danger">
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <span class="avatar-title rounded-circle bg-light">
+                                                        <i
+                                                            class="material-icons font-size-16pt text-danger">notifications</i>
+                                                    </span>
+                                                </span>
+                                                <span class="flex d-flex flex-column">
+
+                                                    <span class="text-black-70">{{this.header}}</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- // END Notifications dropdown -->
+                        <!-- User dropdown -->
+                        <li class="nav-item dropdown ml-1 ml-md-3">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
+                                    src="assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
+                                    width="40"></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="/studentdash">
+                                    <i class="material-icons">account_box</i> Dashboard
+                                </a>
+                                <a class="dropdown-item" href="/studentprofile">
+                                    <i class="material-icons">edit</i> Edit Account
+                                </a>
+                                <a class="dropdown-item" href="/logout">
+                                    <i class="material-icons">lock</i> Logout
+                                </a>
+                            </div>
+                        </li>
+                        <!-- // END User dropdown -->
+
+                    </ul>
+                    <!-- // END Menu -->
+                </div>
+            </nav>
+            <!-- // END Navbar -->
+
+        </div>
+    </div>
+
+    <!-- // END Header -->

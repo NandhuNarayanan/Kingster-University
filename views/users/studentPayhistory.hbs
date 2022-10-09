@@ -1,546 +1,507 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Payment History</title>
-
-    <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
-    <meta name="robots" content="noindex">
-
-    <!-- Custom Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&display=swap"
-        rel="stylesheet">
-
-    <!-- Perfect Scrollbar -->
-    <link type="text/css" href="assets/vendor/perfect-scrollbar.css" rel="stylesheet">
-
-    <!-- Material Design Icons -->
-    <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
-    <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
-
-    <!-- Preloader -->
-    <link type="text/css" href="assets/vendor/spinkit.css" rel="stylesheet">
-
-    <!-- App CSS -->
-    <link type="text/css" href="assets/css/app.css" rel="stylesheet">
-
-</head>
-
-<body class=" layout-fluid">
-
-    <div class="preloader">
-        <div class="sk-chase">
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-        </div>
-
-        <!-- <div class="sk-bounce">
-    <div class="sk-bounce-dot"></div>
-    <div class="sk-bounce-dot"></div>
-  </div> -->
-
-        <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+<!-- chatBot -->
+<div class="chat_icon">
+    <i class="material-icons">chat</i>
+</div>
+<div class="chat_box">
+    <div class="conv-form-wrapper">
+        <form action="" method="get" onsubmit="chatbot()" class="hidden">
+            <select name="help"
+                data-conv-question="Welcome to Admission Helpline of Kingster University. How can I help you ?">
+                <option value="Query">Query</option>
+                <option value="Contact">Contact</option>
+            </select>
+            <div data-conv-fork="help">
+                <div data-conv-case="Query">
+                    <input type="text" name="name"
+                        data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
+                    <input type="text" data-conv-question="Howdy, {name}:0! It's a pleasure to meet you."
+                        data-no-answer="true">
+                    <input data-conv-question="Type in your e-mail"
+                        data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                        id="email" type="email" name="email" required placeholder="What's your e-mail?">
+                    <input type="text" data-conv-question="{name}:0! we will connect you." data-no-answer="true">
+                </div>
+                <div data-conv-case="Contact">
+                    <input type="text"
+                        data-conv-question="Hey there! if you are free I will get the right person from my team to contact."
+                        data-no-answer="true">
+                    <input type="text" name="name" data-conv-question="please give as your Phone number.">
+                    <input type="text" data-conv-question="our team will connect you soon!!!" data-no-answer="true">
+                </div>
+            </div>
+        </form>
     </div>
 
-    <!-- Header Layout -->
-    <div class="mdk-header-layout js-mdk-header-layout">
+</div>
+<!-- chatBot End -->
 
-        <!-- Header -->
+<style>
+    .chat_icon {
+        position: fixed;
+        right: 30px;
+        bottom: 0;
+        font-size: 100px;
+        color: teal;
+        cursor: pointer;
+        z-index: 1000;
+    }
 
-        <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
-            <div class="mdk-header__content">
+    .chat_box {
+        position: fixed;
+        right: 20px;
+        bottom: 75px;
+        width: 400px;
+        height: 80vh;
+        background: #dedede;
+        z-index: 1000;
+        transition: all 0.3s ease-out;
+        transform: scaleY(0);
+    }
 
-                <!-- Navbar -->
-                <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
-                    <div class="container-fluid">
-                        <!-- Toggle sidebar -->
-                        <button class="navbar-toggler d-block" data-toggle="sidebar" type="button">
-                            <span class="material-icons">menu</span>
-                        </button>
+    .chat_box.active {
+        transform: scaleY(1);
+    }
 
-                        <!-- Brand -->
-                        <a href="student-dashboard.html" class="navbar-brand">
-                            <img src="assets/images/logo/white.svg" class="mr-2" alt="LearnPlus" />
-                            <span class="d-none d-xs-md-block">LearnPlus</span>
-                        </a>
+    .hidden {
+        display: none !important;
+    }
 
-                        <!-- Search -->
-                        <form class="search-form d-none d-md-flex">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <button class="btn" type="button"><i
-                                    class="material-icons font-size-24pt">search</i></button>
-                        </form>
-                        <!-- // END Search -->
+    .conv-form-wrapper textarea {
+        height: 30px;
+        overflow: hidden;
+        resize: none;
+    }
 
-                        <div class="flex"></div>
+    #messages {
+        padding: 20px;
+    }
+</style>
 
-                        <!-- Menu -->
-                        <ul class="nav navbar-nav flex-nowrap d-none d-lg-flex">
-                            <li class="nav-item">
-                                <a class="nav-link" href="student-forum.html">Forum</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="student-help-center.html">Get Help</a>
-                            </li>
-                        </ul>
 
-                        <!-- Menu -->
-                        <ul class="nav navbar-nav flex-nowrap">
 
-                            <li class="nav-item d-none d-md-flex">
-                                <a href="student-cart.html" class="nav-link">
-                                    <i class="material-icons">shopping_cart</i>
-                                </a>
-                            </li>
 
-                            <!-- Notifications dropdown -->
-                            <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
-                                <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
-                                    data-dropdown-disable-document-scroll data-caret="false">
-                                    <i class="material-icons">notifications</i>
-                                    <span class="badge badge-notifications badge-danger">2</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <div data-perfect-scrollbar class="position-relative">
-                                        <div class="dropdown-header"><strong>Messages</strong></div>
-                                        <div class="list-group list-group-flush mb-0">
+<div class="preloader">
+    <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+    </div>
 
-                                            <a href="student-messages.html"
-                                                class="list-group-item list-group-item-action unread">
-                                                <span class="d-flex align-items-center mb-1">
-                                                    <small class="text-muted">5 minutes ago</small>
+</div>
 
-                                                    <span class="ml-auto unread-indicator bg-primary"></span>
+<!-- Header Layout -->
+<div class="mdk-header-layout js-mdk-header-layout">
 
-                                                </span>
-                                                <span class="d-flex">
-                                                    <span class="avatar avatar-xs mr-2">
-                                                        <img src="assets/images/people/110/woman-5.jpg" alt="people"
-                                                            class="avatar-img rounded-circle">
-                                                    </span>
-                                                    <span class="flex d-flex flex-column">
-                                                        <strong>Michelle</strong>
-                                                        <span class="text-black-70">Clients loved the new design.</span>
-                                                    </span>
-                                                </span>
-                                            </a>
+    <!-- Header -->
 
-                                            <a href="student-messages.html"
-                                                class="list-group-item list-group-item-action unread">
-                                                <span class="d-flex align-items-center mb-1">
-                                                    <small class="text-muted">5 minutes ago</small>
+    <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
+        <div class="mdk-header__content">
 
-                                                    <span class="ml-auto unread-indicator bg-primary"></span>
+            <!-- Navbar -->
+            <nav id="default-navbar" class="navbar navbar-expand navbar-dark bg-primary m-0">
+                <div class="container-fluid">
 
-                                                </span>
-                                                <span class="d-flex">
-                                                    <span class="avatar avatar-xs mr-2">
-                                                        <img src="assets/images/people/110/woman-5.jpg" alt="people"
-                                                            class="avatar-img rounded-circle">
-                                                    </span>
-                                                    <span class="flex d-flex flex-column">
-                                                        <strong>Michelle</strong>
-                                                        <span class="text-black-70">🔥 Superb job..</span>
-                                                    </span>
-                                                </span>
-                                            </a>
+                    <!-- Brand -->
+                    <a href="student-dashboard.html" class="navbar-brand">
+                        <img src="/assets/images/logo/white.svg" class="mr-2" alt="LearnPlus" />
+                        <span class="d-none d-xs-md-block">Kingster University</span>
+                    </a>
 
-                                        </div>
+                    <div class="flex"></div>
 
-                                        <div class="dropdown-header"><strong>System notifications</strong></div>
-                                        <div class="list-group list-group-flush mb-0">
+                    <!-- Menu -->
+                    <ul class="nav navbar-nav flex-nowrap">
 
-                                            <a href="student-messages.html"
-                                                class="list-group-item list-group-item-action border-left-3 border-left-danger">
-                                                <span class="d-flex align-items-center mb-1">
-                                                    <small class="text-muted">3 minutes ago</small>
-
-                                                </span>
-                                                <span class="d-flex">
-                                                    <span class="avatar avatar-xs mr-2">
-                                                        <span class="avatar-title rounded-circle bg-light">
-                                                            <i
-                                                                class="material-icons font-size-16pt text-danger">account_circle</i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="flex d-flex flex-column">
-
-                                                        <span class="text-black-70">Your profile information has not
-                                                            been synced correctly.</span>
+                        <!-- Notifications dropdown -->
+                        <li class="nav-item dropdown dropdown-notifications dropdown-menu-sm-full">
+                            <button class="nav-link btn-flush dropdown-toggle" type="button" data-toggle="dropdown"
+                                data-dropdown-disable-document-scroll data-caret="false">
+                                <i class="material-icons">notifications</i>
+                                <span class="badge badge-notifications badge-danger">.</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div data-perfect-scrollbar class="position-relative">
+                                    <div class="dropdown-header"><strong>Notifications</strong></div>
+                                    <div class="list-group list-group-flush mb-0">
+                                        {{#each notification}}
+                                        <a href="/notification"
+                                            class="list-group-item list-group-item-action border-left-3 border-left-danger">
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <span class="avatar-title rounded-circle bg-light">
+                                                        <i
+                                                            class="material-icons font-size-16pt text-danger">notifications</i>
                                                     </span>
                                                 </span>
-                                            </a>
+                                                <span class="flex d-flex flex-column">
 
-                                            <a href="student-messages.html"
-                                                class="list-group-item list-group-item-action">
-                                                <span class="d-flex align-items-center mb-1">
-                                                    <small class="text-muted">5 hours ago</small>
-
+                                                    <span class="text-black-70">{{this.header}}</span>
                                                 </span>
-                                                <span class="d-flex">
-                                                    <span class="avatar avatar-xs mr-2">
-                                                        <span class="avatar-title rounded-circle bg-light">
-                                                            <i
-                                                                class="material-icons font-size-16pt text-success">group_add</i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="flex d-flex flex-column">
-                                                        <strong>Adrian. D</strong>
-                                                        <span class="text-black-70">Wants to join your private
-                                                            group.</span>
-                                                    </span>
-                                                </span>
-                                            </a>
-
-                                            <a href="student-messages.html"
-                                                class="list-group-item list-group-item-action">
-                                                <span class="d-flex align-items-center mb-1">
-                                                    <small class="text-muted">1 day ago</small>
-
-                                                </span>
-                                                <span class="d-flex">
-                                                    <span class="avatar avatar-xs mr-2">
-                                                        <span class="avatar-title rounded-circle bg-light">
-                                                            <i
-                                                                class="material-icons font-size-16pt text-warning">storage</i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="flex d-flex flex-column">
-
-                                                        <span class="text-black-70">Your deploy was successful.</span>
-                                                    </span>
-                                                </span>
-                                            </a>
-
-                                        </div>
+                                            </span>
+                                        </a>
+                                        {{/each}}
                                     </div>
                                 </div>
-                            </li>
-                            <!-- // END Notifications dropdown -->
-                            <!-- User dropdown -->
-                            <li class="nav-item dropdown ml-1 ml-md-3">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
-                                        src="assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
-                                        width="40"></a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="student-account-edit.html">
-                                        <i class="material-icons">edit</i> Edit Account
-                                    </a>
-                                    <a class="dropdown-item" href="student-profile.html">
-                                        <i class="material-icons">person</i> Public Profile
-                                    </a>
-                                    <a class="dropdown-item" href="guest-login.html">
-                                        <i class="material-icons">lock</i> Logout
-                                    </a>
-                                </div>
-                            </li>
-                            <!-- // END User dropdown -->
+                            </div>
+                        </li>
+                        <!-- // END Notifications dropdown -->
+                        <!-- User dropdown -->
+                        <li class="nav-item dropdown ml-1 ml-md-3">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img
+                                    src="/assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle"
+                                    width="40"></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="/studentdash">
+                                    <i class="material-icons">account_box</i> Dashboard
+                                </a>
+                                <a class="dropdown-item" href="/studentprofile">
+                                    <i class="material-icons">edit</i> Edit Account
+                                </a>
+                                <a class="dropdown-item" href="guest-login.html">
+                                    <i class="material-icons">lock</i> Logout
+                                </a>
+                            </div>
+                        </li>
+                        <!-- // END User dropdown -->
 
-                        </ul>
-                        <!-- // END Menu -->
-                    </div>
-                </nav>
-                <!-- // END Navbar -->
+                    </ul>
+                    <!-- // END Menu -->
+                </div>
+            </nav>
+            <!-- // END Navbar -->
 
-            </div>
         </div>
+    </div>
 
-        <!-- // END Header -->
+    <!-- // END Header -->
 
-        <!-- Header Layout Content -->
-        <div class="mdk-header-layout__content">
 
-            <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
-                <div class="mdk-drawer-layout__content page ">
+    <!-- Header Layout Content -->
+    <div class="mdk-header-layout__content">
 
-                    <div class="container-fluid page__container p-0">
-                        <div class="row m-0">
-                            <div class="col-lg container-fluid page__container">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="student-dashboard.html">Home</a></li>
-                                    <li class="breadcrumb-item active">Payment History</li>
-                                </ol>
+        <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
+            <div class="mdk-drawer-layout__content page ">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-whatever="Any Queries? Ask Us">Any Queries? Ask
+                    Us</button>
+                <div class="container-fluid page__container p-0">
+                    <div class="row m-0">
+                        <div class="col-lg container-fluid page__container">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/studentdash">Home</a></li>
+                                <li class="breadcrumb-item active">Payment History</li>
+                            </ol>
 
-                                <h1 class="h2">Payment History</h1>
+                            <h1 class="h2">Payment History</h1>
 
-                                <div class="card table-responsive" data-toggle="lists" data-lists-values='[
+                            <div class="card table-responsive" data-toggle="lists" data-lists-values='[
     "js-lists-values-document",
     "js-lists-values-ProgramName", 
     "js-lists-values-amount",
     "js-lists-values-status",
     "js-lists-values-date"
   ]' data-lists-sort-by="js-lists-values-document" data-lists-sort-desc="true">
-                                    <table class="table mb-0">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th colspan="4">
-                                                    <a href="javascript:void(0)" class="sort"
-                                                        data-sort="js-lists-values-document">Document</a>
-                                                        <a href="javascript:void(0)" class="sort"
-                                                        data-sort="js-lists-values-ProgramName">Program Name</a>
-                                                    <a href="javascript:void(0)" class="sort"
-                                                        data-sort="js-lists-values-amount">Amount</a>
-                                                    <a href="javascript:void(0)" class="sort"
-                                                        data-sort="js-lists-values-status">Status</a>
-                                                    <a href="javascript:void(0)" class="sort"
-                                                        data-sort="js-lists-values-date">Date</a>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="list">
-                                            {{#each paymentHistory}}
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-uppercase text-muted mr-2">Invoice</small>
-                                                        <a href="student-invoice.html" class="text-body small">#<span
-                                                                class="js-lists-values-document">12199</span></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-uppercase text-muted mr-2">{{this.program.program}}</small>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-uppercase text-muted mr-2"></small>
-                                                        <small class="text-uppercase">₹<span
-                                                                class="js-lists-values-amount">{{this.finalAmount}}</span>INR</small>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-uppercase text-muted mr-2">{{this.paymentStatus}}</small>
-                                                        <i class="material-icons text-success md-18 mr-2"></i>
-                                                    </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    <div class="d-flex align-items-center text-right">
-                                                        <small class="text-uppercase text-muted mr-2">Date</small>
-                                                        <small class="text-uppercase js-lists-values-date">{{format this.updatedAt}}</small>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            {{/each}}
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <!-- Pagination -->
-                                <ul class="pagination justify-content-center pagination-sm">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true" class="material-icons">chevron_left</span>
-                                            <span>Prev</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#" aria-label="1">
-                                            <span>1</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="1">
-                                            <span>2</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span>Next</span>
-                                            <span aria-hidden="true" class="material-icons">chevron_right</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <table class="table mb-0">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th colspan="4">
+                                                <a href="javascript:void(0)" class="sort"
+                                                    data-sort="js-lists-values-document">Document</a>
+                                                <a href="javascript:void(0)" class="sort"
+                                                    data-sort="js-lists-values-ProgramName">Program Name</a>
+                                                <a href="javascript:void(0)" class="sort"
+                                                    data-sort="js-lists-values-amount">Amount</a>
+                                                <a href="javascript:void(0)" class="sort"
+                                                    data-sort="js-lists-values-status">Status</a>
+                                                <a href="javascript:void(0)" class="sort"
+                                                    data-sort="js-lists-values-date">Date</a>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list">
+                                        {{#each paymentHistory}}
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <small class="text-uppercase text-muted mr-2">Invoice</small>
+                                                    <a href="/invoice" class="text-body small">#<span
+                                                            class="js-lists-values-document">{{this._id}}</span></a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <small
+                                                        class="text-uppercase text-muted mr-2">{{this.program.program}}</small>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="d-flex align-items-center">
+                                                    <small class="text-uppercase text-muted mr-2"></small>
+                                                    <small class="text-uppercase">₹<span
+                                                            class="js-lists-values-amount">{{this.finalAmount}}</span>INR</small>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="d-flex align-items-center">
+                                                    <small
+                                                        class="text-uppercase text-muted mr-2">{{this.paymentStatus}}</small>
+                                                    <i class="material-icons text-success md-18 mr-2"></i>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="d-flex align-items-center text-right">
+                                                    <small class="text-uppercase text-muted mr-2">Date</small>
+                                                    <small class="text-uppercase js-lists-values-date">{{format
+                                                        this.updatedAt}}</small>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
-                    </div>
 
-                </div>
-
-                <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
-                    <div class="mdk-drawer__content ">
-                        <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
-                            <div class="sidebar-p-y">
-                                <div class="sidebar-heading">APPLICATIONS</div>
-                                <ul class="sidebar-menu sm-active-button-bg">
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button" href="student-dashboard.html">
-                                            <i
-                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>
-                                            Student
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button" href="instructor-dashboard.html">
-                                            <i
-                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
-                                            Instructor
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!-- Account menu -->
-                                <div class="sidebar-heading">Account</div>
-                                <ul class="sidebar-menu">
-                                    <li class="sidebar-menu-item open">
-                                        <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
-                                            href="#account_menu">
-                                            <i
-                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person_outline</i>
-                                            Account
-                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                                        </a>
-                                        <ul class="sidebar-submenu sm-indent collapse show" id="account_menu">
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                    href="student-account-billing-payment-information.html">
-                                                    <span class="sidebar-menu-text">Payment Information</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item active">
-                                                <a class="sidebar-menu-button" href="student-billing.html">
-                                                    <span class="sidebar-menu-text">Payment History</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button" href="student-invoice.html">
-                                                    <span class="sidebar-menu-text">Student Invoice</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button" href="instructor-edit-invoice.html">
-                                                    <span class="sidebar-menu-text">Edit Invoice</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <div class="sidebar-heading">Student</div>
-                                <ul class="sidebar-menu sm-active-button-bg">
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button" href="student-browse-courses.html">
-                                            <i
-                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">search</i>
-                                            Browse Courses
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button" href="student-view-course.html">
-                                            <i
-                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">import_contacts</i>
-                                            View Course
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button" data-toggle="collapse" href="#forum_menu">
-                                            <i
-                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">chat_bubble_outline</i>
-                                            Community
-                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                                        </a>
-                                        <ul class="sidebar-submenu sm-indent collapse" id="forum_menu">
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button" href="student-forum.html">
-                                                    <span class="sidebar-menu-text">Forum</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button" href="student-forum-thread.html">
-                                                    <span class="sidebar-menu-text">Discussion</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button" href="student-forum-ask.html">
-                                                    <span class="sidebar-menu-text">Ask Question</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button" href="student-profile.html">
-                                                    <span class="sidebar-menu-text">Student Profile - Courses</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button" href="student-profile-posts.html">
-                                                    <span class="sidebar-menu-text">Student Profile - Posts</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button" href="instructor-profile.html">
-                                                    <span class="sidebar-menu-text">Instructor Profile</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button" href="student-help-center.html">
-                                            <i
-                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">live_help</i>
-                                            Get Help
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button" href="guest-login.html">
-                                            <i
-                                                class="sidebar-menu-icon sidebar-menu-icon--left material-icons">lock_open</i>
-                                            Logout
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <!-- Pagination -->
+                            <ul class="pagination justify-content-center pagination-sm">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true" class="material-icons">chevron_left</span>
+                                        <span>Prev</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#" aria-label="1">
+                                        <span>1</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="1">
+                                        <span>2</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span>Next</span>
+                                        <span aria-hidden="true" class="material-icons">chevron_right</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- App Settings FAB -->
-            <div id="app-settings">
-                <app-settings layout-active="default" :layout-location="{
-      'fixed': 'fixed-student-billing.html',
-      'default': 'student-billing.html'
-    }" sidebar-variant="bg-transparent border-0"></app-settings>
+            <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+                <div class="mdk-drawer__content ">
+                    <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
+                        <div class="sidebar-p-y">
+                            <div class="sidebar-heading">APPLICATIONS</div>
+                            <ul class="sidebar-menu sm-active-button-bg">
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/studentdash">
+                                        <i
+                                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/application">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">book</i>
+                                        All Application Form(s)
+                                        <a class="sidebar-menu-button" href="/application">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">book</i>
+                                            Application Form
+                                        </a>
+                                </li>
+                            </ul>
+                            <!-- Account menu -->
+                            <div class="sidebar-heading">Account</div>
+                            <ul class="sidebar-menu">
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button sidebar-js-collapse" data-toggle="collapse"
+                                        href="#account_menu">
+                                        <i
+                                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person_outline</i>
+                                        Account
+                                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                    </a>
+                                    <ul class="sidebar-submenu sm-indent collapse" id="account_menu">
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/history">
+                                                <span class="sidebar-menu-text">Payment History</span>
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/invoice">
+                                                <span class="sidebar-menu-text">Student Invoice</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" data-toggle="collapse" href="#messages_menu">
+                                        <i
+                                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons">notifications</i>
+                                        Notifications
+                                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                    </a>
+                                    <ul class="sidebar-submenu sm-indent collapse" id="messages_menu">
+                                        <li class="sidebar-menu-item">
+                                            <a class="sidebar-menu-button" href="/notification">
+                                                <span class="sidebar-menu-text">Notifications</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="sidebar-heading">Student</div>
+                            <ul class="sidebar-menu sm-active-button-bg">
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/quary">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">message</i>
+                                        My Queries
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" href="/showStudentAttendance">
+                                        <i
+                                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons">import_contacts</i>
+                                        View Attendance
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
+
+        <!-- App Settings FAB -->
+        <div id="app-settings">
+            <app-settings layout-active="default" :layout-location="{
+      'fixed': 'fixed-student-billing.html',
+      'default': 'student-billing.html'
+    }" sidebar-variant="bg-transparent border-0"></app-settings>
+        </div>
+
     </div>
+</div>
 
-    <!-- jQuery -->
-    <script src="assets/vendor/jquery.min.js"></script>
 
-    <!-- Bootstrap -->
-    <script src="assets/vendor/popper.min.js"></script>
-    <script src="assets/vendor/bootstrap.min.js"></script>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ask your Query</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="query" onsubmit="askQuery(event)">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">name:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="urname"
+                            value="{{user.fname}}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Query Category*</label>
+                        <div class="form">
+                            <select class="form-control" name="queryCategory" required>
+                                <option class="active-selected" value="">Select Query Category</option>
+                                {{#each viewprogram}}
+                                <option value="{{this.program}}">{{this.program}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Select Form*</label>
+                        <div class="form">
+                            <select class="form-control" name="selectForm" required>
+                                <option class="active-selected" value="">Select Form</option>
+                                {{#each viewcourses}}
+                                <option value="{{this.course}}">{{this.course}}</option>
+                                {{/each}}
 
-    <!-- Perfect Scrollbar -->
-    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text" name="message" required></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#submitModal">
+                            Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!-- MDK -->
-    <script src="assets/vendor/dom-factory.js"></script>
-    <script src="assets/vendor/material-design-kit.js"></script>
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ask your Query</h5>
+                <button type="button" class="btn">
+                    <a href="/quary"> My Queries</a>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="get" action="/askQuary">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Dear {{user.fname}},</label>
+                        <p>We are in receipt of your query. your quary will be answered shortly.You may check the status
+                            of your quary at <a href="/quary">My Queries</a></p>
+                    </div>
+                    <div>
+                        <p>Best wishes, <br> Kingster University</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="closeModal()" id="close" class="close" data-dismiss="modal"
+                            aria-label="Close">ok</button>
+                        {{!-- <button type="" class="btn btn-primary">ok</button> --}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!-- App JS -->
-    <script src="assets/js/app.js"></script>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script>
+    function closeModal() {
+        $("#exampleModal").modal('hide');
+    };
 
-    <!-- Highlight.js -->
-    <script src="assets/js/hljs.js"></script>
+    function askQuery(e) {
+        e.preventDefault()
 
-    <!-- App Settings (safe to remove) -->
-    <script src="assets/js/app-settings.js"></script>
+        $.ajax({
+            url: "/getquery",
+            method: "POST",
+            data: $('#query').serialize()
 
-    <!-- List.js -->
-    <script src="assets/vendor/list.min.js"></script>
-    <script src="assets/js/list.js"></script>
-
-</body>
-
-</html>
+        })
+    }
+</script>
+<script>
+    // chatBot
+    $(document).ready(function () {
+        $('.chat_icon').click(function (event) {
+            $('.chat_box').toggleClass('active')
+        });
+        $('.conv-form-wrapper').convform({ selectInputStyle: 'disable' });
+    })
+</script>

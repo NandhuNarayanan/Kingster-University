@@ -1,0 +1,47 @@
+
+<!-- main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Blog Detail</h2>
+            <small class="text-muted">Welcome to Swift application</small>
+        </div>
+        <section class="section blog-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="left-box">
+                           
+                            
+                            <div class="card comment-form">
+                                <div class="body">
+                                    <h4>LEAVE A REPLY</h4>
+                                    <p>Your email address will not be published. Required fields are marked *</p>
+                                    <form method="post" action="/admin/queryResponse"  id="commentform" class="ft-fm-2 mtt40 row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="hidden" name="id" value="{{studentsQuery._id}}">
+                                                    <input type="text" class="form-control" placeholder="Your Name" value="{{studentsQuery.urname}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <textarea rows="4" class="form-control no-resize" name="replay" placeholder="Please type what you want..."></textarea>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-raised g-bg-blush2">SUBMIT</button>
+                                        </div>                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

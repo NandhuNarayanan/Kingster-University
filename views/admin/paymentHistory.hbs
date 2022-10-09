@@ -1,0 +1,74 @@
+<!-- main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Student Recipes</h2>
+            <small class="text-muted">Welcome to Kingster application</small>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>Payment Detail</h2>
+
+                    </div>
+
+                    <style>
+                        tbody {
+                            counter-reset: rowNumber;
+                        }
+
+                        tbody tr::before {
+                            display: table-cell;
+                            counter-increment: rowNumber;
+                            content: counter(rowNumber) ".";
+                            padding-right: 0.3em;
+                            text-align: right;
+                        }
+                    </style>
+                    <div class="body">
+                        <hr>
+                        <div class="mt-40"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table  class="table table-striped">
+                                        <thead >
+                                            <tr>
+                                                <th>No:</th>
+                                                <th>Name</th>
+                                                <th>Program Id</th>
+                                                <th>Exp.</th>
+                                                <th>Program</th>
+                                                <th>PaymentStatus</th>
+                                                <th>Cost</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody cellpadding="0">
+                                            {{#each paymentHistory}}
+                                            <tr>
+                                                <td></td>
+                                                <td>Application Fees</td>
+                                                <td>{{this._id}}</td>
+                                                <td>{{format this.updatedAt}}</td>
+                                                <td>{{this.program.program}}</td>
+                                                <td>{{this.paymentStatus}}</td>
+                                                <td>{{this.finalAmount}}</td>
+                                                <td>₹{{this.finalAmount}}</td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- main content -->
+
+<div class="color-bg"></div>

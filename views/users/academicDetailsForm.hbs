@@ -16,24 +16,24 @@
         rel="stylesheet">
 
     <!-- Perfect Scrollbar -->
-    <link type="text/css" href="assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+    <link type="text/css" href="/assets/vendor/perfect-scrollbar.css" rel="stylesheet">
 
     <!-- Material Design Icons -->
-    <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
+    <link type="text/css" href="/assets/css/material-icons.css" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
-    <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
+    <link type="text/css" href="/assets/css/fontawesome.css" rel="stylesheet">
 
     <!-- Preloader -->
-    <link type="text/css" href="assets/vendor/spinkit.css" rel="stylesheet">
+    <link type="text/css" href="/assets/vendor/spinkit.css" rel="stylesheet">
 
     <!-- App CSS -->
-    <link type="text/css" href="assets/css/app.css" rel="stylesheet">
+    <link type="text/css" href="/assets/css/app.css" rel="stylesheet">
+
 
 </head>
 
 <body class=" layout-fluid">
-
     <!-- Header Layout -->
     <div class="mdk-header-layout js-mdk-header-layout">
 
@@ -126,176 +126,132 @@
         <!-- Header Layout Content -->
         <div class="container">
             <div class="container-fluid py-5">
-                <form id="wizard_with_validation" action="/academicform" method="POST"
-                    class="py-5">
+                <form id="wizard_with_validation" action="/academicform" method="POST" class="py-5">
                     <h3>Academic Details</h3>
-                        <h3>CLASS X/SSC</h3>
+                    <h3>CLASS X/SSC</h3>
+                    <div class="form-group form-float">
+                        <div class="form-line">
+
+                            <input type="text" name="XBoard" class="form-control">
+                            <label class="form-label">X/SSC Board*</label>
+                        </div>
+                    </div>
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" name="ExaminationState" class="form-control">
+                            <label class="form-label">X/SSC Examination State*</label>
+                        </div>
+                    </div>
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="email" name="SchoolName" class="form-control">
+                            <label class="form-label">X/SSC School Name*</label>
+                        </div>
+                    </div>
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <textarea name="XDetails" cols="30" rows="3" class="form-control no-resize"></textarea>
+                            <label class="form-label">X/SSC Details*</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>CLASS XII/HSC OR DIPLOMA</h3>
                         <div class="form-group form-float">
                             <div class="form-line">
 
-                                <input type="text" name="XBoard" class="form-control">
-                                <label class="form-label">X/SSC Board*</label>
+                                <input type="text" name="XIIorDiploma" class="form-control">
+                                <label class="form-label">XII/HSC or Diploma*</label>
                             </div>
                         </div>
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" name="ExaminationState" class="form-control">
-                                <label class="form-label">X/SSC Examination State*</label>
+                                <input type="text" name="XIIStatus" class="form-control">
+                                <label class="form-label">XII/HSC Status*</label>
                             </div>
                         </div>
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="email" name="SchoolName" class="form-control">
-                                <label class="form-label">X/SSC School Name*</label>
+                                <input type="text" name="XIIExaminationState" class="form-control">
+                                <label class="form-label">XII/HSC Examination State*</label>
                             </div>
                         </div>
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <textarea name="XDetails" cols="30" rows="3" class="form-control no-resize"></textarea>
-                                <label class="form-label">X/SSC Details*</label>
+                                <input type="text" name="XIISchoolName" class="form-control">
+                                <label class="form-label">XII/HSC School Name*</label>
                             </div>
                         </div>
-                        <div>
-                            <h3>CLASS XII/HSC OR DIPLOMA</h3>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-
-                                    <input type="text" name="XIIorDiploma" class="form-control">
-                                    <label class="form-label">XII/HSC or Diploma*</label>
-                                </div>
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" name="XIIStatus" class="form-control">
-                                    <label class="form-label">XII/HSC Status*</label>
-                                </div>
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" name="XIIExaminationState" class="form-control">
-                                    <label class="form-label">XII/HSC Examination State*</label>
-                                </div>
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" name="XIISchoolName" class="form-control">
-                                    <label class="form-label">XII/HSC School Name*</label>
-                                </div>
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" name="XIIDetails" class="form-control">
-                                    <label class="form-label">XII/HSC Details*</label>
-                                </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="text" name="XIIDetails" class="form-control">
+                                <label class="form-label">XII/HSC Details*</label>
                             </div>
                         </div>
-                        <div>
-                            <h3>KINGSTER DETAILS</h3>
-                            <div class="form-group col-md-12">
-                                <label class="form-label">How did you get
-                                    to know about admission of KINGSTER University
-                                    2022?*</label>
-                                <div class="form">
-                                    <select class="form-control" name="reference">
-                                            <option value="">Select</option>
-                                            <option value="431803;;;Airline Magazine">Airline Magazine</option>
-                                            <option value="431804;;;Campus Tour">Campus Tour</option>
-                                            <option value="431805;;;Coaching Centre Or Test Prep Centre">Coaching Centre
-                                                Or Test Prep Centre</option>
-                                            <option value="431806;;;College Duniya">College Duniya</option>
-                                            <option value="431807;;;Facebook">Facebook</option>
-                                            <option value="431808;;;Family or Friends">Family or Friends</option>
-                                            <option value="431809;;;Gmac Study In India Campaign">Gmac Study In India
-                                                Campaign</option>
-                                            <option value="431810;;;Google Search">Google Search</option>
-                                            <option value="431811;;;Instagram">Instagram</option>
-                                            <option value="431812;;;Linkedin">Linkedin</option>
-                                            <option value="431813;;;Mba Rendezvous">Mba Rendezvous</option>
-                                            <option value="431814;;;Mba Universe">Mba Universe</option>
-                                            <option value="431815;;;Newspaper">Newspaper</option>
-                                            <option value="431816;;;Nmat.org.in">Nmat.org.in</option>
-                                            <option value="431817;;;Nmims.edu">Nmims.edu</option>
-                                            <option value="431818;;;Pagalguy">Pagalguy</option>
-                                            <option value="431819;;;Quora">Quora</option>
-                                            <option value="431820;;;Radio">Radio</option>
-                                            <option value="431821;;;Seminar Or Webinar">Seminar Or Webinar</option>
-                                            <option value="431822;;;Shiksha.com">Shiksha.com</option>
-                                            <option value="431823;;;Word of Mouth">Word of Mouth</option>
-                                            <option value="431824;;;Youtube">Youtube</option>
-                                            <option value="Other">Other</option>
-                                        </select>
+                    </div>
+                    <div>
+                        <h3>KINGSTER DETAILS</h3>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">How did you get
+                                to know about admission of KINGSTER University
+                                2022?*</label>
+                            <div class="form">
+                                <select class="form-control" name="reference">
+                                    <option value="">Select</option>
+                                    <option value="431803;;;Airline Magazine">Airline Magazine</option>
+                                    <option value="431804;;;Campus Tour">Campus Tour</option>
+                                    <option value="431805;;;Coaching Centre Or Test Prep Centre">Coaching Centre
+                                        Or Test Prep Centre</option>
+                                    <option value="431806;;;College Duniya">College Duniya</option>
+                                    <option value="431807;;;Facebook">Facebook</option>
+                                    <option value="431808;;;Family or Friends">Family or Friends</option>
+                                    <option value="431809;;;Gmac Study In India Campaign">Gmac Study In India
+                                        Campaign</option>
+                                    <option value="431810;;;Google Search">Google Search</option>
+                                    <option value="431811;;;Instagram">Instagram</option>
+                                    <option value="431812;;;Linkedin">Linkedin</option>
+                                    <option value="431813;;;Mba Rendezvous">Mba Rendezvous</option>
+                                    <option value="431814;;;Mba Universe">Mba Universe</option>
+                                    <option value="431815;;;Newspaper">Newspaper</option>
+                                    <option value="431816;;;Nmat.org.in">Nmat.org.in</option>
+                                    <option value="431817;;;Nmims.edu">Nmims.edu</option>
+                                    <option value="431818;;;Pagalguy">Pagalguy</option>
+                                    <option value="431819;;;Quora">Quora</option>
+                                    <option value="431820;;;Radio">Radio</option>
+                                    <option value="431821;;;Seminar Or Webinar">Seminar Or Webinar</option>
+                                    <option value="431822;;;Shiksha.com">Shiksha.com</option>
+                                    <option value="431823;;;Word of Mouth">Word of Mouth</option>
+                                    <option value="431824;;;Youtube">Youtube</option>
+                                    <option value="Other">Other</option>
+                                </select>
 
-                                    </select>
-                                </div>
+                                </select>
                             </div>
                         </div>
-                        <div>
-                            <h3>APPLYING FOR ADMISSION ON THE BASIS OF</h3>
-                            <div class="form-group form-float">
-                                <div class="form-line">
+                    </div>
+                    <div>
+                        <h3>APPLYING FOR ADMISSION ON THE BASIS OF</h3>
+                        <div class="form-group form-float">
+                            <div class="form-line">
 
-                                    <input type="text" name="Program1" class="form-control">
-                                    <label class="form-label">Program Preference 1</label>
-                                </div>
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-
-                                    <input type="text" name="Program2" class="form-control">
-                                    <label class="form-label">Program Preference 2</label>
-                                </div>
+                                <input type="text" name="Program1" class="form-control">
+                                <label class="form-label">Program Preference 1</label>
                             </div>
                         </div>
-                        <div style="display: flex; justify-content:flex-end;">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+
+                                <input type="text" name="Program2" class="form-control">
+                                <label class="form-label">Program Preference 2</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content:flex-end;">
                         <div>
-                        <a href="/personalform" class="btn btn-dark mx-3">Back</a>
+                            <a href="/personalform" class="btn btn-dark mx-3">Back</a>
                         </div>
                         <button type="submit" class="btn btn-success">Make Payment</button>
-                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <!-- jQuery -->
-    <script src="assets/vendor/jquery.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="assets/vendor/popper.min.js"></script>
-    <script src="assets/vendor/bootstrap.min.js"></script>
-
-    <!-- Perfect Scrollbar -->
-    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
-
-    <!-- MDK -->
-    <script src="assets/vendor/dom-factory.js"></script>
-    <script src="assets/vendor/material-design-kit.js"></script>
-
-    <!-- App JS -->
-    <script src="assets/js/app.js"></script>
-
-    <!-- Highlight.js -->
-    <script src="assets/js/hljs.js"></script>
-
-    <!-- App Settings (safe to remove) -->
-    <script src="assets/js/app-settings.js"></script>
-
-    <!-- Global Settings -->
-    <script src="assets/js/settings.js"></script>
-
-    <!-- Moment.js -->
-    <script src="assets/vendor/moment.min.js"></script>
-    <script src="assets/vendor/moment-range.js"></script>
-
-    <!-- Chart.js -->
-    <script src="assets/vendor/Chart.min.js"></script>
-    <script src="assets/js/chartjs.js"></script>
-
-    <!-- Student Dashboard Page JS -->
-    <!-- <script src="assets/js/chartjs-rounded-bar.js"></script> -->
-    <script src="assets/js/page.student-dashboard.js"></script>
-
-
-</body>
-
-</html>
