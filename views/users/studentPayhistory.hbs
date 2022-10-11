@@ -227,14 +227,14 @@
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <small class="text-uppercase text-muted mr-2">Invoice</small>
-                                                    <a href="/invoice" class="text-body small">#<span
+                                                    <a href="/invoice/{{this._id}}" class="text-body small">#<span
                                                             class="js-lists-values-document">{{this._id}}</span></a>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <small
-                                                        class="text-uppercase text-muted mr-2">{{this.program.program}}</small>
+                                                        class="text-uppercase text-muted mr-2">{{this.program.program}}{{this.course.course}}</small>
                                                 </div>
                                             </td>
                                             <td class="text-center">

@@ -15,68 +15,32 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="card">
+                                            {{#each programGroups}}
                                         <div class="card-header d-flex align-items-center">
                                             <div class="flex">
-                                                <h4 class="card-title">Sales today</h4>
-                                                <p class="card-subtitle">by course</p>
+                                                <h4 class="card-title">Department Of {{this.department}}</h4>
                                             </div>
-                                            <a class="btn btn-sm btn-primary"
-                                               href="instructor-earnings.html">Earnings</a>
                                         </div>
                                         <ul class="list-group list-group-fit mb-0">
                                             <li class="list-group-item">
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
-                                                        <a href="instructor-course-edit.html"
-                                                           class="text-body"><strong>Basics of HTML</strong></a>
+                                                        <a href="/teacher/totalStudent/{{this.program}}"
+                                                           class="text-body"><strong>{{this.department}}</strong></a>
                                                     </div>
-                                                    <div class="media-right">
-                                                        <div class="text-center">
-                                                            <span class="badge badge-pill badge-primary">15</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
                                                     <div class="media-body">
-                                                        <a href="instructor-course-edit.html"
-                                                           class="text-body"><strong>Angular in Steps</strong></a>
+                                                        <strong>{{this.HOD}}</strong>
                                                     </div>
                                                     <div class="media-right">
                                                         <div class="text-center">
-                                                            <span class="badge badge-pill badge-success">50</span>
+                                                            <span class="badge badge-pill badge-primary">→</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <a href="instructor-course-edit.html"
-                                                           class="text-body"><strong>Bootstrap Foundations</strong></a>
-                                                    </div>
-                                                    <div class="media-right">
-                                                        <div class="text-center">
-                                                            <span class="badge badge-pill badge-warning">14</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <a href="instructor-course-edit.html"
-                                                           class="text-body"><strong>GitHub Basics</strong></a>
-                                                    </div>
-                                                    <div class="media-right">
-                                                        <div class="text-center">
-                                                            <span class="badge badge-pill  badge-danger ">14</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+
                                         </ul>
+                                            {{/each}}
                                     </div>
                                 </div>
                             </div>

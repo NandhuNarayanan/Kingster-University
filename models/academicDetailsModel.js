@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 
 academicDetailsSchema = new mongoose.Schema({
     userId :{
-        type:String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Users"
     },
     XBoard:{
     type:String
@@ -18,7 +19,7 @@ academicDetailsSchema = new mongoose.Schema({
    XDetails:{
         type:String
     },
-    XIIorDiploma:{
+    XII:{
         type:String
     },
     XIIStatus:{
@@ -28,7 +29,7 @@ academicDetailsSchema = new mongoose.Schema({
         type:String
     },
     XIISchoolName:{
-        type:Number
+        type:String
     },
     XIIDetails:{
         type:String

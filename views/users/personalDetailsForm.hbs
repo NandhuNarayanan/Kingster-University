@@ -128,9 +128,10 @@
             <div class="container-fluid py-5">
                 <form id="wizard_with_validation" enctype="multipart/form-data" action="/personalform" method="POST"
                     class="py-5">
-                    <h2> Application for {{selectedProgram.program.program}}</h2>
-                    <h3>Personal Details</h3>
-                    <h2>BASIC INFORMATION</h2>
+                    <h4> Application for {{programName}}</h4>
+                    &nbsp;
+                    <h5>Personal Details</h5>
+                    <h4>BASIC INFORMATION</h4>
                     <div class="form-group col-md-12">
                         <div class="form-1">
                             <label class="form-2">Upload Your Recent Passport Size Photograph*</label>
@@ -141,7 +142,7 @@
                         <label class="form-label">Salutation*</label>
                         <div class="form">
                             <select class="form-control" name="salutaton">
-                                <option value="1"></option>
+                                <option value=""></option>
                                 <option value="Mr">Mr</option>
                                 <option value="Mrs">Mrs</option>
                                 <option value="Mr">Mr</option>
@@ -167,7 +168,7 @@
                         <div class="form-line">
 
                             <select class="form-control" name="gender">
-                                <option value="1"></option>
+                                <option value=""></option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>
@@ -178,7 +179,7 @@
                         <label class="form-label">Date of Birth*</label>
                         <div class="form-line">
                             <div class="form-line">
-                                <input type="date" name="DOB" class="form-control">
+                                <input type="date" name="dob" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -186,7 +187,7 @@
                         <label class="form-label">Blood Group*</label>
                         <div>
                             <select class="form-control" name="bloodgroup">
-                                <option value="1"></option>
+                                <option value=""></option>
                                 <option value="A+">A+</option>
                                 <option value="B+">B+</option>
                                 <option value="O+">O+</option>
@@ -203,7 +204,7 @@
                         <label class="form-label">Marital Status*</label>
                         <div class="form">
                             <select class="form-control" name="maritalstatus">
-                                <option value="1"></option>
+                                <option value=""></option>
                                 <option value="Married">Married</option>
                                 <option value="Unmarried">Unmarried</option>
 
@@ -224,21 +225,21 @@
                             <label class="form-label">Category*</label>
                             <div>
                                 <select class="form-control" name="category">
-                                    <option value="1"></option>
-                                    <option value="2">(OBC) Other Backward Caste</option>
-                                    <option value="3">Economically Backward Class (EBC)</option>
-                                    <option value="4">General Category (GN)</option>
-                                    <option value="4">Nomadic Tribes (B) (NT - B)</option>
-                                    <option value="4">Nomadic Tribes (C) (NT - C)</option>
-                                    <option value="4">Nomadic Tribes (D) (NT - D)</option>
-                                    <option value="4">Nomadic Tribes (NT)</option>
-                                    <option value="4">Scheduled Tribe (ST)</option>
-                                    <option value="4">Scheduled Caste (SC)</option>
-                                    <option value="4">Socially And Educationally Backward (SEBC)
+                                    <option value=""></option>
+                                    <option value="(OBC) Other Backward Caste">(OBC) Other Backward Caste</option>
+                                    <option value="Economically Backward Class (EBC)">Economically Backward Class (EBC)</option>
+                                    <option value="General Category (GN)">General Category (GN)</option>
+                                    <option value="Nomadic Tribes (B) (NT - B)">Nomadic Tribes (B) (NT - B)</option>
+                                    <option value="Nomadic Tribes (C) (NT - C)">Nomadic Tribes (C) (NT - C)</option>
+                                    <option value="Nomadic Tribes (D) (NT - D)">Nomadic Tribes (D) (NT - D)</option>
+                                    <option value="Nomadic Tribes (NT)">Nomadic Tribes (NT)</option>
+                                    <option value="Scheduled Tribe (ST)">Scheduled Tribe (ST)</option>
+                                    <option value="Scheduled Caste (SC)">Scheduled Caste (SC)</option>
+                                    <option value="Socially And Educationally Backward (SEBC)">Socially And Educationally Backward (SEBC)
                                     </option>
-                                    <option value="4">Special Backward Caste (SBC)</option>
-                                    <option value="4">Scheduled Caste (SC)</option>
-                                    <option value="4">Vimukt Jati (VJ)</option>
+                                    <option value="Special Backward Caste (SBC)">Special Backward Caste (SBC)</option>
+                                    <option value="Scheduled Caste (SC)">Scheduled Caste (SC)</option>
+                                    <option value="Vimukt Jati (VJ)">Vimukt Jati (VJ)</option>
                                 </select>
 
                             </div>
@@ -247,10 +248,8 @@
                             <label class="form-label">Nationality*</label>
                             <div>
                                 <select class="form-control" name="nationality">
-                                    <option value="1"></option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
+                                    <option value=""></option>
+                                    <option value="Indian">Indian</option>
                                 </select>
                             </div>
                         </div>
@@ -258,9 +257,9 @@
                             <label class="form-label">Are you differently abled? *</label>
                             <div class="form-line">
                                 <select class="form-control" name="differentlyabled">
-                                    <option value="1"></option>
-                                    <option value="Male">Yes</option>
-                                    <option value="Female">No</option>
+                                    <option value=""></option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
 
                                 </select>
                             </div>
@@ -268,14 +267,14 @@
                         <div class="form-group col-md-12">
                             <label class="form-label">ID Proof*</label>
                             <div>
-                                <select class="form-control" name="idProof">
-                                    <option value="1"></option>
-                                    <option value="Male">UID (Aadhaar Card)</option>
-                                    <option value="Female">PAN Card issued by government</option>
-                                    <option value="Other">Passport issued by Indian authorities
+                                <select class="form-control" name="idproof">
+                                    <option value=""></option>
+                                    <option value="Aadhaar Card">UID (Aadhaar Card)</option>
+                                    <option value="PAN Card">PAN Card issued by government</option>
+                                    <option value="Passport">Passport issued by Indian authorities
                                     </option>
-                                    <option value="Other">Voter ID</option>
-                                    <option value="Other">Driving License</option>
+                                    <option value="Voter ID">Voter ID</option>
+                                    <option value="Driving License">Driving License</option>
 
 
                                 </select>
@@ -287,7 +286,9 @@
                         <div class="form-group col-md-12">
                             <label class="form-label">Phone Number*</label>
                             <div class="form-line">
-                                <input type="text" name="mobilenumber" class="form-control" disabled
+                                <input type="text"  class="form-control" disabled
+                                    value="{{users.mobile}}">
+                                    <input type="text" name="mobilenumber" class="form-control" hidden
                                     value="{{users.mobile}}">
                             </div>
                         </div>
@@ -300,7 +301,9 @@
                         <div class="form-group col-md-12">
                             <label class="form-label">Primery E mail*</label>
                             <div class="form-line">
-                                <input type="email" name="primeryemail" class="form-control" disabled
+                                <input type="email"  class="form-control" disabled
+                                    value="{{users.email}}">
+                                    <input type="email" name="primeryemail" class="form-control" hidden
                                     value="{{users.email}}">
                             </div>
                         </div>
@@ -317,7 +320,7 @@
                             <label class="form-label">Father's Title *</label>
                             <div class="form">
                                 <select class="form-control" name="fathertitle">
-                                    <option value="1"></option>
+                                    <option value=""></option>
                                     <option value="Mr">Mr</option>
                                     <option value="Mrs">Mrs</option>
                                     <option value="Mr">Mr</option>
@@ -329,13 +332,13 @@
                         <div class="form-group col-md-12">
                             <label class="form-label">Father's First Name*</label>
                             <div class="form-line">
-                                <input type="text" name=" fatherfname" class="form-control">
+                                <input type="text" name="fatherfname" class="form-control">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Father's Last Name*</label>
                             <div class="form-line">
-                                <input type="text" name=" fatherlname" class="form-control">
+                                <input type="text" name="fatherlname" class="form-control">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
@@ -358,7 +361,7 @@
                             <label class="form-label">Mother's Title*</label>
                             <div class="form">
                                 <select class="form-control" name="motheretitle">
-                                    <option value="1"></option>
+                                    <option value=""></option>
                                     <option value="Mr">Mr</option>
                                     <option value="Mrs">Mrs</option>
                                     <option value="Mr">Mr</option>
@@ -669,7 +672,7 @@
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">State*</label>
-                            <select class="form-control" id="inputState">
+                            <select class="form-control" id="inputState" name="state">
                                 <option value="SelectState">Select State</option>
                                 <option value="Andra Pradesh">Andra Pradesh</option>
                                 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -712,7 +715,7 @@
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">District*</label>
-                            <select class="form-control" id="inputDistrict">
+                            <select class="form-control" id="inputDistrict" name="city">
                                 <option value="">-- select one -- </option>
                             </select>
                         </div>

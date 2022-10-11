@@ -450,9 +450,9 @@
                 }).then((e) => {
                     console.log(e)
                     if (e.status) {
-                        alert("payment Successfull")
+                        location.assign('/success')
                     } else {
-                        alert("Payment Failed")
+                        location.assign('/failed')
                     }
                 })
             } catch (err) {

@@ -23,7 +23,7 @@ const verifylogin = (req,res,next)=>{
 
 
 
-//////////////////////////////////////////////_______________________Teacher-SIGNUP/////////////////////////////////////////////////////////////
+//////////////////////////////////////////////_______________________Teacher-SIGNUP_______________________/////////////////////////////////////////////////////////////
 
 
 router.get('/teachersignup',(req,res)=>{
@@ -49,10 +49,151 @@ router.post('/teachersignup',async(req,res)=>{
   }
 })
 
-router.get('/teacherDash',verifylogin,(req,res)=>{
 
-  res.render('teacher/teacherDash',{layout:'teacher-layout',teacher_header:true})
+//////////////////////////////////////////////_______________________Teacher-Dashboard_______________________/////////////////////////////////////////////////////////////
+
+router.get('/teacherDash',verifylogin,async(req,res)=>{
+  try {
+    const programGroups = await paymentModel.aggregate([
+      {
+        '$lookup': {
+          'from': 'programs', 
+          'localField': 'program', 
+          'foreignField': '_id', 
+          'as': 'program'
+        }
+      }, {
+        '$unwind': {
+          'path': '$program'
+        }
+      }, {
+        '$lookup': {
+          'from': 'courses', 
+          'localField': 'program.course', 
+          'foreignField': '_id', 
+          'as': 'course'
+        }
+      }, {
+        '$unwind': {
+          'path': '$course'
+        }
+      }, {
+        '$lookup': {
+          'from': 'departments', 
+          'localField': 'course.department', 
+          'foreignField': '_id', 
+          'as': 'department'
+        }
+      }, {
+        '$unwind': {
+          'path': '$department'
+        }
+      }, {
+        '$group': {
+          '_id': '$department._id', 
+          'department': {
+            '$first': '$department.department'
+          }, 
+          'HOD': {
+            '$first': '$department.HOD'
+          }, 
+          'program': {
+            '$first': '$program._id'
+          }
+        }
+      }
+    ])
+    res.render('teacher/teacherDash',{programGroups,layout:'teacher-layout',teacher_header:true})
+  } catch (error) {
+    
+  }
+
 });
+
+router.get('/totalStudent/:id',async(req,res)=>{
+try {
+  const studentProgram = await paymentModel.aggregate([
+    {
+      '$lookup': {
+        'from': 'programs', 
+        'localField': 'program', 
+        'foreignField': '_id', 
+        'as': 'program'
+      }
+    }, {
+      '$unwind': {
+        'path': '$program'
+      }
+    }, {
+      '$lookup': {
+        'from': 'courses', 
+        'localField': 'program.course', 
+        'foreignField': '_id', 
+        'as': 'course'
+      }
+    }, {
+      '$unwind': {
+        'path': '$course'
+      }
+    }, {
+      '$lookup': {
+        'from': 'departments', 
+        'localField': 'course.department', 
+        'foreignField': '_id', 
+        'as': 'department'
+      }
+    }, {
+      '$unwind': {
+        'path': '$department'
+      }
+    }, {
+      '$lookup': {
+        'from': 'users', 
+        'localField': 'userId', 
+        'foreignField': '_id', 
+        'as': 'userDetails'
+      }
+    }, {
+      '$unwind': {
+        'path': '$userDetails'
+      }
+    }, {
+      '$group': {
+        '_id': '$department._id', 
+        'department': {
+          '$first': '$department.department'
+        }, 
+        'HOD': {
+          '$first': '$department.HOD'
+        }, 
+        'program': {
+          '$first': '$program._id'
+        }, 
+        'userId': {
+          '$first': '$userDetails._id'
+        }
+      }
+    }, {
+      '$lookup': {
+        'from': 'programs', 
+        'localField': 'program', 
+        'foreignField': '_id', 
+        'as': 'program'
+      }
+    }, {
+      '$unwind': {
+        'path': '$program'
+      }
+    }
+  ])
+  const programDetails = await paymentModel.find({program:req.params.id}).populate('program').populate('userId').lean()
+  totalStudents = programDetails.length
+  res.render('teacher/totalStudent',{programDetails,studentProgram,totalStudents,layout:'teacher-layout',teacher_header:true})
+} catch (error) {
+  console.log(error);
+}
+})
+
 
 //////////////////////////////////////////////_______________________Teacher-LOGIN_________________________/////////////////////////////////////////////////////////////
 
@@ -68,15 +209,14 @@ router.post('/',async(req,res)=>{
  try {
   console.log(req.body.teachername);
   const teacher = await teacherModel.findOne({email:req.body.teachername})
-  if(!teacher) return res.render('teacher/teacherLogin',{session:{wrongpassword:'123'},layout:'teacher-layout',teacher_header:true})
+  if(!teacher) return res.render('teacher/teacherLogin',{session:{wrongpassword:'123'}})
   await bcrypt.compare(req.body.password,teacher.password)
   .then(e=>{
-    console.log(e,'qwerrtyu');
     if(e) {
       req.session.teacher = true
      return res.redirect('/teacher/teacherDash')
     }
-    return res.render('teacher/teacherLogin',{session:{wrongpassword:'123'},layout:'teacher-layout',teacher_header:true})
+    return res.render('teacher/teacherLogin',{session:{wrongpassword:'123'}})
   })
  } catch (error) {
   
@@ -85,7 +225,7 @@ router.post('/',async(req,res)=>{
 
 //////////////////////////////////////////////_______________________Teacher-Attendence_________________________/////////////////////////////////////////////////////////////
 
-router.get('/attendance',async(req,res)=>{
+router.get('/attendance',verifylogin,async(req,res)=>{
   try {
     const departments = await departmentModel.find().lean()
 
@@ -98,7 +238,6 @@ router.get('/attendance',async(req,res)=>{
 
 
 router.post('/getDepartment',async(req,res)=>{
-console.log(req.body,'wwwwwwwwwwwwwwwwwww');
 let departmentId=req.body.data
 const users = await userModel.aggregate([
   {
@@ -163,7 +302,6 @@ const users = await userModel.aggregate([
     }
   }
 ])
-console.log(users)
 res.status(200).json({users})
 
 })
@@ -191,39 +329,14 @@ router.post('/attendance',async(req,res)=>{
 
 //////////////////////////////////////////////_______________________Teacher-SHOWATTENDANCE_________________________/////////////////////////////////////////////////////////////
 
-router.get('/showAttendance',async(req, res) => {
-  const studentAttendance = await attendancesModel.find().populate('studentId').populate('depatment').lean()
-  
-  console.log(studentAttendance,'❤️😍😒😒');
+router.get('/showAttendance',verifylogin,async(req, res) => {
+  const studentAttendance = await attendancesModel.find().populate('depatment').populate('studentId').lean()
   res.render('teacher/showAttendance',{studentAttendance,layout:'teacher-layout',teacher_header:true})
 })
 
 
 
-//////////////////////////////////////////////_______________________Teacher-AddMARK_________________________/////////////////////////////////////////////////////////////
-
-
-
-router.get('/viewStudents',async(req,res)=>{
-  try {
-    const departments = await departmentModel.find().lean()
-
-    res.render('teacher/markAdd',{departments,layout:'teacher-layout',teacher_header:true})
-  } catch (error) {
-    
-  }
-})
-
-
-
-
-
-
-
-
-
-
-
+//////////////////////////////////////////////_______________________Teacher-logout_________________________/////////////////////////////////////////////////////////////
 router.get('/logout',(req,res)=>{
   req.session.login = false
   res.redirect('/teacher')

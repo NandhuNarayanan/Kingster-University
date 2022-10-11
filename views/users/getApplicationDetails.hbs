@@ -1,0 +1,355 @@
+<!-- Header Layout Content -->
+<div class="container">
+    <div class="container-fluid py-5">
+
+        <nav class="navbar navbar-light" style="background-color: #86c9f9;">
+            <!-- Navbar content -->
+            <div class=" mx-5">
+                <div class="col-md-6 kingster-logo  kingster-item-pdlr" style="margin-left:170px ;">
+                    <div class="kingster-logo-inner"><a class="" href="#"><img
+                                src="https://a6e8z9v6.stackpathcdn.com/kingster/wp-content/themes/kingster/images/logo.png"
+                                alt="" /></a></div>
+                </div>
+
+                <h6 style="margin-left:130px ;">Accredited with "A" Grade by NAAC | Ranked 1st among Indian Universitynby MHRD-NIRF Application for
+                    admission to UG/PG Courses </h6>
+
+            </div>
+        </nav>
+        <section class="h-100 gradient-custom-2">
+            <div class="rounded-top text-white d-flex flex-row">
+                <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                    <img src="{{ApplicationDetails.[0].photograph.filename}}" alt="Generic placeholder image"
+                        class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Course Applying For*</label>
+                <div class="form-line">
+                    <input type="text" name="applyingCourse" class="form-control" value="">
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-12">
+                <label class="form-label">Salutation*</label>
+                <div class="form">
+                    <input type="text" class="form-control" value="{{ApplicationDetails.[0].salutaton}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">First Name*</label>
+                <div class="form-line">
+                    <input type="text" name="fname" class="form-control" value="{{ApplicationDetails.[0].fname}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Last Name*</label>
+                <div class="form-line">
+                    <input type="text" name="lname" class="form-control" value="{{ApplicationDetails.[0].lname}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Gender*</label>
+                <div class="form-line">
+                    <input type="text" name="lname" class="form-control" value="{{ApplicationDetails.[0].gender}}">
+
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Date of Birth*</label>
+                <div class="form-line">
+                    <div class="form-line">
+                        <input type="date" name="DOB" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Blood Group*</label>
+                <div>
+                    <input type="text" name="lname" class="form-control" value="{{ApplicationDetails.[0].bloodgroup}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Marital Status*</label>
+                <div class="form">
+                    <input type="" name="age" class="form-control" value="{{ApplicationDetails.[0].maritalstatus}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Age*</label>
+                <div class="form-line">
+                    <input type="number" name="age" class="form-control" value="{{ApplicationDetails.[0].age}}">
+                </div>
+            </div>
+            <div>
+                <h2>ADDITIONAL INFORMATION</h2>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Category*</label>
+                    <div>
+                        <input type="text" name="age" class="form-control" value="{{ApplicationDetails.[0].category}}">
+
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Nationality*</label>
+                    <div>
+                        <input type="text" name="lname" class="form-control"
+                            value="{{ApplicationDetails.[0].nationality}}">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Are you differently abled? *</label>
+                <div class="form-line">
+                    <input type="text" name="lname" class="form-control"
+                        value="{{ApplicationDetails.[0].differentlyabled}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">ID Proof*</label>
+                <div>
+                    <input type="text" name="lname" class="form-control"
+                        value="{{ApplicationDetails.[0].differentlyabled}}">
+                </div>
+            </div>
+
+
+            <div>
+                <h2>CONTACT INFORMATION</h2>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Phone Number*</label>
+                    <div class="form-line">
+                        <input type="text" name="mobilenumber" class="form-control" disabled
+                            value="{{ApplicationDetails.[0].mobilenumber}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Alternate Phone Number</label>
+                    <div class="form-line">
+                        <input type="text" name="alternatenumber" class="form-control"
+                            value="{{ApplicationDetails.[0].alternatenumber}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Primery E mail*</label>
+                    <div class="form-line">
+                        <input type="email" name="primeryemail" class="form-control" disabled
+                            value="{{ApplicationDetails.[0].primeryemail}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Alternate Email *</label>
+                    <div class="form-line">
+                        <input type="email" name="alternateemail" class="form-control"
+                            value="{{ApplicationDetails.[0].alternateemail}}">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>FATHER'S DETAILS</h2>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Father's Title *</label>
+                    <div class="form">
+                        <input type="text" name="age" class="form-control"
+                            value="{{ApplicationDetails.[0].fathertitle}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Father's First Name*</label>
+                    <div class="form-line">
+                        <input type="text" name=" fatherfname" class="form-control"
+                            value="{{ApplicationDetails.[0].lname}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Father's Last Name*</label>
+                    <div class="form-line">
+                        <input type="text" name=" fatherlname" class="form-control"
+                            value="{{ApplicationDetails.[0].fathertitle}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Father's Mobile Number*</label>
+                    <div class="form-line">
+                        <input type="text" name="fathermobilenumber" class="form-control"
+                            value="{{ApplicationDetails.[0].fathermobilenumber}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Father's Email ID*</label>
+                    <div class="form-line">
+                        <input type="email" name="fatheremail" class="form-control"
+                            value="{{ApplicationDetails.[0].fatheremail}}">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>MOTHER'S DETAILS</h2>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Mother's Title*</label>
+                    <div class="form">
+                        <input type="text" name="age" class="form-control"
+                            value="{{ApplicationDetails.[0].motheretitle}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Mother's First Name*</label>
+                    <div class="form-line">
+                        <input type="text" name="motherfname" class="form-control"
+                            value="{{ApplicationDetails.[0].motherfname}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Mother's Last Name*</label>
+                    <div class="form-line">
+                        <input type="text" name="motherlname" class="form-control"
+                            value="{{ApplicationDetails.[0].motherlname}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Mother's Mobile Number*</label>
+                    <div class="form-line">
+                        <input type="text" name="mothermobilenumber" class="form-control"
+                            value="{{ApplicationDetails.[0].mothermobilenumber}}">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Mother's Email ID*</label>
+                    <div class="form-line">
+                        <input type="email" name="motheremail" class="form-control"
+                            value="{{ApplicationDetails.[0].motheremail}}">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>COMMUNICATION ADDRESS DETAILS</h2>
+                <div class="form-group col-md-12">
+                    <label class="form-label">Country*</label>
+                    <div class="form">
+                        <input type="text" name="age" class="form-control" value="{{ApplicationDetails.[0].country}}">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">State*</label>
+                <input type="text" name="age" class="form-control" value="{{ApplicationDetails.[0].lname}}">
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">District*</label>
+                <input type="text" name="age" class="form-control" value="{{ApplicationDetails.[0].country}}">
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Address Line 1*</label>
+                <div class="form-line">
+                    <input type="text" name="address1" class="form-control" value="{{ApplicationDetails.[0].address1}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Address Line 2</label>
+                <div class="form-line">
+                    <input type="text" name="address2" class="form-control" value="{{ApplicationDetails.[0].address2}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Pincode*</label>
+                <div class="form-line">
+                    <input type="pincode" name="pincode" class="form-control"
+                        value="{{ApplicationDetails.[0].pincode}}">
+                </div>
+            </div>
+
+
+            <h3>Academic Details</h3>
+            <h3>CLASS X/SSC</h3>
+            <div class="form-group form-float">
+                <div class="form-line">
+
+                    <input type="text" name="XBoard" class="form-control" value="{{ApplicationDetails2.[0].XBoard}}">
+                    <label class="form-label">X/SSC Board*</label>
+                </div>
+            </div>
+            <div class="form-group form-float">
+                <div class="form-line">
+                    <input type="text" name="ExaminationState" class="form-control"
+                        value="{{ApplicationDetails2.[0].ExaminationState}}">
+                    <label class="form-label">X/SSC Examination State*</label>
+                </div>
+            </div>
+            <div class="form-group form-float">
+                <div class="form-line">
+                    <input type="email" name="SchoolName" class="form-control"
+                        value="{{ApplicationDetails2.[0].SchoolName}}">
+                    <label class="form-label">X/SSC School Name*</label>
+                </div>
+            </div>
+            <div class="form-group form-float">
+                <div class="form-line">
+                    <input type="text" name="XIIorDiploma" class="form-control"
+                        value="{{ApplicationDetails2.[0].XDetails}}">
+                    <label class="form-label">X/SSC Details*</label>
+                </div>
+            </div>
+            <div>
+                <h3>CLASS XII/HSC</h3>
+                <div class="form-group form-float">
+                    <div class="form-line">
+
+                        <input type="text" name="XIIorDiploma" class="form-control"
+                            value="{{ApplicationDetails2.[0].XIIorDiploma}}">
+                        <label class="form-label">XII/HSC or Diploma*</label>
+                    </div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" name="XIIStatus" class="form-control"
+                            value="{{ApplicationDetails2.[0].XIIStatus}}">
+                        <label class="form-label">XII/HSC Status*</label>
+                    </div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" name="XIIExaminationState" class="form-control"
+                            value="{{ApplicationDetails2.[0].XIIExaminationState}}">
+                        <label class="form-label">XII/HSC Examination State*</label>
+                    </div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" name="XIISchoolName" class="form-control"
+                            value="{{ApplicationDetails2.[0].XIISchoolName}}">
+                        <label class="form-label">XII/HSC School Name*</label>
+                    </div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" name="XIIDetails" class="form-control"
+                            value="{{ApplicationDetails2.[0].XIIDetails}}">
+                        <label class="form-label">XII/HSC Details*</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>APPLYING FOR ADMISSION ON THE BASIS OF</h3>
+                <div class="form-group form-float">
+                    <div class="form-line">
+
+                        <input type="text" name="Program1" class="form-control"
+                            value="{{ApplicationDetails2.[0].Program1}}">
+                        <label class="form-label">Program Preference 1</label>
+                    </div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+
+                        <input type="text" name="Program2" class="form-control"
+                            value="{{ApplicationDetails2.[0].Program2}}">
+                        <label class="form-label">Program Preference 2</label>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

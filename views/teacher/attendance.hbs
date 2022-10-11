@@ -6,7 +6,7 @@
             <h2>Student Attendance Field</h2>
         </div>
 
-        <div class="row">
+        <div class="row" style="margin-left:200px ;">
                     <form method="post" action="/teacher/attendance">
 
 
@@ -29,10 +29,10 @@
                 </div>
                 <div class="mx-4">
                     <div class="form-group">
-                        <div class="input-group input-group-merge">
                             <label class="form-label" for="name">Select Depatment:</label>
+                        <div class="input-group input-group-merge">
                             <select id="selectdepartment" class="select" name="depatment"
-                                style="width: 90%;padding: 10px;" type="course">
+                                style="width: 70%;padding: 10px;" type="course">
                                 <option value="">Choose department</option>
                                 {{#each departments}}
                                 <option value="{{this._id}}">{{this.department}}</option>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="mx-1">
+               
                     <div class="form-group ">
                         <div class="input-group input-group-merge">
                             <label class="form-label" for="name">Select Semester:</label>
@@ -60,7 +60,7 @@
                             </select>
                         </div>
                     </div>
-                </div>
+               
 
             </div>
 

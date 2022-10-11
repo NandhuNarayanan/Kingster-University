@@ -3,7 +3,12 @@ const mongoose = require('mongoose')
 
 personalDetailsSchema = new mongoose.Schema({
     userId: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Users"
+    },
+    applyingCourse: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Program"
     },
     photograph: {
 

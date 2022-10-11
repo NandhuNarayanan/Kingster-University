@@ -46,7 +46,7 @@
 									<ul class="sub-menu">
 										<li
 											class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5314">
-											<a href="#">About KU</a>
+											<a href="/aboutus">About KU</a>
 										</li>
 										<li
 											class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5342">
@@ -129,42 +129,18 @@
 											class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5729">
 											<a href="/admissions">Apply To Kingster</a>
 										</li>
-										<li
-											class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5918">
-											<a href="#">Campus Tour</a>
-										</li>
-										<li
-											class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5730">
-											<a href="#">Scholarships</a>
-										</li>
-										<li
-											class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5731">
-											<a href="#">Athletics</a>
-										</li>
-										<li
-											class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5732">
-											<a href="#">Give To
-												Kingster</a>
-										</li>
-										<li
-											class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5917">
-											<a href="#">Alumni</a>
-										</li>
-										<li
-											class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6049">
-											<a href="#">Event
-												Calendar</a>
-										</li>
+										
+									<li
+										class="active-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6036 kingster-normal-menu">
+										<a href="/course"
+											class="sf-with-ul-pre">Courses</a>
+									</li>
+									<li
+										class="active-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-5733 kingster-normal-menu">
+										<a href="#">University
+											Life</a>
+									</li>
 									</ul>
-								</li>
-								<li
-									class="active-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6036">
-									<a href="/course">Courses</a>
-								</li>
-								<li class="active-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-5734"><a
-										href="#">Athletics</a></li>
-								<li class="active-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-5733"><a
-										href="#">University Life</a>
 								</li>
 							</ul>
 						</div>
@@ -197,7 +173,7 @@
 
 					<div class="kingster-header-container-inner clearfix">
 						<div class="kingster-logo  kingster-item-pdlr">
-							<div class="kingster-logo-inner"><a class="" href="#"><img
+							<div class="kingster-logo-inner"><a class="" href="/"><img
 										src="https://a6e8z9v6.stackpathcdn.com/kingster/wp-content/themes/kingster/images/logo.png"
 										alt="" /></a></div>
 						</div>
@@ -215,7 +191,7 @@
 										<a href="#" class="sf-with-ul-pre">Pages</a>
 										<ul class="sub-menu">
 											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5314"
-												data-size="60"><a href="#">About KU</a>
+												data-size="60"><a href="/aboutus">About KU</a>
 											</li>
 											<li
 												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5316">
@@ -238,22 +214,13 @@
 												<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5739"
 													data-size="15"><a class="sf-with-ul-pre">Undergraduate</a>
 													<ul class="sub-menu">
+														{{#each studentCourse}}
 														<li
 															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5736">
 															<a
-																href="#">Business
-																Administration</a>
+																href="/programs/{{this._id}}">{{this.courseDetals.course}}</a>
 														</li>
-														<li
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5900">
-															<a
-																href="#">Medicine</a>
-														</li>
-														<li
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5899">
-															<a href="#">Art
-																&#038; Science</a>
-														</li>
+														{{/each}}
 													</ul>
 												</li>
 												<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5740"
@@ -305,29 +272,6 @@
 										<ul class="sub-menu">
 											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5729"
 												data-size="60"><a href="/admissions">Apply To Kingster</a></li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5918"
-												data-size="60"><a
-													href="#">Campus
-													Tour</a></li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5730"
-												data-size="60"><a
-													href="#">Scholarships</a>
-											</li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5731"
-												data-size="60"><a
-													href="#">Athletics</a>
-											</li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5732"
-												data-size="60"><a
-													href="#">Give
-													To Kingster</a></li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5917"
-												data-size="60"><a
-													href="#">Alumni</a></li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6049"
-												data-size="60"><a
-													href="#">Event
-													Calendar</a></li>
 										</ul>
 									</li>
 									<li
@@ -337,7 +281,7 @@
 									</li>
 									<li
 										class="active-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-5733 kingster-normal-menu">
-										<a href="#">University
+										<a href="/universityLife">University
 											Life</a>
 									</li>
 								</ul>

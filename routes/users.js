@@ -38,44 +38,161 @@ const verifylogin = (req,res,next)=>{
 
 
 const multerStorage = multer.diskStorage({
-  destination: "public/passportsizeimages",
+  destination: (req, file, cb) => {
+    cb(null, "public");
+  },
   filename: (req, file, cb) => {
-    cb(null,Date.now()+'--'+file.originalname);
+    const ext = file.mimetype.split("/")[1];
+    cb(null, `passportsizeimages/image-${file.fieldname}-${Date.now()}.${ext}`);
   },
 });
 
-const Uploads = multer({
-  multerStorage
-});
+const upload=multer({storage:multerStorage})
 
 
 
 /* GET home page. */
-router.get('/',function(req, res, next) {
+router.get('/',async function(req, res, next) {
   if(req.session.login){
     res.redirect('/studentdash')
   }else{
-    res.render('users/landingPage',{home_header:true})
+    const studentCourse = await programModel.aggregate([
+      {
+        '$lookup': {
+          'from': 'courses', 
+          'localField': 'course', 
+          'foreignField': '_id', 
+          'as': 'courseDetals'
+        }
+      }, {
+        '$unwind': {
+          'path': '$courseDetals'
+        }
+      }
+    ])
+    res.render('users/landingPage',{studentCourse,home_header:true})
   }
   
 });
 
+router.get('/programs/:id',async(req,res)=>{
+  try {
+    const programs = await programModel.findById(req.params.id).populate('course').lean()
+    const studentCourse = await programModel.aggregate([
+      {
+        '$lookup': {
+          'from': 'courses', 
+          'localField': 'course', 
+          'foreignField': '_id', 
+          'as': 'courseDetals'
+        }
+      }, {
+        '$unwind': {
+          'path': '$courseDetals'
+        }
+      }
+    ])
+    res.render('users/courses/program',{studentCourse,programs,home_header:true})
+  } catch (error) {
+    
+  }
+});
 
-router.get('/admissions',(req,res)=>{
-  res.render('users/admissions',{home_header:true})
+
+router.get('/admissions',async(req,res)=>{
+  const studentCourse = await programModel.aggregate([
+    {
+      '$lookup': {
+        'from': 'courses', 
+        'localField': 'course', 
+        'foreignField': '_id', 
+        'as': 'courseDetals'
+      }
+    }, {
+      '$unwind': {
+        'path': '$courseDetals'
+      }
+    }
+  ])
+  res.render('users/admissions',{studentCourse,home_header:true})
 });
 
 router.get('/course',async(req,res)=>{
   const viewcourses = await courseModel.find().lean()
+  const studentCourse = await programModel.aggregate([
+    {
+      '$lookup': {
+        'from': 'courses', 
+        'localField': 'course', 
+        'foreignField': '_id', 
+        'as': 'courseDetals'
+      }
+    }, {
+      '$unwind': {
+        'path': '$courseDetals'
+      }
+    }
+  ])
  
-  res.render('users/courses/course',{home_header:true,viewcourses})
+  res.render('users/courses/course',{studentCourse,home_header:true,viewcourses})
 });
 
 router.get('/courses/:id',async(req,res)=>{
   const viewcourses = await courseModel.findById(req.params.id).lean()
-  res.render('users/courses/course1',{viewcourses,home_header:true})
+  const studentCourse = await programModel.aggregate([
+    {
+      '$lookup': {
+        'from': 'courses', 
+        'localField': 'course', 
+        'foreignField': '_id', 
+        'as': 'courseDetals'
+      }
+    }, {
+      '$unwind': {
+        'path': '$courseDetals'
+      }
+    }
+  ])
+  res.render('users/courses/course1',{studentCourse,viewcourses,home_header:true})
 });
 
+
+router.get('/aboutus',async(req,res)=>{
+  const studentCourse = await programModel.aggregate([
+    {
+      '$lookup': {
+        'from': 'courses', 
+        'localField': 'course', 
+        'foreignField': '_id', 
+        'as': 'courseDetals'
+      }
+    }, {
+      '$unwind': {
+        'path': '$courseDetals'
+      }
+    }
+  ])
+  res.render('users/aboutUs',{studentCourse,home_header:true})
+})
+
+
+router.get('/universityLife',async(req,res)=>{
+  const studentCourse = await programModel.aggregate([
+    {
+      '$lookup': {
+        'from': 'courses', 
+        'localField': 'course', 
+        'foreignField': '_id', 
+        'as': 'courseDetals'
+      }
+    }, {
+      '$unwind': {
+        'path': '$courseDetals'
+      }
+    }
+  ])
+  res.render('users/universityLife',{studentCourse,home_header:true})
+})
 
 
 ////////////////////////////////_______login section_______////////////////////////////////////
@@ -148,7 +265,7 @@ if (req.session.login) {
 /////////////////////////////////_____________________________________________///////////////////////////////////
 
 //////////////////////////////////// _______SIGNUP OTP VERYFING_______ /////////////////////////////////////////
-router.get('/signupotp',verifylogin,(req,res)=>{
+router.get('/signupotp',(req,res)=>{
   res.render('users/signup_otp_verify')
 });
 
@@ -335,10 +452,11 @@ router.get('/personalform',verifylogin,async(req,res)=>{
     
     if (!olduser) {
     const users = await userModel.findById(req.session.user._id).lean()
+    const applyedProgram = await programModel.find(req.query._id).lean()
     const applyDetails = new applicationModel({userId:req.session.user._id,program:req.query.id})
     applyDetails.save()
     const notification = await notificationModel.find().lean()
-    res.render('users/personalDetailsForm',{users,notification})
+    res.render('users/personalDetailsForm',{programName:applyedProgram.program,users,notification})
   }else{
     res.redirect('/application')
   }
@@ -347,11 +465,47 @@ router.get('/personalform',verifylogin,async(req,res)=>{
   }
 });
 
-router.post('/personalform',Uploads.single("photograph"),async(req,res)=>{
+router.post('/personalform',upload.single("photograph"),async(req,res)=>{
  try {
    let photograph = req.file
    req.body.photograph = photograph
-   const userDetailes = await new personalDetailsModel(req.body)
+   const userDetailes = await new personalDetailsModel(  {userId:req.session.user._id,
+    applyingCourse:req.query.id,
+photograph:req.body.photograph,
+salutaton: req.body.salutaton,
+fname: req.body.fname,
+lname: req.body.lname,
+
+gender:req.body.gender,
+dob: req.body.dob,
+bloodgroup:req.body.bloodgroup,
+maritalstatus:req.body.maritalstatus,
+age: req.body.age,
+category:req.body.category,
+nationality:req.body.nationality,
+differentlyabled: req.body.differentlyabled,
+idproof: req.body.idproof,
+mobilenumber: req.body.mobilenumber,
+alternatenumber: req.body.alternatenumber,
+primeryemail: req.body.primeryemail,
+alternateemail:req.body.alternateemail,
+fathertitle: req.body.fathertitle,
+fatherfname:req.body.fatherfname,
+fatherlname: req.body.fatherlname,
+fathermobilenumber: req.body.fathermobilenumber,
+fatheremail: req.body.fatheremail,
+motheretitle: req.body.motheretitle,
+motherfname: req.body.motherfname,
+motherlname: req.body.motherlname,
+mothermobilenumber: req.body.mothermobilenumber,
+motheremail: req.body.motheremail,
+country:req.body.country,
+state: req.body.state,
+city: req.body.city,
+address1: req.body.address1,
+address2: req.body.address2,
+pincode: req.body.pincode})
+
    userDetailes.save()
    res.redirect('/academicform')
  } catch (error) {
@@ -367,7 +521,7 @@ router.post('/personalform',Uploads.single("photograph"),async(req,res)=>{
 router.get('/academicform',verifylogin,async(req,res)=>{
   try {
     const notification = await notificationModel.find().lean()
-  res.render('users/academicDetailsForm',{notification})
+  res.render('users/academicDetailsForm',{notification,layout:'student-layout',student_header:true})
   } catch (error) {
     console.log(error);
   }
@@ -376,8 +530,23 @@ router.get('/academicform',verifylogin,async(req,res)=>{
 router.post('/academicform',async(req,res)=>{
   console.log(req.body);
   try {
-    req.body.userId = session.user;
-    const academicDetails = await new academicDetailsModel(req.body)
+    const academicDetails = await new academicDetailsModel({
+      userId :req.session.user._id,
+      XBoard:req.body.XBoard,
+     ExaminationState:req.body.ExaminationState,
+     SchoolName:req.body.SchoolName,
+  
+     XDetails:req.body.XDetails,
+      XIIorDiploma:req.body.XIIorDiploma,
+      XIIStatus:req.body.XIIStatus,
+      XIIExaminationState:req.body.XIIExaminationState,
+      XIISchoolName:req.body.XIISchoolName,
+      XIIDetails:req.body.XIIDetails,
+      reference:req.body.reference,
+      Program1:req.body.Program1,
+      Program2:req.body.Program2,
+  })
+
     academicDetails.save()
     res.redirect('/payment')
   } catch (error) {
@@ -448,7 +617,7 @@ router.post('/applyKit',async(req,res)=>{
 
 router.get('/history',verifylogin,async(req,res)=>{
   try {
-    const paymentHistory = await paymentModel.find({userId:req.session.user._id}).populate('program').lean()
+    const paymentHistory = await paymentModel.find({userId:req.session.user._id}).populate('program').populate('course').lean()
     res.render('users/studentPayhistory',{paymentHistory,layout:'student-layout',student_header:true})
   } catch (error) {
    console.log(error);
@@ -514,7 +683,6 @@ res.json({courseName,coursePrice})
 
 router.post('/ProgramOffered/makePayment',(req,res)=>{
   try {
-    console.log(req.body,'❤️❤️❤️❤️');
     const {course,amountPayable} = req.body
     const makePayment = new ProgramOfferedModel({amountPayable,course,userId:req.session.user._id})
     makePayment.save()
@@ -544,7 +712,6 @@ router.post('/payamount',async(req,res)=>{
     const findCourse = await ProgramOfferedModel.findOne({userId:req.session.user._id}).lean()
     const finalPayment = await new paymentModel({finalAmount:req.body.totalFee,userId:req.session.user._id,course:findCourse.course})
     finalPayment.save()
-    console.log(finalPayment,'❤️❤️❤️');
     paymentController.generateRazorpay(finalPayment).then((response)=>{
     res.json(response)
     })
@@ -572,9 +739,9 @@ router.post('/Paymentverify',(req,res)=>{
 
 
 
-router.get('/invoice',verifylogin,async(req,res)=>{
+router.get('/invoice/:id',verifylogin,async(req,res)=>{
   try {
-    const invocePayment = await paymentModel.findOne({userId:req.session.user._id}).populate('program').populate('userId').lean()
+    const invocePayment = await paymentModel.findById(req.params.id).populate('program').populate('userId').populate('course').lean()
     const notification = await notificationModel.find().lean()
     res.render('users/student-invoice',{notification,invocePayment,layout:'student-layout',student_header:true})
   } catch (error) {
@@ -621,6 +788,26 @@ router.get('/showStudentAttendance',async(req,res)=>{
   const showAttendance = await attendanceModel.find({studentId:req.session.user._id}).lean()
   res.render('users/showStudentAttendance',{showAttendance,layout:'student-layout',student_header:true})
 })
+
+
+
+
+router.get('/success',(req,res)=>{
+  res.render('users/successPage')
+})
+
+router.get('/failed',(req,res)=>{
+  res.render('users/FailedPage')
+})
+
+
+
+router.get('/getApplicationForm',async(req,res)=>{
+  const ApplicationDetails = await personalDetailsModel.find({userId:req.session.user._id}).lean()
+  const ApplicationDetails2= await academicDetailsModel.find({userId:req.session.user._id}).lean()
+  res.render('users/getApplicationDetails',{ApplicationDetails2,ApplicationDetails,layout:'student-layout'})
+})
+
 //////////////////////////////////////______logout_______//////////////////////////////////////
 
   router.get('/logout',(req,res)=>{
