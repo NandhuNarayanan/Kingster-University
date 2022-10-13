@@ -347,6 +347,15 @@
         function chatbot(e) {
             e.preventDefault()
         }
+
+
+         // chatBot
+        $(document).ready(function () {
+            $('.chat_icon').click(function (event) {
+                $('.chat_box').toggleClass('active')
+            });
+            $('.conv-form-wrapper').convform({ selectInputStyle: 'disable' });
+        })
     </script>
 
     <!-- jQuery -->
@@ -381,13 +390,7 @@
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
 
-        // chatBot
-        $(document).ready(function () {
-            $('.chat_icon').click(function (event) {
-                $('.chat_box').toggleClass('active')
-            });
-            $('.conv-form-wrapper').convform({ selectInputStyle: 'disable' });
-        })
+       
 
 
         //Razorpay

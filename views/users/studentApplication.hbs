@@ -113,7 +113,7 @@
                             <div class="card">
                                 <!-- Wrapper -->
                                 <div>
-                                    <form method="post" action="/application">
+                                    <form method="post" action="/application" id="formSubmit">
                                         <select name="qualification" id="qualification" onchange="myFunction(1)"
                                             style="width: 25%;padding: 10px;">
                                             <option id="q1Id" value="">-- Select --</option>
@@ -310,7 +310,7 @@
     </div>
 </div>
 
-
+<script src="https://unpkg.com/axios@0.25.0/dist/axios.min.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -334,7 +334,17 @@
 
 
 <script>
-
+     
+    const form = document.getElementById("formSubmit")
+    form.addEventListener("submit", async()=>{
+        console.log("jdgfhfdhdfkjgddfjgdshgskdfhgkjdfh")
+        e.preventDefault();
+        await axios.post('/application', form).then((res)=>{
+            console.log("hello world")
+            let data = res.data
+               
+        })
+    })
 
     function setCourseDropDown(data) {
         let course = data.viewcourses
@@ -366,6 +376,7 @@
 
 
     function myFunction(status) {
+        $('#tbody').html("") 
         let id = status === 1 ? $("#qualification").val() : $("#sel").val();
         let param = status == 1 ? 'qualification' : 'program';
         jQuery.ajax({

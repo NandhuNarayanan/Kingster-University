@@ -20,13 +20,14 @@ const notificationModel = require('../models/notificationModel');
 const applicationModel = require('../models/applicationModel');
 const paymentModel = require('../models/paymentModel');
 const generalInformationModel = require('../models/InformationOfgeneralModel')
-const InformationOfqualificationModel = require('../models/InformationOfqualificationModel')
+const qualificationInformationModel = require('../models/InformationOfqualificationModel')
 const ProgramOfferedModel = require('../models/ProgramOfferedModel')
 const quaryModel = require('../models/QueriesModel');
 const departmentModel = require('../models/departmentModel');
 const admissionDetailsModel = require('../models/admissionDetailsModel');
 const attendanceModel = require('../models/attendenceModel');
-
+const InformationOfgeneralModel = require('../models/InformationOfgeneralModel')
+const InformationOfqualificationModel =  require('../models/InformationOfqualificationModel')
 
 const verifylogin = (req,res,next)=>{
   if(req.session.login) {
@@ -465,10 +466,14 @@ router.get('/personalform',verifylogin,async(req,res)=>{
   }
 });
 
+
+
+
 router.post('/personalform',upload.single("photograph"),async(req,res)=>{
  try {
    let photograph = req.file
    req.body.photograph = photograph
+
    const userDetailes = await new personalDetailsModel(  {userId:req.session.user._id,
     applyingCourse:req.query.id,
 photograph:req.body.photograph,
@@ -564,7 +569,7 @@ router.get('/payment',verifylogin,async(req,res)=>{
     const payDetailes = await userModel.findById(req.session.user._id).lean()
     const fee = await applicationModel.findOne({userId:req.session.user._id}).populate('program').lean()
     const notification = await notificationModel.find().lean()
-    res.render('users/studentPayment',{notification,payDetailes,fee:fee.program.applicationFee,kit:fee.program.kitAmount,layout:'student-layout',student_header:true})
+    res.render('users/studentPayment',{notification,payDetailes,fee:fee.program.applicationFee,kit:fee.program.kitAmount})
   } catch (error) {
     console.log(error);
   }
@@ -625,16 +630,39 @@ router.get('/history',verifylogin,async(req,res)=>{
 });
 
 
-router.get('/generalInformation',(req,res)=>{
+router.get('/generalInformation',verifylogin,(req,res)=>{
   const admissionDetails = new admissionDetailsModel({userId:req.session.user._id,program:req.query.id})
     admissionDetails.save()
-  res.render('users/generalInformation')
+  res.render('users/generalInformation',{layout:'student-layout',student_header:true})
 })
 
-
-router.post('/generalInformation',(req,res)=>{
+let photo = upload.single("photo")
+router.post('/generalInformation',photo,(req,res)=>{
   try {
-    const generalInformation = new generalInformationModel(req.body)
+    let image = req.file
+    req.body.photo = image
+
+    const generalInformation = new generalInformationModel({userId:req.session.user._id,
+      program:req.query.id,
+    dob:req.body.dob,
+    category:req.body.category,
+    aadharNumber:req.body.aadharNumber,
+    photo:req.body.photo,
+    address1:req.body.address1,
+    address2:req.body.address2,
+    country:req.body.country,
+    state:req.body.state,
+    city:req.body.city,
+    pincode:req.body.pincode,
+    alternatenumber:req.body.alternatenumber,
+    whatsappnumber:req.body.whatsappnumber,
+    fatherfname:req.body.fatherfname,
+    fatherSurename:req.body.fatherSurename,
+    motherfname:req.body.motherfname,
+    motherSurename:req.body.motherSurename,
+    parantsemail:req.body.parantsemail,
+    parantscontactnumber:req.body.parantscontactnumber
+    })
     generalInformation.save()
     res.redirect('/qualificationInformation')
   } catch (error) {
@@ -647,24 +675,42 @@ router.post('/generalInformation',(req,res)=>{
 
 router.get('/qualificationInformation',(req,res)=>{
   try {
-    res.render('users/qualificationInformation')
+    res.render('users/qualificationInformation',{layout:'student-layout',student_header:true})
   } catch (error) {
     console.log(error);
   }
 })
 
-router.post('/qualificationInformation',(req,res)=>{
+router.post('/qualificationInformation',upload.single("document"),(req,res)=>{
   try {
-    const qualificationInformation = new InformationOfqualificationModel(req.body)
+    let image = req.file
+    req.body.photo = image
+
+    const qualificationInformation = new qualificationInformationModel({userId:req.session.user._id,
+      tenthDetails:req.body.tenthDetails,
+     qualificationDocumentOftenth:req.body.qualificationDocumentOftenth,
+     tenthSchoolState:req.body.tenthSchoolState,
+     tenthSchoolDistrict:req.body.tenthSchoolDistrict,
+      tenthSchoolCity:req.body.tenthSchoolCity,
+      tenthSchoolName:req.body.tenthSchoolName,
+      tenthBoard:req.body.tenthBoard,
+      plustwoDetails:req.body.plustwoDetails,
+      qualificationDocumentOfPlustwo:req.body.qualificationDocumentOfPlustwo,
+      plustwoSchoolState:req.body.plustwoSchoolState,
+      plustwoSchoolDistrict:req.body.plustwoSchoolDistrict,
+      plustwoSchoolCity:req.body.plustwoSchoolCity,
+      plustwoSchoolName:req.body.plustwoSchoolName,
+      plustwoBoard:req.body.plustwoBoard})
+      console.log(qualificationInformation,'💥💥💥💥');
     qualificationInformation.save()
-    res.redirect('/ProgramOffered')
+    res.redirect('/ProgramsOffered')
   } catch (error) {
     console.log(error);
   }
 })
 
 
-router.get('/ProgramOffered',async(req,res)=>{
+router.get('/ProgramsOffered',async(req,res)=>{
   try {
     const programDetails = await courseModel.find().lean();
 
@@ -675,8 +721,9 @@ router.get('/ProgramOffered',async(req,res)=>{
 })
 
 router.post('/ProgramOffered',async(req,res)=>{
+  console.log(req.body.courseid);
 const course = await courseModel.findById(req.body.courseid)
-const courseName = course.course;
+const courseName = course.course
 const coursePrice = course.price
 res.json({courseName,coursePrice})
 })
@@ -696,11 +743,12 @@ router.post('/ProgramOffered/makePayment',(req,res)=>{
 
 
 
+
 router.get('/admissionPayment',async(req,res)=>{
   try {
     const payableAmount = await ProgramOfferedModel.findOne({userId:req.session.user._id}).populate('userId').lean()
     console.log(payableAmount,'TokenExpired');
-    res.render('users/takeACoursePayment',{payableAmount,fee:payableAmount.amountPayable,username:payableAmount.userId.fname,lastname:payableAmount.userId.lname,email:payableAmount.userId.email,phone:payableAmount.userId.mobile,layout:'student-layout',student_header:true})
+    res.render('users/takeACoursePayment',{payableAmount,fee:payableAmount.amountPayable,username:payableAmount.userId.fname,lastname:payableAmount.userId.lname,email:payableAmount.userId.email,phone:payableAmount.userId.mobile})
   } catch (error) {
     console.log(error);
   }
@@ -808,6 +856,12 @@ router.get('/getApplicationForm',async(req,res)=>{
   res.render('users/getApplicationDetails',{ApplicationDetails2,ApplicationDetails,layout:'student-layout'})
 })
 
+
+router.get('/getTakeadmissionForm',async(req,res)=>{
+  const ApplicationDetails = await InformationOfgeneralModel.find({userId:req.session.user._id}).lean()
+  const ApplicationDetails2= await InformationOfqualificationModel.find({userId:req.session.user._id}).lean()
+  res.render('users/getTakeAdmission',{ApplicationDetails2,ApplicationDetails,layout:'student-layout'})
+})
 //////////////////////////////////////______logout_______//////////////////////////////////////
 
   router.get('/logout',(req,res)=>{

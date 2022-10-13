@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
 
-generalInformationSchema = new mongoose.Schema({
-    userId: {
-        type: String
+const generalInformationSchema = new mongoose.Schema({
+    userId :{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Users"
     },
     dob: {
         type: Date
@@ -14,7 +15,7 @@ generalInformationSchema = new mongoose.Schema({
     aadharNumber: {
         type: Number
     },
-    photograph: {
+    photo:{
 
     },
     address1: {
@@ -61,6 +62,6 @@ generalInformationSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const generalInformationModel = mongoose.model('GeneralInformations', generalInformationSchema)
+const generalInformationModel = mongoose.model('GeneralInformations',generalInformationSchema)
 
 module.exports = generalInformationModel

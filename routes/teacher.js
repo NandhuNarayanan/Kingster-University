@@ -216,7 +216,8 @@ router.post('/',async(req,res)=>{
       req.session.teacher = true
      return res.redirect('/teacher/teacherDash')
     }
-    return res.render('teacher/teacherLogin',{session:{wrongpassword:'123'}})
+    return res.redirect('/teacher')
+    // return res.render('teacher/teacherLogin',{session:{wrongpassword:'123'}})
   })
  } catch (error) {
   

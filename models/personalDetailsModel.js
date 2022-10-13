@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 
-personalDetailsSchema = new mongoose.Schema({
+const personalDetailsSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Users"

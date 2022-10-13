@@ -1,9 +1,11 @@
 const mongoose = require('mongoose')
 
 
-qualificationInformationSchema = new mongoose.Schema({
+
+const qualificationInformationSchema = new mongoose.Schema({
     userId :{
-        type:String
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Users"
     },
     tenthDetails:{
     type:Number
@@ -28,6 +30,9 @@ qualificationInformationSchema = new mongoose.Schema({
         type:String
     },
     plustwoDetails:{
+        type:Number
+    },
+    GradeorPercentage:{
         type:Number
     },
     qualificationDocumentOfPlustwo:{
