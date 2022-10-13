@@ -12,7 +12,9 @@
   p {
       margin: 0
   }
-  
+  .error{
+    color: red;
+  }
   .container {
       max-width: 900px;
       margin: 30px auto;

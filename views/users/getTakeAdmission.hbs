@@ -5,7 +5,7 @@
                     <label class="form-label">Date of Birth*</label>
                     <div class="form-line">
                         <div class="form-line">
-                            <input type="date" name="dob" class="form-control">
+                            <input type="date" name="dob" class="form-control" value="{{AdmissionDetails.[0].dob}}">
                         </div>
                     </div>
                 </div>
@@ -13,20 +13,20 @@
                     <div class="form-group col-md-12">
                         <label class="form-label">Category*</label>
                         <div>
-                         <input type="text" name="aadharNumber" class="form-control">
+                         <input type="text" name="aadharNumber" class="form-control" value="{{AdmissionDetails.[0].category}}">
 
                         </div>
                     </div>
                     <div class="form-group col-md-12">
                         <label class="form-label">Aadhar Card Number</label>
                         <div class="form-line">
-                            <input type="text" name="aadharNumber" class="form-control">
+                            <input type="text" name="aadharNumber" class="form-control" value="{{AdmissionDetails.[0].aadharNumber}}">
                         </div>
                     </div>
 
                    <div class="rounded-top text-white d-flex flex-row">
                 <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                    <img src="{{ApplicationDetails.[0].photograph.filename}}" alt="Generic placeholder image"
+                    <img src="{{AdmissionDetails.[0].photo.filename}}" alt="Generic placeholder image"
                         class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
                 </div>
             </div>
@@ -38,42 +38,45 @@
                         <div class="form-group col-md-12">
                             <label class="form-label">Address Line 1*</label>
                             <div class="form-line">
-                                <input type="text" name="address1" class="form-control">
+                                <input type="text" name="address1" class="form-control" value="{{AdmissionDetails.[0].address1}}">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Address Line 2</label>
                             <div class="form-line">
-                                <input type="text" name="address2" class="form-control">
+                                <input type="text" name="address2" class="form-control" value="{{AdmissionDetails.[0].address2}}">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Country*</label>
                             <div class="form">
-                               <input type="text" name="pincode" class="form-control">
+                               <input type="text" name="pincode" class="form-control" value="{{AdmissionDetails.[0].country}}">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">State*</label>
+                            <div class="form">
+                               <input type="text" name="pincode" class="form-control" value="{{AdmissionDetails.[0].state}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">District*</label>
-                            <select class="form-control" id="inputDistrict" name="city">
-                                <option value="">-- select one -- </option>
-                            </select>
+                           <input type="text" name="pincode" class="form-control" value="{{AdmissionDetails.[0].city}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Pincode*</label>
                             <div class="form-line">
-                                <input type="pincode" name="pincode" class="form-control">
+                                <input type="pincode" name="pincode" class="form-control" value="{{AdmissionDetails.[0].pincode}}">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Alternate Phone Number</label>
                             <div class="form-line">
-                                <input type="text" name="alternatenumber" class="form-control">
+                                <input type="text" name="alternatenumber" class="form-control" value="{{AdmissionDetails.[0].alternatenumber}}">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">WhatsApp Number</label>
                             <div class="form-line">
-                                <input type="text" name="whatsappnumber" class="form-control">
+                                <input type="text" name="whatsappnumber" class="form-control" value="{{AdmissionDetails.[0].whatsappnumber}}">
                             </div>
                         </div>
 
@@ -83,13 +86,13 @@
                         <div class="form-group col-md-12">
                             <label class="form-label">Father's First Name*</label>
                             <div class="form-line">
-                                <input type="text" name="fatherfname" class="form-control">
+                                <input type="text" name="fatherfname" class="form-control" value="{{AdmissionDetails.[0].fatherfname}}">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Father's Last Name*</label>
                             <div class="form-line">
-                                <input type="text" name="fatherSurename" class="form-control">
+                                <input type="text" name="fatherSurename" class="form-control" value="{{AdmissionDetails.[0].fatherSurename}}">
                             </div>
                         </div>
                     </div>
@@ -98,25 +101,25 @@
                         <div class="form-group col-md-12">
                             <label class="form-label">Mother's First Name*</label>
                             <div class="form-line">
-                                <input type="text" name="motherfname" class="form-control">
+                                <input type="text" name="motherfname" class="form-control" value="{{AdmissionDetails.[0].motherfname}}">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Mother's Last Name*</label>
                             <div class="form-line">
-                                <input type="text" name="motherSurename" class="form-control">
+                                <input type="text" name="motherSurename" class="form-control" value="{{AdmissionDetails.[0].motherSurename}}">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Parent's Email ID</label>
                             <div class="form-line">
-                                <input type="email" name="parantsemail" class="form-control">
+                                <input type="email" name="parantsemail" class="form-control" value="{{AdmissionDetails.[0].parantsemail}}">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Parent's Contact Number (10 Digit Mobile Number) *</label>
                             <div class="form-line">
-                                <input type="text" name="parantscontactnumber" class="form-control">
+                                <input type="text" name="parantscontactnumber" class="form-control" value="{{AdmissionDetails.[0].parantscontactnumber}}">
                             </div>
                         </div>
                     </div>
@@ -132,7 +135,7 @@
             <h3>Kindly provide your previous qualification details, so that we can assess your scholarship (if
                 any) based upon that.</h3>
             <h5>10th Details</h5>
-            <table name="tenthDetails" class="table table-bordered table-light">
+            <table class="table table-bordered table-light">
                 <thead>
                     <tr>
                         <th></th>
@@ -146,18 +149,18 @@
                         <td>10th</td>
                         <td>
                             <div class="col-md-10">
-                                <input id="name" type="number" class="form-control" />
+                                <input id="name" type="number" name="tenthpercentage" class="form-control" value="{{AdmissionDetails.[0].percentage}}">
                             </div>
 
                         </td>
                         <td>
                             <div class="col-md-10">
-                                <input id="name" type="number" class="form-control" />
+                                <input id="name" type="number" name="tenthCourseCommencementYear" class="form-control" value="{{AdmissionDetails.[0].CourseCommencementYear}}">
                             </div>
                         </td>
                         <td>
                             <div class="col-md-10">
-                                <input id="name" type="number" class="form-control" />
+                                <input id="name" type="number" name="tenthCourseCompletionYear" class="form-control" value="{{AdmissionDetails.[0].CourseCompletionYear}}">
                             </div>
                         </td>
                     </tr>
@@ -173,19 +176,19 @@
             </div>
             <div class="rounded-top text-white d-flex flex-row">
                 <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                    <img src="{{ApplicationDetails.[0].photograph.filename}}" alt="Generic placeholder image"
+                    <img src="{{ApplicationDetails.[0].qualificationDocumentOftenth.filename}}" alt="Generic placeholder image"
                         class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
                 </div>
             </div>
             <div class="form-group form-float">
                 <div class="form-line">
-                    <input type="text" name="tenthSchoolState" class="form-control">
+                    <input type="text" name="tenthSchoolState" class="form-control" value="{{ApplicationDetails.[0].tenthSchoolState}}">
                     <label class="form-label">10th School/College State</label>
                 </div>
             </div>
             <div class="form-group form-float">
                 <div class="form-line">
-                    <textarea name="tenthSchoolDistrict" cols="30" rows="3" class="form-control no-resize"></textarea>
+                    <input type="text" name="tenthSchoolState" class="form-control" value="{{ApplicationDetails.[0].tenthSchoolDistrict}}">
                     <label class="form-label">10th School/College District</label>
                 </div>
             </div>
@@ -193,25 +196,25 @@
                 <div class="form-group form-float">
                     <div class="form-line">
 
-                        <input type="text" name="tenthSchoolCity" class="form-control">
+                        <input type="text" name="tenthSchoolCity" class="form-control" value="{{ApplicationDetails.[0].tenthSchoolCity}}">
                         <label class="form-label">10th School/College City</label>
                     </div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" name="tenthSchoolName" class="form-control">
+                        <input type="text" name="tenthSchoolName" class="form-control" value="{{ApplicationDetails.[0].tenthSchoolName}}">
                         <label class="form-label">10th School/College Name</label>
                     </div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" name="tenthBoard" class="form-control">
+                        <input type="text" name="tenthBoard" class="form-control" value="{{ApplicationDetails.[0].tenthBoard}}">
                         <label class="form-label">10th Board/University</label>
                     </div>
                 </div>
             </div>
             <h5>12th Qualification Details</h5>
-            <table name="plustwoDetails" class="table table-bordered table-light">
+            <table class="table table-bordered table-light">
                 <thead>
                     <tr>
                         <th></th>
@@ -225,18 +228,18 @@
                         <td>12th</td>
                         <td>
                             <div class="col-md-10">
-                                <input name="GradeorPercentage" id="name" type="text" class="form-control" />
+                                <input name="GradeorPercentage" id="name" type="text" class="form-control" value="{{ApplicationDetails.[0].GradeorPercentage}}" >
                             </div>
 
                         </td>
                         <td>
                             <div class="col-md-10">
-                                <input id="name" type="text" class="form-control" />
+                                <input name="CourseCommencementYear" id="name" type="text" class="form-control" value="{{ApplicationDetails.[0].CourseCommencementYear}}">
                             </div>
                         </td>
                         <td>
                             <div class="col-md-10">
-                                <input id="name" type="text" class="form-control" />
+                                <input name="CourseCompletionYear" id="name" type="text" class="form-control" value="{{ApplicationDetails.[0].CourseCompletionYear}}">
                             </div>
                         </td>
                     </tr>
@@ -251,19 +254,19 @@
             </div>
             <div class="rounded-top text-white d-flex flex-row">
                 <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                    <img src="{{ApplicationDetails.[0].photograph.filename}}" alt="Generic placeholder image"
+                    <img src="{{ApplicationDetails.[0].qualificationDocumentOfPlustwo}}" alt="Generic placeholder image"
                         class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
                 </div>
             </div>
             <div class="form-group form-float">
                 <div class="form-line">
-                    <input type="text" name="plustwoSchoolState" class="form-control">
+                    <input type="text" name="plustwoSchoolState" class="form-control" value="{{ApplicationDetails.[0].plustwoSchoolState}}">
                     <label class="form-label">12th School/College State *</label>
                 </div>
             </div>
             <div class="form-group form-float">
                 <div class="form-line">
-                    <textarea name="plustwoSchoolDistrict" cols="30" rows="3" class="form-control no-resize"></textarea>
+                    <input type="text" name="plustwoSchoolDistrict" class="form-control" value="{{ApplicationDetails.[0].plustwoSchoolDistrict}}">
                     <label class="form-label">12th School/College District *</label>
                 </div>
             </div>
@@ -271,19 +274,19 @@
                 <div class="form-group form-float">
                     <div class="form-line">
 
-                        <input type="text" name="plustwoSchoolCity" class="form-control">
+                        <input type="text" name="plustwoSchoolCity" class="form-control" value="{{ApplicationDetails.[0].plustwoSchoolCity}}">
                         <label class="form-label">12th School/College City *</label>
                     </div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" name="plustwoSchoolName" class="form-control">
+                        <input type="text" name="plustwoSchoolName" class="form-control" value="{{ApplicationDetails.[0].plustwoSchoolName}}">
                         <label class="form-label">12th School/College Name *</label>
                     </div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" name="plustwoBoard" class="form-control">
+                        <input type="text" name="plustwoBoard" class="form-control" value="{{ApplicationDetails.[0].plustwoBoard}}">
                         <label class="form-label">12th Board/University </label>
                     </div>
                 </div>

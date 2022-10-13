@@ -244,7 +244,6 @@ if (req.session.login) {
   });
 
   router.post('/signup',async(req,res)=>{
-    console.log(req.body);
  try {
     const olduser = await userModel.findOne({email:req.body.email})
 
@@ -288,15 +287,12 @@ router.post('/signupverify',(req,res)=>{
 
   router.get('/studentdash',verifylogin,async(req,res)=>{
     try {
-      // console.log(req.query)
-      // const {qualification,course,program}= req.query
        const viewqualification = await qualificationModel.find().lean()
       const viewcourses = await courseModel.find().lean()
       const viewprogram = await programModel.find().lean()
       const notification = await notificationModel.find().lean()
       const user =  await userModel.findById(req.session.user._id).lean()
       const applyedProgram = await paymentModel.find({userId:req.session.user._id}).populate('program').populate('course').lean()
-      console.log(applyedProgram,'applicationModel ');
       res.render('users/studentDash',{user,viewqualification,viewcourses,viewprogram,notification,applyedProgram,layout:'student-layout',student_header:true})
      } catch (error) {
       console.log(error);
@@ -333,26 +329,34 @@ req.session.invaild = true
 
   //////////////////////////////////// _______OTP_______ /////////////////////////////////////////
 
-  router.get('/otp',verifylogin,(req,res)=>{
+  router.get('/otp',(req,res)=>{
     res.render('users/otpvrfy')
   });
 
-  router.post('/otpget',(req,res)=>{
-    req.session.phonenumber = req.body.phonenumber
-    twilioController.getOtp(req.body.phonenumber).then((response)=>{
-      // console.log(response);
-      if (response.exist) {
-        if (response.ActiveStatus) {
-          req.session.user = response.user
-          req.session.email = response.email
-          res.redirect('otp')
-        }
-        else{
-          req.session.usernotfound = true
-          res.redirect('/login')
-        }
+  router.post('/otpget',async(req,res)=>{
+    try {
+      const existuser = await userModel.findOne({mobile:req.body.phonenumber})
+      if (existuser) {
+        req.session.phonenumber = req.body.phonenumber
+        twilioController.getOtp(req.body.phonenumber).then((response)=>{
+          if (response.exist) {
+            if (response.ActiveStatus) {
+              req.session.user = response.user
+              req.session.email = response.email
+              res.redirect('otp')
+            }
+            else{
+              req.session.usernotfound = true
+              res.redirect('/login')
+            }
+          }
+        })
+      }else{
+        res.redirect('/login')
       }
-    })
+    } catch (error) {
+      
+    }
   });
 
 //////////////////////////////////// _______OTP VERYFING_______ /////////////////////////////////////////
@@ -533,7 +537,6 @@ router.get('/academicform',verifylogin,async(req,res)=>{
 });
 
 router.post('/academicform',async(req,res)=>{
-  console.log(req.body);
   try {
     const academicDetails = await new academicDetailsModel({
       userId :req.session.user._id,
@@ -630,10 +633,21 @@ router.get('/history',verifylogin,async(req,res)=>{
 });
 
 
-router.get('/generalInformation',verifylogin,(req,res)=>{
-  const admissionDetails = new admissionDetailsModel({userId:req.session.user._id,program:req.query.id})
-    admissionDetails.save()
-  res.render('users/generalInformation',{layout:'student-layout',student_header:true})
+router.get('/generalInformation',verifylogin,async(req,res)=>{
+  try {
+    
+    const olduser = await applicationModel.findOne({userId:req.session.user._id})
+    if(!olduser){
+      const admissionDetails = new admissionDetailsModel({userId:req.session.user._id,program:req.query.id})
+        admissionDetails.save()
+      res.render('users/generalInformation',{layout:'student-layout',student_header:true})
+    }else{
+      res.redirect('/application')
+    }
+
+  } catch (error) {
+    
+  }
 })
 
 let photo = upload.single("photo")
@@ -684,7 +698,9 @@ router.get('/qualificationInformation',(req,res)=>{
 router.post('/qualificationInformation',upload.single("document"),(req,res)=>{
   try {
     let image = req.file
-    req.body.photo = image
+    req.body.qualificationDocumentOftenth = image
+    let doc = req.file
+    req.body.qualificationDocumentOfPlustwo = doc
 
     const qualificationInformation = new qualificationInformationModel({userId:req.session.user._id,
       tenthDetails:req.body.tenthDetails,
@@ -701,7 +717,6 @@ router.post('/qualificationInformation',upload.single("document"),(req,res)=>{
       plustwoSchoolCity:req.body.plustwoSchoolCity,
       plustwoSchoolName:req.body.plustwoSchoolName,
       plustwoBoard:req.body.plustwoBoard})
-      console.log(qualificationInformation,'💥💥💥💥');
     qualificationInformation.save()
     res.redirect('/ProgramsOffered')
   } catch (error) {
@@ -721,7 +736,6 @@ router.get('/ProgramsOffered',async(req,res)=>{
 })
 
 router.post('/ProgramOffered',async(req,res)=>{
-  console.log(req.body.courseid);
 const course = await courseModel.findById(req.body.courseid)
 const courseName = course.course
 const coursePrice = course.price
@@ -747,7 +761,6 @@ router.post('/ProgramOffered/makePayment',(req,res)=>{
 router.get('/admissionPayment',async(req,res)=>{
   try {
     const payableAmount = await ProgramOfferedModel.findOne({userId:req.session.user._id}).populate('userId').lean()
-    console.log(payableAmount,'TokenExpired');
     res.render('users/takeACoursePayment',{payableAmount,fee:payableAmount.amountPayable,username:payableAmount.userId.fname,lastname:payableAmount.userId.lname,email:payableAmount.userId.email,phone:payableAmount.userId.mobile})
   } catch (error) {
     console.log(error);
@@ -779,10 +792,6 @@ router.post('/Paymentverify',(req,res)=>{
     res.json({status:false})
   })
 })
-
-
-
-
 
 
 
@@ -844,6 +853,10 @@ router.get('/success',(req,res)=>{
   res.render('users/successPage')
 })
 
+router.get('/paymentsuccess',(req,res)=>{
+  res.render('users/paymentsuccesspage')
+})
+
 router.get('/failed',(req,res)=>{
   res.render('users/FailedPage')
 })
@@ -858,9 +871,9 @@ router.get('/getApplicationForm',async(req,res)=>{
 
 
 router.get('/getTakeadmissionForm',async(req,res)=>{
-  const ApplicationDetails = await InformationOfgeneralModel.find({userId:req.session.user._id}).lean()
-  const ApplicationDetails2= await InformationOfqualificationModel.find({userId:req.session.user._id}).lean()
-  res.render('users/getTakeAdmission',{ApplicationDetails2,ApplicationDetails,layout:'student-layout'})
+  const AdmissionDetails = await InformationOfgeneralModel.find({userId:req.session.user._id}).lean()
+  const AdmissionDetails2= await InformationOfqualificationModel.find({userId:req.session.user._id}).lean()
+  res.render('users/getTakeAdmission',{AdmissionDetails,AdmissionDetails2,layout:'student-layout'})
 })
 //////////////////////////////////////______logout_______//////////////////////////////////////
 

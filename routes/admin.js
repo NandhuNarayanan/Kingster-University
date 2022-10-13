@@ -16,23 +16,7 @@ const quaryModel = require('../models/QueriesModel')
 const professorsModel = require('../models/professorsModel')
 
 
-// router.get('/adminsignup',(req,res)=>{
-//   res.render('admin/adminSignup')
-// });
 
-// router.post('/adminsignup',async(req,res)=>{
-//   try {
-//     const oldadmin = await adminModel.findOne({email:req.body.email})
-//     if(oldadmin) return res.redirect('/adminsignup')
-//     const hash = await bcrypt.hash(req.body.password,10)
-//     req.body.password = hash
-//     const newadmin = await new adminModel(req.body)
-//     newadmin.save()
-//     res.redirect('/admin/admindash')
-//   } catch (error) {
-//     console.log(error);
-//   }
-// })
 
 router.get('/admindash',(req,res)=>{
 
@@ -124,7 +108,6 @@ router.post('/addprofessors',async(req,res)=>{
   try {
     const professors = await new  professorsModel(req.body)
     const qualificationIDUpdate = await departmentModel.findOneAndUpdate(req.body.professors,{$push:{professorsID:professors._id}})
-    console.log(qualificationIDUpdate,'update');
     professors.save()
 
      res.redirect('/admin/addprofessors')
@@ -145,7 +128,6 @@ router.post('/addprofessors',async(req,res)=>{
 router.get('/viewprofessors',async(req,res)=>{
   try {
     const viewprofessors = await professorsModel.find().populate('depatment').lean()
-    console.log(viewprofessors,'update');
     res.render('admin/viewProfessors',{viewprofessors,layout:'admin-layout',admin_header:true})
 
   } catch (error) {
@@ -194,7 +176,6 @@ router.post('/addcourse',async(req,res)=>{
   try {
     const qualification = await new  courseModel(req.body)
     const qualificationIDUpdate = await qualificationModel.findOneAndUpdate(req.body.course,{$push:{qualificationID:qualification._id}})
-    console.log(qualificationIDUpdate,'update');
     qualification.save()
 
      res.redirect('/admin/addCourse')
@@ -221,11 +202,9 @@ router.get('/addprograms',async(req,res)=>{
 
 
 router.post('/addprograms',async(req,res)=>{
-  console.log(req.body);
   try {
     const course = await new  programModel(req.body)
     const courseUpdate = await courseModel.findOneAndUpdate(req.body.program,{$push:{courseID:course._id}})
-    console.log(courseUpdate,'courseUpdate');
     course.save()
      res.redirect('/admin/addPrograms')
     
@@ -245,7 +224,6 @@ router.get('/addqualification',(req,res)=>{
 
 
 router.post('/addqualification',async(req,res)=>{
-  console.log(req.body)
 
   try {
     const qualifications = await new qualificationModel(req.body)
@@ -267,7 +245,6 @@ router.get('/paymentDetails',(req,res)=>{
 })
 
 router.post('/paymentDetails',async(req,res)=>{
-  console.log(req.body)
 
   try {
     const coupons = await new couponModel(req.body)
@@ -290,7 +267,6 @@ router.get('/notificationcontent',(req,res)=>{
 });
 
 router.post('/notificationcontent',async(req,res)=>{
-  console.log(req.body)
 
   try {
     const notification = await new notificationModel(req.body)
@@ -332,7 +308,6 @@ router.get('/studentsQuery',async(req,res)=>{
 router.get('/queryResponse/:id',async(req,res)=>{
   try {
     const studentsQuery = await quaryModel.findById(req.params.id).lean()
-    console.log(studentsQuery,'1234567');
     res.render('admin/queryReplay',{studentsQuery,layout:'admin-layout',admin_header:true})
   } catch (error) {
     
@@ -343,9 +318,7 @@ router.get('/queryResponse/:id',async(req,res)=>{
 
 router.post('/queryResponse',async(req,res)=>{
   try {
-    console.log(req.body,'rtyuiolkjhgfdsa');
    const updateModal = await quaryModel.findOneAndUpdate({_id:req.body.id},{$set:{replay:req.body.replay}})
-   console.log(updateModal,'updateModal12345');
     res.redirect('/admin/studentsQuery')
   } catch (error) {
     console.log(error);

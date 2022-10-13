@@ -37,7 +37,7 @@ const userSchema= new mongoose.Schema({
     },
     password:{
        type:String,
-       required:[true,'please provid password'],
+       required:[true],
        minilength:8
     },
     verified:{

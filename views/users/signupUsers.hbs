@@ -5,7 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Signup</title>
-
+<style>
+  .error{
+    color: red;
+  }
+</style>
   <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
   <meta name="robots" content="noindex" />
 
@@ -61,7 +65,7 @@
           <p class="card-subtitle">Create a new account</p>
         </div>
         <div class="card-body">
-          <form method="post" action="/signup" id="signupForm">
+          <form method="post" action="/signup" id="signupForm" novalidate>
             <div class="form-group row">
               <label for="name" class="col-sm-3 col-form-label form-label">Full Name</label>
               <div class="col-sm-8">
@@ -78,7 +82,7 @@
             <div class="form-group">
               <label class="form-label" for="email">Email address:</label>
               <div class="input-group input-group-merge">
-                <input id="email" type="email" name="email" required="" class="form-control form-control-prepended"
+                <input id="email" type="email" name="email"  class="form-control form-control-prepended"
                   placeholder="Your email address" />
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -90,7 +94,7 @@
             <div class="form-group">
               <label class="form-label" for="name">MOBILE NO:</label>
               <div class="input-group input-group-merge">
-                <input id="mobile" type="number" name="mobile" required="" class="form-control form-control-prepended"
+                <input id="mobile" type="number" name="mobile"  class="form-control form-control-prepended"
                   placeholder="Enter Phone Number" />
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -103,7 +107,7 @@
 
               <div class="form-group col-md-6">
                 <label for="inputState">State</label>
-                <select class="form-control" id="inputState">
+                <select class="form-control" id="inputState" name="state">
                   <option value="SelectState">Select State</option>
                   <option value="Andra Pradesh">Andra Pradesh</option>
                   <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -146,7 +150,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputDistrict">District</label>
-                <select class="form-control" id="inputDistrict">
+                <select class="form-control" id="inputDistrict" name="city">
                   <option value="">-- select one -- </option>
                 </select>
               </div>
@@ -203,7 +207,7 @@
             <div class="form-group">
               <label class="form-label" for="password">Password:</label>
               <div class="input-group input-group-merge">
-                <input id="password" name="password" type="password" required=""
+                <input id="password" name="password" type="password" 
                   class="form-control form-control-prepended" placeholder="Choose a password" />
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -215,7 +219,7 @@
             <div class="form-group">
               <label class="form-label" for="password2">Confirm Password:</label>
               <div class="input-group input-group-merge">
-                <input id="password2" name="cpassword" type="password" required=""
+                <input  name="cpassword" type="password" 
                   class="form-control form-control-prepended" placeholder="Confirm password" />
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -230,7 +234,7 @@
 
             <div class="form-group text-center mb-0">
               <div class="custom-control custom-checkbox">
-                <input id="terms" type="checkbox" class="custom-control-input" checked required="" />
+                <input id="terms" type="checkbox" class="custom-control-input" checked  />
                 <label for="terms" class="custom-control-label text-black-70">I agree to the
                   <a href="#" class="text-black-70" style="text-decoration: underline;">Terms of Use</a></label>
               </div>
@@ -433,11 +437,94 @@
   <script src="/assets/js/app-settings.js"></script>
 
   <!-- Jquery Validation -->
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+          
+            $("#signupForm").validate({
+                // in 'rules' user have to specify all the constraints for respective fields
+                rules: {
+                    fname: "required",
+                    lname: "required",
+                    mobile: {
+                        required: true,
+                        minlength: 10 //for length of lastname
+                    },
+                    state: {
+                        required: true
+                    },
+                    city: {
+                        required: true
+                    },
+                    gender: {
+                        required: true
+                    },
+                    QUALIFICATION: {
+                        required: true
+                    },
+                     course: {
+                        required: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8
+                    },
+                    cpassword: {
+                        required: true,
+                        minlength: 8,
+                        equalTo: "#password" //for checking both passwords are same or not
+                    },
+                    email: {
+                        required: true,      
+                        email: true
+                    },
+                    agree: "required"
+                },
+                messages: {
+                  fname:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  lname:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  email:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  mobile:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  state:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  city:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  gender:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  QUALIFICATION:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  course:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  password:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  cpassword:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  }
+                }
+                
+            });
+        });
+ 
+    </script>
 
 </body>
 

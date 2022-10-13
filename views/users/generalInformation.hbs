@@ -2,7 +2,7 @@
         <div class="container-fluid py-5">
             <h2> Application for {{programname}}</h2>
             <h2>General Information</h2>
-            <form action="/generalInformation" method="post" enctype="multipart/form-data">
+            <form action="/generalInformation" method="post" enctype="multipart/form-data" id="generalForm">
                 <div class="form-group col-md-12">
                     <label class="form-label">Date of Birth*</label>
                     <div class="form-line">
@@ -16,21 +16,21 @@
                         <label class="form-label">Category*</label>
                         <div>
                             <select class="form-control" name="category">
-                                <option value="1"></option>
-                                <option value="2">(OBC) Other Backward Caste</option>
-                                <option value="3">Economically Backward Class (EBC)</option>
-                                <option value="4">General Category (GN)</option>
-                                <option value="4">Nomadic Tribes (B) (NT - B)</option>
-                                <option value="4">Nomadic Tribes (C) (NT - C)</option>
-                                <option value="4">Nomadic Tribes (D) (NT - D)</option>
-                                <option value="4">Nomadic Tribes (NT)</option>
-                                <option value="4">Scheduled Tribe (ST)</option>
-                                <option value="4">Scheduled Caste (SC)</option>
-                                <option value="4">Socially And Educationally Backward (SEBC)
+                                <option value=""></option>
+                                <option value="(OBC) Other Backward Caste">(OBC) Other Backward Caste</option>
+                                <option value="Economically Backward Class (EBC)">Economically Backward Class (EBC)</option>
+                                <option value="General Category (GN)">General Category (GN)</option>
+                                <option value="Nomadic Tribes (B) (NT - B)">Nomadic Tribes (B) (NT - B)</option>
+                                <option value="Nomadic Tribes (C) (NT - C)">Nomadic Tribes (C) (NT - C)</option>
+                                <option value="Nomadic Tribes (D) (NT - D)">Nomadic Tribes (D) (NT - D)</option>
+                                <option value="Nomadic Tribes (NT)">Nomadic Tribes (NT)</option>
+                                <option value="Scheduled Tribe (ST)">Scheduled Tribe (ST)</option>
+                                <option value="Scheduled Caste (SC)">Scheduled Caste (SC)</option>
+                                <option value="Socially And Educationally Backward (SEBC)">Socially And Educationally Backward (SEBC)
                                 </option>
-                                <option value="4">Special Backward Caste (SBC)</option>
-                                <option value="4">Scheduled Caste (SC)</option>
-                                <option value="4">Vimukt Jati (VJ)</option>
+                                <option value="Special Backward Caste (SBC)">Special Backward Caste (SBC)</option>
+                                <option value="Scheduled Caste (SC)">Scheduled Caste (SC)</option>
+                                <option value="Vimukt Jati (VJ)">Vimukt Jati (VJ)</option>
                             </select>
 
                         </div>
@@ -620,4 +620,115 @@
             $("#inputDistrict").html(htmlString);
 
         });
+    </script>
+
+    
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+          
+            $("#generalForm").validate({
+                // in 'rules' user have to specify all the constraints for respective fields
+                rules: {
+                    dob: "required",
+                    category: "required",
+                    aadharNumber: {
+                        required: true,
+                        minlength: 12 //for length of lastname
+                        maxlength:12
+                    },
+                    photo: {
+                        required: true
+                    },
+                    address1: {
+                        required: true
+                    },
+                    address2: {
+                        required: true
+                    },
+                    country: {
+                        required: true
+                    },
+                     state: {
+                        required: true
+                    },
+                    city: {
+                        required: true
+                    },
+                    pincode: {
+                        required: true
+                        minlength:6,
+                        maxlength:6
+                    },
+                    alternatenumber: {
+                        required: true,
+                        minlength:10,
+                        maxlength:10     
+                    },
+                    whatsappnumber: {
+                        required: true,
+                        minlength:10,
+                        maxlength:10     
+                    },
+                    fatherfname: {
+                        required: true,   
+                    },
+                    fatherSurename: {
+                        required: true   
+                    },
+                    motherfname: {
+                        required: true   
+                    },
+                    motherSurename: {
+                        required: true   
+                    },
+                    parantsemail: {
+                        required: true   
+                    },
+                    parantscontactnumber: {
+                        required: true   
+                    }
+                },
+                messages: {
+                  fname:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  lname:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  email:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  mobile:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  state:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  city:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  gender:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  QUALIFICATION:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  course:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  password:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  },
+                  cpassword:{
+                    required:  `<span class="bi bi-exclamation-triangle"></span>`
+                  }
+                }
+                
+            });
+        });
+ 
     </script>

@@ -7,7 +7,13 @@ const qualificationInformationSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"Users"
     },
-    tenthDetails:{
+    tenthpercentage:{
+    type:Number
+   },
+   tenthCourseCommencementYear:{
+    type:Number
+   },
+   tenthCourseCompletionYear:{
     type:Number
    },
    qualificationDocumentOftenth:{
@@ -29,10 +35,13 @@ const qualificationInformationSchema = new mongoose.Schema({
     tenthBoard:{
         type:String
     },
-    plustwoDetails:{
+    GradeorPercentage:{
         type:Number
     },
-    GradeorPercentage:{
+    CourseCommencementYear:{
+        type:Number
+    },
+    CourseCompletionYear:{
         type:Number
     },
     qualificationDocumentOfPlustwo:{

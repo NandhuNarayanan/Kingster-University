@@ -207,7 +207,6 @@ router.get('/',(req,res)=>{
 
 router.post('/',async(req,res)=>{
  try {
-  console.log(req.body.teachername);
   const teacher = await teacherModel.findOne({email:req.body.teachername})
   if(!teacher) return res.render('teacher/teacherLogin',{session:{wrongpassword:'123'}})
   await bcrypt.compare(req.body.password,teacher.password)
