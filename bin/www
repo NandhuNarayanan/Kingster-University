@@ -13,9 +13,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config({ path: './.env' })
 
-// mongoose.connect('mongodb+srv://nandhu:nandhunarayanan@cluster0.qctfkix.mongodb.net/StudentsUniversity?retryWrites=true&w=majority').then(e=>{
-//   console.log('db connected');
-// })
+
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
   process.env.DATABASE_PASSWORD

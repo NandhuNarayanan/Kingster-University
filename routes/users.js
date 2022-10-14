@@ -327,6 +327,15 @@ req.session.invaild = true
 
 
 
+router.post('/studentprofile',async(req,res)=>{
+try {
+  const user = await userModel.findById(req.session.user._id)
+  
+} catch (error) {
+  
+}
+})
+
   //////////////////////////////////// _______OTP_______ /////////////////////////////////////////
 
   router.get('/otp',(req,res)=>{
@@ -424,14 +433,6 @@ router.post('/application',async(req,res)=>{
     console.log(error);
   }
 });
-
-
-
-router.get('/help',verifylogin,(req,res)=>{
-  res.render('users/studentsHelp',{layout:'student-layout',student_header:true})
-});
-
-
 
 
 

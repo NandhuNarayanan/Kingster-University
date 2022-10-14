@@ -19,16 +19,49 @@ dotenv.config({ path: './config.env' })
 
 
 
-router.get('/admindash',(req,res)=>{
 
-  res.render('admin/adminDash',{layout:'admin-layout',admin_header:true})
+const verifylogin = (req,res,next)=>{
+  if(req.session.admin) {
+    next()
+  }else{
+  res.redirect('/admin')
+  }
+}
+
+
+router.get('/admindash',verifylogin,async(req,res)=>{
+  let dashbord={}
+  dashbord.totaluser = 0;
+  totaluser = await userModel.find().lean()
+  dashbord.totaluser = totaluser.length;
+  totaladmissions = await paymentModel.find().lean()
+  dashbord.totaladmissions = totaladmissions.length;
+  totalprograms = await programModel.find().lean()
+  dashbord.totalprograms = totalprograms.length;
+  totalamount = await paymentModel.aggregate([
+    {
+      '$group': {
+        '_id': null, 
+        'fieldN': {
+          '$sum': '$finalAmount'
+        }
+      }
+    }
+  ])
+
+  dashbord.total = totaladmissions
+  dashbord.amountTwo = totalamount[0].fieldN*2
+  dashbord.amountThree=totalamount[0].fieldN*3
+  dashbord.amountFour=totalamount[0].fieldN*2.5
+  console.log("totaluser=",dashbord.amountTwo)
+  res.render('admin/adminDash',{layout:'admin-layout',admin_header:true,dashbord,totalamount})
 });
 
 //////////////////////////////////////////////_______________________ADD-LOGIN_________________________/////////////////////////////////////////////////////////////
 
 
 router.get('/',(req,res)=>{
-  if(req.session.login){
+  if(req.session.admin){
     res.redirect('/admin/admindash')
   }
   res.render('admin/adminlogin',{layout:'admin-layout'})
@@ -41,7 +74,7 @@ router.post('/',async(req,res)=>{
   await bcrypt.compare(req.body.password,admin.password)
   .then(e=>{
     if(e) {
-      req.session.login = true
+      req.session.admin = true
      return res.redirect('/admin/admindash')
     }
     return res.render('admin/adminlogin',{session:{wrongpassword:'123'}})
@@ -52,7 +85,7 @@ router.post('/',async(req,res)=>{
 })
 
 //////////////////////////////////////////////_______________________VIEW-STUDENTS_________________________/////////////////////////////////////////////////////////////
-router.get('/viewstudent',async(req,res)=>{
+router.get('/viewstudent',verifylogin,async(req,res)=>{
   try {
     const allStudents = await userModel.find().lean()
    res.render('admin/viewStudents',{allStudents,layout:'admin-layout',admin_header:true}).toUpperCase()
@@ -64,14 +97,14 @@ router.get('/viewstudent',async(req,res)=>{
 })
 
 
-router.get('/addstudents',(req,res)=>{
+router.get('/addstudents',verifylogin,(req,res)=>{
   res.render('admin/addStudents',{layout:'admin-layout',admin_header:true})
 })
 
 
 //////////////////////////////////////////////_______________________ADD-DEPARTMENT_________________________///////////////////////////////////////////////////////
 
-router.get('/adddepartment',(req,res)=>{
+router.get('/adddepartment',verifylogin,(req,res)=>{
   res.render('admin/addDepartment',{layout:'admin-layout',admin_header:true})
 })
 
@@ -95,7 +128,7 @@ router.post('/adddepartment',async(req,res)=>{
 //////////////////////////////////////////////_______________________ADD-PROFESSERS_________________________////////////////////////////////////////////////////////
 
 
-router.get('/addprofessors',async(req,res)=>{
+router.get('/addprofessors',verifylogin,async(req,res)=>{
   try {
     const getDepartment = await departmentModel.find().lean()
     res.render('admin/addProfessors',{getDepartment,layout:'admin-layout',admin_header:true})
@@ -126,7 +159,7 @@ router.post('/addprofessors',async(req,res)=>{
 
 
 
-router.get('/viewprofessors',async(req,res)=>{
+router.get('/viewprofessors',verifylogin,async(req,res)=>{
   try {
     const viewprofessors = await professorsModel.find().populate('depatment').lean()
     res.render('admin/viewProfessors',{viewprofessors,layout:'admin-layout',admin_header:true})
@@ -147,7 +180,7 @@ router.get('/viewprofessors',async(req,res)=>{
 //////////////////////////////////////////////_______________________VIEW-COURSES_________________________////////////////////////////////////////////////////////
 
 
-router.get('/viewcourse',async(req,res)=>{
+router.get('/viewcourse',verifylogin,async(req,res)=>{
   try {
     const viewcourses = await courseModel.find().lean()
     res.render('admin/viewCourses',{viewcourses,layout:'admin-layout',admin_header:true})
@@ -161,7 +194,7 @@ router.get('/viewcourse',async(req,res)=>{
 //////////////////////////////////////////////_______________________ADD-COURSES_________________________/////////////////////////////////////////////////////////////
 
 
-router.get('/addcourse',async(req,res)=>{
+router.get('/addcourse',verifylogin,async(req,res)=>{
   try {
     const getqualificaton = await  qualificationModel.find().lean()
     const getDepartment = await departmentModel.find().lean()
@@ -173,7 +206,7 @@ router.get('/addcourse',async(req,res)=>{
 })
 
 
-router.post('/addcourse',async(req,res)=>{
+router.post('/addcourse',verifylogin,async(req,res)=>{
   try {
     const qualification = await new  courseModel(req.body)
     const qualificationIDUpdate = await qualificationModel.findOneAndUpdate(req.body.course,{$push:{qualificationID:qualification._id}})
@@ -191,7 +224,7 @@ router.post('/addcourse',async(req,res)=>{
 //////////////////////////////////////////////_______________________ADD-PROGRAMS_________________________/////////////////////////////////////////////////////////////
 
 
-router.get('/addprograms',async(req,res)=>{
+router.get('/addprograms',verifylogin,async(req,res)=>{
   try {
     const getcourse = await  courseModel.find().lean()
     res.render('admin/addPrograms',{getcourse,layout:'admin-layout',admin_header:true})
@@ -219,7 +252,7 @@ router.post('/addprograms',async(req,res)=>{
 //////////////////////////////////////////////_______________________ADD-QUALIFICATIONS_________________________/////////////////////////////////////////////////////////////
 
 
-router.get('/addqualification',(req,res)=>{
+router.get('/addqualification',verifylogin,(req,res)=>{
   res.render('admin/addQualification',{layout:'admin-layout',admin_header:true})
 })
 
@@ -241,7 +274,7 @@ router.post('/addqualification',async(req,res)=>{
 });
 
 //////////////////////////////////////////////_______________________ADD-COUPONS_________________________/////////////////////////////////////////////////////////
-router.get('/paymentDetails',(req,res)=>{
+router.get('/paymentDetails',verifylogin,(req,res)=>{
   res.render('admin/paymentDetails',{layout:'admin-layout',admin_header:true})
 })
 
@@ -263,7 +296,7 @@ router.post('/paymentDetails',async(req,res)=>{
 
 
 
-router.get('/notificationcontent',(req,res)=>{
+router.get('/notificationcontent',verifylogin,(req,res)=>{
   res.render('admin/notification',{layout:'admin-layout',admin_header:true})
 });
 
@@ -285,7 +318,7 @@ router.post('/notificationcontent',async(req,res)=>{
 
 
 
-router.get('/paymenthistory',async(req,res)=>{
+router.get('/paymenthistory',verifylogin,async(req,res)=>{
   try {
     const paymentHistory = await paymentModel.find().populate('program').lean()
     res.render('admin/paymentHistory',{paymentHistory,layout:'admin-layout',admin_header:true})
@@ -295,7 +328,7 @@ router.get('/paymenthistory',async(req,res)=>{
 
 })
 
-router.get('/studentsQuery',async(req,res)=>{
+router.get('/studentsQuery',verifylogin,async(req,res)=>{
   try {
     const studentsQuery = await quaryModel.find().populate('userId').lean()
     res.render('admin/studentsQuery',{studentsQuery,layout:'admin-layout',admin_header:true})
@@ -306,7 +339,7 @@ router.get('/studentsQuery',async(req,res)=>{
 })
 
 
-router.get('/queryResponse/:id',async(req,res)=>{
+router.get('/queryResponse/:id',verifylogin,async(req,res)=>{
   try {
     const studentsQuery = await quaryModel.findById(req.params.id).lean()
     res.render('admin/queryReplay',{studentsQuery,layout:'admin-layout',admin_header:true})
@@ -337,7 +370,7 @@ router.post('/queryResponse',async(req,res)=>{
 
 
 router.get('/logout',(req,res)=>{
-  req.session.login = false
+  req.session.admin = false
   res.redirect('/admin/login')
 })
 

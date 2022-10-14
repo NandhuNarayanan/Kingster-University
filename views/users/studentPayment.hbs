@@ -210,13 +210,10 @@
                                     <a class="dropdown-item" href="/studentdash">
                                         <i class="material-icons">account_box</i> Dashboard
                                     </a>
-                                    <a class="dropdown-item" href="student-account-edit.html">
+                                    <a class="dropdown-item" href="studentprofile">
                                         <i class="material-icons">edit</i> Edit Account
                                     </a>
-                                    <a class="dropdown-item" href="student-profile.html">
-                                        <i class="material-icons">person</i> Public Profile
-                                    </a>
-                                    <a class="dropdown-item" href="guest-login.html">
+                                    <a class="dropdown-item" href="/logout">
                                         <i class="material-icons">lock</i> Logout
                                     </a>
                                 </div>
@@ -535,9 +532,9 @@
                 }).then((e) => {
                     console.log(e)
                     if(e.status){
-                        alert("payment Successfull")
+                        location.assign('/paymentsuccess')
                     }else{
-                        alert("Payment Failed")
+                        location.assign('/failed')
                     }
                 })
             } catch (err) {

@@ -15,7 +15,7 @@ const paymentSchema = new mongoose.Schema({
         ref:"Course"
     },
     finalAmount:{
-        type:String
+        type:Number
     },
     OrderStatus:{
         type:Boolean,
