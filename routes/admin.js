@@ -14,7 +14,8 @@ const notificationModel = require('../models/notificationModel')
 const paymentModel = require('../models/paymentModel');
 const quaryModel = require('../models/QueriesModel')
 const professorsModel = require('../models/professorsModel')
-
+const dotenv = require('dotenv')
+dotenv.config({ path: './config.env' })
 
 
 

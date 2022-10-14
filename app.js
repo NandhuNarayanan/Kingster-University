@@ -11,6 +11,9 @@ const adminRouter = require('./routes/admin');
 const teacherRouter = require('./routes/teacher');
 const { format } = require('path');
 const multer = require('multer')
+const dotenv = require('dotenv')
+dotenv.config({ path: './.env' })
+
 
 const app = express();
 

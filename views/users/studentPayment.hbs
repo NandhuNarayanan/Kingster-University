@@ -479,6 +479,7 @@
         function makePayment() {
             let totalFee = document.getElementById('totalfee').value
             let Grandtotal = Gtotal + parseInt(totalFee)
+            console.log(Grandtotal,'12345')
             axios({
                 method: 'post',
                 url: '/makepayment',
@@ -486,25 +487,27 @@
                     Grandtotal
                 }
             }).then((e) => {
-                console.log(e)
+                console.log(e.data.receipt)
                 if (e.data) {
                     rayzorpayPayment(e.data)
                 }
 
             })
         }
-console.log(order)
+
         function rayzorpayPayment(order) {
+           console.log(order.receipt)
             var options = {
-                "key": "rzp_test_ZA6QWhav78sinI", // Enter the Key ID generated from the Dashboard
-                "amount": order, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "key":"rzp_test_GLNe9qeA5buuYT", // Enter the Key ID generated from the Dashboard
+                "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                 "currency": "INR",
                 "name": "Kingster University",
                 "description": "Test Transaction",
                 "image": "https://example.com/your_logo",
-                "order_id":''+order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                 "handler": function (response) {
-                    verifyPayment(response, order)
+                 verifyPayment(response,order)
+                    
                 },
                 "prefill": {
                     "name": "Gaurav Kumar",
@@ -521,8 +524,10 @@ console.log(order)
             var rzp1 = new Razorpay(options);
             rzp1.open();
         }
-
+        console.log("response     ",response)
         async function verifyPayment(Payment, order) {
+            console.log("Payment",Payment)
+            console.log("order",order)
             try {
                 const res = await axios.post('/verifyPayment', {
                     Payment,

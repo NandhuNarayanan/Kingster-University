@@ -583,9 +583,13 @@ router.get('/payment',verifylogin,async(req,res)=>{
 router.post('/makepayment',async(req,res)=>{  
   try {
     const findProgram = await applicationModel.findOne({userId:req.session.user._id}).populate('program').lean()
+    console.log(req.body.Grandtotal,"jjjjjj");
     const finalPayment = await new paymentModel({finalAmount:req.body.Grandtotal,userId:req.session.user._id,program:findProgram.program})
+    
     finalPayment.save()
+    console.log(finalPayment,"lllll");
     paymentController.generateRazorpay(finalPayment).then((response)=>{
+      console.log(response,"response");
     res.json(response)
     })
   } catch (error) {
@@ -595,6 +599,7 @@ router.post('/makepayment',async(req,res)=>{
 
 ////////---------------------verify_PAYMENT
 router.post('/verifyPayment',(req,res)=>{
+  console.log(req.body,"kkkkkkkk");
   paymentController.verifyPayment(req.body).then(()=>{
     paymentController.changePaymentStatus(req.body.receipt).then(()=>{
       res.json({status:true})

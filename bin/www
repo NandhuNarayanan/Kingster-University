@@ -10,7 +10,19 @@ const http = require('http');
 
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://127.0.0.1:27017/StudentsUniversity').then(e=>{
+const dotenv = require('dotenv')
+dotenv.config({ path: './.env' })
+
+// mongoose.connect('mongodb+srv://nandhu:nandhunarayanan@cluster0.qctfkix.mongodb.net/StudentsUniversity?retryWrites=true&w=majority').then(e=>{
+//   console.log('db connected');
+// })
+const DB = process.env.DATABASE.replace(
+  '<PASSWORD>',
+  process.env.DATABASE_PASSWORD
+  );
+mongoose.connect(DB, {
+  useNewUrlParser:true
+}).then(e=>{
   console.log('db connected');
 })
 /**

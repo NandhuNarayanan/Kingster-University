@@ -422,13 +422,13 @@
         console.log(order)
         function rayzorpayPayment(order) {
             var options = {
-                "key": "rzp_test_ZA6QWhav78sinI", // Enter the Key ID generated from the Dashboard
-                "amount": order, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "key":"rzp_test_GLNe9qeA5buuYT", // Enter the Key ID generated from the Dashboard
+                "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                 "currency": "INR",
                 "name": "Kingster University",
                 "description": "Test Transaction",
                 "image": "https://example.com/your_logo",
-                "order_id": '' + order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                 "handler": function (response) {
                     verifyPayment(response, order)
                 },

@@ -1,85 +1,3 @@
-<!-- chatBot -->
-<div class="chat_icon">
-    <i class="material-icons">chat</i>
-</div>
-<div class="chat_box">
-    <div class="conv-form-wrapper">
-        <form action="" method="get" onsubmit="chatbot()" class="hidden">
-            <select name="help"
-                data-conv-question="Welcome to Admission Helpline of Kingster University. How can I help you ?">
-                <option value="Query">Query</option>
-                <option value="Contact">Contact</option>
-            </select>
-            <div data-conv-fork="help">
-                <div data-conv-case="Query">
-                    <input type="text" name="name"
-                        data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
-                    <input type="text" data-conv-question="Howdy, {name}:0! It's a pleasure to meet you."
-                        data-no-answer="true">
-                    <input data-conv-question="Type in your e-mail"
-                        data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-                        id="email" type="email" name="email" required placeholder="What's your e-mail?">
-                    <input type="text" data-conv-question="{name}:0! we will connect you." data-no-answer="true">
-                </div>
-                <div data-conv-case="Contact">
-                    <input type="text"
-                        data-conv-question="Hey there! if you are free I will get the right person from my team to contact."
-                        data-no-answer="true">
-                    <input type="text" name="name" data-conv-question="please give as your Phone number.">
-                    <input type="text" data-conv-question="our team will connect you soon!!!" data-no-answer="true">
-                </div>
-            </div>
-        </form>
-    </div>
-
-</div>
-<!-- chatBot End -->
-
-<style>
-    .chat_icon {
-        position: fixed;
-        right: 30px;
-        bottom: 0;
-        font-size: 100px;
-        color: teal;
-        cursor: pointer;
-        z-index: 1000;
-    }
-
-    .chat_box {
-        position: fixed;
-        right: 20px;
-        bottom: 75px;
-        width: 400px;
-        height: 80vh;
-        background: #dedede;
-        z-index: 1000;
-        transition: all 0.3s ease-out;
-        transform: scaleY(0);
-    }
-
-    .chat_box.active {
-        transform: scaleY(1);
-    }
-
-    .hidden {
-        display: none !important;
-    }
-
-    .conv-form-wrapper textarea {
-        height: 30px;
-        overflow: hidden;
-        resize: none;
-    }
-
-    #messages {
-        padding: 20px;
-    }
-</style>
-
-
-
-
 <div class="preloader">
     <div class="sk-chase">
         <div class="sk-chase-dot"></div>
@@ -184,9 +102,7 @@
 
         <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
             <div class="mdk-drawer-layout__content page ">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                    data-whatever="Any Queries? Ask Us">Any Queries? Ask
-                    Us</button>
+
                 <div class="container-fluid page__container p-0">
                     <div class="row m-0">
                         <div class="col-lg container-fluid page__container">
@@ -262,9 +178,10 @@
                                         {{/each}}
                                     </tbody>
                                 </table>
-                                 <button type="button" class="btn btn-primary"  style="margin-left:940px;" data-toggle="modal" data-target="#exampleModal"
-                data-whatever="Any Queries? Ask Us">Any Queries? Ask
-                Us</button>
+                                <button type="button" class="btn btn-primary" style="margin-left:940px;"
+                                    data-toggle="modal" data-target="#exampleModal"
+                                    data-whatever="Any Queries? Ask Us">Any Queries? Ask
+                                    Us</button>
                             </div>
 
                             <!-- Pagination -->
@@ -295,7 +212,9 @@
                         </div>
                     </div>
                 </div>
-
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-whatever="Any Queries? Ask Us">Any Queries? Ask
+                    Us</button>
             </div>
 
             <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
@@ -379,13 +298,6 @@
 
         </div>
 
-        <!-- App Settings FAB -->
-        <div id="app-settings">
-            <app-settings layout-active="default" :layout-location="{
-      'fixed': 'fixed-student-billing.html',
-      'default': 'student-billing.html'
-    }" sidebar-variant="bg-transparent border-0"></app-settings>
-        </div>
 
     </div>
 </div>
@@ -493,13 +405,4 @@
 
         })
     }
-</script>
-<script>
-    // chatBot
-    $(document).ready(function () {
-        $('.chat_icon').click(function (event) {
-            $('.chat_box').toggleClass('active')
-        });
-        $('.conv-form-wrapper').convform({ selectInputStyle: 'disable' });
-    })
 </script>
