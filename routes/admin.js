@@ -371,7 +371,7 @@ router.post('/queryResponse',async(req,res)=>{
 
 router.get('/logout',(req,res)=>{
   req.session.admin = false
-  res.redirect('/admin/login')
+  res.redirect('/')
 })
 
 module.exports=router;
